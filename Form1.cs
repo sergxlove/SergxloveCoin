@@ -19,6 +19,7 @@ namespace SergxloveCoin
             myBalance.BalansePlayer += myBalance.SpeedClick;
             label2.Text = Convert.ToString(myBalance.BalansePlayer);
         }
+
     }
     public class Balanse
     {
