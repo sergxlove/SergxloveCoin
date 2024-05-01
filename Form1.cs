@@ -20,8 +20,47 @@ namespace SergxloveCoin
             label2.Text = Convert.ToString(myBalance.BalansePlayer);
         }
 
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Profile");
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("levels");
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("list");
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("shop");
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            pictureBox4_Click(sender, e);
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            pictureBox5_Click(sender, e);
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            pictureBox6_Click(sender, e);
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            pictureBox3_Click(sender,e);
+        }
     }
-    public class Balanse
+    public sealed class Balanse
     {
         public Balanse()
         {
