@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace SergxloveCoin
 {
     public partial class Form1 : Form
@@ -9,6 +11,9 @@ namespace SergxloveCoin
 
         }
         private Balanse myBalance;
+        private int frameCount = 0;
+        private int sizeY = 0;
+        private int coordPointY= 0;
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
@@ -57,7 +62,32 @@ namespace SergxloveCoin
 
         private void label10_Click(object sender, EventArgs e)
         {
-            pictureBox3_Click(sender,e);
+            pictureBox3_Click(sender, e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 7;
+            frameCount = 0;
+            coordPointY = 155;
+            sizeY = 650;
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(frameCount <= 10)
+            {
+                tabControl1.Location = new Point(12, coordPointY);
+                tabControl1.Size = new Size(620, sizeY);
+                coordPointY += 80;
+                sizeY -= 65;
+                frameCount++;
+            }
+            else
+            {
+                timer1.Stop();
+            }
         }
     }
     public sealed class Balanse

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             button1 = new Button();
             button2 = new Button();
@@ -360,6 +361,7 @@
             label222 = new Label();
             label223 = new Label();
             pictureBox36 = new PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -1733,6 +1735,7 @@
             button3.TabIndex = 2;
             button3.Text = "Закрыть";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // label11
             // 
@@ -1867,7 +1870,7 @@
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(614, 615);
+            tabPage2.Size = new Size(612, 617);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Видеокарты";
             // 
@@ -3071,7 +3074,7 @@
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(614, 615);
+            tabPage3.Size = new Size(612, 617);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Процессоры";
             // 
@@ -4268,6 +4271,10 @@
             pictureBox36.TabIndex = 0;
             pictureBox36.TabStop = false;
             // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -4741,5 +4748,6 @@
         private Label label222;
         private Label label223;
         private PictureBox pictureBox36;
+        private System.Windows.Forms.Timer timer1;
     }
 }
