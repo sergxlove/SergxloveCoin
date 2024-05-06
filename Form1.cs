@@ -13,7 +13,7 @@ namespace SergxloveCoin
         private Balanse myBalance;
         private int frameCount = 0;
         private int sizeY = 0;
-        private int coordPointY= 0;
+        private int coordPointY = 0;
         private bool showAnimation = false;
         private void button1_Click(object sender, EventArgs e)
         {
@@ -83,9 +83,9 @@ namespace SergxloveCoin
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(showAnimation)
+            if (showAnimation)
             {
-                if(frameCount <= 5)
+                if (frameCount <= 5)
                 {
                     tabControl1.Location = new Point(12, coordPointY);
                     tabControl1.Size = new Size(620, sizeY);
@@ -100,7 +100,7 @@ namespace SergxloveCoin
             }
             else
             {
-                if(frameCount <= 5)
+                if (frameCount <= 5)
                 {
                     tabControl1.Location = new Point(12, coordPointY);
                     tabControl1.Size = new Size(620, sizeY);
@@ -113,6 +113,26 @@ namespace SergxloveCoin
                     timer1.Stop();
                 }
             }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 7;
+            frameCount = 0;
+            coordPointY = 155;
+            sizeY = 650;
+            showAnimation = false;
+            timer1.Start();
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 7;
+            frameCount = 0;
+            coordPointY = 155;
+            sizeY = 650;
+            showAnimation = false;
+            timer1.Start();
         }
     }
     public sealed class Balanse
