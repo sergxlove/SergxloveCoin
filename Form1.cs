@@ -14,6 +14,7 @@ namespace SergxloveCoin
         private int frameCount = 0;
         private int sizeY = 0;
         private int coordPointY= 0;
+        private bool showAnimation = false;
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
@@ -42,7 +43,12 @@ namespace SergxloveCoin
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("shop");
+            timer1.Interval = 7;
+            frameCount = 0;
+            coordPointY = 805;
+            sizeY = 0;
+            showAnimation = true;
+            timer1.Start();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -71,22 +77,41 @@ namespace SergxloveCoin
             frameCount = 0;
             coordPointY = 155;
             sizeY = 650;
+            showAnimation = false;
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(frameCount <= 10)
+            if(showAnimation)
             {
-                tabControl1.Location = new Point(12, coordPointY);
-                tabControl1.Size = new Size(620, sizeY);
-                coordPointY += 80;
-                sizeY -= 65;
-                frameCount++;
+                if(frameCount <= 5)
+                {
+                    tabControl1.Location = new Point(12, coordPointY);
+                    tabControl1.Size = new Size(620, sizeY);
+                    coordPointY -= 130;
+                    sizeY += 130;
+                    frameCount++;
+                }
+                else
+                {
+                    timer1.Stop();
+                }
             }
             else
             {
-                timer1.Stop();
+                if(frameCount <= 5)
+                {
+                    tabControl1.Location = new Point(12, coordPointY);
+                    tabControl1.Size = new Size(620, sizeY);
+                    coordPointY += 130;
+                    sizeY -= 130;
+                    frameCount++;
+                }
+                else
+                {
+                    timer1.Stop();
+                }
             }
         }
     }

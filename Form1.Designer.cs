@@ -654,7 +654,7 @@
             tabControl1.Location = new Point(12, 155);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(620, 650);
+            tabControl1.Size = new Size(620, 0);
             tabControl1.SizeMode = TabSizeMode.Fixed;
             tabControl1.TabIndex = 18;
             // 
@@ -665,7 +665,7 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(612, 617);
+            tabPage1.Size = new Size(612, 0);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Мыши";
             // 
