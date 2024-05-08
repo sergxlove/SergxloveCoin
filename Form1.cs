@@ -10,7 +10,7 @@ namespace SergxloveCoin
         {
             InitializeComponent();
             myBalance = new();
-            label2.DataBindings.Add(new Binding("Text", myBalance, "BalansePlayer", true, DataSourceUpdateMode.OnPropertyChanged));
+            label2.DataBindings.Add(new Binding("Text", myBalance, "BalanceCoinString", true, DataSourceUpdateMode.OnPropertyChanged));
         }
         private SergxloveCoin.resourse.StatsPlayer myBalance;
         private int frameCount = 0;
@@ -24,7 +24,7 @@ namespace SergxloveCoin
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            myBalance.BalansePlayer += myBalance.SpeedClick;
+            myBalance.upBalanse(myBalance.SpeedClick.ToString());
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)

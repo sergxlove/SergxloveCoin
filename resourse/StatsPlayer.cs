@@ -15,14 +15,14 @@ namespace SergxloveCoin.resourse
             _speedClick = 0.001f;
             _balanceCoin = 0.000f;
             _speedVideoCard = 0.000f;
-            _speedMouse = 0.000f;
-            _balanceCoinString = "";
+            _speedProcessor = 0.000f;
+            _balanceCoinString = "1110,000";
         }
         private float _speedClick;
         private float _balanceCoin;
         private string _balanceCoinString;
         private float _speedVideoCard;
-        private float _speedMouse;
+        private float _speedProcessor;
         public event PropertyChangedEventHandler? PropertyChanged;
         public float BalansePlayer
         {
@@ -33,6 +33,18 @@ namespace SergxloveCoin.resourse
             set
             {
                 _balanceCoin = value;
+                OnPropertyChanged();
+            }
+        }
+        public string BalanceCoinString
+        {
+            get
+            {
+                return _balanceCoinString;
+            }
+            set
+            {
+                _balanceCoinString = value;
                 OnPropertyChanged();
             }
         }
@@ -60,15 +72,15 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public float SpeedMouse
+        public float SpeedProcessor
         {
             get
             {
-                return _speedMouse;
+                return _speedProcessor;
             }
             set
             {
-                _speedMouse = value;
+                _speedProcessor = value;
                 OnPropertyChanged();
             }
         }
@@ -78,7 +90,7 @@ namespace SergxloveCoin.resourse
         }
         public void upBalanse(string value)
         {
-
+            BalanceCoinString = (Convert.ToSingle(_balanceCoinString) + Convert.ToSingle(value)).ToString("0.000");
         }
     }
 }
