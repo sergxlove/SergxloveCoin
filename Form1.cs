@@ -1,3 +1,5 @@
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace SergxloveCoin
@@ -8,9 +10,9 @@ namespace SergxloveCoin
         {
             InitializeComponent();
             myBalance = new();
-
+            label2.DataBindings.Add(new Binding("Text", myBalance, "BalansePlayer", true, DataSourceUpdateMode.OnPropertyChanged));
         }
-        private Balanse myBalance;
+        private SergxloveCoin.resourse.StatsPlayer myBalance;
         private int frameCount = 0;
         private int sizeY = 0;
         private int coordPointY = 0;
@@ -23,7 +25,6 @@ namespace SergxloveCoin
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             myBalance.BalansePlayer += myBalance.SpeedClick;
-            label2.Text = Convert.ToString(myBalance.BalansePlayer);
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -135,36 +136,5 @@ namespace SergxloveCoin
             timer1.Start();
         }
     }
-    public sealed class Balanse
-    {
-        public Balanse()
-        {
-            _balanceCoin = 0.000f;
-            _speedClick = 0.001f;
-        }
-        private float _speedClick;
-        private float _balanceCoin;
-        public float BalansePlayer
-        {
-            get
-            {
-                return _balanceCoin;
-            }
-            set 
-            {
-                _balanceCoin = value;
-            }
-        }
-        public float SpeedClick
-        {
-            get 
-            {
-                return _speedClick;
-            }
-            set 
-            {
-                _speedClick = value;
-            }
-        }
-    }
 }
+ 
