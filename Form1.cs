@@ -10,9 +10,15 @@ namespace SergxloveCoin
         {
             InitializeComponent();
             myBalance = new();
+            commonmouse = new();
             label2.DataBindings.Add(new Binding("Text", myBalance, "BalanceCoinString", true, DataSourceUpdateMode.OnPropertyChanged));
+            label12.DataBindings.Add(new Binding("Text", commonmouse, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
+            label16.DataBindings.Add(new Binding("Text", commonmouse, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
+            label17.DataBindings.Add(new Binding("Text", commonmouse, "SpeedClick", true, DataSourceUpdateMode.OnPropertyChanged));
+            label18.DataBindings.Add(new Binding("Text", commonmouse, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
         }
         private SergxloveCoin.resourse.StatsPlayer myBalance;
+        private SergxloveCoin.resourse.CommonMouse commonmouse;
         private int frameCount = 0;
         private int sizeY = 0;
         private int coordPointY = 0;
