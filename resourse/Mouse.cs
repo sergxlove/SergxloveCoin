@@ -13,8 +13,8 @@ namespace SergxloveCoin.resourse
         public abstract string Name { get; set; }
         public abstract float Price { get; set; }
         public abstract float SpeedClick { get; set; }
-        public abstract int Qantity { get; set; }
-        protected string _name;
+        public abstract int Quantity { get; set; }
+        protected string? _name;
         protected float _price;
         protected float _speedClick;
         protected int _quantity;
@@ -37,7 +37,17 @@ namespace SergxloveCoin.resourse
         }
         public override string Name
         {
-            get => _name;
+            get
+            {
+                if(_name == null)
+                {
+                    return "no";
+                }
+                else
+                {
+                    return _name;
+                }
+            }
             set
             {
                 _name = value;
@@ -61,7 +71,409 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override int Qantity
+        public override int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged();
+            }
+        }
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
+        public event PropertyChangedEventHandler? PropertyChanged;
+    }
+    internal sealed class EconomyMouse : Mouse ,INotifyPropertyChanged
+    {
+        public EconomyMouse() 
+        {
+            _name = "Эконом мышь";
+            _price = 2.000f;
+            _speedClick = 0.009f;
+            _quantity = 0;
+        }
+        public EconomyMouse(string name, float price, float speedClick, int quantity)
+        {
+            _name = name;
+            _price = price;
+            _speedClick = speedClick;
+            _quantity = quantity;
+        }
+        public override string Name
+        {
+            get
+            {
+                if (_name == null)
+                {
+                    return "no";
+                }
+                else
+                {
+                    return _name;
+                }
+            }
+            set
+            {
+                _name = value;
+            }
+        }
+        public override float Price
+        {
+            get => _price;
+            set
+            {
+                _price = value;
+                OnPropertyChanged();
+            }
+        }
+        public override float SpeedClick
+        {
+            get => _speedClick;
+            set
+            {
+                _speedClick = value;
+                OnPropertyChanged();
+            }
+        }
+        public override int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged();
+            }
+        }
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
+        public event PropertyChangedEventHandler? PropertyChanged;
+    }
+    internal sealed class BudgetMouse : Mouse, INotifyPropertyChanged
+    {
+        public BudgetMouse()
+        {
+            _name = "Бюджетная мышь";
+            _price = 10.000f;
+            _speedClick = 0.020f;
+            _quantity = 0;
+        }
+        public BudgetMouse(string name, float price, float speedClick, int quantity)
+        {
+            _name = name;
+            _price = price;
+            _speedClick = speedClick;
+            _quantity = quantity;
+        }
+        public override string Name
+        {
+            get
+            {
+                if (_name == null)
+                {
+                    return "no";
+                }
+                else
+                {
+                    return _name;
+                }
+            }
+            set
+            {
+                _name = value;
+            }
+        }
+        public override float Price
+        {
+            get => _price;
+            set
+            {
+                _price = value;
+                OnPropertyChanged();
+            }
+        }
+        public override float SpeedClick
+        {
+            get => _speedClick;
+            set
+            {
+                _speedClick = value;
+                OnPropertyChanged();
+            }
+        }
+        public override int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged();
+            }
+        }
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
+        public event PropertyChangedEventHandler? PropertyChanged;
+    }
+    internal sealed class StandartMouse : Mouse , INotifyPropertyChanged
+    {
+        public StandartMouse()
+        {
+            _name = "Стандартная мышь";
+            _price = 50.000f;
+            _speedClick = 0.045f;
+            _quantity = 0;
+        }
+        public StandartMouse(string name, float price, float speedClick, int quantity)
+        {
+            _name = name;
+            _price = price;
+            _speedClick = speedClick;
+            _quantity = quantity;
+        }
+        public override string Name
+        {
+            get
+            {
+                if (_name == null)
+                {
+                    return "no";
+                }
+                else
+                {
+                    return _name;
+                }
+            }
+            set
+            {
+                _name = value;
+            }
+        }
+        public override float Price
+        {
+            get => _price;
+            set
+            {
+                _price = value;
+                OnPropertyChanged();
+            }
+        }
+        public override float SpeedClick
+        {
+            get => _speedClick;
+            set
+            {
+                _speedClick = value;
+                OnPropertyChanged();
+            }
+        }
+        public override int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged();
+            }
+        }
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
+        public event PropertyChangedEventHandler? PropertyChanged;
+    }
+    internal sealed class UniversalMouse : Mouse, INotifyPropertyChanged
+    {
+        public UniversalMouse()
+        {
+            _name = "Универсальная мышь";
+            _price = 250.000f;
+            _speedClick = 0.110f;
+            _quantity = 0;
+        }
+        public UniversalMouse(string name, float price, float speedClick, int quantity)
+        {
+            _name = name;
+            _price = price;
+            _speedClick = speedClick;
+            _quantity = quantity;
+        }
+        public override string Name
+        {
+            get
+            {
+                if (_name == null)
+                {
+                    return "no";
+                }
+                else
+                {
+                    return _name;
+                }
+            }
+            set
+            {
+                _name = value;
+            }
+        }
+        public override float Price
+        {
+            get => _price;
+            set
+            {
+                _price = value;
+                OnPropertyChanged();
+            }
+        }
+        public override float SpeedClick
+        {
+            get => _speedClick;
+            set
+            {
+                _speedClick = value;
+                OnPropertyChanged();
+            }
+        }
+        public override int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged();
+            }
+        }
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
+        public event PropertyChangedEventHandler? PropertyChanged;
+    }
+    internal sealed class ClassicalMouse : Mouse, INotifyPropertyChanged
+    {
+        public ClassicalMouse()
+        {
+            _name = "Классическая мышь";
+            _price = 1000.000f;
+            _speedClick = 0.250f;
+            _quantity = 0;
+        }
+        public ClassicalMouse(string name, float price, float speedClick, int quantity)
+        {
+            _name = name;
+            _price = price;
+            _speedClick = speedClick;
+            _quantity = quantity;
+        }
+        public override string Name
+        {
+            get
+            {
+                if (_name == null)
+                {
+                    return "no";
+                }
+                else
+                {
+                    return _name;
+                }
+            }
+            set
+            {
+                _name = value;
+            }
+        }
+        public override float Price
+        {
+            get => _price;
+            set
+            {
+                _price = value;
+                OnPropertyChanged();
+            }
+        }
+        public override float SpeedClick
+        {
+            get => _speedClick;
+            set
+            {
+                _speedClick = value;
+                OnPropertyChanged();
+            }
+        }
+        public override int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged();
+            }
+        }
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
+        public event PropertyChangedEventHandler? PropertyChanged;
+    }
+    internal sealed class ProfessionalMouse : Mouse, INotifyPropertyChanged
+    {
+        public ProfessionalMouse() 
+        {
+            _name = "Профессиональная мышь";
+            _price = 4000.000f;
+            _speedClick = 0.650f;
+            _quantity = 0;
+        }
+        public ProfessionalMouse(string name, float price, float speedClick, int quantity)
+        {
+            _name = name;
+            _price = price;
+            _speedClick = speedClick;
+            _quantity = quantity;
+        }
+        public override string Name
+        {
+            get
+            {
+                if (_name == null)
+                {
+                    return "no";
+                }
+                else
+                {
+                    return _name;
+                }
+            }
+            set
+            {
+                _name = value;
+            }
+        }
+        public override float Price
+        {
+            get => _price;
+            set
+            {
+                _price = value;
+                OnPropertyChanged();
+            }
+        }
+        public override float SpeedClick
+        {
+            get => _speedClick;
+            set
+            {
+                _speedClick = value;
+                OnPropertyChanged();
+            }
+        }
+        public override int Quantity
         {
             get => _quantity;
             set
