@@ -10,6 +10,7 @@ namespace SergxloveCoin
         {
             InitializeComponent();
             myBalance = new();
+
             commonmouse = new();
             economymouse = new();
             budgetmouse = new();
@@ -20,7 +21,19 @@ namespace SergxloveCoin
             premiummouse = new();
             elitemouse = new();
             legendarymouse = new();
+
+            commonvideocard = new();
+            economyvideocard = new();
+            budgetvideocard = new();
+            standartvideocard = new();
+            universalvideocard = new();
+            classicalvideocard = new();
+            professionalvideocard = new();
+            premiumvideocard = new();
+            elitevideocard = new();
+            legendaryvideocard = new();
             label2.DataBindings.Add(new Binding("Text", myBalance, "BalanceCoinString", true, DataSourceUpdateMode.OnPropertyChanged));
+
             //12,16,17,18
             label12.DataBindings.Add(new Binding("Text", commonmouse, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
             label16.DataBindings.Add(new Binding("Text", commonmouse, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
@@ -71,6 +84,57 @@ namespace SergxloveCoin
             label77.DataBindings.Add(new Binding("Text", legendarymouse, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
             label76.DataBindings.Add(new Binding("Text", legendarymouse, "SpeedClick", true, DataSourceUpdateMode.OnPropertyChanged));
             label75.DataBindings.Add(new Binding("Text", legendarymouse, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+
+            //152, 148, 147, 146
+            label152.DataBindings.Add(new Binding("Text", commonvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
+            label148.DataBindings.Add(new Binding("Text", commonvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
+            label147.DataBindings.Add(new Binding("Text", commonvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
+            label146.DataBindings.Add(new Binding("Text", commonvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            //144, 140, 139 , 138
+            label144.DataBindings.Add(new Binding("Text", economyvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
+            label140.DataBindings.Add(new Binding("Text", economyvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
+            label139.DataBindings.Add(new Binding("Text", economyvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
+            label138.DataBindings.Add(new Binding("Text", economyvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            //137, 133, 132, 131
+            label137.DataBindings.Add(new Binding("Text", budgetvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
+            label133.DataBindings.Add(new Binding("Text", budgetvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
+            label132.DataBindings.Add(new Binding("Text", budgetvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
+            label131.DataBindings.Add(new Binding("Text", budgetvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            //130, 126, 125, 124
+            label130.DataBindings.Add(new Binding("Text", standartvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
+            label126.DataBindings.Add(new Binding("Text", standartvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
+            label125.DataBindings.Add(new Binding("Text", standartvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
+            label124.DataBindings.Add(new Binding("Text", standartvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            //123, 119, 118, 117
+            label123.DataBindings.Add(new Binding("Text", universalvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
+            label119.DataBindings.Add(new Binding("Text", universalvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
+            label118.DataBindings.Add(new Binding("Text", universalvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
+            label117.DataBindings.Add(new Binding("Text", universalvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            //116, 112, 111, 110
+            label116.DataBindings.Add(new Binding("Text", classicalvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
+            label112.DataBindings.Add(new Binding("Text", classicalvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
+            label111.DataBindings.Add(new Binding("Text", classicalvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
+            label110.DataBindings.Add(new Binding("Text", classicalvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            //109, 105, 104, 103
+            label109.DataBindings.Add(new Binding("Text", professionalvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
+            label105.DataBindings.Add(new Binding("Text", professionalvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
+            label104.DataBindings.Add(new Binding("Text", professionalvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
+            label103.DataBindings.Add(new Binding("Text", professionalvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            //102, 98, 97, 96
+            label102.DataBindings.Add(new Binding("Text", premiumvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
+            label98.DataBindings.Add(new Binding("Text", premiumvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
+            label97.DataBindings.Add(new Binding("Text", premiumvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
+            label96.DataBindings.Add(new Binding("Text", premiumvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            //95, 91, 90, 89
+            label95.DataBindings.Add(new Binding("Text", elitevideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
+            label91.DataBindings.Add(new Binding("Text", elitevideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
+            label90.DataBindings.Add(new Binding("Text", elitevideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
+            label89.DataBindings.Add(new Binding("Text", elitevideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            //88, 84, 83, 82
+            label88.DataBindings.Add(new Binding("Text", legendaryvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
+            label84.DataBindings.Add(new Binding("Text", legendaryvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
+            label83.DataBindings.Add(new Binding("Text", legendaryvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
+            label82.DataBindings.Add(new Binding("Text", legendaryvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
         }
         private SergxloveCoin.resourse.StatsPlayer myBalance;
         
@@ -84,6 +148,17 @@ namespace SergxloveCoin
         private SergxloveCoin.resourse.PremiumMouse premiummouse;
         private SergxloveCoin.resourse.EliteMouse elitemouse;
         private SergxloveCoin.resourse.LegendaryMouse legendarymouse;
+
+        private SergxloveCoin.resourse.CommonVideoCard commonvideocard;
+        private SergxloveCoin.resourse.EconomyVideoCard economyvideocard;
+        private SergxloveCoin.resourse.BudgetVideoCard budgetvideocard;
+        private SergxloveCoin.resourse.StandartVideoCard standartvideocard;
+        private SergxloveCoin.resourse.UniversalVideoCard universalvideocard;
+        private SergxloveCoin.resourse.ClassicalVideoCard classicalvideocard;
+        private SergxloveCoin.resourse.ProfessionalVideoCard professionalvideocard;
+        private SergxloveCoin.resourse.PremiumVideoCard premiumvideocard;
+        private SergxloveCoin.resourse.EliteVideoCard elitevideocard;
+        private SergxloveCoin.resourse.LegendaryVideoCard legendaryvideocard;
         private int frameCount = 0;
         private int sizeY = 0;
         private int coordPointY = 0;
