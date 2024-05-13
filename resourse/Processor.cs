@@ -556,4 +556,138 @@ namespace SergxloveCoin.resourse
         }
         public event PropertyChangedEventHandler? PropertyChanged;
     }
+    internal sealed class EliteProcessor : Processor , INotifyPropertyChanged
+    {
+        public EliteProcessor()
+        {
+            _name = "Элитный процессор";
+            _price = 300000.000f;
+            _speed = 0.100f;
+            _quantity = 0;
+        }
+        public EliteProcessor(string name, float price, float speed, int quantity)
+        {
+            _name = name;
+            _price = price;
+            _speed = speed;
+            _quantity = quantity;
+        }
+        public override string Name
+        {
+            get
+            {
+                if (_name == null)
+                {
+                    return "no";
+                }
+                else
+                {
+                    return _name;
+                }
+            }
+            set
+            {
+                _name = value;
+            }
+        }
+        public override float Price
+        {
+            get => _price;
+            set
+            {
+                _price = value;
+                OnPropertyChanged();
+            }
+        }
+        public override float Speed
+        {
+            get => _speed;
+            set
+            {
+                _speed = value;
+                OnPropertyChanged();
+            }
+        }
+        public override int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged();
+            }
+        }
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
+        public event PropertyChangedEventHandler? PropertyChanged;
+    }
+    internal sealed class LegendaryProcessor : Processor , INotifyPropertyChanged
+    {
+        public LegendaryProcessor()
+        {
+            _name = "Легендарный процессор";
+            _price = 500000.000f;
+            _speed = 0.130f;
+            _quantity = 0;
+        }
+        public LegendaryProcessor(string name, float price, float speed, int quantity)
+        {
+            _name = name;
+            _price = price;
+            _speed = speed;
+            _quantity = quantity;
+        }
+        public override string Name
+        {
+            get
+            {
+                if (_name == null)
+                {
+                    return "no";
+                }
+                else
+                {
+                    return _name;
+                }
+            }
+            set
+            {
+                _name = value;
+            }
+        }
+        public override float Price
+        {
+            get => _price;
+            set
+            {
+                _price = value;
+                OnPropertyChanged();
+            }
+        }
+        public override float Speed
+        {
+            get => _speed;
+            set
+            {
+                _speed = value;
+                OnPropertyChanged();
+            }
+        }
+        public override int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged();
+            }
+        }
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
+        public event PropertyChangedEventHandler? PropertyChanged;
+    }
 }
