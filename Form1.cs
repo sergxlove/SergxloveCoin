@@ -67,86 +67,86 @@ namespace SergxloveCoin
             label34.DataBindings.Add(new Binding(nameof(Text), standartmouse, nameof(standartmouse.SpeedClick), true, DataSourceUpdateMode.OnPropertyChanged));
             label33.DataBindings.Add(new Binding(nameof(Text), standartmouse, nameof(standartmouse.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //46, 42, 41, 40
-            label46.DataBindings.Add(new Binding(nameof(Text), universalmouse, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label42.DataBindings.Add(new Binding(nameof(Text), universalmouse, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label41.DataBindings.Add(new Binding(nameof(Text), universalmouse, "SpeedClick", true, DataSourceUpdateMode.OnPropertyChanged));
-            label40.DataBindings.Add(new Binding(nameof(Text), universalmouse, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label46.DataBindings.Add(new Binding(nameof(Text), universalmouse, nameof(universalmouse.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label42.DataBindings.Add(new Binding(nameof(Text), universalmouse, nameof(universalmouse.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label41.DataBindings.Add(new Binding(nameof(Text), universalmouse, nameof(universalmouse.SpeedClick), true, DataSourceUpdateMode.OnPropertyChanged));
+            label40.DataBindings.Add(new Binding(nameof(Text), universalmouse, nameof(universalmouse.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //53, 49, 48, 47
-            label53.DataBindings.Add(new Binding(nameof(Text), classicalmouse, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label49.DataBindings.Add(new Binding(nameof(Text), classicalmouse, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label48.DataBindings.Add(new Binding(nameof(Text), classicalmouse, "SpeedClick", true, DataSourceUpdateMode.OnPropertyChanged));
-            label47.DataBindings.Add(new Binding(nameof(Text), classicalmouse, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label53.DataBindings.Add(new Binding(nameof(Text), classicalmouse, nameof(classicalmouse.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label49.DataBindings.Add(new Binding(nameof(Text), classicalmouse, nameof(classicalmouse.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label48.DataBindings.Add(new Binding(nameof(Text), classicalmouse, nameof(classicalmouse.SpeedClick), true, DataSourceUpdateMode.OnPropertyChanged));
+            label47.DataBindings.Add(new Binding(nameof(Text), classicalmouse, nameof(classicalmouse.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //60, 56, 55, 54
-            label60.DataBindings.Add(new Binding(nameof(Text), professionalmouse, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label56.DataBindings.Add(new Binding(nameof(Text), professionalmouse, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label55.DataBindings.Add(new Binding(nameof(Text), professionalmouse, "SpeedClick", true, DataSourceUpdateMode.OnPropertyChanged));
-            label54.DataBindings.Add(new Binding(nameof(Text), professionalmouse, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label60.DataBindings.Add(new Binding(nameof(Text), professionalmouse, nameof(professionalmouse.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label56.DataBindings.Add(new Binding(nameof(Text), professionalmouse, nameof(professionalmouse.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label55.DataBindings.Add(new Binding(nameof(Text), professionalmouse, nameof(professionalmouse.SpeedClick), true, DataSourceUpdateMode.OnPropertyChanged));
+            label54.DataBindings.Add(new Binding(nameof(Text), professionalmouse, nameof(professionalmouse.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //67, 63, 62, 61
-            label67.DataBindings.Add(new Binding(nameof(Text), premiummouse, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label63.DataBindings.Add(new Binding(nameof(Text), premiummouse, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label62.DataBindings.Add(new Binding(nameof(Text), premiummouse, "SpeedClick", true, DataSourceUpdateMode.OnPropertyChanged));
-            label61.DataBindings.Add(new Binding(nameof(Text), premiummouse, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label67.DataBindings.Add(new Binding(nameof(Text), premiummouse, nameof(premiummouse.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label63.DataBindings.Add(new Binding(nameof(Text), premiummouse, nameof(premiummouse.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label62.DataBindings.Add(new Binding(nameof(Text), premiummouse, nameof(premiummouse.SpeedClick), true, DataSourceUpdateMode.OnPropertyChanged));
+            label61.DataBindings.Add(new Binding(nameof(Text), premiummouse, nameof(premiummouse.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //74, 70, 69, 68
-            label74.DataBindings.Add(new Binding(nameof(Text), elitemouse, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label70.DataBindings.Add(new Binding(nameof(Text), elitemouse, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label69.DataBindings.Add(new Binding(nameof(Text), elitemouse, "SpeedClick", true, DataSourceUpdateMode.OnPropertyChanged));
-            label68.DataBindings.Add(new Binding(nameof(Text), elitemouse, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label74.DataBindings.Add(new Binding(nameof(Text), elitemouse, nameof(elitemouse.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label70.DataBindings.Add(new Binding(nameof(Text), elitemouse, nameof(elitemouse.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label69.DataBindings.Add(new Binding(nameof(Text), elitemouse, nameof(elitemouse.SpeedClick), true, DataSourceUpdateMode.OnPropertyChanged));
+            label68.DataBindings.Add(new Binding(nameof(Text), elitemouse, nameof(elitemouse.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //81, 77, 76, 75
-            label81.DataBindings.Add(new Binding(nameof(Text), legendarymouse, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label77.DataBindings.Add(new Binding(nameof(Text), legendarymouse, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label76.DataBindings.Add(new Binding(nameof(Text), legendarymouse, "SpeedClick", true, DataSourceUpdateMode.OnPropertyChanged));
-            label75.DataBindings.Add(new Binding(nameof(Text), legendarymouse, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label81.DataBindings.Add(new Binding(nameof(Text), legendarymouse, nameof(legendarymouse.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label77.DataBindings.Add(new Binding(nameof(Text), legendarymouse, nameof(legendarymouse.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label76.DataBindings.Add(new Binding(nameof(Text), legendarymouse, nameof(legendarymouse.SpeedClick), true, DataSourceUpdateMode.OnPropertyChanged));
+            label75.DataBindings.Add(new Binding(nameof(Text), legendarymouse, nameof(legendarymouse.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
 
             //152, 148, 147, 146
-            label152.DataBindings.Add(new Binding(nameof(Text), commonvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label148.DataBindings.Add(new Binding(nameof(Text), commonvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label147.DataBindings.Add(new Binding(nameof(Text), commonvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
-            label146.DataBindings.Add(new Binding(nameof(Text), commonvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label152.DataBindings.Add(new Binding(nameof(Text), commonvideocard, nameof(commonvideocard.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label148.DataBindings.Add(new Binding(nameof(Text), commonvideocard, nameof(commonvideocard.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label147.DataBindings.Add(new Binding(nameof(Text), commonvideocard, nameof(commonvideocard.Speed), true, DataSourceUpdateMode.OnPropertyChanged));
+            label146.DataBindings.Add(new Binding(nameof(Text), commonvideocard, nameof(commonvideocard.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //144, 140, 139 , 138
-            label144.DataBindings.Add(new Binding(nameof(Text), economyvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label140.DataBindings.Add(new Binding(nameof(Text), economyvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label139.DataBindings.Add(new Binding(nameof(Text), economyvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
-            label138.DataBindings.Add(new Binding(nameof(Text), economyvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label144.DataBindings.Add(new Binding(nameof(Text), economyvideocard, nameof(economyvideocard.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label140.DataBindings.Add(new Binding(nameof(Text), economyvideocard, nameof(economyvideocard.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label139.DataBindings.Add(new Binding(nameof(Text), economyvideocard, nameof(economyvideocard.Speed), true, DataSourceUpdateMode.OnPropertyChanged));
+            label138.DataBindings.Add(new Binding(nameof(Text), economyvideocard, nameof(economyvideocard.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //137, 133, 132, 131
-            label137.DataBindings.Add(new Binding(nameof(Text), budgetvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label133.DataBindings.Add(new Binding(nameof(Text), budgetvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label132.DataBindings.Add(new Binding(nameof(Text), budgetvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
-            label131.DataBindings.Add(new Binding(nameof(Text), budgetvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label137.DataBindings.Add(new Binding(nameof(Text), budgetvideocard, nameof(budgetvideocard.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label133.DataBindings.Add(new Binding(nameof(Text), budgetvideocard, nameof(budgetvideocard.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label132.DataBindings.Add(new Binding(nameof(Text), budgetvideocard, nameof(budgetvideocard.Speed), true, DataSourceUpdateMode.OnPropertyChanged));
+            label131.DataBindings.Add(new Binding(nameof(Text), budgetvideocard, nameof(budgetvideocard.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //130, 126, 125, 124
-            label130.DataBindings.Add(new Binding(nameof(Text), standartvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label126.DataBindings.Add(new Binding(nameof(Text), standartvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label125.DataBindings.Add(new Binding(nameof(Text), standartvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
-            label124.DataBindings.Add(new Binding(nameof(Text), standartvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label130.DataBindings.Add(new Binding(nameof(Text), standartvideocard, nameof(standartvideocard.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label126.DataBindings.Add(new Binding(nameof(Text), standartvideocard, nameof(standartvideocard.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label125.DataBindings.Add(new Binding(nameof(Text), standartvideocard, nameof(standartvideocard.Speed), true, DataSourceUpdateMode.OnPropertyChanged));
+            label124.DataBindings.Add(new Binding(nameof(Text), standartvideocard, nameof(standartvideocard.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //123, 119, 118, 117
-            label123.DataBindings.Add(new Binding(nameof(Text), universalvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label119.DataBindings.Add(new Binding(nameof(Text), universalvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label118.DataBindings.Add(new Binding(nameof(Text), universalvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
-            label117.DataBindings.Add(new Binding(nameof(Text), universalvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label123.DataBindings.Add(new Binding(nameof(Text), universalvideocard, nameof(universalvideocard.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label119.DataBindings.Add(new Binding(nameof(Text), universalvideocard, nameof(universalvideocard.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label118.DataBindings.Add(new Binding(nameof(Text), universalvideocard, nameof(universalvideocard.Speed), true, DataSourceUpdateMode.OnPropertyChanged));
+            label117.DataBindings.Add(new Binding(nameof(Text), universalvideocard, nameof(universalvideocard.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //116, 112, 111, 110
-            label116.DataBindings.Add(new Binding(nameof(Text), classicalvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label112.DataBindings.Add(new Binding(nameof(Text), classicalvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label111.DataBindings.Add(new Binding(nameof(Text), classicalvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
-            label110.DataBindings.Add(new Binding(nameof(Text), classicalvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label116.DataBindings.Add(new Binding(nameof(Text), classicalvideocard, nameof(classicalvideocard.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label112.DataBindings.Add(new Binding(nameof(Text), classicalvideocard, nameof(classicalvideocard.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label111.DataBindings.Add(new Binding(nameof(Text), classicalvideocard, nameof(classicalvideocard.Speed), true, DataSourceUpdateMode.OnPropertyChanged));
+            label110.DataBindings.Add(new Binding(nameof(Text), classicalvideocard, nameof(classicalvideocard.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //109, 105, 104, 103
-            label109.DataBindings.Add(new Binding(nameof(Text), professionalvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label105.DataBindings.Add(new Binding(nameof(Text), professionalvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label104.DataBindings.Add(new Binding(nameof(Text), professionalvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
-            label103.DataBindings.Add(new Binding(nameof(Text), professionalvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label109.DataBindings.Add(new Binding(nameof(Text), professionalvideocard, nameof(professionalvideocard.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label105.DataBindings.Add(new Binding(nameof(Text), professionalvideocard, nameof(professionalvideocard.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label104.DataBindings.Add(new Binding(nameof(Text), professionalvideocard, nameof(professionalvideocard.Speed), true, DataSourceUpdateMode.OnPropertyChanged));
+            label103.DataBindings.Add(new Binding(nameof(Text), professionalvideocard, nameof(professionalvideocard.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //102, 98, 97, 96
-            label102.DataBindings.Add(new Binding(nameof(Text), premiumvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label98.DataBindings.Add(new Binding(nameof(Text), premiumvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label97.DataBindings.Add(new Binding(nameof(Text), premiumvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
-            label96.DataBindings.Add(new Binding(nameof(Text), premiumvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label102.DataBindings.Add(new Binding(nameof(Text), premiumvideocard, nameof(premiumvideocard.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label98.DataBindings.Add(new Binding(nameof(Text), premiumvideocard, nameof(premiumvideocard.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label97.DataBindings.Add(new Binding(nameof(Text), premiumvideocard, nameof(premiumvideocard.Speed), true, DataSourceUpdateMode.OnPropertyChanged));
+            label96.DataBindings.Add(new Binding(nameof(Text), premiumvideocard, nameof(premiumvideocard.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //95, 91, 90, 89
-            label95.DataBindings.Add(new Binding(nameof(Text), elitevideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label91.DataBindings.Add(new Binding(nameof(Text), elitevideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label90.DataBindings.Add(new Binding(nameof(Text), elitevideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
-            label89.DataBindings.Add(new Binding(nameof(Text), elitevideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label95.DataBindings.Add(new Binding(nameof(Text), elitevideocard, nameof(elitevideocard.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label91.DataBindings.Add(new Binding(nameof(Text), elitevideocard, nameof(elitevideocard.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label90.DataBindings.Add(new Binding(nameof(Text), elitevideocard, nameof(elitevideocard.Speed), true, DataSourceUpdateMode.OnPropertyChanged));
+            label89.DataBindings.Add(new Binding(nameof(Text), elitevideocard, nameof(elitevideocard.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //88, 84, 83, 82
-            label88.DataBindings.Add(new Binding(nameof(Text), legendaryvideocard, "Name", true, DataSourceUpdateMode.OnPropertyChanged));
-            label84.DataBindings.Add(new Binding(nameof(Text), legendaryvideocard, "Price", true, DataSourceUpdateMode.OnPropertyChanged));
-            label83.DataBindings.Add(new Binding(nameof(Text), legendaryvideocard, "Speed", true, DataSourceUpdateMode.OnPropertyChanged));
-            label82.DataBindings.Add(new Binding(nameof(Text), legendaryvideocard, "Quantity", true, DataSourceUpdateMode.OnPropertyChanged));
+            label88.DataBindings.Add(new Binding(nameof(Text), legendaryvideocard, nameof(legendaryvideocard.Name), true, DataSourceUpdateMode.OnPropertyChanged));
+            label84.DataBindings.Add(new Binding(nameof(Text), legendaryvideocard, nameof(legendaryvideocard.Price), true, DataSourceUpdateMode.OnPropertyChanged));
+            label83.DataBindings.Add(new Binding(nameof(Text), legendaryvideocard, nameof(legendaryvideocard.Speed), true, DataSourceUpdateMode.OnPropertyChanged));
+            label82.DataBindings.Add(new Binding(nameof(Text), legendaryvideocard, nameof(legendaryvideocard.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
             //223 , 219, 218, 217
 
         }
