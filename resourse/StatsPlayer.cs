@@ -13,16 +13,16 @@ namespace SergxloveCoin.resourse
         public StatsPlayer() 
         {
             _speedClick = 0.001f;
-            _balanceCoin = 0.000f;
+            _balanceCoin = 11000.000f;
             _speedVideoCard = 0.000f;
             _speedProcessor = 0.000f;
-            _balanceCoinString = "1110,000";
+            _balanceCoinString = "0,000";
         }
         private float _speedClick;
         private float _balanceCoin;
-        private string _balanceCoinString;
         private float _speedVideoCard;
         private float _speedProcessor;
+        private string _balanceCoinString;
         public event PropertyChangedEventHandler? PropertyChanged;
         public float BalansePlayer
         {
@@ -82,6 +82,20 @@ namespace SergxloveCoin.resourse
             {
                 _speedProcessor = value;
                 OnPropertyChanged();
+            }
+        }
+        public string SpeedClickString
+        {
+            get 
+            {
+                return _speedClick.ToString("0.000");
+            }
+        }
+        public string SpeedAutoString
+        {
+            get
+            {
+                return (_speedProcessor + _speedVideoCard).ToString("0.000");
             }
         }
         public void OnPropertyChanged([CallerMemberName] string prop = "")
