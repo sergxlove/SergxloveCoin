@@ -44,9 +44,9 @@ namespace SergxloveCoin
             eliteprocessor = new();
             legendaryprocessor = new();
 
-            label2.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.BalanceCoinString), true, DataSourceUpdateMode.OnPropertyChanged));
-            label5.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.SpeedClickString), true, DataSourceUpdateMode.OnPropertyChanged));
-            label6.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.SpeedAutoString), true, DataSourceUpdateMode.OnPropertyChanged));
+            //label2.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.BalanceCoinString), true, DataSourceUpdateMode.OnPropertyChanged));
+            //label5.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.SpeedClickString), true, DataSourceUpdateMode.OnPropertyChanged));
+            //label6.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.SpeedAutoString), true, DataSourceUpdateMode.OnPropertyChanged));
 
             //12,16,17,18
             label12.DataBindings.Add(new Binding(nameof(Text), commonmouse, nameof(commonmouse.Name), true, DataSourceUpdateMode.OnPropertyChanged));
@@ -247,6 +247,7 @@ namespace SergxloveCoin
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             myBalance.upBalanse(myBalance.SpeedClick.ToString());
+
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)

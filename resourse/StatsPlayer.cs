@@ -40,7 +40,7 @@ namespace SergxloveCoin.resourse
         {
             get
             {
-                return _balanceCoinString;
+                return _balanceCoin.ToString("0.000");
             }
             set
             {
@@ -104,7 +104,8 @@ namespace SergxloveCoin.resourse
         }
         public void upBalanse(string value)
         {
-            BalanceCoinString = (Convert.ToSingle(_balanceCoinString) + Convert.ToSingle(value)).ToString("0.000");
+            BalansePlayer += Convert.ToSingle(value);
+            OnPropertyChanged();
         }
     }
 }
