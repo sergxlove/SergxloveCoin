@@ -10,6 +10,7 @@ namespace SergxloveCoin
         {
             InitializeComponent();
             myBalance = new();
+            stabilization = new();
 
             commonmouse = new();
             economymouse = new();
@@ -44,9 +45,6 @@ namespace SergxloveCoin
             eliteprocessor = new();
             legendaryprocessor = new();
 
-            //label2.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.BalanceCoinString), true, DataSourceUpdateMode.OnPropertyChanged));
-            //label5.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.SpeedClickString), true, DataSourceUpdateMode.OnPropertyChanged));
-            //label6.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.SpeedAutoString), true, DataSourceUpdateMode.OnPropertyChanged));
 
             //12,16,17,18
             label12.DataBindings.Add(new Binding(nameof(Text), commonmouse, nameof(commonmouse.Name), true, DataSourceUpdateMode.OnPropertyChanged));
@@ -201,6 +199,7 @@ namespace SergxloveCoin
             label153.DataBindings.Add(new Binding(nameof(Text), legendaryprocessor, nameof(legendaryprocessor.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
         }
         private SergxloveCoin.resourse.StatsPlayer myBalance;
+        private SergxloveCoin.resourse.Stabilization stabilization;
 
         private SergxloveCoin.resourse.CommonMouse commonmouse;
         private SergxloveCoin.resourse.EconomyMouse economymouse;
@@ -242,12 +241,13 @@ namespace SergxloveCoin
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            myBalance.upBalanse(myBalance.SpeedClick.ToString());
-
+            myBalance.upBalanse(myBalance.SpeedClick);
+            label2.Text = stabilization.stabilizationFloatToString(myBalance.BalansePlayer, 3);
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -297,6 +297,8 @@ namespace SergxloveCoin
 
         private void button3_Click(object sender, EventArgs e)
         {
+            label5.Text = myBalance.SpeedClick.ToString();
+            label6.Text = myBalance.SpeedAutoString;
             timer1.Interval = 7;
             frameCount = 0;
             coordPointY = 155;
@@ -341,22 +343,12 @@ namespace SergxloveCoin
 
         private void button23_Click(object sender, EventArgs e)
         {
-            timer1.Interval = 7;
-            frameCount = 0;
-            coordPointY = 155;
-            sizeY = 650;
-            showAnimation = false;
-            timer1.Start();
+            button3_Click(sender, e);
         }
 
         private void button34_Click(object sender, EventArgs e)
         {
-            timer1.Interval = 7;
-            frameCount = 0;
-            coordPointY = 155;
-            sizeY = 650;
-            showAnimation = false;
-            timer1.Start();
+            button3_Click(sender, e);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -364,7 +356,11 @@ namespace SergxloveCoin
             commonmouse.Quantity += 1;
             myBalance.BalansePlayer -= commonmouse.Price;
             myBalance.SpeedClick += commonmouse.SpeedClick;
-            myBalance.OnPropertyChanged();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

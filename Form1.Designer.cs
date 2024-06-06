@@ -654,7 +654,7 @@
             tabControl1.Location = new Point(12, 155);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(620, 650);
+            tabControl1.Size = new Size(620, 0);
             tabControl1.SizeMode = TabSizeMode.Fixed;
             tabControl1.TabIndex = 18;
             // 
@@ -665,7 +665,7 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(612, 617);
+            tabPage1.Size = new Size(612, 0);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Мыши";
             // 
@@ -1871,7 +1871,7 @@
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(612, 617);
+            tabPage2.Size = new Size(612, 0);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Видеокарты";
             // 
@@ -3076,7 +3076,7 @@
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(612, 617);
+            tabPage3.Size = new Size(612, 0);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Процессоры";
             // 
@@ -4308,6 +4308,7 @@
             MaximumSize = new Size(800, 1000);
             Name = "Form1";
             Text = "SergxloveCoin";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
