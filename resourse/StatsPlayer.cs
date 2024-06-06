@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace SergxloveCoin.resourse
 {
-    internal sealed class StatsPlayer : INotifyPropertyChanged
+    internal sealed class StatsPlayer 
     {
         public StatsPlayer() 
         {
             _speedClick = 0.001f;
-            _balanceCoin = 11000.000f;
+            _balanceCoin = 100.000f;
             _speedVideoCard = 0.000f;
             _speedProcessor = 0.000f;
             _balanceCoinString = "0,000";
@@ -23,7 +23,6 @@ namespace SergxloveCoin.resourse
         private float _speedVideoCard;
         private float _speedProcessor;
         private string _balanceCoinString;
-        public event PropertyChangedEventHandler? PropertyChanged;
         public float BalansePlayer
         {
             get
@@ -33,7 +32,6 @@ namespace SergxloveCoin.resourse
             set
             {
                 _balanceCoin = value;
-                OnPropertyChanged();
             }
         }
         public string BalanceCoinString
@@ -45,7 +43,6 @@ namespace SergxloveCoin.resourse
             set
             {
                 _balanceCoinString = value;
-                OnPropertyChanged();
             }
         }
         public float SpeedClick
@@ -57,7 +54,6 @@ namespace SergxloveCoin.resourse
             set
             {
                 _speedClick = value;
-                OnPropertyChanged();
             }
         }
         public float SpeedVideoCard
@@ -69,7 +65,6 @@ namespace SergxloveCoin.resourse
             set
             {
                 _speedVideoCard = value;
-                OnPropertyChanged();
             }
         }
         public float SpeedProcessor
@@ -81,7 +76,6 @@ namespace SergxloveCoin.resourse
             set
             {
                 _speedProcessor = value;
-                OnPropertyChanged();
             }
         }
         public string SpeedClickString
@@ -98,14 +92,15 @@ namespace SergxloveCoin.resourse
                 return (_speedProcessor + _speedVideoCard).ToString("0.000");
             }
         }
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-        }
         public void upBalanse(string value)
         {
-            BalansePlayer += Convert.ToSingle(value);
-            OnPropertyChanged();
+            _balanceCoin += Convert.ToSingle(value);
+            _balanceCoinString = _balanceCoin.ToString("0.000");
+        }
+        public void upBalanse(float value)
+        {
+            _balanceCoin += value;
+            _balanceCoinString = _balanceCoin.ToString("0.000");
         }
     }
 }
