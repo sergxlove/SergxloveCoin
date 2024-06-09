@@ -6,12 +6,12 @@ namespace SergxloveCoin.resourse
     internal abstract class VideoCard
     {
         public abstract string Name { get; set; }
-        public abstract float Price { get; set; }
-        public abstract float Speed { get; set; }
+        public abstract int Price { get; set; }
+        public abstract int Speed { get; set; }
         public abstract int Quantity { get; set; }
         protected string? _name;
-        protected float _price;
-        protected float _speed;
+        protected int _price;
+        protected int _speed;
         protected int _quantity;
     }
     internal sealed class CommonVideoCard : VideoCard , INotifyPropertyChanged
@@ -19,11 +19,11 @@ namespace SergxloveCoin.resourse
         public CommonVideoCard() 
         {
             _name = "Обычная видеокарта";
-            _price = 1.500f;
-            _speed = 0.005f;
+            _price = 150 ;
+            _speed = 5;
             _quantity = 0;
         }
-        public CommonVideoCard(string name, float price, float speed, int quantity)
+        public CommonVideoCard(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -48,7 +48,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -57,7 +57,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -86,11 +86,11 @@ namespace SergxloveCoin.resourse
         public EconomyVideoCard()
         {
             _name = "Эконом видеокарта";
-            _price = 5.000f;
-            _speed = 0.010f;
+            _price = 500;
+            _speed = 10;
             _quantity = 0;
         }
-        public EconomyVideoCard(string name, float price, float speed, int quantity)
+        public EconomyVideoCard(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -115,7 +115,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -124,7 +124,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -153,11 +153,11 @@ namespace SergxloveCoin.resourse
         public BudgetVideoCard()
         {
             _name = "Бюджетная видеокарта";
-            _price = 30.000f;
-            _speed = 0.020f;
+            _price = 3000;
+            _speed = 20;
             _quantity = 0;
         }
-        public BudgetVideoCard(string name, float price, float speed, int quantity)
+        public BudgetVideoCard(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -182,7 +182,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -191,7 +191,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -220,11 +220,11 @@ namespace SergxloveCoin.resourse
         public StandartVideoCard()
         {
             _name = "Стандартная видеокарта";
-            _price = 100.000f;
-            _speed = 0.035f;
+            _price = 10000;
+            _speed = 35;
             _quantity = 0;
         }
-        public StandartVideoCard(string name, float price, float speed, int quantity)
+        public StandartVideoCard(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -249,7 +249,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -258,7 +258,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -287,11 +287,11 @@ namespace SergxloveCoin.resourse
         public UniversalVideoCard()
         {
             _name = "Универсальная видеокарта";
-            _price = 500.000f;
-            _speed = 0.060f;
+            _price = 50000;
+            _speed = 60;
             _quantity = 0;
         }
-        public UniversalVideoCard(string name, float price, float speed, int quantity)
+        public UniversalVideoCard(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -316,7 +316,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -325,7 +325,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -354,11 +354,11 @@ namespace SergxloveCoin.resourse
         public ClassicalVideoCard()
         {
             _name = "Классическая видеокарта";
-            _price = 3000.000f;
-            _speed = 0.100f;
+            _price = 300000;
+            _speed = 100;
             _quantity = 0;
         }
-        public ClassicalVideoCard(string name, float price, float speed, int quantity)
+        public ClassicalVideoCard(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -383,7 +383,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -392,7 +392,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -421,11 +421,11 @@ namespace SergxloveCoin.resourse
         public ProfessionalVideoCard()
         {
             _name = "Профессиональная видеокарта";
-            _price = 10000.000f;
-            _speed = 0.250f;
+            _price = 1000000;
+            _speed = 250;
             _quantity = 0;
         }
-        public ProfessionalVideoCard(string name, float price, float speed, int quantity)
+        public ProfessionalVideoCard(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -450,7 +450,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -459,7 +459,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -488,11 +488,11 @@ namespace SergxloveCoin.resourse
         public PremiumVideoCard()
         {
             _name = "Премиум видеокарта";
-            _price = 25000.000f;
-            _speed = 0.400f;
+            _price = 2500000;
+            _speed = 400;
             _quantity = 0;
         }
-        public PremiumVideoCard(string name, float price, float speed, int quantity)
+        public PremiumVideoCard(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -517,7 +517,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -526,7 +526,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -555,11 +555,11 @@ namespace SergxloveCoin.resourse
         public EliteVideoCard()
         {
             _name = "Элитная видеокарта";
-            _price = 100000.000f;
-            _speed = 0.700f;
+            _price = 10000000;
+            _speed = 700;
             _quantity = 0;
         }
-        public EliteVideoCard(string name, float price, float speed, int quantity)
+        public EliteVideoCard(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -584,7 +584,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -593,7 +593,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -622,11 +622,11 @@ namespace SergxloveCoin.resourse
         public LegendaryVideoCard()
         {
             _name = "Легендарная видеокарта";
-            _price = 450000.000f;
-            _speed = 1.000f;
+            _price = 45000000;
+            _speed = 1000;
             _quantity = 0;
         }
-        public LegendaryVideoCard(string name, float price, float speed, int quantity)
+        public LegendaryVideoCard(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -651,7 +651,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -660,7 +660,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set

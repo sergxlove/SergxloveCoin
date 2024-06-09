@@ -1,29 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SergxloveCoin.resourse
+﻿namespace SergxloveCoin.resourse
 {
     internal sealed class StatsPlayer 
     {
         public StatsPlayer() 
         {
-            _speedClick = 0.001f;
-            _balanceCoin = 100.000f;
-            _speedVideoCard = 0.000f;
-            _speedProcessor = 0.000f;
+            _speedClick = 1;
+            _balanceCoin = 100;
+            _speedVideoCard = 0;
+            _speedProcessor = 0;
             _balanceCoinString = "0,000";
         }
-        private float _speedClick;
-        private float _balanceCoin;
-        private float _speedVideoCard;
-        private float _speedProcessor;
+        private int _speedClick;
+        private long _balanceCoin;
+        private int _speedVideoCard;
+        private int _speedProcessor;
         private string _balanceCoinString;
-        public float BalansePlayer
+        public long BalansePlayer
         {
             get
             {
@@ -45,7 +37,7 @@ namespace SergxloveCoin.resourse
                 _balanceCoinString = value;
             }
         }
-        public float SpeedClick
+        public int SpeedClick
         {
             get
             {
@@ -56,7 +48,7 @@ namespace SergxloveCoin.resourse
                 _speedClick = value;
             }
         }
-        public float SpeedVideoCard
+        public int SpeedVideoCard
         {
             get
             {
@@ -67,7 +59,7 @@ namespace SergxloveCoin.resourse
                 _speedVideoCard = value;
             }
         }
-        public float SpeedProcessor
+        public int SpeedProcessor
         {
             get
             {
@@ -94,13 +86,13 @@ namespace SergxloveCoin.resourse
         }
         public void upBalanse(string value)
         {
-            _balanceCoin += Convert.ToSingle(value);
-            _balanceCoinString = _balanceCoin.ToString("0.000");
+            _balanceCoin += Convert.ToInt64(value);
+            _balanceCoinString = _balanceCoin.ToString();
         }
-        public void upBalanse(float value)
+        public void upBalanse(int value)
         {
             _balanceCoin += value;
-            _balanceCoinString = _balanceCoin.ToString("0.000");
+            _balanceCoinString = _balanceCoin.ToString();
         }
     }
 }
