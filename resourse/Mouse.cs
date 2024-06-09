@@ -6,12 +6,12 @@ namespace SergxloveCoin.resourse
     internal abstract class Mouse
     {
         public abstract string Name { get; set; }
-        public abstract float Price { get; set; }
-        public abstract float SpeedClick { get; set; }
+        public abstract int Price { get; set; }
+        public abstract int SpeedClick { get; set; }
         public abstract int Quantity { get; set; }
         protected string? _name;
-        protected float _price;
-        protected float _speedClick;
+        protected int _price;
+        protected int _speedClick;
         protected int _quantity;
     }
     internal sealed class CommonMouse : Mouse, INotifyPropertyChanged
@@ -19,11 +19,11 @@ namespace SergxloveCoin.resourse
         public CommonMouse()
         {
             _name = "Обычная мышь";
-            _price = 0.500f;
-            _speedClick = 0.003f;
+            _price = 500;
+            _speedClick = 3;
             _quantity = 0;
         }
-        public CommonMouse(string name, float price, float speedClick, int quantity)
+        public CommonMouse(string name, int price, int speedClick, int quantity)
         {
             _name = name;
             _price = price;
@@ -48,7 +48,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -57,7 +57,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float SpeedClick
+        public override int SpeedClick
         {
             get => _speedClick;
             set
@@ -86,11 +86,11 @@ namespace SergxloveCoin.resourse
         public EconomyMouse() 
         {
             _name = "Эконом мышь";
-            _price = 2.000f;
-            _speedClick = 0.009f;
+            _price = 2000;
+            _speedClick = 9;
             _quantity = 0;
         }
-        public EconomyMouse(string name, float price, float speedClick, int quantity)
+        public EconomyMouse(string name, int price, int speedClick, int quantity)
         {
             _name = name;
             _price = price;
@@ -115,7 +115,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -124,7 +124,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float SpeedClick
+        public override int SpeedClick
         {
             get => _speedClick;
             set
@@ -153,11 +153,11 @@ namespace SergxloveCoin.resourse
         public BudgetMouse()
         {
             _name = "Бюджетная мышь";
-            _price = 10.000f;
-            _speedClick = 0.020f;
+            _price = 10000;
+            _speedClick = 20;
             _quantity = 0;
         }
-        public BudgetMouse(string name, float price, float speedClick, int quantity)
+        public BudgetMouse(string name, int price, int speedClick, int quantity)
         {
             _name = name;
             _price = price;
@@ -182,7 +182,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -191,7 +191,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float SpeedClick
+        public override int SpeedClick
         {
             get => _speedClick;
             set
@@ -220,11 +220,11 @@ namespace SergxloveCoin.resourse
         public StandartMouse()
         {
             _name = "Стандартная мышь";
-            _price = 50.000f;
-            _speedClick = 0.045f;
+            _price = 50000;
+            _speedClick = 45;
             _quantity = 0;
         }
-        public StandartMouse(string name, float price, float speedClick, int quantity)
+        public StandartMouse(string name, int price, int speedClick, int quantity)
         {
             _name = name;
             _price = price;
@@ -249,7 +249,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -258,7 +258,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float SpeedClick
+        public override int SpeedClick
         {
             get => _speedClick;
             set
@@ -287,11 +287,11 @@ namespace SergxloveCoin.resourse
         public UniversalMouse()
         {
             _name = "Универсальная мышь";
-            _price = 250.000f;
-            _speedClick = 0.110f;
+            _price = 250000;
+            _speedClick = 110;
             _quantity = 0;
         }
-        public UniversalMouse(string name, float price, float speedClick, int quantity)
+        public UniversalMouse(string name, int price, int speedClick, int quantity)
         {
             _name = name;
             _price = price;
@@ -316,7 +316,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -325,7 +325,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float SpeedClick
+        public override int SpeedClick
         {
             get => _speedClick;
             set
@@ -354,11 +354,11 @@ namespace SergxloveCoin.resourse
         public ClassicalMouse()
         {
             _name = "Классическая мышь";
-            _price = 1000.000f;
-            _speedClick = 0.250f;
+            _price = 1000000;
+            _speedClick = 250;
             _quantity = 0;
         }
-        public ClassicalMouse(string name, float price, float speedClick, int quantity)
+        public ClassicalMouse(string name, int price, int speedClick, int quantity)
         {
             _name = name;
             _price = price;
@@ -383,7 +383,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -392,7 +392,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float SpeedClick
+        public override int SpeedClick
         {
             get => _speedClick;
             set
@@ -421,11 +421,11 @@ namespace SergxloveCoin.resourse
         public ProfessionalMouse() 
         {
             _name = "Профессиональная мышь";
-            _price = 4000.000f;
-            _speedClick = 0.650f;
+            _price = 4000000;
+            _speedClick = 650;
             _quantity = 0;
         }
-        public ProfessionalMouse(string name, float price, float speedClick, int quantity)
+        public ProfessionalMouse(string name, int price, int speedClick, int quantity)
         {
             _name = name;
             _price = price;
@@ -450,7 +450,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -459,7 +459,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float SpeedClick
+        public override int SpeedClick
         {
             get => _speedClick;
             set
@@ -488,11 +488,11 @@ namespace SergxloveCoin.resourse
         public PremiumMouse() 
         {
             _name = "Премиум мышь";
-            _price = 20000.000f;
-            _speedClick = 1.000f;
+            _price = 20000000;
+            _speedClick = 1000;
             _quantity = 0;
         }
-        public PremiumMouse(string name, float price, float speedClick, int quantity)
+        public PremiumMouse(string name, int price, int speedClick, int quantity)
         {
             _name = name;
             _price = price;
@@ -517,7 +517,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -526,7 +526,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float SpeedClick
+        public override int SpeedClick
         {
             get => _speedClick;
             set
@@ -555,11 +555,11 @@ namespace SergxloveCoin.resourse
         public EliteMouse() 
         {
             _name = "Элитная мышь";
-            _price = 100000.000f;
-            _speedClick = 2.100f;
+            _price = 100000000;
+            _speedClick = 2100;
             _quantity = 0;
         }
-        public EliteMouse(string name, float price, float speedClick, int quantity)
+        public EliteMouse(string name, int price, int speedClick, int quantity)
         {
             _name = name;
             _price = price;
@@ -584,7 +584,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -593,7 +593,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float SpeedClick
+        public override int SpeedClick
         {
             get => _speedClick;
             set
@@ -622,11 +622,11 @@ namespace SergxloveCoin.resourse
         public LegendaryMouse() 
         {
             _name = "Легендарная мышь";
-            _price = 250000.000f;
-            _speedClick = 4.000f;
+            _price = 250000000;
+            _speedClick = 4000;
             _quantity = 0;
         }
-        public LegendaryMouse(string name, float price, float speedClick, int quantity)
+        public LegendaryMouse(string name, int price, int speedClick, int quantity)
         {
             _name = name;
             _price = price;
@@ -651,7 +651,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -660,7 +660,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float SpeedClick
+        public override int SpeedClick
         {
             get => _speedClick;
             set

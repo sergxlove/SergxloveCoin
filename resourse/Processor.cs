@@ -12,12 +12,12 @@ namespace SergxloveCoin.resourse
     internal abstract class Processor
     {
         public abstract string Name { get; set; }
-        public abstract float Price { get; set; }
-        public abstract float Speed { get; set; }
+        public abstract int Price { get; set; }
+        public abstract int Speed { get; set; }
         public abstract int Quantity { get; set; }
         protected string? _name;
-        protected float _price;
-        protected float _speed;
+        protected int _price;
+        protected int _speed;
         protected int _quantity;
     }
     internal sealed class CommonProcessor : Processor, INotifyPropertyChanged
@@ -25,11 +25,11 @@ namespace SergxloveCoin.resourse
         public CommonProcessor() 
         {
             _name = "Обычный процессор";
-            _price = 3.000f;
-            _speed = 0.002f;
+            _price = 300;
+            _speed = 2;
             _quantity = 0; 
         }
-        public CommonProcessor(string name, float price, float speed, int quantity)
+        public CommonProcessor(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -54,7 +54,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -63,7 +63,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -92,11 +92,11 @@ namespace SergxloveCoin.resourse
         public EconomyProcessor() 
         {
             _name = "Эконом процессор";
-            _price = 15.000f;
-            _speed = 0.003f;
+            _price = 1500;
+            _speed = 3;
             _quantity = 0;
         }
-        public EconomyProcessor(string name, float price, float speed, int quantity)
+        public EconomyProcessor(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -121,7 +121,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -130,7 +130,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -159,11 +159,11 @@ namespace SergxloveCoin.resourse
         public BudgetProcessor()
         {
             _name = "Бюджетный процессор";
-            _price = 60.000f;
-            _speed = 0.005f;
+            _price = 6000;
+            _speed = 5;
             _quantity = 0;
         }
-        public BudgetProcessor(string name, float price, float speed, int quantity)
+        public BudgetProcessor(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -188,7 +188,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -197,7 +197,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -226,11 +226,11 @@ namespace SergxloveCoin.resourse
         public StandartProcessor()
         {
             _name = "Стандартный процессор";
-            _price = 250.000f;
-            _speed = 0.008f;
+            _price = 25000;
+            _speed = 8;
             _quantity = 0;
         }
-        public StandartProcessor(string name, float price, float speed, int quantity)
+        public StandartProcessor(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -255,7 +255,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -264,7 +264,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -293,11 +293,11 @@ namespace SergxloveCoin.resourse
         public UniversalProcessor() 
         {
             _name = "Универсальный процессор";
-            _price = 1000.000f;
-            _speed = 0.013f;
+            _price = 100000;
+            _speed = 13;
             _quantity = 0;
         }
-        public UniversalProcessor(string name, float price, float speed, int quantity)
+        public UniversalProcessor(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -322,7 +322,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -331,7 +331,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -360,11 +360,11 @@ namespace SergxloveCoin.resourse
         public ClassicalProcessor()
         {
             _name = "Классический процессор";
-            _price = 5000.000f;
-            _speed = 0.025f;
+            _price = 500000;
+            _speed = 25;
             _quantity = 0;
         }
-        public ClassicalProcessor(string name, float price, float speed, int quantity)
+        public ClassicalProcessor(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -389,7 +389,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -398,7 +398,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -427,11 +427,11 @@ namespace SergxloveCoin.resourse
         public ProfessionalProcessor()
         {
             _name = "Профессиональный процессор";
-            _price = 20000.000f;
-            _speed = 0.040f;
+            _price = 2000000;
+            _speed = 40;
             _quantity = 0;
         }
-        public ProfessionalProcessor(string name, float price, float speed, int quantity)
+        public ProfessionalProcessor(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -456,7 +456,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -465,7 +465,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -494,11 +494,11 @@ namespace SergxloveCoin.resourse
         public PremiumProcessor()
         {
             _name = "Премиум процессор";
-            _price = 100000.000f;
-            _speed = 0.065f;
+            _price = 10000000;
+            _speed = 65;
             _quantity = 0;
         }
-        public PremiumProcessor(string name, float price, float speed, int quantity)
+        public PremiumProcessor(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -523,7 +523,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -532,7 +532,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -561,11 +561,11 @@ namespace SergxloveCoin.resourse
         public EliteProcessor()
         {
             _name = "Элитный процессор";
-            _price = 300000.000f;
-            _speed = 0.100f;
+            _price = 3000000;
+            _speed = 100;
             _quantity = 0;
         }
-        public EliteProcessor(string name, float price, float speed, int quantity)
+        public EliteProcessor(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -590,7 +590,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -599,7 +599,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
@@ -628,11 +628,11 @@ namespace SergxloveCoin.resourse
         public LegendaryProcessor()
         {
             _name = "Легендарный процессор";
-            _price = 500000.000f;
-            _speed = 0.130f;
+            _price = 50000000;
+            _speed = 130;
             _quantity = 0;
         }
-        public LegendaryProcessor(string name, float price, float speed, int quantity)
+        public LegendaryProcessor(string name, int price, int speed, int quantity)
         {
             _name = name;
             _price = price;
@@ -657,7 +657,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
-        public override float Price
+        public override int Price
         {
             get => _price;
             set
@@ -666,7 +666,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
-        public override float Speed
+        public override int Speed
         {
             get => _speed;
             set
