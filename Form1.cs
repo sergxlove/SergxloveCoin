@@ -1,3 +1,4 @@
+using SergxloveCoin.resourse;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
@@ -11,40 +12,78 @@ namespace SergxloveCoin
             InitializeComponent();
             myBalance = new();
 
-            commonmouse = new();
-            economymouse = new();
-            budgetmouse = new();
-            standartmouse = new();
-            universalmouse = new();
-            classicalmouse = new();
-            professionalmouse = new();
-            premiummouse = new();
-            elitemouse = new();
-            legendarymouse = new();
+            commonmouse = new("Обычная мышь", 500, 3, 0);
+            economymouse = new("Эконом мышь",2000, 9, 0);
+            budgetmouse = new("Бюджетная мышь", 10000, 20, 0);
+            standartmouse = new("Стандартная мышь",50000, 45,0 );
+            universalmouse = new("Универсальная мышь", 250000, 110, 0);
+            classicalmouse = new("Классическая мышь", 1000000, 250, 0);
+            professionalmouse = new("Профессиональная мышь", 4000000, 650, 0);
+            premiummouse = new("Премиум мышь", 20000000, 1000, 0);
+            elitemouse = new("Элитеая мышь", 100000000,2100, 0);
+            legendarymouse = new("Легендарная мышь", 250000000, 4000, 0);
 
-            commonvideocard = new();
-            economyvideocard = new();
-            budgetvideocard = new();
-            standartvideocard = new();
-            universalvideocard = new();
-            classicalvideocard = new();
-            professionalvideocard = new();
-            premiumvideocard = new();
-            elitevideocard = new();
-            legendaryvideocard = new();
+            commonvideocard = new("Обычная видеокарта",150, 5, 0);
+            economyvideocard = new("Эконом видеокарта", 500, 10, 0);
+            budgetvideocard = new("Бюджетная видеокарта", 3000, 20, 0);
+            standartvideocard = new("Стандартная видеокарта",10000, 35, 0);
+            universalvideocard = new("Универсальная видеокарта", 50000, 60, 0);
+            classicalvideocard = new("Классическая видеокарта", 300000, 100,0);
+            professionalvideocard = new("Профессиональная видеокарта", 1000000, 250,0);
+            premiumvideocard = new("Премиум видеокарта", 2500000, 400,0);
+            elitevideocard = new("Элитная видеокарта", 10000000, 700, 0);
+            legendaryvideocard = new("Легендарная видоекарта", 45000000, 1000, 0);
 
-            commonprocessor = new();
-            economyprocessor = new();
-            budgetprocessor = new();
-            standartprocessor = new();
-            universalprocessor = new();
-            classicalprocessor = new();
-            professionalprocessor = new();
-            premiumprocessor = new();
-            eliteprocessor = new();
-            legendaryprocessor = new();
+            commonprocessor = new("Обычный процессор", 30, 2, 0);
+            economyprocessor = new("Эконом процессор", 1500, 3, 0);
+            budgetprocessor = new("Бюджетный процессор", 6000, 5, 0);
+            standartprocessor = new("Стандартный процессор", 25000, 8, 0);
+            universalprocessor = new("Универсальный процессор", 100000, 13, 0);
+            classicalprocessor = new("Классический процессор", 500000, 25, 0);
+            professionalprocessor = new("Профкссиональный процессор", 2000000, 40, 0);
+            premiumprocessor = new("Премиум процессор", 10000000, 65, 0);
+            eliteprocessor = new("Элитный прцессор", 30000000, 100, 0);
+            legendaryprocessor = new("Легендарный процессор", 50000000, 130, 0);
 
-
+            dictionaryMouse = new Dictionary<string, Mouse>()
+            {
+                ["commonmouse"] = commonmouse,
+                ["economymouse"] = economymouse,
+                ["budgetmouse"] = budgetmouse,
+                ["standartmouse"] = standartmouse,
+                ["universalmouse"] = universalmouse,
+                ["classicalmouse"] = classicalmouse,
+                ["professionalmouse"] = professionalmouse,
+                ["premiummouse"] = premiummouse,
+                ["elitemouse"] = elitemouse,
+                ["legendarymouse"] = legendarymouse
+            };
+            dictionaryVideoCard = new Dictionary<string, VideoCard>()
+            {
+                ["commonvideocard"] = commonvideocard,
+                ["economyvideocard"] = economyvideocard,
+                ["budgetvideocard"] = budgetvideocard,
+                ["standartvideocard"] = standartvideocard,
+                ["universalvideocard"] = universalvideocard,
+                ["classicalvideocard"] = classicalvideocard,
+                ["professionalvideocard"] = professionalvideocard,
+                ["premiumvideocard"] = premiumvideocard,
+                ["elitevideocard"] = elitevideocard,
+                ["legendaryvideocard"] = legendaryvideocard
+            };
+            dictionaryProcessor = new Dictionary<string, Processor>()
+            {
+                ["commonprocessor"] = commonprocessor,
+                ["economyprocessor"] = economyprocessor,
+                ["budgetprocessor"] = budgetprocessor,
+                ["standartprocessor"] = standartprocessor,
+                ["universalprocessor"] = universalprocessor,
+                ["classicalprocessor"] = classicalprocessor,
+                ["professionalprocessor"] = professionalprocessor,
+                ["premiumprocessor"] = premiumprocessor,
+                ["eliteprocessor"] = eliteprocessor,
+                ["legendaryprocessor"] = legendaryprocessor
+            };
             //12,16,17,18
             label12.DataBindings.Add(new Binding(nameof(Text), commonmouse, nameof(commonmouse.Name), true, DataSourceUpdateMode.OnPropertyChanged));
             label16.DataBindings.Add(new Binding(nameof(Text), commonmouse, nameof(commonmouse.Price), true, DataSourceUpdateMode.OnPropertyChanged));
@@ -199,39 +238,42 @@ namespace SergxloveCoin
         }
         private SergxloveCoin.resourse.StatsPlayer myBalance;
 
-        private SergxloveCoin.resourse.CommonMouse commonmouse;
-        private SergxloveCoin.resourse.EconomyMouse economymouse;
-        private SergxloveCoin.resourse.BudgetMouse budgetmouse;
-        private SergxloveCoin.resourse.StandartMouse standartmouse;
-        private SergxloveCoin.resourse.UniversalMouse universalmouse;
-        private SergxloveCoin.resourse.ClassicalMouse classicalmouse;
-        private SergxloveCoin.resourse.ProfessionalMouse professionalmouse;
-        private SergxloveCoin.resourse.PremiumMouse premiummouse;
-        private SergxloveCoin.resourse.EliteMouse elitemouse;
-        private SergxloveCoin.resourse.LegendaryMouse legendarymouse;
+        private SergxloveCoin.resourse.Mouse commonmouse;
+        private SergxloveCoin.resourse.Mouse economymouse;
+        private SergxloveCoin.resourse.Mouse budgetmouse;
+        private SergxloveCoin.resourse.Mouse standartmouse;
+        private SergxloveCoin.resourse.Mouse universalmouse;
+        private SergxloveCoin.resourse.Mouse classicalmouse;
+        private SergxloveCoin.resourse.Mouse professionalmouse;
+        private SergxloveCoin.resourse.Mouse premiummouse;
+        private SergxloveCoin.resourse.Mouse elitemouse;
+        private SergxloveCoin.resourse.Mouse legendarymouse;
 
-        private SergxloveCoin.resourse.CommonVideoCard commonvideocard;
-        private SergxloveCoin.resourse.EconomyVideoCard economyvideocard;
-        private SergxloveCoin.resourse.BudgetVideoCard budgetvideocard;
-        private SergxloveCoin.resourse.StandartVideoCard standartvideocard;
-        private SergxloveCoin.resourse.UniversalVideoCard universalvideocard;
-        private SergxloveCoin.resourse.ClassicalVideoCard classicalvideocard;
-        private SergxloveCoin.resourse.ProfessionalVideoCard professionalvideocard;
-        private SergxloveCoin.resourse.PremiumVideoCard premiumvideocard;
-        private SergxloveCoin.resourse.EliteVideoCard elitevideocard;
-        private SergxloveCoin.resourse.LegendaryVideoCard legendaryvideocard;
+        private SergxloveCoin.resourse.VideoCard commonvideocard;
+        private SergxloveCoin.resourse.VideoCard economyvideocard;
+        private SergxloveCoin.resourse.VideoCard budgetvideocard;
+        private SergxloveCoin.resourse.VideoCard standartvideocard;
+        private SergxloveCoin.resourse.VideoCard universalvideocard;
+        private SergxloveCoin.resourse.VideoCard classicalvideocard;
+        private SergxloveCoin.resourse.VideoCard professionalvideocard;
+        private SergxloveCoin.resourse.VideoCard premiumvideocard;
+        private SergxloveCoin.resourse.VideoCard elitevideocard;
+        private SergxloveCoin.resourse.VideoCard legendaryvideocard;
 
-        private SergxloveCoin.resourse.CommonProcessor commonprocessor;
-        private SergxloveCoin.resourse.EconomyProcessor economyprocessor;
-        private SergxloveCoin.resourse.BudgetProcessor budgetprocessor;
-        private SergxloveCoin.resourse.StandartProcessor standartprocessor;
-        private SergxloveCoin.resourse.UniversalProcessor universalprocessor;
-        private SergxloveCoin.resourse.ClassicalProcessor classicalprocessor;
-        private SergxloveCoin.resourse.ProfessionalProcessor professionalprocessor;
-        private SergxloveCoin.resourse.PremiumProcessor premiumprocessor;
-        private SergxloveCoin.resourse.EliteProcessor eliteprocessor;
-        private SergxloveCoin.resourse.LegendaryProcessor legendaryprocessor;
+        private SergxloveCoin.resourse.Processor commonprocessor;
+        private SergxloveCoin.resourse.Processor economyprocessor;
+        private SergxloveCoin.resourse.Processor budgetprocessor;
+        private SergxloveCoin.resourse.Processor standartprocessor;
+        private SergxloveCoin.resourse.Processor universalprocessor;
+        private SergxloveCoin.resourse.Processor classicalprocessor;
+        private SergxloveCoin.resourse.Processor professionalprocessor;
+        private SergxloveCoin.resourse.Processor premiumprocessor;
+        private SergxloveCoin.resourse.Processor eliteprocessor;
+        private SergxloveCoin.resourse.Processor legendaryprocessor;
 
+        private Dictionary<string, Mouse> dictionaryMouse;
+        private Dictionary<string, VideoCard> dictionaryVideoCard;
+        private Dictionary<string, Processor> dictionaryProcessor;
         private int frameCount = 0;
         private int sizeY = 0;
         private int coordPointY = 0;
@@ -245,7 +287,7 @@ namespace SergxloveCoin
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             myBalance.upBalanse(myBalance.SpeedClick);
-            //label2.Text = stabilization.stabilizationFloatToString(myBalance.BalansePlayer, 3);
+            label2.Text = myBalance.BalansePlayer.ToString();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -351,13 +393,24 @@ namespace SergxloveCoin
 
         private void button4_Click(object sender, EventArgs e)
         {
-            commonmouse.Quantity += 1;
+            if(myBalance.BalansePlayer<commonmouse.Price)
+            {
+                MessageBox.Show("Недостаточно средств");
+            }
+            else
+            { 
+                commonmouse.Quantity += 1;
+                myBalance.SpeedClick += commonmouse.SpeedClick;
+                myBalance.downBalanse(commonmouse.Price);
+            }
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            label2.Text = myBalance.BalansePlayer.ToString();
+            label5.Text = myBalance.SpeedClick.ToString();
+            label6.Text = myBalance.SpeedAutoString;
         }
     }
 }
