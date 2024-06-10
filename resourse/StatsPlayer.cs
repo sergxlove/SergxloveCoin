@@ -8,7 +8,7 @@
             _balanceCoin = 100;
             _speedVideoCard = 0;
             _speedProcessor = 0;
-            _balanceCoinString = "0,000";
+            _balanceCoinString = "0";
         }
         private int _speedClick;
         private long _balanceCoin;
@@ -30,7 +30,7 @@
         {
             get
             {
-                return _balanceCoin.ToString("0.000");
+                return _balanceCoin.ToString();
             }
             set
             {
@@ -74,14 +74,14 @@
         {
             get 
             {
-                return _speedClick.ToString("0.000");
+                return _speedClick.ToString();
             }
         }
         public string SpeedAutoString
         {
             get
             {
-                return (_speedProcessor + _speedVideoCard).ToString("0.000");
+                return (_speedProcessor + _speedVideoCard).ToString();
             }
         }
         public void upBalanse(string value)
@@ -92,6 +92,16 @@
         public void upBalanse(int value)
         {
             _balanceCoin += value;
+            _balanceCoinString = _balanceCoin.ToString();
+        }
+        public void downBalanse(string value) 
+        {
+            _balanceCoin -= Convert.ToInt64(value);
+            _balanceCoinString = _balanceCoin.ToString();
+        }
+        public void downBalanse(int value) 
+        {
+            _balanceCoin -= value;
             _balanceCoinString = _balanceCoin.ToString();
         }
     }
