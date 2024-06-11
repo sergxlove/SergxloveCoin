@@ -2,6 +2,7 @@ using SergxloveCoin.resourse;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Microsoft.Data.Sqlite;
 
 namespace SergxloveCoin
 {
@@ -10,6 +11,14 @@ namespace SergxloveCoin
         public Form1()
         {
             InitializeComponent();
+            if(File.Exists("userdata.db"))
+            {
+                isCreateDatabase = true;
+            }
+            else
+            {
+                isCreateDatabase= false;
+            }
             myBalance = new();
 
             commonmouse = new("Обычная мышь", 500, 3, 0);
@@ -47,43 +56,46 @@ namespace SergxloveCoin
 
             dictionaryMouse = new Dictionary<string, Mouse>()
             {
-                ["commonmouse"] = commonmouse,
-                ["economymouse"] = economymouse,
-                ["budgetmouse"] = budgetmouse,
-                ["standartmouse"] = standartmouse,
-                ["universalmouse"] = universalmouse,
-                ["classicalmouse"] = classicalmouse,
-                ["professionalmouse"] = professionalmouse,
-                ["premiummouse"] = premiummouse,
-                ["elitemouse"] = elitemouse,
-                ["legendarymouse"] = legendarymouse
+                ["buycommonmouse"] = commonmouse,
+                ["buyeconomymouse"] = economymouse,
+                ["buybudgetmouse"] = budgetmouse,
+                ["buystandartmouse"] = standartmouse,
+                ["buyuniversalmouse"] = universalmouse,
+                ["buyclassicalmouse"] = classicalmouse,
+                ["buyprofessionalmouse"] = professionalmouse,
+                ["buypremiummouse"] = premiummouse,
+                ["buyelitemouse"] = elitemouse,
+                ["buylegendarymouse"] = legendarymouse
             };
             dictionaryVideoCard = new Dictionary<string, VideoCard>()
             {
-                ["commonvideocard"] = commonvideocard,
-                ["economyvideocard"] = economyvideocard,
-                ["budgetvideocard"] = budgetvideocard,
-                ["standartvideocard"] = standartvideocard,
-                ["universalvideocard"] = universalvideocard,
-                ["classicalvideocard"] = classicalvideocard,
-                ["professionalvideocard"] = professionalvideocard,
-                ["premiumvideocard"] = premiumvideocard,
-                ["elitevideocard"] = elitevideocard,
-                ["legendaryvideocard"] = legendaryvideocard
+                ["buycommonvideocard"] = commonvideocard,
+                ["buyeconomyvideocard"] = economyvideocard,
+                ["buybudgetvideocard"] = budgetvideocard,
+                ["buystandartvideocard"] = standartvideocard,
+                ["buyuniversalvideocard"] = universalvideocard,
+                ["buyclassicalvideocard"] = classicalvideocard,
+                ["buyprofessionalvideocard"] = professionalvideocard,
+                ["buypremiumvideocard"] = premiumvideocard,
+                ["buyelitevideocard"] = elitevideocard,
+                ["buylegendaryvideocard"] = legendaryvideocard
             };
             dictionaryProcessor = new Dictionary<string, Processor>()
             {
-                ["commonprocessor"] = commonprocessor,
-                ["economyprocessor"] = economyprocessor,
-                ["budgetprocessor"] = budgetprocessor,
-                ["standartprocessor"] = standartprocessor,
-                ["universalprocessor"] = universalprocessor,
-                ["classicalprocessor"] = classicalprocessor,
-                ["professionalprocessor"] = professionalprocessor,
-                ["premiumprocessor"] = premiumprocessor,
-                ["eliteprocessor"] = eliteprocessor,
-                ["legendaryprocessor"] = legendaryprocessor
+                ["buycommonprocessor"] = commonprocessor,
+                ["buyeconomyprocessor"] = economyprocessor,
+                ["buybudgetprocessor"] = budgetprocessor,
+                ["buystandartprocessor"] = standartprocessor,
+                ["buyuniversalprocessor"] = universalprocessor,
+                ["buyclassicalprocessor"] = classicalprocessor,
+                ["buyprofessionalprocessor"] = professionalprocessor,
+                ["buypremiumprocessor"] = premiumprocessor,
+                ["buyeliteprocessor"] = eliteprocessor,
+                ["buylegendaryprocessor"] = legendaryprocessor
             };
+
+            sqlConnection = "Data source=userdata.db";
+
             //12,16,17,18
             label12.DataBindings.Add(new Binding(nameof(Text), commonmouse, nameof(commonmouse.Name), true, DataSourceUpdateMode.OnPropertyChanged));
             label16.DataBindings.Add(new Binding(nameof(Text), commonmouse, nameof(commonmouse.Price), true, DataSourceUpdateMode.OnPropertyChanged));
@@ -274,6 +286,10 @@ namespace SergxloveCoin
         private Dictionary<string, Mouse> dictionaryMouse;
         private Dictionary<string, VideoCard> dictionaryVideoCard;
         private Dictionary<string, Processor> dictionaryProcessor;
+
+        private string sqlConnection;
+        bool isCreateDatabase;
+
         private int frameCount = 0;
         private int sizeY = 0;
         private int coordPointY = 0;
@@ -288,11 +304,13 @@ namespace SergxloveCoin
         {
             myBalance.upBalanse(myBalance.SpeedClick);
             label2.Text = myBalance.BalansePlayer.ToString();
+            
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Profile");
+            
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -390,27 +408,154 @@ namespace SergxloveCoin
         {
             button3_Click(sender, e);
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if(myBalance.BalansePlayer<commonmouse.Price)
-            {
-                MessageBox.Show("Недостаточно средств");
-            }
-            else
-            { 
-                commonmouse.Quantity += 1;
-                myBalance.SpeedClick += commonmouse.SpeedClick;
-                myBalance.downBalanse(commonmouse.Price);
-            }
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            if(isCreateDatabase)
+            {
+
+            }
+            else
+            {
+                using(var connection = new SqliteConnection(sqlConnection))
+                {
+                    string sqlCommand = "CREATE TABLE StatsPlayer( idPlayer INT PRIMARY KEY NOT NULL, balancePlayer BIGINT NOT NULL, speedClick INT NOT NULL, speedVideoCard INT NOT NULL, speedProcessor INT NOT NULL);";
+                    connection.Open();
+                    SqliteCommand command = connection.CreateCommand();
+                    command.Connection = connection;
+                    command.CommandText = sqlCommand;
+                    command.ExecuteNonQuery();
+                    sqlCommand = "CREATE TABLE Mouses(idMouse INT PRIMARY KEY NOT NULL,price INT NOT NULL,speed INT NOT NULL,quantity INT NOT NULL);";
+                    command.CommandText = sqlCommand;
+                    command.ExecuteNonQuery();
+                    sqlCommand = "CREATE TABLE Videocards(idVideocard INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);";
+                    command.CommandText = sqlCommand;
+                    command.ExecuteNonQuery();
+                    sqlCommand = "CREATE TABLE Processors(idProcessor INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);";
+                    command.CommandText = sqlCommand;
+                    command.ExecuteNonQuery();
+                    sqlCommand = $@"INSERT INTO StatsPlayer(idPlayer, balancePlayer, speedClick, speedVideoCard, speedProcessor) VALUES
+                                (1, 100, 0, 0, 0);";
+                    command.CommandText = sqlCommand;
+                    command.ExecuteNonQuery();
+                    sqlCommand = $@"INSERT INTO Mouses(idMouse, price, speed, quantity) VALUES
+                                   (1, 500, 3, 0),
+                                   (2, 2000, 9, 0),
+                                   (3, 10000, 20, 0),
+                                   (4, 50000, 45, 0),
+                                   (5, 250000, 110, 0),
+                                   (6, 1000000, 250, 0),
+                                   (7, 4000000, 650, 0),
+                                   (8, 20000000, 1000, 0),
+                                   (9, 100000000, 2100, 0),
+                                   (10, 250000000, 4000, 0);";
+                    command.CommandText = sqlCommand;
+                    command.ExecuteNonQuery();
+                    sqlCommand = $@"INSERT INTO Videocards(idVideocard, price, speed, quantity) VALUES
+                                   (1, 150, 5, 0),
+                                   (2, 500, 10, 0),
+                                   (3, 3000, 20, 0),
+                                   (4, 10000, 35, 0),
+                                   (5, 50000, 60, 0),
+                                   (6, 300000, 100, 0),
+                                   (7, 1000000, 250, 0),
+                                   (8, 2500000, 400, 0),
+                                   (9, 10000000, 700, 0),
+                                   (10, 45000000, 1000, 0);";
+                    command.CommandText = sqlCommand;
+                    command.ExecuteNonQuery();
+                    sqlCommand = $@"INSERT INTO Processors(idProcessor, price, speed, quantity) VALUES
+                                   (1, 300, 2, 0),
+                                   (2, 1500, 3, 0),
+                                   (3, 6000, 5, 0),
+                                   (4, 25000, 8, 0),
+                                   (5, 100000, 13, 0),
+                                   (6, 500000, 25, 0),
+                                   (7, 2000000, 40, 0),
+                                   (8, 10000000, 65, 0),
+                                   (9, 30000000, 100, 0),
+                                   (10, 50000000, 130, 0);";
+                    command.CommandText = sqlCommand;
+                    command.ExecuteNonQuery();
+                }
+            }
             label2.Text = myBalance.BalansePlayer.ToString();
             label5.Text = myBalance.SpeedClick.ToString();
             label6.Text = myBalance.SpeedAutoString;
+        }
+        private void buyComponentMouse(object sender, EventArgs e)
+        {
+            Button selectButton = (Button)sender;
+            if(dictionaryMouse.ContainsKey(selectButton.Name)) 
+            {
+                Mouse newmouse = dictionaryMouse[selectButton.Name];
+                if(myBalance.BalansePlayer < newmouse.Price) 
+                {
+                    MessageBox.Show("Недостаточно средств");
+                }
+                else
+                {
+                    newmouse.Quantity += 1;
+                    newmouse.Price += Convert.ToInt32(Convert.ToDouble(newmouse.Price) * 0.60);
+                    newmouse.SpeedClick += Convert.ToInt32(Convert.ToDouble(newmouse.SpeedClick) * 0.25);
+                    myBalance.SpeedClick += newmouse.SpeedClick;
+                    myBalance.downBalanse(newmouse.Price);
+                    label2.Text = myBalance.BalanceCoinString;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No found key");
+            }
+        }
+        private void buyComponentVideoCard(object sender, EventArgs e)
+        {
+            Button selectButton = (Button)sender;
+            if(dictionaryVideoCard.ContainsKey(selectButton.Name)) 
+            {
+                VideoCard newvideocard = dictionaryVideoCard[selectButton.Name];
+                if(myBalance.BalansePlayer < newvideocard.Price)
+                {
+                    MessageBox.Show("Недостаточно средств");
+                }
+                else
+                {
+                    newvideocard.Quantity += 1;
+                    newvideocard.Price += Convert.ToInt32(Convert.ToDouble(newvideocard.Price) * 0.60);
+                    newvideocard.Speed += Convert.ToInt32(Convert.ToDouble(newvideocard.Speed) * 0.25);
+                    myBalance.SpeedVideoCard += newvideocard.Speed;
+                    myBalance.downBalanse(newvideocard.Price);
+                    label2.Text = myBalance.BalanceCoinString;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No found key");
+            }
+        }
+        private void buyComponentProcessor(object sender, EventArgs e) 
+        {
+            Button selectButton = (Button)sender;
+            if(dictionaryProcessor.ContainsKey(selectButton.Name)) 
+            {
+                Processor newprocessor = dictionaryProcessor[selectButton.Name];
+                if(myBalance.BalansePlayer < newprocessor.Price)
+                {
+                    MessageBox.Show("Недостаточно средств");
+                }
+                else
+                {
+                    newprocessor.Quantity += 1;
+                    newprocessor.Price += Convert.ToInt32(Convert.ToDouble(newprocessor.Price) * 0.60);
+                    newprocessor.Speed += Convert.ToInt32(Convert.ToDouble(newprocessor.Speed) * 0.25);
+                    myBalance.SpeedProcessor += newprocessor.Speed;
+                    myBalance.downBalanse(newprocessor.Price);
+                    label2.Text = myBalance.BalanceCoinString;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No found key");
+            }
         }
     }
 }
