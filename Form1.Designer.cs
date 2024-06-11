@@ -55,7 +55,7 @@
             label75 = new Label();
             label76 = new Label();
             label77 = new Label();
-            button13 = new Button();
+            buylegendarymouse = new Button();
             label78 = new Label();
             label79 = new Label();
             label80 = new Label();
@@ -65,7 +65,7 @@
             label68 = new Label();
             label69 = new Label();
             label70 = new Label();
-            button12 = new Button();
+            buyelitemouse = new Button();
             label71 = new Label();
             label72 = new Label();
             label73 = new Label();
@@ -75,7 +75,7 @@
             label61 = new Label();
             label62 = new Label();
             label63 = new Label();
-            button11 = new Button();
+            buypremiummouse = new Button();
             label64 = new Label();
             label65 = new Label();
             label66 = new Label();
@@ -85,7 +85,7 @@
             label54 = new Label();
             label55 = new Label();
             label56 = new Label();
-            button10 = new Button();
+            buyprofessionalmouse = new Button();
             label57 = new Label();
             label58 = new Label();
             label59 = new Label();
@@ -95,7 +95,7 @@
             label47 = new Label();
             label48 = new Label();
             label49 = new Label();
-            button9 = new Button();
+            buyclassicalmouse = new Button();
             label50 = new Label();
             label51 = new Label();
             label52 = new Label();
@@ -105,7 +105,7 @@
             label40 = new Label();
             label41 = new Label();
             label42 = new Label();
-            button8 = new Button();
+            buyuniversalmouse = new Button();
             label43 = new Label();
             label44 = new Label();
             label45 = new Label();
@@ -115,7 +115,7 @@
             label33 = new Label();
             label34 = new Label();
             label35 = new Label();
-            button7 = new Button();
+            buystandartmouse = new Button();
             label36 = new Label();
             label37 = new Label();
             label38 = new Label();
@@ -125,7 +125,7 @@
             label26 = new Label();
             label27 = new Label();
             label28 = new Label();
-            button6 = new Button();
+            buybudgetmouse = new Button();
             label29 = new Label();
             label30 = new Label();
             label31 = new Label();
@@ -135,7 +135,7 @@
             label19 = new Label();
             label20 = new Label();
             label21 = new Label();
-            button5 = new Button();
+            buyeconomymouse = new Button();
             label22 = new Label();
             label23 = new Label();
             label24 = new Label();
@@ -147,7 +147,7 @@
             label18 = new Label();
             label17 = new Label();
             label16 = new Label();
-            button4 = new Button();
+            buycommonmouse = new Button();
             label15 = new Label();
             label14 = new Label();
             label13 = new Label();
@@ -159,7 +159,7 @@
             label82 = new Label();
             label83 = new Label();
             label84 = new Label();
-            button14 = new Button();
+            buylegendaryvideocard = new Button();
             label85 = new Label();
             label86 = new Label();
             label87 = new Label();
@@ -169,7 +169,7 @@
             label89 = new Label();
             label90 = new Label();
             label91 = new Label();
-            button15 = new Button();
+            buyelitevideocard = new Button();
             label92 = new Label();
             label93 = new Label();
             label94 = new Label();
@@ -179,7 +179,7 @@
             label96 = new Label();
             label97 = new Label();
             label98 = new Label();
-            button16 = new Button();
+            buypremiumvideocard = new Button();
             label99 = new Label();
             label100 = new Label();
             label101 = new Label();
@@ -189,7 +189,7 @@
             label103 = new Label();
             label104 = new Label();
             label105 = new Label();
-            button17 = new Button();
+            buyprofessionalvideocard = new Button();
             label106 = new Label();
             label107 = new Label();
             label108 = new Label();
@@ -199,7 +199,7 @@
             label110 = new Label();
             label111 = new Label();
             label112 = new Label();
-            button18 = new Button();
+            buyclassicalvideocard = new Button();
             label113 = new Label();
             label114 = new Label();
             label115 = new Label();
@@ -209,7 +209,7 @@
             label117 = new Label();
             label118 = new Label();
             label119 = new Label();
-            button19 = new Button();
+            buyuniversalvideocard = new Button();
             label120 = new Label();
             label121 = new Label();
             label122 = new Label();
@@ -219,7 +219,7 @@
             label124 = new Label();
             label125 = new Label();
             label126 = new Label();
-            button20 = new Button();
+            buystandartvideocard = new Button();
             label127 = new Label();
             label128 = new Label();
             label129 = new Label();
@@ -229,7 +229,7 @@
             label131 = new Label();
             label132 = new Label();
             label133 = new Label();
-            button21 = new Button();
+            buybudgetvideocard = new Button();
             label134 = new Label();
             label135 = new Label();
             label136 = new Label();
@@ -239,7 +239,7 @@
             label138 = new Label();
             label139 = new Label();
             label140 = new Label();
-            button22 = new Button();
+            buyeconomyvideocard = new Button();
             label141 = new Label();
             label142 = new Label();
             label143 = new Label();
@@ -251,7 +251,7 @@
             label146 = new Label();
             label147 = new Label();
             label148 = new Label();
-            button24 = new Button();
+            buycommonvideocard = new Button();
             label149 = new Label();
             label150 = new Label();
             label151 = new Label();
@@ -263,7 +263,7 @@
             label153 = new Label();
             label154 = new Label();
             label155 = new Label();
-            button25 = new Button();
+            buylegendaryprocessor = new Button();
             label156 = new Label();
             label157 = new Label();
             label158 = new Label();
@@ -273,7 +273,7 @@
             label160 = new Label();
             label161 = new Label();
             label162 = new Label();
-            button26 = new Button();
+            buyeliteprocessor = new Button();
             label163 = new Label();
             label164 = new Label();
             label165 = new Label();
@@ -283,7 +283,7 @@
             label167 = new Label();
             label168 = new Label();
             label169 = new Label();
-            button27 = new Button();
+            buypremiumprocessor = new Button();
             label170 = new Label();
             label171 = new Label();
             label172 = new Label();
@@ -293,7 +293,7 @@
             label174 = new Label();
             label175 = new Label();
             label176 = new Label();
-            button28 = new Button();
+            buyprofessionalprocessor = new Button();
             label177 = new Label();
             label178 = new Label();
             label179 = new Label();
@@ -303,7 +303,7 @@
             label181 = new Label();
             label182 = new Label();
             label183 = new Label();
-            button29 = new Button();
+            buyclassicalprocessor = new Button();
             label184 = new Label();
             label185 = new Label();
             label186 = new Label();
@@ -313,7 +313,7 @@
             label188 = new Label();
             label189 = new Label();
             label190 = new Label();
-            button30 = new Button();
+            buyuniversalprocessor = new Button();
             label191 = new Label();
             label192 = new Label();
             label193 = new Label();
@@ -323,7 +323,7 @@
             label195 = new Label();
             label196 = new Label();
             label197 = new Label();
-            button31 = new Button();
+            buystandartprocessor = new Button();
             label198 = new Label();
             label199 = new Label();
             label200 = new Label();
@@ -333,7 +333,7 @@
             label202 = new Label();
             label203 = new Label();
             label204 = new Label();
-            button32 = new Button();
+            buybudgetprocessor = new Button();
             label205 = new Label();
             label206 = new Label();
             label207 = new Label();
@@ -343,7 +343,7 @@
             label209 = new Label();
             label210 = new Label();
             label211 = new Label();
-            button33 = new Button();
+            buyeconomyprocessor = new Button();
             label212 = new Label();
             label213 = new Label();
             label214 = new Label();
@@ -355,7 +355,7 @@
             label217 = new Label();
             label218 = new Label();
             label219 = new Label();
-            button35 = new Button();
+            buycommonprocessor = new Button();
             label220 = new Label();
             label221 = new Label();
             label222 = new Label();
@@ -500,7 +500,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.SergxloveCoinButton;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(12, 417);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(622, 384);
@@ -694,7 +694,7 @@
             groupBox10.Controls.Add(label75);
             groupBox10.Controls.Add(label76);
             groupBox10.Controls.Add(label77);
-            groupBox10.Controls.Add(button13);
+            groupBox10.Controls.Add(buylegendarymouse);
             groupBox10.Controls.Add(label78);
             groupBox10.Controls.Add(label79);
             groupBox10.Controls.Add(label80);
@@ -739,18 +739,19 @@
             label77.TabIndex = 6;
             label77.Text = "0";
             // 
-            // button13
+            // buylegendarymouse
             // 
-            button13.BackColor = Color.FromArgb(0, 192, 0);
-            button13.FlatStyle = FlatStyle.Flat;
-            button13.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button13.ForeColor = Color.White;
-            button13.Location = new Point(387, 104);
-            button13.Name = "button13";
-            button13.Size = new Size(144, 36);
-            button13.TabIndex = 5;
-            button13.Text = "Купить";
-            button13.UseVisualStyleBackColor = false;
+            buylegendarymouse.BackColor = Color.FromArgb(0, 192, 0);
+            buylegendarymouse.FlatStyle = FlatStyle.Flat;
+            buylegendarymouse.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buylegendarymouse.ForeColor = Color.White;
+            buylegendarymouse.Location = new Point(387, 104);
+            buylegendarymouse.Name = "buylegendarymouse";
+            buylegendarymouse.Size = new Size(144, 36);
+            buylegendarymouse.TabIndex = 5;
+            buylegendarymouse.Text = "Купить";
+            buylegendarymouse.UseVisualStyleBackColor = false;
+            buylegendarymouse.Click += buyComponentMouse;
             // 
             // label78
             // 
@@ -809,7 +810,7 @@
             groupBox9.Controls.Add(label68);
             groupBox9.Controls.Add(label69);
             groupBox9.Controls.Add(label70);
-            groupBox9.Controls.Add(button12);
+            groupBox9.Controls.Add(buyelitemouse);
             groupBox9.Controls.Add(label71);
             groupBox9.Controls.Add(label72);
             groupBox9.Controls.Add(label73);
@@ -854,18 +855,19 @@
             label70.TabIndex = 6;
             label70.Text = "0";
             // 
-            // button12
+            // buyelitemouse
             // 
-            button12.BackColor = Color.FromArgb(0, 192, 0);
-            button12.FlatStyle = FlatStyle.Flat;
-            button12.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button12.ForeColor = Color.White;
-            button12.Location = new Point(387, 104);
-            button12.Name = "button12";
-            button12.Size = new Size(144, 36);
-            button12.TabIndex = 5;
-            button12.Text = "Купить";
-            button12.UseVisualStyleBackColor = false;
+            buyelitemouse.BackColor = Color.FromArgb(0, 192, 0);
+            buyelitemouse.FlatStyle = FlatStyle.Flat;
+            buyelitemouse.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyelitemouse.ForeColor = Color.White;
+            buyelitemouse.Location = new Point(387, 104);
+            buyelitemouse.Name = "buyelitemouse";
+            buyelitemouse.Size = new Size(144, 36);
+            buyelitemouse.TabIndex = 5;
+            buyelitemouse.Text = "Купить";
+            buyelitemouse.UseVisualStyleBackColor = false;
+            buyelitemouse.Click += buyComponentMouse;
             // 
             // label71
             // 
@@ -924,7 +926,7 @@
             groupBox8.Controls.Add(label61);
             groupBox8.Controls.Add(label62);
             groupBox8.Controls.Add(label63);
-            groupBox8.Controls.Add(button11);
+            groupBox8.Controls.Add(buypremiummouse);
             groupBox8.Controls.Add(label64);
             groupBox8.Controls.Add(label65);
             groupBox8.Controls.Add(label66);
@@ -969,18 +971,19 @@
             label63.TabIndex = 6;
             label63.Text = "0";
             // 
-            // button11
+            // buypremiummouse
             // 
-            button11.BackColor = Color.FromArgb(0, 192, 0);
-            button11.FlatStyle = FlatStyle.Flat;
-            button11.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button11.ForeColor = Color.White;
-            button11.Location = new Point(387, 104);
-            button11.Name = "button11";
-            button11.Size = new Size(144, 36);
-            button11.TabIndex = 5;
-            button11.Text = "Купить";
-            button11.UseVisualStyleBackColor = false;
+            buypremiummouse.BackColor = Color.FromArgb(0, 192, 0);
+            buypremiummouse.FlatStyle = FlatStyle.Flat;
+            buypremiummouse.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buypremiummouse.ForeColor = Color.White;
+            buypremiummouse.Location = new Point(387, 104);
+            buypremiummouse.Name = "buypremiummouse";
+            buypremiummouse.Size = new Size(144, 36);
+            buypremiummouse.TabIndex = 5;
+            buypremiummouse.Text = "Купить";
+            buypremiummouse.UseVisualStyleBackColor = false;
+            buypremiummouse.Click += buyComponentMouse;
             // 
             // label64
             // 
@@ -1039,7 +1042,7 @@
             groupBox7.Controls.Add(label54);
             groupBox7.Controls.Add(label55);
             groupBox7.Controls.Add(label56);
-            groupBox7.Controls.Add(button10);
+            groupBox7.Controls.Add(buyprofessionalmouse);
             groupBox7.Controls.Add(label57);
             groupBox7.Controls.Add(label58);
             groupBox7.Controls.Add(label59);
@@ -1084,18 +1087,19 @@
             label56.TabIndex = 6;
             label56.Text = "0";
             // 
-            // button10
+            // buyprofessionalmouse
             // 
-            button10.BackColor = Color.FromArgb(0, 192, 0);
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button10.ForeColor = Color.White;
-            button10.Location = new Point(387, 104);
-            button10.Name = "button10";
-            button10.Size = new Size(144, 36);
-            button10.TabIndex = 5;
-            button10.Text = "Купить";
-            button10.UseVisualStyleBackColor = false;
+            buyprofessionalmouse.BackColor = Color.FromArgb(0, 192, 0);
+            buyprofessionalmouse.FlatStyle = FlatStyle.Flat;
+            buyprofessionalmouse.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyprofessionalmouse.ForeColor = Color.White;
+            buyprofessionalmouse.Location = new Point(387, 104);
+            buyprofessionalmouse.Name = "buyprofessionalmouse";
+            buyprofessionalmouse.Size = new Size(144, 36);
+            buyprofessionalmouse.TabIndex = 5;
+            buyprofessionalmouse.Text = "Купить";
+            buyprofessionalmouse.UseVisualStyleBackColor = false;
+            buyprofessionalmouse.Click += buyComponentMouse;
             // 
             // label57
             // 
@@ -1154,7 +1158,7 @@
             groupBox6.Controls.Add(label47);
             groupBox6.Controls.Add(label48);
             groupBox6.Controls.Add(label49);
-            groupBox6.Controls.Add(button9);
+            groupBox6.Controls.Add(buyclassicalmouse);
             groupBox6.Controls.Add(label50);
             groupBox6.Controls.Add(label51);
             groupBox6.Controls.Add(label52);
@@ -1199,18 +1203,19 @@
             label49.TabIndex = 6;
             label49.Text = "0";
             // 
-            // button9
+            // buyclassicalmouse
             // 
-            button9.BackColor = Color.FromArgb(0, 192, 0);
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button9.ForeColor = Color.White;
-            button9.Location = new Point(387, 104);
-            button9.Name = "button9";
-            button9.Size = new Size(144, 36);
-            button9.TabIndex = 5;
-            button9.Text = "Купить";
-            button9.UseVisualStyleBackColor = false;
+            buyclassicalmouse.BackColor = Color.FromArgb(0, 192, 0);
+            buyclassicalmouse.FlatStyle = FlatStyle.Flat;
+            buyclassicalmouse.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyclassicalmouse.ForeColor = Color.White;
+            buyclassicalmouse.Location = new Point(387, 104);
+            buyclassicalmouse.Name = "buyclassicalmouse";
+            buyclassicalmouse.Size = new Size(144, 36);
+            buyclassicalmouse.TabIndex = 5;
+            buyclassicalmouse.Text = "Купить";
+            buyclassicalmouse.UseVisualStyleBackColor = false;
+            buyclassicalmouse.Click += buyComponentMouse;
             // 
             // label50
             // 
@@ -1269,7 +1274,7 @@
             groupBox5.Controls.Add(label40);
             groupBox5.Controls.Add(label41);
             groupBox5.Controls.Add(label42);
-            groupBox5.Controls.Add(button8);
+            groupBox5.Controls.Add(buyuniversalmouse);
             groupBox5.Controls.Add(label43);
             groupBox5.Controls.Add(label44);
             groupBox5.Controls.Add(label45);
@@ -1314,18 +1319,19 @@
             label42.TabIndex = 6;
             label42.Text = "0";
             // 
-            // button8
+            // buyuniversalmouse
             // 
-            button8.BackColor = Color.FromArgb(0, 192, 0);
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button8.ForeColor = Color.White;
-            button8.Location = new Point(387, 104);
-            button8.Name = "button8";
-            button8.Size = new Size(144, 36);
-            button8.TabIndex = 5;
-            button8.Text = "Купить";
-            button8.UseVisualStyleBackColor = false;
+            buyuniversalmouse.BackColor = Color.FromArgb(0, 192, 0);
+            buyuniversalmouse.FlatStyle = FlatStyle.Flat;
+            buyuniversalmouse.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyuniversalmouse.ForeColor = Color.White;
+            buyuniversalmouse.Location = new Point(387, 104);
+            buyuniversalmouse.Name = "buyuniversalmouse";
+            buyuniversalmouse.Size = new Size(144, 36);
+            buyuniversalmouse.TabIndex = 5;
+            buyuniversalmouse.Text = "Купить";
+            buyuniversalmouse.UseVisualStyleBackColor = false;
+            buyuniversalmouse.Click += buyComponentMouse;
             // 
             // label43
             // 
@@ -1384,7 +1390,7 @@
             groupBox4.Controls.Add(label33);
             groupBox4.Controls.Add(label34);
             groupBox4.Controls.Add(label35);
-            groupBox4.Controls.Add(button7);
+            groupBox4.Controls.Add(buystandartmouse);
             groupBox4.Controls.Add(label36);
             groupBox4.Controls.Add(label37);
             groupBox4.Controls.Add(label38);
@@ -1429,18 +1435,19 @@
             label35.TabIndex = 6;
             label35.Text = "0";
             // 
-            // button7
+            // buystandartmouse
             // 
-            button7.BackColor = Color.FromArgb(0, 192, 0);
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button7.ForeColor = Color.White;
-            button7.Location = new Point(387, 104);
-            button7.Name = "button7";
-            button7.Size = new Size(144, 36);
-            button7.TabIndex = 5;
-            button7.Text = "Купить";
-            button7.UseVisualStyleBackColor = false;
+            buystandartmouse.BackColor = Color.FromArgb(0, 192, 0);
+            buystandartmouse.FlatStyle = FlatStyle.Flat;
+            buystandartmouse.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buystandartmouse.ForeColor = Color.White;
+            buystandartmouse.Location = new Point(387, 104);
+            buystandartmouse.Name = "buystandartmouse";
+            buystandartmouse.Size = new Size(144, 36);
+            buystandartmouse.TabIndex = 5;
+            buystandartmouse.Text = "Купить";
+            buystandartmouse.UseVisualStyleBackColor = false;
+            buystandartmouse.Click += buyComponentMouse;
             // 
             // label36
             // 
@@ -1499,7 +1506,7 @@
             groupBox3.Controls.Add(label26);
             groupBox3.Controls.Add(label27);
             groupBox3.Controls.Add(label28);
-            groupBox3.Controls.Add(button6);
+            groupBox3.Controls.Add(buybudgetmouse);
             groupBox3.Controls.Add(label29);
             groupBox3.Controls.Add(label30);
             groupBox3.Controls.Add(label31);
@@ -1544,18 +1551,19 @@
             label28.TabIndex = 6;
             label28.Text = "0";
             // 
-            // button6
+            // buybudgetmouse
             // 
-            button6.BackColor = Color.FromArgb(0, 192, 0);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(387, 104);
-            button6.Name = "button6";
-            button6.Size = new Size(144, 36);
-            button6.TabIndex = 5;
-            button6.Text = "Купить";
-            button6.UseVisualStyleBackColor = false;
+            buybudgetmouse.BackColor = Color.FromArgb(0, 192, 0);
+            buybudgetmouse.FlatStyle = FlatStyle.Flat;
+            buybudgetmouse.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buybudgetmouse.ForeColor = Color.White;
+            buybudgetmouse.Location = new Point(387, 104);
+            buybudgetmouse.Name = "buybudgetmouse";
+            buybudgetmouse.Size = new Size(144, 36);
+            buybudgetmouse.TabIndex = 5;
+            buybudgetmouse.Text = "Купить";
+            buybudgetmouse.UseVisualStyleBackColor = false;
+            buybudgetmouse.Click += buyComponentMouse;
             // 
             // label29
             // 
@@ -1614,7 +1622,7 @@
             groupBox2.Controls.Add(label19);
             groupBox2.Controls.Add(label20);
             groupBox2.Controls.Add(label21);
-            groupBox2.Controls.Add(button5);
+            groupBox2.Controls.Add(buyeconomymouse);
             groupBox2.Controls.Add(label22);
             groupBox2.Controls.Add(label23);
             groupBox2.Controls.Add(label24);
@@ -1659,18 +1667,19 @@
             label21.TabIndex = 6;
             label21.Text = "0";
             // 
-            // button5
+            // buyeconomymouse
             // 
-            button5.BackColor = Color.FromArgb(0, 192, 0);
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(387, 104);
-            button5.Name = "button5";
-            button5.Size = new Size(144, 36);
-            button5.TabIndex = 5;
-            button5.Text = "Купить";
-            button5.UseVisualStyleBackColor = false;
+            buyeconomymouse.BackColor = Color.FromArgb(0, 192, 0);
+            buyeconomymouse.FlatStyle = FlatStyle.Flat;
+            buyeconomymouse.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyeconomymouse.ForeColor = Color.White;
+            buyeconomymouse.Location = new Point(387, 104);
+            buyeconomymouse.Name = "buyeconomymouse";
+            buyeconomymouse.Size = new Size(144, 36);
+            buyeconomymouse.TabIndex = 5;
+            buyeconomymouse.Text = "Купить";
+            buyeconomymouse.UseVisualStyleBackColor = false;
+            buyeconomymouse.Click += buyComponentMouse;
             // 
             // label22
             // 
@@ -1753,7 +1762,7 @@
             groupBox1.Controls.Add(label18);
             groupBox1.Controls.Add(label17);
             groupBox1.Controls.Add(label16);
-            groupBox1.Controls.Add(button4);
+            groupBox1.Controls.Add(buycommonmouse);
             groupBox1.Controls.Add(label15);
             groupBox1.Controls.Add(label14);
             groupBox1.Controls.Add(label13);
@@ -1798,19 +1807,19 @@
             label16.TabIndex = 6;
             label16.Text = "0";
             // 
-            // button4
+            // buycommonmouse
             // 
-            button4.BackColor = Color.FromArgb(0, 192, 0);
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(387, 104);
-            button4.Name = "button4";
-            button4.Size = new Size(144, 36);
-            button4.TabIndex = 5;
-            button4.Text = "Купить";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            buycommonmouse.BackColor = Color.FromArgb(0, 192, 0);
+            buycommonmouse.FlatStyle = FlatStyle.Flat;
+            buycommonmouse.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buycommonmouse.ForeColor = Color.White;
+            buycommonmouse.Location = new Point(387, 104);
+            buycommonmouse.Name = "buycommonmouse";
+            buycommonmouse.Size = new Size(144, 36);
+            buycommonmouse.TabIndex = 5;
+            buycommonmouse.Text = "Купить";
+            buycommonmouse.UseVisualStyleBackColor = false;
+            buycommonmouse.Click += buyComponentMouse;
             // 
             // label15
             // 
@@ -1871,7 +1880,7 @@
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(612, 0);
+            tabPage2.Size = new Size(612, 617);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Видеокарты";
             // 
@@ -1900,7 +1909,7 @@
             groupBox11.Controls.Add(label82);
             groupBox11.Controls.Add(label83);
             groupBox11.Controls.Add(label84);
-            groupBox11.Controls.Add(button14);
+            groupBox11.Controls.Add(buylegendaryvideocard);
             groupBox11.Controls.Add(label85);
             groupBox11.Controls.Add(label86);
             groupBox11.Controls.Add(label87);
@@ -1945,18 +1954,19 @@
             label84.TabIndex = 6;
             label84.Text = "0";
             // 
-            // button14
+            // buylegendaryvideocard
             // 
-            button14.BackColor = Color.FromArgb(0, 192, 0);
-            button14.FlatStyle = FlatStyle.Flat;
-            button14.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button14.ForeColor = Color.White;
-            button14.Location = new Point(387, 104);
-            button14.Name = "button14";
-            button14.Size = new Size(144, 36);
-            button14.TabIndex = 5;
-            button14.Text = "Купить";
-            button14.UseVisualStyleBackColor = false;
+            buylegendaryvideocard.BackColor = Color.FromArgb(0, 192, 0);
+            buylegendaryvideocard.FlatStyle = FlatStyle.Flat;
+            buylegendaryvideocard.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buylegendaryvideocard.ForeColor = Color.White;
+            buylegendaryvideocard.Location = new Point(387, 104);
+            buylegendaryvideocard.Name = "buylegendaryvideocard";
+            buylegendaryvideocard.Size = new Size(144, 36);
+            buylegendaryvideocard.TabIndex = 5;
+            buylegendaryvideocard.Text = "Купить";
+            buylegendaryvideocard.UseVisualStyleBackColor = false;
+            buylegendaryvideocard.Click += buyComponentVideoCard;
             // 
             // label85
             // 
@@ -2015,7 +2025,7 @@
             groupBox12.Controls.Add(label89);
             groupBox12.Controls.Add(label90);
             groupBox12.Controls.Add(label91);
-            groupBox12.Controls.Add(button15);
+            groupBox12.Controls.Add(buyelitevideocard);
             groupBox12.Controls.Add(label92);
             groupBox12.Controls.Add(label93);
             groupBox12.Controls.Add(label94);
@@ -2060,18 +2070,19 @@
             label91.TabIndex = 6;
             label91.Text = "0";
             // 
-            // button15
+            // buyelitevideocard
             // 
-            button15.BackColor = Color.FromArgb(0, 192, 0);
-            button15.FlatStyle = FlatStyle.Flat;
-            button15.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button15.ForeColor = Color.White;
-            button15.Location = new Point(387, 104);
-            button15.Name = "button15";
-            button15.Size = new Size(144, 36);
-            button15.TabIndex = 5;
-            button15.Text = "Купить";
-            button15.UseVisualStyleBackColor = false;
+            buyelitevideocard.BackColor = Color.FromArgb(0, 192, 0);
+            buyelitevideocard.FlatStyle = FlatStyle.Flat;
+            buyelitevideocard.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyelitevideocard.ForeColor = Color.White;
+            buyelitevideocard.Location = new Point(387, 104);
+            buyelitevideocard.Name = "buyelitevideocard";
+            buyelitevideocard.Size = new Size(144, 36);
+            buyelitevideocard.TabIndex = 5;
+            buyelitevideocard.Text = "Купить";
+            buyelitevideocard.UseVisualStyleBackColor = false;
+            buyelitevideocard.Click += buyComponentVideoCard;
             // 
             // label92
             // 
@@ -2130,7 +2141,7 @@
             groupBox13.Controls.Add(label96);
             groupBox13.Controls.Add(label97);
             groupBox13.Controls.Add(label98);
-            groupBox13.Controls.Add(button16);
+            groupBox13.Controls.Add(buypremiumvideocard);
             groupBox13.Controls.Add(label99);
             groupBox13.Controls.Add(label100);
             groupBox13.Controls.Add(label101);
@@ -2175,18 +2186,19 @@
             label98.TabIndex = 6;
             label98.Text = "0";
             // 
-            // button16
+            // buypremiumvideocard
             // 
-            button16.BackColor = Color.FromArgb(0, 192, 0);
-            button16.FlatStyle = FlatStyle.Flat;
-            button16.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button16.ForeColor = Color.White;
-            button16.Location = new Point(387, 104);
-            button16.Name = "button16";
-            button16.Size = new Size(144, 36);
-            button16.TabIndex = 5;
-            button16.Text = "Купить";
-            button16.UseVisualStyleBackColor = false;
+            buypremiumvideocard.BackColor = Color.FromArgb(0, 192, 0);
+            buypremiumvideocard.FlatStyle = FlatStyle.Flat;
+            buypremiumvideocard.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buypremiumvideocard.ForeColor = Color.White;
+            buypremiumvideocard.Location = new Point(387, 104);
+            buypremiumvideocard.Name = "buypremiumvideocard";
+            buypremiumvideocard.Size = new Size(144, 36);
+            buypremiumvideocard.TabIndex = 5;
+            buypremiumvideocard.Text = "Купить";
+            buypremiumvideocard.UseVisualStyleBackColor = false;
+            buypremiumvideocard.Click += buyComponentVideoCard;
             // 
             // label99
             // 
@@ -2245,7 +2257,7 @@
             groupBox14.Controls.Add(label103);
             groupBox14.Controls.Add(label104);
             groupBox14.Controls.Add(label105);
-            groupBox14.Controls.Add(button17);
+            groupBox14.Controls.Add(buyprofessionalvideocard);
             groupBox14.Controls.Add(label106);
             groupBox14.Controls.Add(label107);
             groupBox14.Controls.Add(label108);
@@ -2290,18 +2302,19 @@
             label105.TabIndex = 6;
             label105.Text = "0";
             // 
-            // button17
+            // buyprofessionalvideocard
             // 
-            button17.BackColor = Color.FromArgb(0, 192, 0);
-            button17.FlatStyle = FlatStyle.Flat;
-            button17.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button17.ForeColor = Color.White;
-            button17.Location = new Point(387, 104);
-            button17.Name = "button17";
-            button17.Size = new Size(144, 36);
-            button17.TabIndex = 5;
-            button17.Text = "Купить";
-            button17.UseVisualStyleBackColor = false;
+            buyprofessionalvideocard.BackColor = Color.FromArgb(0, 192, 0);
+            buyprofessionalvideocard.FlatStyle = FlatStyle.Flat;
+            buyprofessionalvideocard.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyprofessionalvideocard.ForeColor = Color.White;
+            buyprofessionalvideocard.Location = new Point(387, 104);
+            buyprofessionalvideocard.Name = "buyprofessionalvideocard";
+            buyprofessionalvideocard.Size = new Size(144, 36);
+            buyprofessionalvideocard.TabIndex = 5;
+            buyprofessionalvideocard.Text = "Купить";
+            buyprofessionalvideocard.UseVisualStyleBackColor = false;
+            buyprofessionalvideocard.Click += buyComponentVideoCard;
             // 
             // label106
             // 
@@ -2360,7 +2373,7 @@
             groupBox15.Controls.Add(label110);
             groupBox15.Controls.Add(label111);
             groupBox15.Controls.Add(label112);
-            groupBox15.Controls.Add(button18);
+            groupBox15.Controls.Add(buyclassicalvideocard);
             groupBox15.Controls.Add(label113);
             groupBox15.Controls.Add(label114);
             groupBox15.Controls.Add(label115);
@@ -2405,18 +2418,19 @@
             label112.TabIndex = 6;
             label112.Text = "0";
             // 
-            // button18
+            // buyclassicalvideocard
             // 
-            button18.BackColor = Color.FromArgb(0, 192, 0);
-            button18.FlatStyle = FlatStyle.Flat;
-            button18.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button18.ForeColor = Color.White;
-            button18.Location = new Point(387, 104);
-            button18.Name = "button18";
-            button18.Size = new Size(144, 36);
-            button18.TabIndex = 5;
-            button18.Text = "Купить";
-            button18.UseVisualStyleBackColor = false;
+            buyclassicalvideocard.BackColor = Color.FromArgb(0, 192, 0);
+            buyclassicalvideocard.FlatStyle = FlatStyle.Flat;
+            buyclassicalvideocard.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyclassicalvideocard.ForeColor = Color.White;
+            buyclassicalvideocard.Location = new Point(387, 104);
+            buyclassicalvideocard.Name = "buyclassicalvideocard";
+            buyclassicalvideocard.Size = new Size(144, 36);
+            buyclassicalvideocard.TabIndex = 5;
+            buyclassicalvideocard.Text = "Купить";
+            buyclassicalvideocard.UseVisualStyleBackColor = false;
+            buyclassicalvideocard.Click += buyComponentVideoCard;
             // 
             // label113
             // 
@@ -2475,7 +2489,7 @@
             groupBox16.Controls.Add(label117);
             groupBox16.Controls.Add(label118);
             groupBox16.Controls.Add(label119);
-            groupBox16.Controls.Add(button19);
+            groupBox16.Controls.Add(buyuniversalvideocard);
             groupBox16.Controls.Add(label120);
             groupBox16.Controls.Add(label121);
             groupBox16.Controls.Add(label122);
@@ -2520,18 +2534,19 @@
             label119.TabIndex = 6;
             label119.Text = "0";
             // 
-            // button19
+            // buyuniversalvideocard
             // 
-            button19.BackColor = Color.FromArgb(0, 192, 0);
-            button19.FlatStyle = FlatStyle.Flat;
-            button19.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button19.ForeColor = Color.White;
-            button19.Location = new Point(387, 104);
-            button19.Name = "button19";
-            button19.Size = new Size(144, 36);
-            button19.TabIndex = 5;
-            button19.Text = "Купить";
-            button19.UseVisualStyleBackColor = false;
+            buyuniversalvideocard.BackColor = Color.FromArgb(0, 192, 0);
+            buyuniversalvideocard.FlatStyle = FlatStyle.Flat;
+            buyuniversalvideocard.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyuniversalvideocard.ForeColor = Color.White;
+            buyuniversalvideocard.Location = new Point(387, 104);
+            buyuniversalvideocard.Name = "buyuniversalvideocard";
+            buyuniversalvideocard.Size = new Size(144, 36);
+            buyuniversalvideocard.TabIndex = 5;
+            buyuniversalvideocard.Text = "Купить";
+            buyuniversalvideocard.UseVisualStyleBackColor = false;
+            buyuniversalvideocard.Click += buyComponentVideoCard;
             // 
             // label120
             // 
@@ -2590,7 +2605,7 @@
             groupBox17.Controls.Add(label124);
             groupBox17.Controls.Add(label125);
             groupBox17.Controls.Add(label126);
-            groupBox17.Controls.Add(button20);
+            groupBox17.Controls.Add(buystandartvideocard);
             groupBox17.Controls.Add(label127);
             groupBox17.Controls.Add(label128);
             groupBox17.Controls.Add(label129);
@@ -2635,18 +2650,19 @@
             label126.TabIndex = 6;
             label126.Text = "0";
             // 
-            // button20
+            // buystandartvideocard
             // 
-            button20.BackColor = Color.FromArgb(0, 192, 0);
-            button20.FlatStyle = FlatStyle.Flat;
-            button20.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button20.ForeColor = Color.White;
-            button20.Location = new Point(387, 104);
-            button20.Name = "button20";
-            button20.Size = new Size(144, 36);
-            button20.TabIndex = 5;
-            button20.Text = "Купить";
-            button20.UseVisualStyleBackColor = false;
+            buystandartvideocard.BackColor = Color.FromArgb(0, 192, 0);
+            buystandartvideocard.FlatStyle = FlatStyle.Flat;
+            buystandartvideocard.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buystandartvideocard.ForeColor = Color.White;
+            buystandartvideocard.Location = new Point(387, 104);
+            buystandartvideocard.Name = "buystandartvideocard";
+            buystandartvideocard.Size = new Size(144, 36);
+            buystandartvideocard.TabIndex = 5;
+            buystandartvideocard.Text = "Купить";
+            buystandartvideocard.UseVisualStyleBackColor = false;
+            buystandartvideocard.Click += buyComponentVideoCard;
             // 
             // label127
             // 
@@ -2705,7 +2721,7 @@
             groupBox18.Controls.Add(label131);
             groupBox18.Controls.Add(label132);
             groupBox18.Controls.Add(label133);
-            groupBox18.Controls.Add(button21);
+            groupBox18.Controls.Add(buybudgetvideocard);
             groupBox18.Controls.Add(label134);
             groupBox18.Controls.Add(label135);
             groupBox18.Controls.Add(label136);
@@ -2750,18 +2766,19 @@
             label133.TabIndex = 6;
             label133.Text = "0";
             // 
-            // button21
+            // buybudgetvideocard
             // 
-            button21.BackColor = Color.FromArgb(0, 192, 0);
-            button21.FlatStyle = FlatStyle.Flat;
-            button21.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button21.ForeColor = Color.White;
-            button21.Location = new Point(387, 104);
-            button21.Name = "button21";
-            button21.Size = new Size(144, 36);
-            button21.TabIndex = 5;
-            button21.Text = "Купить";
-            button21.UseVisualStyleBackColor = false;
+            buybudgetvideocard.BackColor = Color.FromArgb(0, 192, 0);
+            buybudgetvideocard.FlatStyle = FlatStyle.Flat;
+            buybudgetvideocard.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buybudgetvideocard.ForeColor = Color.White;
+            buybudgetvideocard.Location = new Point(387, 104);
+            buybudgetvideocard.Name = "buybudgetvideocard";
+            buybudgetvideocard.Size = new Size(144, 36);
+            buybudgetvideocard.TabIndex = 5;
+            buybudgetvideocard.Text = "Купить";
+            buybudgetvideocard.UseVisualStyleBackColor = false;
+            buybudgetvideocard.Click += buyComponentVideoCard;
             // 
             // label134
             // 
@@ -2820,7 +2837,7 @@
             groupBox19.Controls.Add(label138);
             groupBox19.Controls.Add(label139);
             groupBox19.Controls.Add(label140);
-            groupBox19.Controls.Add(button22);
+            groupBox19.Controls.Add(buyeconomyvideocard);
             groupBox19.Controls.Add(label141);
             groupBox19.Controls.Add(label142);
             groupBox19.Controls.Add(label143);
@@ -2865,18 +2882,19 @@
             label140.TabIndex = 6;
             label140.Text = "0";
             // 
-            // button22
+            // buyeconomyvideocard
             // 
-            button22.BackColor = Color.FromArgb(0, 192, 0);
-            button22.FlatStyle = FlatStyle.Flat;
-            button22.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button22.ForeColor = Color.White;
-            button22.Location = new Point(387, 104);
-            button22.Name = "button22";
-            button22.Size = new Size(144, 36);
-            button22.TabIndex = 5;
-            button22.Text = "Купить";
-            button22.UseVisualStyleBackColor = false;
+            buyeconomyvideocard.BackColor = Color.FromArgb(0, 192, 0);
+            buyeconomyvideocard.FlatStyle = FlatStyle.Flat;
+            buyeconomyvideocard.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyeconomyvideocard.ForeColor = Color.White;
+            buyeconomyvideocard.Location = new Point(387, 104);
+            buyeconomyvideocard.Name = "buyeconomyvideocard";
+            buyeconomyvideocard.Size = new Size(144, 36);
+            buyeconomyvideocard.TabIndex = 5;
+            buyeconomyvideocard.Text = "Купить";
+            buyeconomyvideocard.UseVisualStyleBackColor = false;
+            buyeconomyvideocard.Click += buyComponentVideoCard;
             // 
             // label141
             // 
@@ -2959,7 +2977,7 @@
             groupBox20.Controls.Add(label146);
             groupBox20.Controls.Add(label147);
             groupBox20.Controls.Add(label148);
-            groupBox20.Controls.Add(button24);
+            groupBox20.Controls.Add(buycommonvideocard);
             groupBox20.Controls.Add(label149);
             groupBox20.Controls.Add(label150);
             groupBox20.Controls.Add(label151);
@@ -3004,18 +3022,19 @@
             label148.TabIndex = 6;
             label148.Text = "0";
             // 
-            // button24
+            // buycommonvideocard
             // 
-            button24.BackColor = Color.FromArgb(0, 192, 0);
-            button24.FlatStyle = FlatStyle.Flat;
-            button24.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button24.ForeColor = Color.White;
-            button24.Location = new Point(387, 104);
-            button24.Name = "button24";
-            button24.Size = new Size(144, 36);
-            button24.TabIndex = 5;
-            button24.Text = "Купить";
-            button24.UseVisualStyleBackColor = false;
+            buycommonvideocard.BackColor = Color.FromArgb(0, 192, 0);
+            buycommonvideocard.FlatStyle = FlatStyle.Flat;
+            buycommonvideocard.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buycommonvideocard.ForeColor = Color.White;
+            buycommonvideocard.Location = new Point(387, 104);
+            buycommonvideocard.Name = "buycommonvideocard";
+            buycommonvideocard.Size = new Size(144, 36);
+            buycommonvideocard.TabIndex = 5;
+            buycommonvideocard.Text = "Купить";
+            buycommonvideocard.UseVisualStyleBackColor = false;
+            buycommonvideocard.Click += buyComponentVideoCard;
             // 
             // label149
             // 
@@ -3076,7 +3095,7 @@
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(612, 0);
+            tabPage3.Size = new Size(612, 617);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Процессоры";
             // 
@@ -3105,7 +3124,7 @@
             groupBox21.Controls.Add(label153);
             groupBox21.Controls.Add(label154);
             groupBox21.Controls.Add(label155);
-            groupBox21.Controls.Add(button25);
+            groupBox21.Controls.Add(buylegendaryprocessor);
             groupBox21.Controls.Add(label156);
             groupBox21.Controls.Add(label157);
             groupBox21.Controls.Add(label158);
@@ -3150,18 +3169,19 @@
             label155.TabIndex = 6;
             label155.Text = "0";
             // 
-            // button25
+            // buylegendaryprocessor
             // 
-            button25.BackColor = Color.FromArgb(0, 192, 0);
-            button25.FlatStyle = FlatStyle.Flat;
-            button25.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button25.ForeColor = Color.White;
-            button25.Location = new Point(387, 104);
-            button25.Name = "button25";
-            button25.Size = new Size(144, 36);
-            button25.TabIndex = 5;
-            button25.Text = "Купить";
-            button25.UseVisualStyleBackColor = false;
+            buylegendaryprocessor.BackColor = Color.FromArgb(0, 192, 0);
+            buylegendaryprocessor.FlatStyle = FlatStyle.Flat;
+            buylegendaryprocessor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buylegendaryprocessor.ForeColor = Color.White;
+            buylegendaryprocessor.Location = new Point(387, 104);
+            buylegendaryprocessor.Name = "buylegendaryprocessor";
+            buylegendaryprocessor.Size = new Size(144, 36);
+            buylegendaryprocessor.TabIndex = 5;
+            buylegendaryprocessor.Text = "Купить";
+            buylegendaryprocessor.UseVisualStyleBackColor = false;
+            buylegendaryprocessor.Click += buyComponentProcessor;
             // 
             // label156
             // 
@@ -3220,7 +3240,7 @@
             groupBox22.Controls.Add(label160);
             groupBox22.Controls.Add(label161);
             groupBox22.Controls.Add(label162);
-            groupBox22.Controls.Add(button26);
+            groupBox22.Controls.Add(buyeliteprocessor);
             groupBox22.Controls.Add(label163);
             groupBox22.Controls.Add(label164);
             groupBox22.Controls.Add(label165);
@@ -3265,18 +3285,19 @@
             label162.TabIndex = 6;
             label162.Text = "0";
             // 
-            // button26
+            // buyeliteprocessor
             // 
-            button26.BackColor = Color.FromArgb(0, 192, 0);
-            button26.FlatStyle = FlatStyle.Flat;
-            button26.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button26.ForeColor = Color.White;
-            button26.Location = new Point(387, 104);
-            button26.Name = "button26";
-            button26.Size = new Size(144, 36);
-            button26.TabIndex = 5;
-            button26.Text = "Купить";
-            button26.UseVisualStyleBackColor = false;
+            buyeliteprocessor.BackColor = Color.FromArgb(0, 192, 0);
+            buyeliteprocessor.FlatStyle = FlatStyle.Flat;
+            buyeliteprocessor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyeliteprocessor.ForeColor = Color.White;
+            buyeliteprocessor.Location = new Point(387, 104);
+            buyeliteprocessor.Name = "buyeliteprocessor";
+            buyeliteprocessor.Size = new Size(144, 36);
+            buyeliteprocessor.TabIndex = 5;
+            buyeliteprocessor.Text = "Купить";
+            buyeliteprocessor.UseVisualStyleBackColor = false;
+            buyeliteprocessor.Click += buyComponentProcessor;
             // 
             // label163
             // 
@@ -3335,7 +3356,7 @@
             groupBox23.Controls.Add(label167);
             groupBox23.Controls.Add(label168);
             groupBox23.Controls.Add(label169);
-            groupBox23.Controls.Add(button27);
+            groupBox23.Controls.Add(buypremiumprocessor);
             groupBox23.Controls.Add(label170);
             groupBox23.Controls.Add(label171);
             groupBox23.Controls.Add(label172);
@@ -3380,18 +3401,19 @@
             label169.TabIndex = 6;
             label169.Text = "0";
             // 
-            // button27
+            // buypremiumprocessor
             // 
-            button27.BackColor = Color.FromArgb(0, 192, 0);
-            button27.FlatStyle = FlatStyle.Flat;
-            button27.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button27.ForeColor = Color.White;
-            button27.Location = new Point(387, 104);
-            button27.Name = "button27";
-            button27.Size = new Size(144, 36);
-            button27.TabIndex = 5;
-            button27.Text = "Купить";
-            button27.UseVisualStyleBackColor = false;
+            buypremiumprocessor.BackColor = Color.FromArgb(0, 192, 0);
+            buypremiumprocessor.FlatStyle = FlatStyle.Flat;
+            buypremiumprocessor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buypremiumprocessor.ForeColor = Color.White;
+            buypremiumprocessor.Location = new Point(387, 104);
+            buypremiumprocessor.Name = "buypremiumprocessor";
+            buypremiumprocessor.Size = new Size(144, 36);
+            buypremiumprocessor.TabIndex = 5;
+            buypremiumprocessor.Text = "Купить";
+            buypremiumprocessor.UseVisualStyleBackColor = false;
+            buypremiumprocessor.Click += buyComponentProcessor;
             // 
             // label170
             // 
@@ -3450,7 +3472,7 @@
             groupBox24.Controls.Add(label174);
             groupBox24.Controls.Add(label175);
             groupBox24.Controls.Add(label176);
-            groupBox24.Controls.Add(button28);
+            groupBox24.Controls.Add(buyprofessionalprocessor);
             groupBox24.Controls.Add(label177);
             groupBox24.Controls.Add(label178);
             groupBox24.Controls.Add(label179);
@@ -3495,18 +3517,19 @@
             label176.TabIndex = 6;
             label176.Text = "0";
             // 
-            // button28
+            // buyprofessionalprocessor
             // 
-            button28.BackColor = Color.FromArgb(0, 192, 0);
-            button28.FlatStyle = FlatStyle.Flat;
-            button28.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button28.ForeColor = Color.White;
-            button28.Location = new Point(387, 104);
-            button28.Name = "button28";
-            button28.Size = new Size(144, 36);
-            button28.TabIndex = 5;
-            button28.Text = "Купить";
-            button28.UseVisualStyleBackColor = false;
+            buyprofessionalprocessor.BackColor = Color.FromArgb(0, 192, 0);
+            buyprofessionalprocessor.FlatStyle = FlatStyle.Flat;
+            buyprofessionalprocessor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyprofessionalprocessor.ForeColor = Color.White;
+            buyprofessionalprocessor.Location = new Point(387, 104);
+            buyprofessionalprocessor.Name = "buyprofessionalprocessor";
+            buyprofessionalprocessor.Size = new Size(144, 36);
+            buyprofessionalprocessor.TabIndex = 5;
+            buyprofessionalprocessor.Text = "Купить";
+            buyprofessionalprocessor.UseVisualStyleBackColor = false;
+            buyprofessionalprocessor.Click += buyComponentProcessor;
             // 
             // label177
             // 
@@ -3565,7 +3588,7 @@
             groupBox25.Controls.Add(label181);
             groupBox25.Controls.Add(label182);
             groupBox25.Controls.Add(label183);
-            groupBox25.Controls.Add(button29);
+            groupBox25.Controls.Add(buyclassicalprocessor);
             groupBox25.Controls.Add(label184);
             groupBox25.Controls.Add(label185);
             groupBox25.Controls.Add(label186);
@@ -3610,18 +3633,19 @@
             label183.TabIndex = 6;
             label183.Text = "0";
             // 
-            // button29
+            // buyclassicalprocessor
             // 
-            button29.BackColor = Color.FromArgb(0, 192, 0);
-            button29.FlatStyle = FlatStyle.Flat;
-            button29.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button29.ForeColor = Color.White;
-            button29.Location = new Point(387, 104);
-            button29.Name = "button29";
-            button29.Size = new Size(144, 36);
-            button29.TabIndex = 5;
-            button29.Text = "Купить";
-            button29.UseVisualStyleBackColor = false;
+            buyclassicalprocessor.BackColor = Color.FromArgb(0, 192, 0);
+            buyclassicalprocessor.FlatStyle = FlatStyle.Flat;
+            buyclassicalprocessor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyclassicalprocessor.ForeColor = Color.White;
+            buyclassicalprocessor.Location = new Point(387, 104);
+            buyclassicalprocessor.Name = "buyclassicalprocessor";
+            buyclassicalprocessor.Size = new Size(144, 36);
+            buyclassicalprocessor.TabIndex = 5;
+            buyclassicalprocessor.Text = "Купить";
+            buyclassicalprocessor.UseVisualStyleBackColor = false;
+            buyclassicalprocessor.Click += buyComponentProcessor;
             // 
             // label184
             // 
@@ -3680,7 +3704,7 @@
             groupBox26.Controls.Add(label188);
             groupBox26.Controls.Add(label189);
             groupBox26.Controls.Add(label190);
-            groupBox26.Controls.Add(button30);
+            groupBox26.Controls.Add(buyuniversalprocessor);
             groupBox26.Controls.Add(label191);
             groupBox26.Controls.Add(label192);
             groupBox26.Controls.Add(label193);
@@ -3725,18 +3749,19 @@
             label190.TabIndex = 6;
             label190.Text = "0";
             // 
-            // button30
+            // buyuniversalprocessor
             // 
-            button30.BackColor = Color.FromArgb(0, 192, 0);
-            button30.FlatStyle = FlatStyle.Flat;
-            button30.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button30.ForeColor = Color.White;
-            button30.Location = new Point(387, 104);
-            button30.Name = "button30";
-            button30.Size = new Size(144, 36);
-            button30.TabIndex = 5;
-            button30.Text = "Купить";
-            button30.UseVisualStyleBackColor = false;
+            buyuniversalprocessor.BackColor = Color.FromArgb(0, 192, 0);
+            buyuniversalprocessor.FlatStyle = FlatStyle.Flat;
+            buyuniversalprocessor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyuniversalprocessor.ForeColor = Color.White;
+            buyuniversalprocessor.Location = new Point(387, 104);
+            buyuniversalprocessor.Name = "buyuniversalprocessor";
+            buyuniversalprocessor.Size = new Size(144, 36);
+            buyuniversalprocessor.TabIndex = 5;
+            buyuniversalprocessor.Text = "Купить";
+            buyuniversalprocessor.UseVisualStyleBackColor = false;
+            buyuniversalprocessor.Click += buyComponentProcessor;
             // 
             // label191
             // 
@@ -3795,7 +3820,7 @@
             groupBox27.Controls.Add(label195);
             groupBox27.Controls.Add(label196);
             groupBox27.Controls.Add(label197);
-            groupBox27.Controls.Add(button31);
+            groupBox27.Controls.Add(buystandartprocessor);
             groupBox27.Controls.Add(label198);
             groupBox27.Controls.Add(label199);
             groupBox27.Controls.Add(label200);
@@ -3840,18 +3865,19 @@
             label197.TabIndex = 6;
             label197.Text = "0";
             // 
-            // button31
+            // buystandartprocessor
             // 
-            button31.BackColor = Color.FromArgb(0, 192, 0);
-            button31.FlatStyle = FlatStyle.Flat;
-            button31.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button31.ForeColor = Color.White;
-            button31.Location = new Point(387, 104);
-            button31.Name = "button31";
-            button31.Size = new Size(144, 36);
-            button31.TabIndex = 5;
-            button31.Text = "Купить";
-            button31.UseVisualStyleBackColor = false;
+            buystandartprocessor.BackColor = Color.FromArgb(0, 192, 0);
+            buystandartprocessor.FlatStyle = FlatStyle.Flat;
+            buystandartprocessor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buystandartprocessor.ForeColor = Color.White;
+            buystandartprocessor.Location = new Point(387, 104);
+            buystandartprocessor.Name = "buystandartprocessor";
+            buystandartprocessor.Size = new Size(144, 36);
+            buystandartprocessor.TabIndex = 5;
+            buystandartprocessor.Text = "Купить";
+            buystandartprocessor.UseVisualStyleBackColor = false;
+            buystandartprocessor.Click += buyComponentProcessor;
             // 
             // label198
             // 
@@ -3910,7 +3936,7 @@
             groupBox28.Controls.Add(label202);
             groupBox28.Controls.Add(label203);
             groupBox28.Controls.Add(label204);
-            groupBox28.Controls.Add(button32);
+            groupBox28.Controls.Add(buybudgetprocessor);
             groupBox28.Controls.Add(label205);
             groupBox28.Controls.Add(label206);
             groupBox28.Controls.Add(label207);
@@ -3955,18 +3981,19 @@
             label204.TabIndex = 6;
             label204.Text = "0";
             // 
-            // button32
+            // buybudgetprocessor
             // 
-            button32.BackColor = Color.FromArgb(0, 192, 0);
-            button32.FlatStyle = FlatStyle.Flat;
-            button32.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button32.ForeColor = Color.White;
-            button32.Location = new Point(387, 104);
-            button32.Name = "button32";
-            button32.Size = new Size(144, 36);
-            button32.TabIndex = 5;
-            button32.Text = "Купить";
-            button32.UseVisualStyleBackColor = false;
+            buybudgetprocessor.BackColor = Color.FromArgb(0, 192, 0);
+            buybudgetprocessor.FlatStyle = FlatStyle.Flat;
+            buybudgetprocessor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buybudgetprocessor.ForeColor = Color.White;
+            buybudgetprocessor.Location = new Point(387, 104);
+            buybudgetprocessor.Name = "buybudgetprocessor";
+            buybudgetprocessor.Size = new Size(144, 36);
+            buybudgetprocessor.TabIndex = 5;
+            buybudgetprocessor.Text = "Купить";
+            buybudgetprocessor.UseVisualStyleBackColor = false;
+            buybudgetprocessor.Click += buyComponentProcessor;
             // 
             // label205
             // 
@@ -4025,7 +4052,7 @@
             groupBox29.Controls.Add(label209);
             groupBox29.Controls.Add(label210);
             groupBox29.Controls.Add(label211);
-            groupBox29.Controls.Add(button33);
+            groupBox29.Controls.Add(buyeconomyprocessor);
             groupBox29.Controls.Add(label212);
             groupBox29.Controls.Add(label213);
             groupBox29.Controls.Add(label214);
@@ -4070,18 +4097,19 @@
             label211.TabIndex = 6;
             label211.Text = "0";
             // 
-            // button33
+            // buyeconomyprocessor
             // 
-            button33.BackColor = Color.FromArgb(0, 192, 0);
-            button33.FlatStyle = FlatStyle.Flat;
-            button33.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button33.ForeColor = Color.White;
-            button33.Location = new Point(387, 104);
-            button33.Name = "button33";
-            button33.Size = new Size(144, 36);
-            button33.TabIndex = 5;
-            button33.Text = "Купить";
-            button33.UseVisualStyleBackColor = false;
+            buyeconomyprocessor.BackColor = Color.FromArgb(0, 192, 0);
+            buyeconomyprocessor.FlatStyle = FlatStyle.Flat;
+            buyeconomyprocessor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buyeconomyprocessor.ForeColor = Color.White;
+            buyeconomyprocessor.Location = new Point(387, 104);
+            buyeconomyprocessor.Name = "buyeconomyprocessor";
+            buyeconomyprocessor.Size = new Size(144, 36);
+            buyeconomyprocessor.TabIndex = 5;
+            buyeconomyprocessor.Text = "Купить";
+            buyeconomyprocessor.UseVisualStyleBackColor = false;
+            buyeconomyprocessor.Click += buyComponentProcessor;
             // 
             // label212
             // 
@@ -4164,7 +4192,7 @@
             groupBox30.Controls.Add(label217);
             groupBox30.Controls.Add(label218);
             groupBox30.Controls.Add(label219);
-            groupBox30.Controls.Add(button35);
+            groupBox30.Controls.Add(buycommonprocessor);
             groupBox30.Controls.Add(label220);
             groupBox30.Controls.Add(label221);
             groupBox30.Controls.Add(label222);
@@ -4209,18 +4237,19 @@
             label219.TabIndex = 6;
             label219.Text = "0";
             // 
-            // button35
+            // buycommonprocessor
             // 
-            button35.BackColor = Color.FromArgb(0, 192, 0);
-            button35.FlatStyle = FlatStyle.Flat;
-            button35.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button35.ForeColor = Color.White;
-            button35.Location = new Point(387, 104);
-            button35.Name = "button35";
-            button35.Size = new Size(144, 36);
-            button35.TabIndex = 5;
-            button35.Text = "Купить";
-            button35.UseVisualStyleBackColor = false;
+            buycommonprocessor.BackColor = Color.FromArgb(0, 192, 0);
+            buycommonprocessor.FlatStyle = FlatStyle.Flat;
+            buycommonprocessor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buycommonprocessor.ForeColor = Color.White;
+            buycommonprocessor.Location = new Point(387, 104);
+            buycommonprocessor.Name = "buycommonprocessor";
+            buycommonprocessor.Size = new Size(144, 36);
+            buycommonprocessor.TabIndex = 5;
+            buycommonprocessor.Text = "Купить";
+            buycommonprocessor.UseVisualStyleBackColor = false;
+            buycommonprocessor.Click += buyComponentProcessor;
             // 
             // label220
             // 
@@ -4454,13 +4483,13 @@
         private Label label18;
         private Label label17;
         private Label label16;
-        private Button button4;
+        private Button buycommonmouse;
         private Label label15;
         private GroupBox groupBox2;
         private Label label19;
         private Label label20;
         private Label label21;
-        private Button button5;
+        private Button buyeconomymouse;
         private Label label22;
         private Label label23;
         private Label label24;
@@ -4470,7 +4499,7 @@
         private Label label33;
         private Label label34;
         private Label label35;
-        private Button button7;
+        private Button buystandartmouse;
         private Label label36;
         private Label label37;
         private Label label38;
@@ -4480,7 +4509,7 @@
         private Label label26;
         private Label label27;
         private Label label28;
-        private Button button6;
+        private Button buybudgetmouse;
         private Label label29;
         private Label label30;
         private Label label31;
@@ -4490,7 +4519,7 @@
         private Label label40;
         private Label label41;
         private Label label42;
-        private Button button8;
+        private Button buyuniversalmouse;
         private Label label43;
         private Label label44;
         private Label label45;
@@ -4500,7 +4529,7 @@
         private Label label47;
         private Label label48;
         private Label label49;
-        private Button button9;
+        private Button buyclassicalmouse;
         private Label label50;
         private Label label51;
         private Label label52;
@@ -4510,7 +4539,7 @@
         private Label label54;
         private Label label55;
         private Label label56;
-        private Button button10;
+        private Button buyprofessionalmouse;
         private Label label57;
         private Label label58;
         private Label label59;
@@ -4520,7 +4549,7 @@
         private Label label68;
         private Label label69;
         private Label label70;
-        private Button button12;
+        private Button buyelitemouse;
         private Label label71;
         private Label label72;
         private Label label73;
@@ -4530,7 +4559,7 @@
         private Label label61;
         private Label label62;
         private Label label63;
-        private Button button11;
+        private Button buypremiummouse;
         private Label label64;
         private Label label65;
         private Label label66;
@@ -4540,7 +4569,7 @@
         private Label label75;
         private Label label76;
         private Label label77;
-        private Button button13;
+        private Button buylegendarymouse;
         private Label label78;
         private Label label79;
         private Label label80;
@@ -4551,7 +4580,7 @@
         private Label label82;
         private Label label83;
         private Label label84;
-        private Button button14;
+        private Button buylegendaryvideocard;
         private Label label85;
         private Label label86;
         private Label label87;
@@ -4561,7 +4590,7 @@
         private Label label89;
         private Label label90;
         private Label label91;
-        private Button button15;
+        private Button buyelitevideocard;
         private Label label92;
         private Label label93;
         private Label label94;
@@ -4571,7 +4600,7 @@
         private Label label96;
         private Label label97;
         private Label label98;
-        private Button button16;
+        private Button buypremiumvideocard;
         private Label label99;
         private Label label100;
         private Label label101;
@@ -4581,7 +4610,7 @@
         private Label label103;
         private Label label104;
         private Label label105;
-        private Button button17;
+        private Button buyprofessionalvideocard;
         private Label label106;
         private Label label107;
         private Label label108;
@@ -4591,7 +4620,7 @@
         private Label label110;
         private Label label111;
         private Label label112;
-        private Button button18;
+        private Button buyclassicalvideocard;
         private Label label113;
         private Label label114;
         private Label label115;
@@ -4601,7 +4630,7 @@
         private Label label117;
         private Label label118;
         private Label label119;
-        private Button button19;
+        private Button buyuniversalvideocard;
         private Label label120;
         private Label label121;
         private Label label122;
@@ -4611,7 +4640,7 @@
         private Label label124;
         private Label label125;
         private Label label126;
-        private Button button20;
+        private Button buystandartvideocard;
         private Label label127;
         private Label label128;
         private Label label129;
@@ -4621,7 +4650,7 @@
         private Label label131;
         private Label label132;
         private Label label133;
-        private Button button21;
+        private Button buybudgetvideocard;
         private Label label134;
         private Label label135;
         private Label label136;
@@ -4631,7 +4660,7 @@
         private Label label138;
         private Label label139;
         private Label label140;
-        private Button button22;
+        private Button buyeconomyvideocard;
         private Label label141;
         private Label label142;
         private Label label143;
@@ -4643,7 +4672,7 @@
         private Label label146;
         private Label label147;
         private Label label148;
-        private Button button24;
+        private Button buycommonvideocard;
         private Label label149;
         private Label label150;
         private Label label151;
@@ -4654,7 +4683,7 @@
         private Label label153;
         private Label label154;
         private Label label155;
-        private Button button25;
+        private Button buylegendaryprocessor;
         private Label label156;
         private Label label157;
         private Label label158;
@@ -4664,7 +4693,7 @@
         private Label label160;
         private Label label161;
         private Label label162;
-        private Button button26;
+        private Button buyeliteprocessor;
         private Label label163;
         private Label label164;
         private Label label165;
@@ -4674,7 +4703,7 @@
         private Label label167;
         private Label label168;
         private Label label169;
-        private Button button27;
+        private Button buypremiumprocessor;
         private Label label170;
         private Label label171;
         private Label label172;
@@ -4684,7 +4713,7 @@
         private Label label174;
         private Label label175;
         private Label label176;
-        private Button button28;
+        private Button buyprofessionalprocessor;
         private Label label177;
         private Label label178;
         private Label label179;
@@ -4694,7 +4723,7 @@
         private Label label181;
         private Label label182;
         private Label label183;
-        private Button button29;
+        private Button buyclassicalprocessor;
         private Label label184;
         private Label label185;
         private Label label186;
@@ -4704,7 +4733,7 @@
         private Label label188;
         private Label label189;
         private Label label190;
-        private Button button30;
+        private Button buyuniversalprocessor;
         private Label label191;
         private Label label192;
         private Label label193;
@@ -4714,7 +4743,7 @@
         private Label label195;
         private Label label196;
         private Label label197;
-        private Button button31;
+        private Button buystandartprocessor;
         private Label label198;
         private Label label199;
         private Label label200;
@@ -4724,7 +4753,7 @@
         private Label label202;
         private Label label203;
         private Label label204;
-        private Button button32;
+        private Button buybudgetprocessor;
         private Label label205;
         private Label label206;
         private Label label207;
@@ -4734,7 +4763,7 @@
         private Label label209;
         private Label label210;
         private Label label211;
-        private Button button33;
+        private Button buyeconomyprocessor;
         private Label label212;
         private Label label213;
         private Label label214;
@@ -4746,7 +4775,7 @@
         private Label label217;
         private Label label218;
         private Label label219;
-        private Button button35;
+        private Button buycommonprocessor;
         private Label label220;
         private Label label221;
         private Label label222;

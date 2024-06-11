@@ -5,7 +5,7 @@
         public StatsPlayer() 
         {
             _speedClick = 1;
-            _balanceCoin = 100;
+            _balanceCoin = 10000000000;
             _speedVideoCard = 0;
             _speedProcessor = 0;
             _balanceCoinString = "0";

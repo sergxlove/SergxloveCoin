@@ -68,6 +68,12 @@ namespace SergxloveCoin.resourse
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
+        public void ChangeData(int price, int speed, int quantity)
+        {
+            _price = price;
+            _speed = speed;
+            _quantity = quantity;
+        }
         private string? _name;
         private int _price;
         private int _speed;
