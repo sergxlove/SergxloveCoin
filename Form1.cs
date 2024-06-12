@@ -287,6 +287,7 @@ namespace SergxloveCoin
         private Dictionary<string, VideoCard> dictionaryVideoCard;
         private Dictionary<string, Processor> dictionaryProcessor;
 
+
         private string sqlConnection;
         bool isCreateDatabase;
 
