@@ -93,7 +93,21 @@ namespace SergxloveCoin
                 ["buyeliteprocessor"] = eliteprocessor,
                 ["buylegendaryprocessor"] = legendaryprocessor
             };
-
+            namesMouse = new List<string>()
+            {
+                "buycommonmouse", "buyeconomymouse", "buybudgetmouse", "buystandartmouse", "buyuniversalmouse",
+                "buyclassicalmouse", "buyprofessionalmouse", "buypremiummouse", "buyelitemouse", "buylegendarymouse"
+            };
+            namesVideoCard = new List<string>()
+            {
+                "buycommonvideocard", "buyeconomyvideocard", "buybudgetvideocard", "buystandartvideocard", "buyuniversalvideocard",
+                "buyclassicalvideocard", "buyprofessionalvideocard", "buypremiumvideocard", "buyelitevideocard", "buylegendaryvideocard"
+            };
+            namesProcessor = new List<string>()
+            {
+                "buycommonprocessor", "buyeconomyprocessor", "buybudgetprocessor", "buystandartprocessor", "buyuniversalprocessor",
+                "buyclassicalprocessor", "buyprofessionalprocessor",  "buypremiumprocessor", "buyeliteprocessor", "buylegendaryprocessor"
+            };
             sqlConnection = "Data source=userdata.db";
 
             //12,16,17,18
@@ -286,7 +300,9 @@ namespace SergxloveCoin
         private Dictionary<string, Mouse> dictionaryMouse;
         private Dictionary<string, VideoCard> dictionaryVideoCard;
         private Dictionary<string, Processor> dictionaryProcessor;
-
+        private List<string> namesMouse;
+        private List<string> namesVideoCard;
+        private List<string> namesProcessor;
 
         private string sqlConnection;
         bool isCreateDatabase;
