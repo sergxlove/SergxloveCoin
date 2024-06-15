@@ -450,47 +450,46 @@ namespace SergxloveCoin
                     sqlCommand = "CREATE TABLE Processors(idProcessor INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
-                    sqlCommand = $@"INSERT INTO StatsPlayer(idPlayer, balancePlayer, speedClick, speedVideoCard, speedProcessor) VALUES
-                                (1, 100, 0, 0, 0);";
+                    sqlCommand = $@"INSERT INTO StatsPlayer(idPlayer, balancePlayer, speedClick, speedVideoCard, speedProcessor) VALUES(1, 100, 0, 0, 0);";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
                     sqlCommand = $@"INSERT INTO Mouses(idMouse, price, speed, quantity) VALUES
-                                   (1, 500, 3, 0),
-                                   (2, 2000, 9, 0),
-                                   (3, 10000, 20, 0),
-                                   (4, 50000, 45, 0),
-                                   (5, 250000, 110, 0),
-                                   (6, 1000000, 250, 0),
-                                   (7, 4000000, 650, 0),
-                                   (8, 20000000, 1000, 0),
-                                   (9, 100000000, 2100, 0),
-                                   (10, 250000000, 4000, 0);";
+                    (1, 500, 3, 0),
+                    (2, 2000, 9, 0),
+                    (3, 10000, 20, 0),
+                    (4, 50000, 45, 0),
+                    (5, 250000, 110, 0),
+                    (6, 1000000, 250, 0),
+                    (7, 4000000, 650, 0),
+                    (8, 20000000, 1000, 0),
+                    (9, 100000000, 2100, 0),
+                    (10, 250000000, 4000, 0);";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
                     sqlCommand = $@"INSERT INTO Videocards(idVideocard, price, speed, quantity) VALUES
-                                   (1, 150, 5, 0),
-                                   (2, 500, 10, 0),
-                                   (3, 3000, 20, 0),
-                                   (4, 10000, 35, 0),
-                                   (5, 50000, 60, 0),
-                                   (6, 300000, 100, 0),
-                                   (7, 1000000, 250, 0),
-                                   (8, 2500000, 400, 0),
-                                   (9, 10000000, 700, 0),
-                                   (10, 45000000, 1000, 0);";
+                    (1, 150, 5, 0),
+                    (2, 500, 10, 0),
+                    (3, 3000, 20, 0),
+                    (4, 10000, 35, 0),
+                    (5, 50000, 60, 0),
+                    (6, 300000, 100, 0),
+                    (7, 1000000, 250, 0),
+                    (8, 2500000, 400, 0),
+                    (9, 10000000, 700, 0),
+                    (10, 45000000, 1000, 0);";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
                     sqlCommand = $@"INSERT INTO Processors(idProcessor, price, speed, quantity) VALUES
-                                   (1, 300, 2, 0),
-                                   (2, 1500, 3, 0),
-                                   (3, 6000, 5, 0),
-                                   (4, 25000, 8, 0),
-                                   (5, 100000, 13, 0),
-                                   (6, 500000, 25, 0),
-                                   (7, 2000000, 40, 0),
-                                   (8, 10000000, 65, 0),
-                                   (9, 30000000, 100, 0),
-                                   (10, 50000000, 130, 0);";
+                    (1, 300, 2, 0),
+                    (2, 1500, 3, 0),
+                    (3, 6000, 5, 0),
+                    (4, 25000, 8, 0),
+                    (5, 100000, 13, 0),
+                    (6, 500000, 25, 0),
+                    (7, 2000000, 40, 0),
+                    (8, 10000000, 65, 0),
+                    (9, 30000000, 100, 0),
+                    (10, 50000000, 130, 0);";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
                 }
