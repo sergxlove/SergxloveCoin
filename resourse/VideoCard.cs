@@ -12,6 +12,13 @@ namespace SergxloveCoin.resourse
             _speed = 0;
             _quantity = 0;
         }
+        public VideoCard(string? name)
+        {
+            _name=name;
+            _price = 0;
+            _speed = 0;
+            _quantity = 0;
+        }
         public VideoCard(string? name, int price, int speed, int quantity)
         {
             _name = name;

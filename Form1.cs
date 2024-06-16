@@ -435,6 +435,7 @@ namespace SergxloveCoin
             {
                 using(var connection = new SqliteConnection(sqlConnection))
                 {
+
                     string sqlCommand = "CREATE TABLE StatsPlayer( idPlayer INT PRIMARY KEY NOT NULL, balancePlayer BIGINT NOT NULL, speedClick INT NOT NULL, speedVideoCard INT NOT NULL, speedProcessor INT NOT NULL);";
                     connection.Open();
                     SqliteCommand command = connection.CreateCommand();
@@ -515,7 +516,7 @@ namespace SergxloveCoin
                     newmouse.SpeedClick += Convert.ToInt32(Convert.ToDouble(newmouse.SpeedClick) * 0.25);
                     myBalance.SpeedClick += newmouse.SpeedClick;
                     myBalance.downBalanse(newmouse.Price);
-                    label2.Text = myBalance.BalanceCoinString;
+                    label2.Text = myBalance.BalansePlayer.ToString();
                 }
             }
             else
@@ -540,7 +541,7 @@ namespace SergxloveCoin
                     newvideocard.Speed += Convert.ToInt32(Convert.ToDouble(newvideocard.Speed) * 0.25);
                     myBalance.SpeedVideoCard += newvideocard.Speed;
                     myBalance.downBalanse(newvideocard.Price);
-                    label2.Text = myBalance.BalanceCoinString;
+                    label2.Text = myBalance.BalansePlayer.ToString();
                 }
             }
             else
@@ -565,7 +566,7 @@ namespace SergxloveCoin
                     newprocessor.Speed += Convert.ToInt32(Convert.ToDouble(newprocessor.Speed) * 0.25);
                     myBalance.SpeedProcessor += newprocessor.Speed;
                     myBalance.downBalanse(newprocessor.Price);
-                    label2.Text = myBalance.BalanceCoinString;
+                    label2.Text = myBalance.BalansePlayer.ToString();
                 }
             }
             else
