@@ -18,6 +18,13 @@ namespace SergxloveCoin.resourse
             _speed = 0;
             _quantity = 0;
         }
+        public Processor(string? name)
+        {
+            _name = name;
+            _price = 0;
+            _speed = 0;
+            _quantity = 0;
+        }
         public Processor(string? name, int price, int speed, int quantity)
         {
             _name = name;

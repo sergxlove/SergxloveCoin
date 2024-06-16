@@ -12,6 +12,13 @@ namespace SergxloveCoin.resourse
             _speedClick = 0;
             _quantity = 0;
         }
+        public Mouse(string? name)
+        {
+            _name = name;
+            _price = 0;
+            _speedClick = 0;
+            _quantity = 0;
+        }
         public Mouse(string? name, int price, int speedClick, int quantity)
         {
             _name = name;
