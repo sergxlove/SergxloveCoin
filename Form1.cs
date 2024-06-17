@@ -11,35 +11,35 @@ namespace SergxloveCoin
         public Form1()
         {
             InitializeComponent();
-            if(File.Exists("userdata.db"))
+            if (File.Exists("userdata.db"))
             {
                 isCreateDatabase = true;
             }
             else
             {
-                isCreateDatabase= false;
+                isCreateDatabase = false;
             }
             myBalance = new();
 
             commonmouse = new("Обычная мышь", 500, 3, 0);
-            economymouse = new("Эконом мышь",2000, 9, 0);
+            economymouse = new("Эконом мышь", 2000, 9, 0);
             budgetmouse = new("Бюджетная мышь", 10000, 20, 0);
-            standartmouse = new("Стандартная мышь",50000, 45,0 );
+            standartmouse = new("Стандартная мышь", 50000, 45, 0);
             universalmouse = new("Универсальная мышь", 250000, 110, 0);
             classicalmouse = new("Классическая мышь", 1000000, 250, 0);
             professionalmouse = new("Профессиональная мышь", 4000000, 650, 0);
             premiummouse = new("Премиум мышь", 20000000, 1000, 0);
-            elitemouse = new("Элитеая мышь", 100000000,2100, 0);
+            elitemouse = new("Элитеая мышь", 100000000, 2100, 0);
             legendarymouse = new("Легендарная мышь", 250000000, 4000, 0);
 
-            commonvideocard = new("Обычная видеокарта",150, 5, 0);
+            commonvideocard = new("Обычная видеокарта", 150, 5, 0);
             economyvideocard = new("Эконом видеокарта", 500, 10, 0);
             budgetvideocard = new("Бюджетная видеокарта", 3000, 20, 0);
-            standartvideocard = new("Стандартная видеокарта",10000, 35, 0);
+            standartvideocard = new("Стандартная видеокарта", 10000, 35, 0);
             universalvideocard = new("Универсальная видеокарта", 50000, 60, 0);
-            classicalvideocard = new("Классическая видеокарта", 300000, 100,0);
-            professionalvideocard = new("Профессиональная видеокарта", 1000000, 250,0);
-            premiumvideocard = new("Премиум видеокарта", 2500000, 400,0);
+            classicalvideocard = new("Классическая видеокарта", 300000, 100, 0);
+            professionalvideocard = new("Профессиональная видеокарта", 1000000, 250, 0);
+            premiumvideocard = new("Премиум видеокарта", 2500000, 400, 0);
             elitevideocard = new("Элитная видеокарта", 10000000, 700, 0);
             legendaryvideocard = new("Легендарная видоекарта", 45000000, 1000, 0);
 
@@ -321,13 +321,13 @@ namespace SergxloveCoin
         {
             myBalance.upBalanse(myBalance.SpeedClick);
             label2.Text = myBalance.BalansePlayer.ToString();
-            
+
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Profile");
-            
+
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -427,17 +427,74 @@ namespace SergxloveCoin
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            if(isCreateDatabase)
+            if (isCreateDatabase)
             {
-
+                using (var connection = new SqliteConnection(sqlConnection))
+                {
+                    connection.Open();
+                    string sqlCommand = "SELECT * FROM Mouses;";
+                    int countComponent = 0;
+                    SqliteCommand command = connection.CreateCommand();
+                    command.Connection = connection;
+                    command.CommandText = sqlCommand;
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                dictionaryMouse[namesMouse[countComponent]].ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3));
+                                countComponent++;
+                            }
+                        }
+                    }
+                    countComponent = 0;
+                    sqlCommand = "SELECT * FROM Videocards;";
+                    command.CommandText = sqlCommand;
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                dictionaryVideoCard[namesVideoCard[countComponent]].ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3));
+                                countComponent++;
+                            }
+                        }
+                    }
+                    countComponent = 0;
+                    sqlCommand = "SELECT * FROM Processors;";
+                    command.CommandText = sqlCommand;
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                dictionaryProcessor[namesProcessor[countComponent]].ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3));
+                                countComponent++;
+                            }
+                        }
+                    }
+                    sqlCommand = "SELECT * FROM StatsPlayer;";
+                    command.CommandText = sqlCommand;
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+                            myBalance.changeData(reader.GetInt32(2), reader.GetInt64(1), reader.GetInt32(3), reader.GetInt32(4));
+                        }
+                    }
+                }
             }
             else
             {
-                using(var connection = new SqliteConnection(sqlConnection))
+                using (var connection = new SqliteConnection(sqlConnection))
                 {
 
-                    string sqlCommand = "CREATE TABLE StatsPlayer( idPlayer INT PRIMARY KEY NOT NULL, balancePlayer BIGINT NOT NULL, speedClick INT NOT NULL, speedVideoCard INT NOT NULL, speedProcessor INT NOT NULL);";
                     connection.Open();
+                    string sqlCommand = "CREATE TABLE StatsPlayer( idPlayer INT PRIMARY KEY NOT NULL, balancePlayer BIGINT NOT NULL, speedClick INT NOT NULL, speedVideoCard INT NOT NULL, speedProcessor INT NOT NULL);";
                     SqliteCommand command = connection.CreateCommand();
                     command.Connection = connection;
                     command.CommandText = sqlCommand;
@@ -451,7 +508,7 @@ namespace SergxloveCoin
                     sqlCommand = "CREATE TABLE Processors(idProcessor INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
-                    sqlCommand = $@"INSERT INTO StatsPlayer(idPlayer, balancePlayer, speedClick, speedVideoCard, speedProcessor) VALUES(1, 100, 0, 0, 0);";
+                    sqlCommand = $@"INSERT INTO StatsPlayer(idPlayer, balancePlayer, speedClick, speedVideoCard, speedProcessor) VALUES(1, 100, 5, 0, 0);";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
                     sqlCommand = $@"INSERT INTO Mouses(idMouse, price, speed, quantity) VALUES
@@ -502,10 +559,10 @@ namespace SergxloveCoin
         private void buyComponentMouse(object sender, EventArgs e)
         {
             Button selectButton = (Button)sender;
-            if(dictionaryMouse.ContainsKey(selectButton.Name)) 
+            if (dictionaryMouse.ContainsKey(selectButton.Name))
             {
                 Mouse newmouse = dictionaryMouse[selectButton.Name];
-                if(myBalance.BalansePlayer < newmouse.Price) 
+                if (myBalance.BalansePlayer < newmouse.Price)
                 {
                     MessageBox.Show("Недостаточно средств");
                 }
@@ -527,10 +584,10 @@ namespace SergxloveCoin
         private void buyComponentVideoCard(object sender, EventArgs e)
         {
             Button selectButton = (Button)sender;
-            if(dictionaryVideoCard.ContainsKey(selectButton.Name)) 
+            if (dictionaryVideoCard.ContainsKey(selectButton.Name))
             {
                 VideoCard newvideocard = dictionaryVideoCard[selectButton.Name];
-                if(myBalance.BalansePlayer < newvideocard.Price)
+                if (myBalance.BalansePlayer < newvideocard.Price)
                 {
                     MessageBox.Show("Недостаточно средств");
                 }
@@ -549,13 +606,13 @@ namespace SergxloveCoin
                 MessageBox.Show("No found key");
             }
         }
-        private void buyComponentProcessor(object sender, EventArgs e) 
+        private void buyComponentProcessor(object sender, EventArgs e)
         {
             Button selectButton = (Button)sender;
-            if(dictionaryProcessor.ContainsKey(selectButton.Name)) 
+            if (dictionaryProcessor.ContainsKey(selectButton.Name))
             {
                 Processor newprocessor = dictionaryProcessor[selectButton.Name];
-                if(myBalance.BalansePlayer < newprocessor.Price)
+                if (myBalance.BalansePlayer < newprocessor.Price)
                 {
                     MessageBox.Show("Недостаточно средств");
                 }
@@ -576,4 +633,3 @@ namespace SergxloveCoin
         }
     }
 }
- 

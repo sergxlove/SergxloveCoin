@@ -87,5 +87,12 @@
         {
             _balanceCoin -= value;
         }
+        public void changeData(int speedClick, long balanceCoin, int speedVideoCrad, int speedProcessor)
+        {
+            _speedClick = speedClick;
+            _balanceCoin = balanceCoin;
+            _speedVideoCard = speedVideoCrad;  
+            _speedProcessor = speedProcessor;
+        }
     }
 }
