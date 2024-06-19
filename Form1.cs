@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using Microsoft.Data.Sqlite;
+using System.Threading;
 
 namespace SergxloveCoin
 {
@@ -112,6 +113,7 @@ namespace SergxloveCoin
             isChangedDataMouses = false;
             isChangedDataVideoCard = false;
             isChangedDataProcessor = false;
+            threadUpBalanceInSecond = new Thread(new ThreadStart(AutoUpBalance));
         }
         private SergxloveCoin.resourse.StatsPlayer myBalance;
 
@@ -166,6 +168,9 @@ namespace SergxloveCoin
         private int sizeY = 0;
         private int coordPointY = 0;
         private bool showAnimation = false;
+
+        private Thread threadUpBalanceInSecond;
+
         private void button1_Click(object sender, EventArgs e)
         {
             using (SqliteConnection connection = new SqliteConnection(sqlConnection))
@@ -742,6 +747,10 @@ namespace SergxloveCoin
             {
                 MessageBox.Show("No found key");
             }
+        }
+        private void AutoUpBalance()
+        {
+            myBalance.upBalanse(myBalance.SpeedVideoCard + myBalance.SpeedProcessor);
         }
     }
 }
