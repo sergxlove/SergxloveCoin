@@ -109,6 +109,9 @@ namespace SergxloveCoin
                 "buyclassicalprocessor", "buyprofessionalprocessor",  "buypremiumprocessor", "buyeliteprocessor", "buylegendaryprocessor"
             };
             sqlConnection = "Data source=userdata.db";
+            isChangedDataMouses = false;
+            isChangedDataVideoCard = false;
+            isChangedDataProcessor = false;
         }
         private SergxloveCoin.resourse.StatsPlayer myBalance;
 
@@ -152,6 +155,10 @@ namespace SergxloveCoin
         private List<string> namesVideoCard;
         private List<string> namesProcessor;
 
+        private bool isChangedDataMouses;
+        private bool isChangedDataVideoCard;
+        private bool isChangedDataProcessor;
+
         private string sqlConnection;
         bool isCreateDatabase;
 
@@ -161,8 +168,74 @@ namespace SergxloveCoin
         private bool showAnimation = false;
         private void button1_Click(object sender, EventArgs e)
         {
+            using (SqliteConnection connection = new SqliteConnection(sqlConnection))
+            {
+                connection.Open();
+                string sqlCommand;
+                SqliteCommand command = connection.CreateCommand();
+                SqliteParameter idParam = new SqliteParameter();
+                SqliteParameter priceParam = new SqliteParameter();
+                SqliteParameter speedParam = new SqliteParameter();
+                SqliteParameter speedClickParam = new SqliteParameter();
+                SqliteParameter quantityParam = new SqliteParameter();
+                idParam.ParameterName = "@id";
+                priceParam.ParameterName = "@price";
+                speedParam.ParameterName = "@speed";
+                speedClickParam.ParameterName = "@speedClick";
+                quantityParam.ParameterName = "@quantity";
+                command.Parameters.Add(idParam);
+                command.Parameters.Add(priceParam);
+                command.Parameters.Add(speedParam);
+                command.Parameters.Add(speedClickParam);
+                command.Parameters.Add(quantityParam);
+                if (isChangedDataMouses)
+                {
+                    sqlCommand = "UPDATE Mouses SET price = @price, speed = @speed, quantity = @quantity WHERE idMouse = @id;";
+                    command.CommandText = sqlCommand;
+                    for(int i = 0; i < namesMouse.Count; i++)
+                    {
+                        idParam.Value = i + 1;
+                        priceParam.Value = dictionaryMouse[namesMouse[i]].Price;
+                        speedParam.Value = dictionaryMouse[namesMouse[i]].SpeedClick;
+                        quantityParam.Value = dictionaryMouse[namesMouse[i]].Quantity;
+                        command.ExecuteNonQuery();
+                    }
+                }
+                if(isChangedDataVideoCard)
+                {
+                    sqlCommand = "UPDATE Videocards SET price = @price, speed = @speed, quantity = @quantity WHERE idVideocard = @id;";
+                    command.CommandText = sqlCommand;
+                    for (int i = 0; i < namesVideoCard.Count; i++)
+                    {
+                        idParam.Value = i + 1;
+                        priceParam.Value = dictionaryVideoCard[namesVideoCard[i]].Price;
+                        speedParam.Value = dictionaryVideoCard[namesVideoCard[i]].Speed;
+                        quantityParam.Value = dictionaryVideoCard[namesVideoCard[i]].Quantity;
+                        command.ExecuteNonQuery();
+                    }
+                }
+                if(isChangedDataProcessor)
+                {
+                    sqlCommand = "UPDATE Processors SET price = @price, speed = @speed, quantity = @quantity WHERE idProcessor = @id;";
+                    command.CommandText = sqlCommand;
+                    for(int i = 0;i<namesProcessor.Count;i++)
+                    {
+                        idParam.Value = i + 1;
+                        priceParam.Value = dictionaryProcessor[namesProcessor[i]].Price;
+                        speedParam.Value = dictionaryProcessor[namesProcessor[i]].Speed;
+                        quantityParam.Value = dictionaryProcessor[namesProcessor[i]].Quantity;
+                        command.ExecuteNonQuery();
+                    }
+                }
+                sqlCommand = "UPDATE StatsPlayer SET balancePlayer = @price, speedClick = @speedClick, speedVideoCard = @speed, speedProcessor = @quantity WHERE idPlayer = 1;";
+                command.CommandText = sqlCommand;
+                priceParam.Value = myBalance.BalansePlayer;
+                speedClickParam.Value = myBalance.SpeedClick;
+                speedParam.Value = myBalance.SpeedVideoCard;
+                quantityParam.Value = myBalance.SpeedProcessor;
+                command.ExecuteNonQuery();
+            }
             Close();
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -604,6 +677,7 @@ namespace SergxloveCoin
                 }
                 else
                 {
+                    isChangedDataMouses = true;
                     newmouse.Quantity += 1;
                     newmouse.Price += Convert.ToInt32(Convert.ToDouble(newmouse.Price) * 0.60);
                     newmouse.SpeedClick += Convert.ToInt32(Convert.ToDouble(newmouse.SpeedClick) * 0.25);
@@ -629,6 +703,7 @@ namespace SergxloveCoin
                 }
                 else
                 {
+                    isChangedDataVideoCard = true;
                     newvideocard.Quantity += 1;
                     newvideocard.Price += Convert.ToInt32(Convert.ToDouble(newvideocard.Price) * 0.60);
                     newvideocard.Speed += Convert.ToInt32(Convert.ToDouble(newvideocard.Speed) * 0.25);
@@ -654,6 +729,7 @@ namespace SergxloveCoin
                 }
                 else
                 {
+                    isChangedDataProcessor = true;
                     newprocessor.Quantity += 1;
                     newprocessor.Price += Convert.ToInt32(Convert.ToDouble(newprocessor.Price) * 0.60);
                     newprocessor.Speed += Convert.ToInt32(Convert.ToDouble(newprocessor.Speed) * 0.25);
