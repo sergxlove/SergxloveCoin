@@ -362,6 +362,10 @@
             label223 = new Label();
             pictureBox36 = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            label224 = new Label();
+            label225 = new Label();
+            label226 = new Label();
+            label227 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -500,10 +504,10 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(12, 417);
+            pictureBox2.Image = Properties.Resources.SergxloveCoinButton;
+            pictureBox2.Location = new Point(12, 451);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(622, 384);
+            pictureBox2.Size = new Size(622, 350);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
@@ -1880,7 +1884,7 @@
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(612, 0);
+            tabPage2.Size = new Size(612, 617);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Видеокарты";
             // 
@@ -3095,7 +3099,7 @@
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(612, 0);
+            tabPage3.Size = new Size(612, 617);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Процессоры";
             // 
@@ -4307,6 +4311,50 @@
             // 
             timer1.Tick += timer1_Tick;
             // 
+            // label224
+            // 
+            label224.AutoSize = true;
+            label224.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label224.ForeColor = Color.White;
+            label224.Location = new Point(12, 420);
+            label224.Name = "label224";
+            label224.Size = new Size(92, 28);
+            label224.TabIndex = 19;
+            label224.Text = "Энергия:";
+            // 
+            // label225
+            // 
+            label225.AutoSize = true;
+            label225.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label225.ForeColor = Color.White;
+            label225.Location = new Point(217, 420);
+            label225.Name = "label225";
+            label225.Size = new Size(56, 28);
+            label225.TabIndex = 20;
+            label225.Text = "1000";
+            // 
+            // label226
+            // 
+            label226.AutoSize = true;
+            label226.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label226.ForeColor = Color.White;
+            label226.Location = new Point(135, 420);
+            label226.Name = "label226";
+            label226.Size = new Size(56, 28);
+            label226.TabIndex = 21;
+            label226.Text = "1000";
+            // 
+            // label227
+            // 
+            label227.AutoSize = true;
+            label227.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label227.ForeColor = Color.White;
+            label227.Location = new Point(197, 420);
+            label227.Name = "label227";
+            label227.Size = new Size(20, 28);
+            label227.TabIndex = 22;
+            label227.Text = "/";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -4314,6 +4362,10 @@
             BackColor = Color.FromArgb(69, 69, 69);
             ClientSize = new Size(646, 798);
             ControlBox = false;
+            Controls.Add(label227);
+            Controls.Add(label226);
+            Controls.Add(label225);
+            Controls.Add(label224);
             Controls.Add(tabControl1);
             Controls.Add(label10);
             Controls.Add(label9);
@@ -4782,5 +4834,9 @@
         private Label label223;
         private PictureBox pictureBox36;
         private System.Windows.Forms.Timer timer1;
+        private Label label224;
+        private Label label225;
+        private Label label226;
+        private Label label227;
     }
 }

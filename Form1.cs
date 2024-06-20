@@ -51,7 +51,7 @@ namespace SergxloveCoin
             universalprocessor = new("Универсальный процессор");
             classicalprocessor = new("Классический процессор");
             professionalprocessor = new("Профкссиональный процессор");
-            premiumprocessor = new("Премиум процессор"  );
+            premiumprocessor = new("Премиум процессор");
             eliteprocessor = new("Элитный прцессор");
             legendaryprocessor = new("Легендарный процессор");
 
@@ -113,7 +113,10 @@ namespace SergxloveCoin
             isChangedDataMouses = false;
             isChangedDataVideoCard = false;
             isChangedDataProcessor = false;
-            threadUpBalanceInSecond = new Thread(new ThreadStart(AutoUpBalance));
+            threadUpBalanceInSecond = new Thread(AutoUpBalance);
+            threadUpEnergyInSeconds = new Thread(AutoUpEnergy);
+            isThreadingActive = true;
+            tabControl1.BringToFront();
         }
         private SergxloveCoin.resourse.StatsPlayer myBalance;
 
@@ -170,9 +173,13 @@ namespace SergxloveCoin
         private bool showAnimation = false;
 
         private Thread threadUpBalanceInSecond;
+        private Thread threadUpEnergyInSeconds;
+        private bool isThreadingActive;
 
         private void button1_Click(object sender, EventArgs e)
         {
+            myBalance.LastVisitDate = DateTime.Now;
+            isThreadingActive = false;
             using (SqliteConnection connection = new SqliteConnection(sqlConnection))
             {
                 connection.Open();
@@ -183,21 +190,30 @@ namespace SergxloveCoin
                 SqliteParameter speedParam = new SqliteParameter();
                 SqliteParameter speedClickParam = new SqliteParameter();
                 SqliteParameter quantityParam = new SqliteParameter();
+                SqliteParameter currentEnergyParam = new SqliteParameter();
+                SqliteParameter maxEnergyParam = new SqliteParameter();
+                SqliteParameter lastVisitDateParam = new SqliteParameter();
                 idParam.ParameterName = "@id";
                 priceParam.ParameterName = "@price";
                 speedParam.ParameterName = "@speed";
                 speedClickParam.ParameterName = "@speedClick";
                 quantityParam.ParameterName = "@quantity";
+                currentEnergyParam.ParameterName = "@currentEnergy";
+                maxEnergyParam.ParameterName = "@maxEnergy";
+                lastVisitDateParam.ParameterName = "@lastVisitDate";
                 command.Parameters.Add(idParam);
                 command.Parameters.Add(priceParam);
                 command.Parameters.Add(speedParam);
                 command.Parameters.Add(speedClickParam);
                 command.Parameters.Add(quantityParam);
+                command.Parameters.Add(currentEnergyParam);
+                command.Parameters.Add(maxEnergyParam);
+                command.Parameters.Add(lastVisitDateParam);
                 if (isChangedDataMouses)
                 {
                     sqlCommand = "UPDATE Mouses SET price = @price, speed = @speed, quantity = @quantity WHERE idMouse = @id;";
                     command.CommandText = sqlCommand;
-                    for(int i = 0; i < namesMouse.Count; i++)
+                    for (int i = 0; i < namesMouse.Count; i++)
                     {
                         idParam.Value = i + 1;
                         priceParam.Value = dictionaryMouse[namesMouse[i]].Price;
@@ -206,7 +222,7 @@ namespace SergxloveCoin
                         command.ExecuteNonQuery();
                     }
                 }
-                if(isChangedDataVideoCard)
+                if (isChangedDataVideoCard)
                 {
                     sqlCommand = "UPDATE Videocards SET price = @price, speed = @speed, quantity = @quantity WHERE idVideocard = @id;";
                     command.CommandText = sqlCommand;
@@ -219,11 +235,11 @@ namespace SergxloveCoin
                         command.ExecuteNonQuery();
                     }
                 }
-                if(isChangedDataProcessor)
+                if (isChangedDataProcessor)
                 {
                     sqlCommand = "UPDATE Processors SET price = @price, speed = @speed, quantity = @quantity WHERE idProcessor = @id;";
                     command.CommandText = sqlCommand;
-                    for(int i = 0;i<namesProcessor.Count;i++)
+                    for (int i = 0; i < namesProcessor.Count; i++)
                     {
                         idParam.Value = i + 1;
                         priceParam.Value = dictionaryProcessor[namesProcessor[i]].Price;
@@ -232,12 +248,15 @@ namespace SergxloveCoin
                         command.ExecuteNonQuery();
                     }
                 }
-                sqlCommand = "UPDATE StatsPlayer SET balancePlayer = @price, speedClick = @speedClick, speedVideoCard = @speed, speedProcessor = @quantity WHERE idPlayer = 1;";
+                sqlCommand = "UPDATE StatsPlayer SET balancePlayer = @price, speedClick = @speedClick, speedVideoCard = @speed, speedProcessor = @quantity , currentEnergy = @currentEnergy, maxEnergy = @maxEnergy, lastVisitDate = @lastVisitDate WHERE idPlayer = 1;";
                 command.CommandText = sqlCommand;
                 priceParam.Value = myBalance.BalansePlayer;
                 speedClickParam.Value = myBalance.SpeedClick;
                 speedParam.Value = myBalance.SpeedVideoCard;
                 quantityParam.Value = myBalance.SpeedProcessor;
+                currentEnergyParam.Value = myBalance.CurrentEnergy;
+                maxEnergyParam.Value = myBalance.MaxEnergy;
+                lastVisitDateParam.Value = myBalance.LastVisitDate;
                 command.ExecuteNonQuery();
             }
             Close();
@@ -247,7 +266,8 @@ namespace SergxloveCoin
         {
             myBalance.upBalanse(myBalance.SpeedClick);
             label2.Text = myBalance.BalansePlayer.ToString();
-
+            myBalance.CurrentEnergy -= 3;
+            label226.Text = myBalance.CurrentEnergy.ToString();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -409,7 +429,7 @@ namespace SergxloveCoin
                         if (reader.HasRows)
                         {
                             reader.Read();
-                            myBalance.changeData(reader.GetInt32(2), reader.GetInt64(1), reader.GetInt32(3), reader.GetInt32(4));
+                            myBalance.changeData(reader.GetInt32(2), reader.GetInt64(1), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetInt32(6), reader.GetDateTime(7));
                         }
                     }
                 }
@@ -449,11 +469,11 @@ namespace SergxloveCoin
                 eliteprocessor.ChangeData(30000000, 100, 0);
                 legendaryprocessor.ChangeData(50000000, 130, 0);
 
-                myBalance.changeData(1, 0, 0, 0);
+                myBalance.changeData(1, 0, 0, 0, 1000, 1000, DateTime.Now);
                 using (var connection = new SqliteConnection(sqlConnection))
                 {
                     connection.Open();
-                    string sqlCommand = "CREATE TABLE StatsPlayer( idPlayer INT PRIMARY KEY NOT NULL, balancePlayer BIGINT NOT NULL, speedClick INT NOT NULL, speedVideoCard INT NOT NULL, speedProcessor INT NOT NULL);";
+                    string sqlCommand = "CREATE TABLE StatsPlayer( idPlayer INT PRIMARY KEY NOT NULL, balancePlayer BIGINT NOT NULL, speedClick INT NOT NULL, speedVideoCard INT NOT NULL, speedProcessor INT NOT NULL, currentEnergy INT NOT NULL, maxEnergy INT NOT NULL, lastVisitDate DATETIME NOT NULL);";
                     SqliteCommand command = connection.CreateCommand();
                     command.Connection = connection;
                     command.CommandText = sqlCommand;
@@ -479,12 +499,12 @@ namespace SergxloveCoin
                     sqlCommand = "CREATE TABLE Processors(idProcessor INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
-                    sqlCommand = $@"INSERT INTO StatsPlayer(idPlayer, balancePlayer, speedClick, speedVideoCard, speedProcessor) VALUES(1, 0, 1, 0, 0);";
+                    sqlCommand = $@"INSERT INTO StatsPlayer(idPlayer, balancePlayer, speedClick, speedVideoCard, speedProcessor, currentEnergy, maxEnergy, lastVisitDate) VALUES(1, 0, 1, 0, 0, 1000, 1000, '2024-01-01 00:00:00');";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
                     sqlCommand = $@"INSERT INTO Mouses(idMouse, price, speed, quantity) VALUES (@id, @price, @speed, @quantity);";
                     command.CommandText = sqlCommand;
-                    for(int i = 0;i<namesMouse.Count;i++)
+                    for (int i = 0; i < namesMouse.Count; i++)
                     {
                         idParam.Value = i + 1;
                         priceParam.Value = dictionaryMouse[namesMouse[i]].Price;
@@ -494,7 +514,7 @@ namespace SergxloveCoin
                     }
                     sqlCommand = $@"INSERT INTO Videocards(idVideocard, price, speed, quantity) VALUES (@id, @price, @speed, @quantity);";
                     command.CommandText = sqlCommand;
-                    for(int i = 0;i<namesVideoCard.Count;i++)
+                    for (int i = 0; i < namesVideoCard.Count; i++)
                     {
                         idParam.Value = i + 1;
                         priceParam.Value = dictionaryVideoCard[namesVideoCard[i]].Price;
@@ -504,7 +524,7 @@ namespace SergxloveCoin
                     }
                     sqlCommand = $@"INSERT INTO Processors(idProcessor, price, speed, quantity) VALUES (@id, @price, @speed, @quantity);";
                     command.CommandText = sqlCommand;
-                    for(int i = 0; i< namesProcessor.Count; i++)
+                    for (int i = 0; i < namesProcessor.Count; i++)
                     {
                         idParam.Value = i + 1;
                         priceParam.Value = dictionaryProcessor[namesProcessor[i]].Price;
@@ -669,6 +689,8 @@ namespace SergxloveCoin
             label154.DataBindings.Add(new Binding(nameof(Text), legendaryprocessor, nameof(legendaryprocessor.Speed), true, DataSourceUpdateMode.OnPropertyChanged));
             label153.DataBindings.Add(new Binding(nameof(Text), legendaryprocessor, nameof(legendaryprocessor.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
 
+            threadUpBalanceInSecond.Start();
+            threadUpEnergyInSeconds.Start();
         }
         private void buyComponentMouse(object sender, EventArgs e)
         {
@@ -750,7 +772,24 @@ namespace SergxloveCoin
         }
         private void AutoUpBalance()
         {
-            myBalance.upBalanse(myBalance.SpeedVideoCard + myBalance.SpeedProcessor);
+            while (isThreadingActive)
+            {
+                myBalance.upBalanse(myBalance.SpeedVideoCard + myBalance.SpeedProcessor);
+                label2.Text = myBalance.BalansePlayer.ToString();
+                Thread.Sleep(1000);
+            }
+        }
+        private void AutoUpEnergy()
+        {
+            while (isThreadingActive)
+            {
+                if(myBalance.CurrentEnergy<myBalance.MaxEnergy)
+                {
+                    myBalance.CurrentEnergy += 1;
+                    label226.Text = myBalance.CurrentEnergy.ToString();
+                }
+                Thread.Sleep(3000);
+            }
         }
     }
 }
