@@ -1884,7 +1884,7 @@
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(612, 617);
+            tabPage2.Size = new Size(612, 0);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Видеокарты";
             // 
@@ -3099,7 +3099,7 @@
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(612, 617);
+            tabPage3.Size = new Size(612, 0);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Процессоры";
             // 

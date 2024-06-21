@@ -167,6 +167,7 @@ namespace SergxloveCoin
         private string sqlConnection;
         bool isCreateDatabase;
 
+
         private int frameCount = 0;
         private int sizeY = 0;
         private int coordPointY = 0;
@@ -422,7 +423,7 @@ namespace SergxloveCoin
                             }
                         }
                     }
-                    sqlCommand = "SELECT * FROM StatsPlayer;";
+                    sqlCommand = "SELECT * FROM StatsPlayer WHERE idPlayer = 1;";
                     command.CommandText = sqlCommand;
                     using (SqliteDataReader reader = command.ExecuteReader())
                     {
@@ -430,6 +431,17 @@ namespace SergxloveCoin
                         {
                             reader.Read();
                             myBalance.changeData(reader.GetInt32(2), reader.GetInt64(1), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetInt32(6), reader.GetDateTime(7));
+                            TimeSpan diffTime = DateTime.Now - reader.GetDateTime(7);
+                            int needTimesForFullEnergy = (myBalance.MaxEnergy - myBalance.CurrentEnergy) * 3;
+                            int actualTimesForFullEnergy = Convert.ToInt32(diffTime.TotalHours * 3600.0);
+                            if(actualTimesForFullEnergy >= needTimesForFullEnergy)
+                            {
+                                myBalance.CurrentEnergy = myBalance.MaxEnergy;
+                            }
+                            else
+                            {
+                                myBalance.CurrentEnergy += actualTimesForFullEnergy / 3;
+                            }
                         }
                     }
                 }
@@ -537,6 +549,8 @@ namespace SergxloveCoin
             label2.Text = myBalance.BalansePlayer.ToString();
             label5.Text = myBalance.SpeedClick.ToString();
             label6.Text = myBalance.SpeedAutoString;
+            label226.Text = myBalance.CurrentEnergy.ToString();
+            label225.Text = myBalance.MaxEnergy.ToString();
             //12,16,17,18
             label12.DataBindings.Add(new Binding(nameof(Text), commonmouse, nameof(commonmouse.Name), true, DataSourceUpdateMode.OnPropertyChanged));
             label16.DataBindings.Add(new Binding(nameof(Text), commonmouse, nameof(commonmouse.Price), true, DataSourceUpdateMode.OnPropertyChanged));
@@ -587,7 +601,6 @@ namespace SergxloveCoin
             label77.DataBindings.Add(new Binding(nameof(Text), legendarymouse, nameof(legendarymouse.Price), true, DataSourceUpdateMode.OnPropertyChanged));
             label76.DataBindings.Add(new Binding(nameof(Text), legendarymouse, nameof(legendarymouse.SpeedClick), true, DataSourceUpdateMode.OnPropertyChanged));
             label75.DataBindings.Add(new Binding(nameof(Text), legendarymouse, nameof(legendarymouse.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
-
             //152, 148, 147, 146
             label152.DataBindings.Add(new Binding(nameof(Text), commonvideocard, nameof(commonvideocard.Name), true, DataSourceUpdateMode.OnPropertyChanged));
             label148.DataBindings.Add(new Binding(nameof(Text), commonvideocard, nameof(commonvideocard.Price), true, DataSourceUpdateMode.OnPropertyChanged));
