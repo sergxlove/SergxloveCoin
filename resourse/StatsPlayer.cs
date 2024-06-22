@@ -1,6 +1,9 @@
-﻿namespace SergxloveCoin.resourse
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace SergxloveCoin.resourse
 {
-    internal sealed class StatsPlayer
+    internal sealed class StatsPlayer : INotifyPropertyChanged
     {
         public StatsPlayer()
         {
@@ -15,7 +18,11 @@
         public long BalansePlayer
         {
             get { return _balanceCoin; }
-            set { _balanceCoin = value; }
+            set 
+            {
+                _balanceCoin = value;
+                OnPropertyChanged();
+            }
         }
         public int SpeedClick
         {
@@ -43,12 +50,20 @@
         public int CurrentEnergy
         {
             get { return _currentEnergy; }
-            set { _currentEnergy = value; }
+            set 
+            {
+                _currentEnergy = value;
+                OnPropertyChanged();
+            }
         }
         public int MaxEnergy
         {
             get { return _maxEnergy; }
-            set { _maxEnergy = value; }
+            set 
+            {
+                _maxEnergy = value;
+                OnPropertyChanged();
+            }
         }
         public DateTime LastVisitDate
         {
@@ -58,10 +73,11 @@
         public void upBalanse(string value)
         {
             _balanceCoin += Convert.ToInt64(value);
+            OnPropertyChanged();
         }
         public void upBalanse(int value)
         {
-            _balanceCoin += value;
+            BalansePlayer += value;
         }
         public void downBalanse(string value)
         {
@@ -81,6 +97,10 @@
             _maxEnergy = maxEnergy;
             _lastVisitDate = lastVisitDate;
         }
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
         private int _speedClick;
         private long _balanceCoin;
         private int _speedVideoCard;
@@ -88,5 +108,6 @@
         private int _currentEnergy;
         private int _maxEnergy;
         private DateTime _lastVisitDate;
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

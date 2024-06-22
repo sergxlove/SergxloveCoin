@@ -110,6 +110,8 @@ namespace SergxloveCoin
                 "buyclassicalprocessor", "buyprofessionalprocessor",  "buypremiumprocessor", "buyeliteprocessor", "buylegendaryprocessor"
             };
             sqlConnection = "Data source=userdata.db";
+            panels = new List<Panel> { panel4 };
+            selectedPanel = 0;
             isChangedDataMouses = false;
             isChangedDataVideoCard = false;
             isChangedDataProcessor = false;
@@ -173,9 +175,13 @@ namespace SergxloveCoin
         private int coordPointY = 0;
         private bool showAnimation = false;
 
+        private bool showAnimationPanel = false;
+
         private Thread threadUpBalanceInSecond;
         private Thread threadUpEnergyInSeconds;
         private bool isThreadingActive;
+        private List<Panel> panels;
+        private int selectedPanel;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -279,7 +285,12 @@ namespace SergxloveCoin
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("levels");
+            timer2.Interval = 7;
+            frameCount = 0;
+            coordPointY = 805;
+            sizeY = 0;
+            showAnimationPanel = true;
+            timer2.Start();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -372,6 +383,7 @@ namespace SergxloveCoin
         {
             button3_Click(sender, e);
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             if (isCreateDatabase)
@@ -434,7 +446,7 @@ namespace SergxloveCoin
                             TimeSpan diffTime = DateTime.Now - reader.GetDateTime(7);
                             int needTimesForFullEnergy = (myBalance.MaxEnergy - myBalance.CurrentEnergy) * 3;
                             int actualTimesForFullEnergy = Convert.ToInt32(diffTime.TotalHours * 3600.0);
-                            if(actualTimesForFullEnergy >= needTimesForFullEnergy)
+                            if (actualTimesForFullEnergy >= needTimesForFullEnergy)
                             {
                                 myBalance.CurrentEnergy = myBalance.MaxEnergy;
                             }
@@ -551,6 +563,9 @@ namespace SergxloveCoin
             label6.Text = myBalance.SpeedAutoString;
             label226.Text = myBalance.CurrentEnergy.ToString();
             label225.Text = myBalance.MaxEnergy.ToString();
+            label2.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.BalansePlayer), true, DataSourceUpdateMode.OnPropertyChanged));
+            label226.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.CurrentEnergy), true, DataSourceUpdateMode.OnPropertyChanged));
+            label225.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.MaxEnergy), true, DataSourceUpdateMode.OnPropertyChanged));
             //12,16,17,18
             label12.DataBindings.Add(new Binding(nameof(Text), commonmouse, nameof(commonmouse.Name), true, DataSourceUpdateMode.OnPropertyChanged));
             label16.DataBindings.Add(new Binding(nameof(Text), commonmouse, nameof(commonmouse.Price), true, DataSourceUpdateMode.OnPropertyChanged));
@@ -788,7 +803,6 @@ namespace SergxloveCoin
             while (isThreadingActive)
             {
                 myBalance.upBalanse(myBalance.SpeedVideoCard + myBalance.SpeedProcessor);
-                label2.Text = myBalance.BalansePlayer.ToString();
                 Thread.Sleep(1000);
             }
         }
@@ -796,12 +810,57 @@ namespace SergxloveCoin
         {
             while (isThreadingActive)
             {
-                if(myBalance.CurrentEnergy<myBalance.MaxEnergy)
+                if (myBalance.CurrentEnergy < myBalance.MaxEnergy)
                 {
                     myBalance.CurrentEnergy += 1;
-                    label226.Text = myBalance.CurrentEnergy.ToString();
                 }
                 Thread.Sleep(3000);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            label5.Text = myBalance.SpeedClick.ToString();
+            label6.Text = myBalance.SpeedAutoString;
+            timer2.Interval = 7;
+            frameCount = 0;
+            coordPointY = 155;
+            sizeY = 650;
+            showAnimationPanel = false;
+            timer2.Start();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (showAnimationPanel)
+            {
+                if (frameCount <= 5)
+                {
+                    panels[selectedPanel].Location = new Point(12, coordPointY);
+                    panels[selectedPanel].Size = new Size(620, sizeY);
+                    coordPointY -= 130;
+                    sizeY += 130;
+                    frameCount++;
+                }
+                else
+                {
+                    timer2.Stop();
+                }
+            }
+            else
+            {
+                if (frameCount <= 5)
+                {
+                    panels[selectedPanel].Location = new Point(12, coordPointY);
+                    panels[selectedPanel].Size = new Size(620, sizeY);
+                    coordPointY += 130;
+                    sizeY -= 130;
+                    frameCount++;
+                }
+                else
+                {
+                    timer2.Stop();
+                }
             }
         }
     }
