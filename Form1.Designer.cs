@@ -366,6 +366,10 @@
             label225 = new Label();
             label226 = new Label();
             label227 = new Label();
+            panel4 = new Panel();
+            button4 = new Button();
+            label228 = new Label();
+            timer2 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -439,6 +443,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox35).BeginInit();
             groupBox30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox36).BeginInit();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -4355,6 +4360,44 @@
             label227.TabIndex = 22;
             label227.Text = "/";
             // 
+            // panel4
+            // 
+            panel4.AutoScroll = true;
+            panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Controls.Add(button4);
+            panel4.Controls.Add(label228);
+            panel4.Location = new Point(12, 155);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(620, 650);
+            panel4.TabIndex = 23;
+            // 
+            // button4
+            // 
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = Color.Red;
+            button4.Location = new Point(456, 13);
+            button4.Name = "button4";
+            button4.Size = new Size(154, 53);
+            button4.TabIndex = 25;
+            button4.Text = "Закрыть";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // label228
+            // 
+            label228.AutoSize = true;
+            label228.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label228.ForeColor = Color.White;
+            label228.Location = new Point(18, 16);
+            label228.Name = "label228";
+            label228.Size = new Size(187, 50);
+            label228.TabIndex = 24;
+            label228.Text = "Уровни : ";
+            // 
+            // timer2
+            // 
+            timer2.Tick += timer2_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -4362,6 +4405,7 @@
             BackColor = Color.FromArgb(69, 69, 69);
             ClientSize = new Size(646, 798);
             ControlBox = false;
+            Controls.Add(panel4);
             Controls.Add(label227);
             Controls.Add(label226);
             Controls.Add(label225);
@@ -4496,6 +4540,8 @@
             groupBox30.ResumeLayout(false);
             groupBox30.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox36).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -4838,5 +4884,9 @@
         private Label label225;
         private Label label226;
         private Label label227;
+        private Panel panel4;
+        private Label label228;
+        private System.Windows.Forms.Timer timer2;
+        private Button button4;
     }
 }
