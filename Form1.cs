@@ -110,7 +110,7 @@ namespace SergxloveCoin
                 "buyclassicalprocessor", "buyprofessionalprocessor",  "buypremiumprocessor", "buyeliteprocessor", "buylegendaryprocessor"
             };
             sqlConnection = "Data source=userdata.db";
-            panels = new List<Panel> { panel4 };
+            panels = new List<Panel> { panel4, panel5 , panel6};
             selectedPanel = 0;
             isChangedDataMouses = false;
             isChangedDataVideoCard = false;
@@ -118,6 +118,8 @@ namespace SergxloveCoin
             threadUpBalanceInSecond = new Thread(AutoUpBalance);
             threadUpEnergyInSeconds = new Thread(AutoUpEnergy);
             isThreadingActive = true;
+            showAnimation = false;
+            showAnimationPanel = false;
             tabControl1.BringToFront();
         }
         private SergxloveCoin.resourse.StatsPlayer myBalance;
@@ -169,220 +171,18 @@ namespace SergxloveCoin
         private string sqlConnection;
         bool isCreateDatabase;
 
-
         private int frameCount = 0;
         private int sizeY = 0;
         private int coordPointY = 0;
-        private bool showAnimation = false;
+        private bool showAnimation;
+        private List<Panel> panels;
+        private int selectedPanel;
 
-        private bool showAnimationPanel = false;
+        private bool showAnimationPanel;
 
         private Thread threadUpBalanceInSecond;
         private Thread threadUpEnergyInSeconds;
         private bool isThreadingActive;
-        private List<Panel> panels;
-        private int selectedPanel;
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            myBalance.LastVisitDate = DateTime.Now;
-            isThreadingActive = false;
-            using (SqliteConnection connection = new SqliteConnection(sqlConnection))
-            {
-                connection.Open();
-                string sqlCommand;
-                SqliteCommand command = connection.CreateCommand();
-                SqliteParameter idParam = new SqliteParameter();
-                SqliteParameter priceParam = new SqliteParameter();
-                SqliteParameter speedParam = new SqliteParameter();
-                SqliteParameter speedClickParam = new SqliteParameter();
-                SqliteParameter quantityParam = new SqliteParameter();
-                SqliteParameter currentEnergyParam = new SqliteParameter();
-                SqliteParameter maxEnergyParam = new SqliteParameter();
-                SqliteParameter lastVisitDateParam = new SqliteParameter();
-                idParam.ParameterName = "@id";
-                priceParam.ParameterName = "@price";
-                speedParam.ParameterName = "@speed";
-                speedClickParam.ParameterName = "@speedClick";
-                quantityParam.ParameterName = "@quantity";
-                currentEnergyParam.ParameterName = "@currentEnergy";
-                maxEnergyParam.ParameterName = "@maxEnergy";
-                lastVisitDateParam.ParameterName = "@lastVisitDate";
-                command.Parameters.Add(idParam);
-                command.Parameters.Add(priceParam);
-                command.Parameters.Add(speedParam);
-                command.Parameters.Add(speedClickParam);
-                command.Parameters.Add(quantityParam);
-                command.Parameters.Add(currentEnergyParam);
-                command.Parameters.Add(maxEnergyParam);
-                command.Parameters.Add(lastVisitDateParam);
-                if (isChangedDataMouses)
-                {
-                    sqlCommand = "UPDATE Mouses SET price = @price, speed = @speed, quantity = @quantity WHERE idMouse = @id;";
-                    command.CommandText = sqlCommand;
-                    for (int i = 0; i < namesMouse.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        priceParam.Value = dictionaryMouse[namesMouse[i]].Price;
-                        speedParam.Value = dictionaryMouse[namesMouse[i]].SpeedClick;
-                        quantityParam.Value = dictionaryMouse[namesMouse[i]].Quantity;
-                        command.ExecuteNonQuery();
-                    }
-                }
-                if (isChangedDataVideoCard)
-                {
-                    sqlCommand = "UPDATE Videocards SET price = @price, speed = @speed, quantity = @quantity WHERE idVideocard = @id;";
-                    command.CommandText = sqlCommand;
-                    for (int i = 0; i < namesVideoCard.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        priceParam.Value = dictionaryVideoCard[namesVideoCard[i]].Price;
-                        speedParam.Value = dictionaryVideoCard[namesVideoCard[i]].Speed;
-                        quantityParam.Value = dictionaryVideoCard[namesVideoCard[i]].Quantity;
-                        command.ExecuteNonQuery();
-                    }
-                }
-                if (isChangedDataProcessor)
-                {
-                    sqlCommand = "UPDATE Processors SET price = @price, speed = @speed, quantity = @quantity WHERE idProcessor = @id;";
-                    command.CommandText = sqlCommand;
-                    for (int i = 0; i < namesProcessor.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        priceParam.Value = dictionaryProcessor[namesProcessor[i]].Price;
-                        speedParam.Value = dictionaryProcessor[namesProcessor[i]].Speed;
-                        quantityParam.Value = dictionaryProcessor[namesProcessor[i]].Quantity;
-                        command.ExecuteNonQuery();
-                    }
-                }
-                sqlCommand = "UPDATE StatsPlayer SET balancePlayer = @price, speedClick = @speedClick, speedVideoCard = @speed, speedProcessor = @quantity , currentEnergy = @currentEnergy, maxEnergy = @maxEnergy, lastVisitDate = @lastVisitDate WHERE idPlayer = 1;";
-                command.CommandText = sqlCommand;
-                priceParam.Value = myBalance.BalansePlayer;
-                speedClickParam.Value = myBalance.SpeedClick;
-                speedParam.Value = myBalance.SpeedVideoCard;
-                quantityParam.Value = myBalance.SpeedProcessor;
-                currentEnergyParam.Value = myBalance.CurrentEnergy;
-                maxEnergyParam.Value = myBalance.MaxEnergy;
-                lastVisitDateParam.Value = myBalance.LastVisitDate;
-                command.ExecuteNonQuery();
-            }
-            Close();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            myBalance.upBalanse(myBalance.SpeedClick);
-            label2.Text = myBalance.BalansePlayer.ToString();
-            myBalance.CurrentEnergy -= 3;
-            label226.Text = myBalance.CurrentEnergy.ToString();
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Profile");
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            timer2.Interval = 7;
-            frameCount = 0;
-            coordPointY = 805;
-            sizeY = 0;
-            showAnimationPanel = true;
-            timer2.Start();
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("list");
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            timer1.Interval = 7;
-            frameCount = 0;
-            coordPointY = 805;
-            sizeY = 0;
-            showAnimation = true;
-            timer1.Start();
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-            pictureBox4_Click(sender, e);
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-            pictureBox5_Click(sender, e);
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-            pictureBox6_Click(sender, e);
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-            pictureBox3_Click(sender, e);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            label5.Text = myBalance.SpeedClick.ToString();
-            label6.Text = myBalance.SpeedAutoString;
-            timer1.Interval = 7;
-            frameCount = 0;
-            coordPointY = 155;
-            sizeY = 650;
-            showAnimation = false;
-            timer1.Start();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (showAnimation)
-            {
-                if (frameCount <= 5)
-                {
-                    tabControl1.Location = new Point(12, coordPointY);
-                    tabControl1.Size = new Size(620, sizeY);
-                    coordPointY -= 130;
-                    sizeY += 130;
-                    frameCount++;
-                }
-                else
-                {
-                    timer1.Stop();
-                }
-            }
-            else
-            {
-                if (frameCount <= 5)
-                {
-                    tabControl1.Location = new Point(12, coordPointY);
-                    tabControl1.Size = new Size(620, sizeY);
-                    coordPointY += 130;
-                    sizeY -= 130;
-                    frameCount++;
-                }
-                else
-                {
-                    timer1.Stop();
-                }
-            }
-        }
-
-        private void button23_Click(object sender, EventArgs e)
-        {
-            button3_Click(sender, e);
-        }
-
-        private void button34_Click(object sender, EventArgs e)
-        {
-            button3_Click(sender, e);
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -720,6 +520,221 @@ namespace SergxloveCoin
             threadUpBalanceInSecond.Start();
             threadUpEnergyInSeconds.Start();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            myBalance.LastVisitDate = DateTime.Now;
+            isThreadingActive = false;
+            using (SqliteConnection connection = new SqliteConnection(sqlConnection))
+            {
+                connection.Open();
+                string sqlCommand;
+                SqliteCommand command = connection.CreateCommand();
+                SqliteParameter idParam = new SqliteParameter();
+                SqliteParameter priceParam = new SqliteParameter();
+                SqliteParameter speedParam = new SqliteParameter();
+                SqliteParameter speedClickParam = new SqliteParameter();
+                SqliteParameter quantityParam = new SqliteParameter();
+                SqliteParameter currentEnergyParam = new SqliteParameter();
+                SqliteParameter maxEnergyParam = new SqliteParameter();
+                SqliteParameter lastVisitDateParam = new SqliteParameter();
+                idParam.ParameterName = "@id";
+                priceParam.ParameterName = "@price";
+                speedParam.ParameterName = "@speed";
+                speedClickParam.ParameterName = "@speedClick";
+                quantityParam.ParameterName = "@quantity";
+                currentEnergyParam.ParameterName = "@currentEnergy";
+                maxEnergyParam.ParameterName = "@maxEnergy";
+                lastVisitDateParam.ParameterName = "@lastVisitDate";
+                command.Parameters.Add(idParam);
+                command.Parameters.Add(priceParam);
+                command.Parameters.Add(speedParam);
+                command.Parameters.Add(speedClickParam);
+                command.Parameters.Add(quantityParam);
+                command.Parameters.Add(currentEnergyParam);
+                command.Parameters.Add(maxEnergyParam);
+                command.Parameters.Add(lastVisitDateParam);
+                if (isChangedDataMouses)
+                {
+                    sqlCommand = "UPDATE Mouses SET price = @price, speed = @speed, quantity = @quantity WHERE idMouse = @id;";
+                    command.CommandText = sqlCommand;
+                    for (int i = 0; i < namesMouse.Count; i++)
+                    {
+                        idParam.Value = i + 1;
+                        priceParam.Value = dictionaryMouse[namesMouse[i]].Price;
+                        speedParam.Value = dictionaryMouse[namesMouse[i]].SpeedClick;
+                        quantityParam.Value = dictionaryMouse[namesMouse[i]].Quantity;
+                        command.ExecuteNonQuery();
+                    }
+                }
+                if (isChangedDataVideoCard)
+                {
+                    sqlCommand = "UPDATE Videocards SET price = @price, speed = @speed, quantity = @quantity WHERE idVideocard = @id;";
+                    command.CommandText = sqlCommand;
+                    for (int i = 0; i < namesVideoCard.Count; i++)
+                    {
+                        idParam.Value = i + 1;
+                        priceParam.Value = dictionaryVideoCard[namesVideoCard[i]].Price;
+                        speedParam.Value = dictionaryVideoCard[namesVideoCard[i]].Speed;
+                        quantityParam.Value = dictionaryVideoCard[namesVideoCard[i]].Quantity;
+                        command.ExecuteNonQuery();
+                    }
+                }
+                if (isChangedDataProcessor)
+                {
+                    sqlCommand = "UPDATE Processors SET price = @price, speed = @speed, quantity = @quantity WHERE idProcessor = @id;";
+                    command.CommandText = sqlCommand;
+                    for (int i = 0; i < namesProcessor.Count; i++)
+                    {
+                        idParam.Value = i + 1;
+                        priceParam.Value = dictionaryProcessor[namesProcessor[i]].Price;
+                        speedParam.Value = dictionaryProcessor[namesProcessor[i]].Speed;
+                        quantityParam.Value = dictionaryProcessor[namesProcessor[i]].Quantity;
+                        command.ExecuteNonQuery();
+                    }
+                }
+                sqlCommand = "UPDATE StatsPlayer SET balancePlayer = @price, speedClick = @speedClick, speedVideoCard = @speed, speedProcessor = @quantity , currentEnergy = @currentEnergy, maxEnergy = @maxEnergy, lastVisitDate = @lastVisitDate WHERE idPlayer = 1;";
+                command.CommandText = sqlCommand;
+                priceParam.Value = myBalance.BalansePlayer;
+                speedClickParam.Value = myBalance.SpeedClick;
+                speedParam.Value = myBalance.SpeedVideoCard;
+                quantityParam.Value = myBalance.SpeedProcessor;
+                currentEnergyParam.Value = myBalance.CurrentEnergy;
+                maxEnergyParam.Value = myBalance.MaxEnergy;
+                lastVisitDateParam.Value = myBalance.LastVisitDate;
+                command.ExecuteNonQuery();
+            }
+            Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            myBalance.upBalanse(myBalance.SpeedClick);
+            label2.Text = myBalance.BalansePlayer.ToString();
+            myBalance.CurrentEnergy -= 3;
+            label226.Text = myBalance.CurrentEnergy.ToString();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            timer2.Interval = 7;
+            selectedPanel = 2;
+            frameCount = 0;
+            coordPointY = 805;
+            sizeY = 0;
+            showAnimationPanel = true;
+            timer2.Start();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            timer2.Interval = 7;
+            selectedPanel = 0;
+            frameCount = 0;
+            coordPointY = 805;
+            sizeY = 0;
+            showAnimationPanel = true;
+            timer2.Start();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            timer2.Interval = 7;
+            selectedPanel = 1;
+            frameCount = 0;
+            coordPointY = 805;
+            sizeY = 0;
+            showAnimationPanel = true;
+            timer2.Start();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 7;
+            frameCount = 0;
+            coordPointY = 805;
+            sizeY = 0;
+            showAnimation = true;
+            timer1.Start();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            pictureBox4_Click(sender, e);
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            pictureBox5_Click(sender, e);
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            pictureBox6_Click(sender, e);
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            pictureBox3_Click(sender, e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            label5.Text = myBalance.SpeedClick.ToString();
+            label6.Text = myBalance.SpeedAutoString;
+            timer1.Interval = 7;
+            frameCount = 0;
+            coordPointY = 155;
+            sizeY = 650;
+            showAnimation = false;
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (showAnimation)
+            {
+                if (frameCount <= 5)
+                {
+                    tabControl1.Location = new Point(12, coordPointY);
+                    tabControl1.Size = new Size(620, sizeY);
+                    coordPointY -= 130;
+                    sizeY += 130;
+                    frameCount++;
+                }
+                else
+                {
+                    timer1.Stop();
+                }
+            }
+            else
+            {
+                if (frameCount <= 5)
+                {
+                    tabControl1.Location = new Point(12, coordPointY);
+                    tabControl1.Size = new Size(620, sizeY);
+                    coordPointY += 130;
+                    sizeY -= 130;
+                    frameCount++;
+                }
+                else
+                {
+                    timer1.Stop();
+                }
+            }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            button3_Click(sender, e);
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            button3_Click(sender, e);
+        }
+
+        
         private void buyComponentMouse(object sender, EventArgs e)
         {
             Button selectButton = (Button)sender;
@@ -823,6 +838,7 @@ namespace SergxloveCoin
             label5.Text = myBalance.SpeedClick.ToString();
             label6.Text = myBalance.SpeedAutoString;
             timer2.Interval = 7;
+            selectedPanel = 0;
             frameCount = 0;
             coordPointY = 155;
             sizeY = 650;
@@ -862,6 +878,32 @@ namespace SergxloveCoin
                     timer2.Stop();
                 }
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            label5.Text = myBalance.SpeedClick.ToString();
+            label6.Text = myBalance.SpeedAutoString;
+            timer2.Interval = 7;
+            selectedPanel = 1;
+            frameCount = 0;
+            coordPointY = 155;
+            sizeY = 650;
+            showAnimationPanel = false;
+            timer2.Start();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            label5.Text = myBalance.SpeedClick.ToString();
+            label6.Text = myBalance.SpeedAutoString;
+            timer2.Interval = 7;
+            selectedPanel = 2;
+            frameCount = 0;
+            coordPointY = 155;
+            sizeY = 650;
+            showAnimationPanel = false;
+            timer2.Start();
         }
     }
 }

@@ -370,6 +370,12 @@
             button4 = new Button();
             label228 = new Label();
             timer2 = new System.Windows.Forms.Timer(components);
+            panel5 = new Panel();
+            button5 = new Button();
+            label229 = new Label();
+            panel6 = new Panel();
+            label230 = new Label();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -444,6 +450,8 @@
             groupBox30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox36).BeginInit();
             panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -453,9 +461,9 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI Black", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.Red;
-            button1.Location = new Point(574, 12);
+            button1.Location = new Point(586, 12);
             button1.Name = "button1";
-            button1.Size = new Size(60, 60);
+            button1.Size = new Size(50, 53);
             button1.TabIndex = 0;
             button1.Text = "X";
             button1.UseVisualStyleBackColor = false;
@@ -468,9 +476,9 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Black", 11.2F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(508, 12);
+            button2.Location = new Point(530, 12);
             button2.Name = "button2";
-            button2.Size = new Size(60, 60);
+            button2.Size = new Size(50, 53);
             button2.TabIndex = 1;
             button2.Text = "...";
             button2.UseVisualStyleBackColor = false;
@@ -4368,7 +4376,7 @@
             panel4.Controls.Add(label228);
             panel4.Location = new Point(12, 155);
             panel4.Name = "panel4";
-            panel4.Size = new Size(620, 650);
+            panel4.Size = new Size(620, 0);
             panel4.TabIndex = 23;
             // 
             // button4
@@ -4398,6 +4406,74 @@
             // 
             timer2.Tick += timer2_Tick;
             // 
+            // panel5
+            // 
+            panel5.AutoScroll = true;
+            panel5.BorderStyle = BorderStyle.Fixed3D;
+            panel5.Controls.Add(button5);
+            panel5.Controls.Add(label229);
+            panel5.Location = new Point(12, 155);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(620, 0);
+            panel5.TabIndex = 24;
+            // 
+            // button5
+            // 
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.ForeColor = Color.Red;
+            button5.Location = new Point(456, 13);
+            button5.Name = "button5";
+            button5.Size = new Size(152, 51);
+            button5.TabIndex = 26;
+            button5.Text = "Закрыть";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // label229
+            // 
+            label229.AutoSize = true;
+            label229.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label229.ForeColor = Color.White;
+            label229.Location = new Point(10, 13);
+            label229.Name = "label229";
+            label229.Size = new Size(340, 62);
+            label229.TabIndex = 25;
+            label229.Text = "Достижения :";
+            // 
+            // panel6
+            // 
+            panel6.AutoScroll = true;
+            panel6.BorderStyle = BorderStyle.Fixed3D;
+            panel6.Controls.Add(button6);
+            panel6.Controls.Add(label230);
+            panel6.Location = new Point(12, 155);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(620, 650);
+            panel6.TabIndex = 25;
+            // 
+            // label230
+            // 
+            label230.AutoSize = true;
+            label230.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label230.ForeColor = Color.White;
+            label230.Location = new Point(10, 13);
+            label230.Name = "label230";
+            label230.Size = new Size(267, 62);
+            label230.TabIndex = 26;
+            label230.Text = "Профиль :";
+            // 
+            // button6
+            // 
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.ForeColor = Color.Red;
+            button6.Location = new Point(468, 17);
+            button6.Name = "button6";
+            button6.Size = new Size(142, 49);
+            button6.TabIndex = 27;
+            button6.Text = "Закрыть";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -4405,6 +4481,8 @@
             BackColor = Color.FromArgb(69, 69, 69);
             ClientSize = new Size(646, 798);
             ControlBox = false;
+            Controls.Add(panel6);
+            Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(label227);
             Controls.Add(label226);
@@ -4542,6 +4620,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox36).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -4888,5 +4970,11 @@
         private Label label228;
         private System.Windows.Forms.Timer timer2;
         private Button button4;
+        private Panel panel5;
+        private Label label229;
+        private Button button5;
+        private Panel panel6;
+        private Button button6;
+        private Label label230;
     }
 }
