@@ -12,6 +12,7 @@ namespace SergxloveCoin.resourse
             _speed = 0;
             _quantity = 0;
         }
+
         public VideoCard(string? name)
         {
             _name=name;
@@ -19,6 +20,7 @@ namespace SergxloveCoin.resourse
             _speed = 0;
             _quantity = 0;
         }
+
         public VideoCard(string? name, int price, int speed, int quantity)
         {
             _name = name;
@@ -26,6 +28,7 @@ namespace SergxloveCoin.resourse
             _speed = speed;
             _quantity = quantity;
         }
+
         public string Name
         {
             get
@@ -44,6 +47,7 @@ namespace SergxloveCoin.resourse
                 _name = value;
             }
         }
+
         public int Price
         {
             get => _price;
@@ -53,6 +57,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
+
         public int Speed
         {
             get => _speed;
@@ -62,6 +67,7 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
+
         public int Quantity
         {
             get => _quantity;
@@ -71,16 +77,19 @@ namespace SergxloveCoin.resourse
                 OnPropertyChanged();
             }
         }
+
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
+
         public void ChangeData(int price, int speed, int quantity)
         {
             _price = price;
             _speed = speed;
             _quantity = quantity;
         }
+
         private string? _name;
         private int _price;
         private int _speed;
