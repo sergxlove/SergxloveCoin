@@ -41,9 +41,9 @@
             label5 = new Label();
             label6 = new Label();
             pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
+            s2_pictureBox4 = new PictureBox();
+            s0_pictureBox5 = new PictureBox();
+            s1_pictureBox6 = new PictureBox();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
@@ -374,14 +374,22 @@
             button5 = new Button();
             label229 = new Label();
             panel6 = new Panel();
-            label230 = new Label();
             button6 = new Button();
+            label230 = new Label();
+            panel7 = new Panel();
+            button7 = new Button();
+            label235 = new Label();
+            label234 = new Label();
+            label233 = new Label();
+            label232 = new Label();
+            label231 = new Label();
+            timer3 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)s2_pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)s0_pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)s1_pictureBox6).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             panel1.SuspendLayout();
@@ -452,6 +460,7 @@
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -533,9 +542,9 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(12, 193);
             label3.Name = "label3";
-            label3.Size = new Size(98, 28);
+            label3.Size = new Size(173, 28);
             label3.TabIndex = 6;
-            label3.Text = "Вручную:";
+            label3.Text = "Прибыль за клик:";
             // 
             // label4
             // 
@@ -544,16 +553,16 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(287, 193);
             label4.Name = "label4";
-            label4.Size = new Size(156, 28);
+            label4.Size = new Size(194, 28);
             label4.TabIndex = 7;
-            label4.Text = "Автоматически:";
+            label4.Text = "Прибыль в секунду:";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(116, 193);
+            label5.Location = new Point(186, 194);
             label5.Name = "label5";
             label5.Size = new Size(23, 28);
             label5.TabIndex = 8;
@@ -564,7 +573,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(449, 193);
+            label6.Location = new Point(487, 193);
             label6.Name = "label6";
             label6.Size = new Size(23, 28);
             label6.TabIndex = 9;
@@ -581,38 +590,38 @@
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
             // 
-            // pictureBox4
+            // s2_pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.iconProfile;
-            pictureBox4.Location = new Point(12, 235);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(135, 135);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 11;
-            pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
+            s2_pictureBox4.Image = Properties.Resources.iconProfile;
+            s2_pictureBox4.Location = new Point(12, 235);
+            s2_pictureBox4.Name = "s2_pictureBox4";
+            s2_pictureBox4.Size = new Size(135, 135);
+            s2_pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            s2_pictureBox4.TabIndex = 11;
+            s2_pictureBox4.TabStop = false;
+            s2_pictureBox4.Click += openPanel;
             // 
-            // pictureBox5
+            // s0_pictureBox5
             // 
-            pictureBox5.Image = Properties.Resources.iconLevel1;
-            pictureBox5.Location = new Point(180, 235);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(135, 135);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 12;
-            pictureBox5.TabStop = false;
-            pictureBox5.Click += pictureBox5_Click;
+            s0_pictureBox5.Image = Properties.Resources.iconLevel1;
+            s0_pictureBox5.Location = new Point(180, 235);
+            s0_pictureBox5.Name = "s0_pictureBox5";
+            s0_pictureBox5.Size = new Size(135, 135);
+            s0_pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            s0_pictureBox5.TabIndex = 12;
+            s0_pictureBox5.TabStop = false;
+            s0_pictureBox5.Click += openPanel;
             // 
-            // pictureBox6
+            // s1_pictureBox6
             // 
-            pictureBox6.Image = Properties.Resources.iconList1;
-            pictureBox6.Location = new Point(339, 235);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(135, 135);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 13;
-            pictureBox6.TabStop = false;
-            pictureBox6.Click += pictureBox6_Click;
+            s1_pictureBox6.Image = Properties.Resources.iconList1;
+            s1_pictureBox6.Location = new Point(339, 235);
+            s1_pictureBox6.Name = "s1_pictureBox6";
+            s1_pictureBox6.Size = new Size(135, 135);
+            s1_pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            s1_pictureBox6.TabIndex = 13;
+            s1_pictureBox6.TabStop = false;
+            s1_pictureBox6.Click += openPanel;
             // 
             // label7
             // 
@@ -4396,7 +4405,7 @@
             label228.AutoSize = true;
             label228.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
             label228.ForeColor = Color.White;
-            label228.Location = new Point(18, 16);
+            label228.Location = new Point(10, 13);
             label228.Name = "label228";
             label228.Size = new Size(187, 50);
             label228.TabIndex = 24;
@@ -4423,7 +4432,7 @@
             button5.ForeColor = Color.Red;
             button5.Location = new Point(456, 13);
             button5.Name = "button5";
-            button5.Size = new Size(152, 51);
+            button5.Size = new Size(154, 53);
             button5.TabIndex = 26;
             button5.Text = "Закрыть";
             button5.UseVisualStyleBackColor = true;
@@ -4432,11 +4441,11 @@
             // label229
             // 
             label229.AutoSize = true;
-            label229.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label229.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
             label229.ForeColor = Color.White;
             label229.Location = new Point(10, 13);
             label229.Name = "label229";
-            label229.Size = new Size(340, 62);
+            label229.Size = new Size(269, 50);
             label229.TabIndex = 25;
             label229.Text = "Достижения :";
             // 
@@ -4448,31 +4457,116 @@
             panel6.Controls.Add(label230);
             panel6.Location = new Point(12, 155);
             panel6.Name = "panel6";
-            panel6.Size = new Size(620, 650);
+            panel6.Size = new Size(620, 0);
             panel6.TabIndex = 25;
-            // 
-            // label230
-            // 
-            label230.AutoSize = true;
-            label230.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label230.ForeColor = Color.White;
-            label230.Location = new Point(10, 13);
-            label230.Name = "label230";
-            label230.Size = new Size(267, 62);
-            label230.TabIndex = 26;
-            label230.Text = "Профиль :";
             // 
             // button6
             // 
             button6.FlatStyle = FlatStyle.Flat;
             button6.ForeColor = Color.Red;
-            button6.Location = new Point(468, 17);
+            button6.Location = new Point(456, 13);
             button6.Name = "button6";
-            button6.Size = new Size(142, 49);
+            button6.Size = new Size(154, 53);
             button6.TabIndex = 27;
             button6.Text = "Закрыть";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
+            // 
+            // label230
+            // 
+            label230.AutoSize = true;
+            label230.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label230.ForeColor = Color.White;
+            label230.Location = new Point(10, 13);
+            label230.Name = "label230";
+            label230.Size = new Size(211, 50);
+            label230.TabIndex = 26;
+            label230.Text = "Профиль :";
+            // 
+            // panel7
+            // 
+            panel7.BorderStyle = BorderStyle.Fixed3D;
+            panel7.Controls.Add(button7);
+            panel7.Controls.Add(label235);
+            panel7.Controls.Add(label234);
+            panel7.Controls.Add(label233);
+            panel7.Controls.Add(label232);
+            panel7.Controls.Add(label231);
+            panel7.Location = new Point(12, 12);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(0, 0);
+            panel7.TabIndex = 26;
+            // 
+            // button7
+            // 
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.ForeColor = Color.Red;
+            button7.Location = new Point(429, 89);
+            button7.Name = "button7";
+            button7.Size = new Size(130, 28);
+            button7.TabIndex = 5;
+            button7.Text = "Закрыть";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // label235
+            // 
+            label235.AutoSize = true;
+            label235.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label235.ForeColor = Color.White;
+            label235.Location = new Point(273, 91);
+            label235.Name = "label235";
+            label235.Size = new Size(19, 23);
+            label235.TabIndex = 4;
+            label235.Text = "0";
+            // 
+            // label234
+            // 
+            label234.AutoSize = true;
+            label234.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label234.ForeColor = Color.White;
+            label234.Location = new Point(273, 54);
+            label234.Name = "label234";
+            label234.Size = new Size(19, 23);
+            label234.TabIndex = 3;
+            label234.Text = "0";
+            // 
+            // label233
+            // 
+            label233.AutoSize = true;
+            label233.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label233.ForeColor = Color.White;
+            label233.Location = new Point(13, 91);
+            label233.Name = "label233";
+            label233.Size = new Size(194, 23);
+            label233.TabIndex = 2;
+            label233.Text = "Востановлено энергии:";
+            // 
+            // label232
+            // 
+            label232.AutoSize = true;
+            label232.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label232.ForeColor = Color.White;
+            label232.Location = new Point(13, 54);
+            label232.Name = "label232";
+            label232.Size = new Size(154, 23);
+            label232.TabIndex = 1;
+            label232.Text = "Накоплено монет:";
+            // 
+            // label231
+            // 
+            label231.AutoSize = true;
+            label231.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label231.ForeColor = Color.White;
+            label231.Location = new Point(13, 16);
+            label231.Name = "label231";
+            label231.Size = new Size(515, 28);
+            label231.TabIndex = 0;
+            label231.Text = "Добро пожаловать в SergxloveCoin, пока вас не было :";
+            // 
+            // timer3
+            // 
+            timer3.Tick += timer3_Tick;
             // 
             // Form1
             // 
@@ -4481,6 +4575,7 @@
             BackColor = Color.FromArgb(69, 69, 69);
             ClientSize = new Size(646, 798);
             ControlBox = false;
+            Controls.Add(panel7);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -4493,9 +4588,9 @@
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
-            Controls.Add(pictureBox6);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
+            Controls.Add(s1_pictureBox6);
+            Controls.Add(s0_pictureBox5);
+            Controls.Add(s2_pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -4515,9 +4610,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)s2_pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)s0_pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)s1_pictureBox6).EndInit();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -4624,6 +4719,8 @@
             panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -4641,9 +4738,9 @@
         private Label label5;
         private Label label6;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
+        private PictureBox s2_pictureBox4;
+        private PictureBox s0_pictureBox5;
+        private PictureBox s1_pictureBox6;
         private Label label7;
         private Label label8;
         private Label label9;
@@ -4976,5 +5073,13 @@
         private Panel panel6;
         private Button button6;
         private Label label230;
+        private Panel panel7;
+        private Label label231;
+        private Label label234;
+        private Label label233;
+        private Label label232;
+        private Button button7;
+        private Label label235;
+        private System.Windows.Forms.Timer timer3;
     }
 }
