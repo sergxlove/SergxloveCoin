@@ -55,6 +55,14 @@ namespace SergxloveCoin
             eliteprocessor = new("Ёлитный прцессор");
             legendaryprocessor = new("Ћегендарный процессор");
 
+            firstLevel = new();
+            secondLevel = new();
+            thirdLevel = new();
+            fourLevel = new();
+            fiveLevel = new();
+            sixLevel = new();
+            sevenLevel = new();
+
             dictionaryMouse = new Dictionary<string, Mouse>()
             {
                 ["buycommonmouse"] = commonmouse,
@@ -94,6 +102,16 @@ namespace SergxloveCoin
                 ["buyeliteprocessor"] = eliteprocessor,
                 ["buylegendaryprocessor"] = legendaryprocessor
             };
+            dictionaryLevel = new Dictionary<string, Level>()
+            {
+                ["getfirstlevel"] = firstLevel,
+                ["getsecondlevel"] = secondLevel,
+                ["getthirdlevel"] = thirdLevel,
+                ["getfourlevel"] = fourLevel,
+                ["getfivelevel"] = fiveLevel,
+                ["getsixlevel"] = sixLevel,
+                ["getsevenlevel"] = sevenLevel
+            };
             namesMouse = new List<string>()
             {
                 "buycommonmouse", "buyeconomymouse", "buybudgetmouse", "buystandartmouse", "buyuniversalmouse",
@@ -109,6 +127,11 @@ namespace SergxloveCoin
                 "buycommonprocessor", "buyeconomyprocessor", "buybudgetprocessor", "buystandartprocessor", "buyuniversalprocessor",
                 "buyclassicalprocessor", "buyprofessionalprocessor",  "buypremiumprocessor", "buyeliteprocessor", "buylegendaryprocessor"
             };
+            namesLevel = new List<string>()
+            {
+                "getfirstlevel", "getsecondlevel", "gethirdlevel", "getfourlevel",
+                "getfivelevel", "getsixlevel", "getsevenlevel"
+            };
             sqlConnection = "Data source=userdata.db";
             panels = new List<Panel> { panel4, panel5, panel6 };
             selectedPanel = 0;
@@ -123,47 +146,57 @@ namespace SergxloveCoin
             showAnimationNotify = true;
             tabControl1.BringToFront();
         }
-        private SergxloveCoin.resourse.StatsPlayer myBalance;
+        private StatsPlayer myBalance;
 
-        private SergxloveCoin.resourse.Mouse commonmouse;
-        private SergxloveCoin.resourse.Mouse economymouse;
-        private SergxloveCoin.resourse.Mouse budgetmouse;
-        private SergxloveCoin.resourse.Mouse standartmouse;
-        private SergxloveCoin.resourse.Mouse universalmouse;
-        private SergxloveCoin.resourse.Mouse classicalmouse;
-        private SergxloveCoin.resourse.Mouse professionalmouse;
-        private SergxloveCoin.resourse.Mouse premiummouse;
-        private SergxloveCoin.resourse.Mouse elitemouse;
-        private SergxloveCoin.resourse.Mouse legendarymouse;
+        private Mouse commonmouse;
+        private Mouse economymouse;
+        private Mouse budgetmouse;
+        private Mouse standartmouse;
+        private Mouse universalmouse;
+        private Mouse classicalmouse;
+        private Mouse professionalmouse;
+        private Mouse premiummouse;
+        private Mouse elitemouse;
+        private Mouse legendarymouse;
 
-        private SergxloveCoin.resourse.VideoCard commonvideocard;
-        private SergxloveCoin.resourse.VideoCard economyvideocard;
-        private SergxloveCoin.resourse.VideoCard budgetvideocard;
-        private SergxloveCoin.resourse.VideoCard standartvideocard;
-        private SergxloveCoin.resourse.VideoCard universalvideocard;
-        private SergxloveCoin.resourse.VideoCard classicalvideocard;
-        private SergxloveCoin.resourse.VideoCard professionalvideocard;
-        private SergxloveCoin.resourse.VideoCard premiumvideocard;
-        private SergxloveCoin.resourse.VideoCard elitevideocard;
-        private SergxloveCoin.resourse.VideoCard legendaryvideocard;
+        private VideoCard commonvideocard;
+        private VideoCard economyvideocard;
+        private VideoCard budgetvideocard;
+        private VideoCard standartvideocard;
+        private VideoCard universalvideocard;
+        private VideoCard classicalvideocard;
+        private VideoCard professionalvideocard;
+        private VideoCard premiumvideocard;
+        private VideoCard elitevideocard;
+        private VideoCard legendaryvideocard;
 
-        private SergxloveCoin.resourse.Processor commonprocessor;
-        private SergxloveCoin.resourse.Processor economyprocessor;
-        private SergxloveCoin.resourse.Processor budgetprocessor;
-        private SergxloveCoin.resourse.Processor standartprocessor;
-        private SergxloveCoin.resourse.Processor universalprocessor;
-        private SergxloveCoin.resourse.Processor classicalprocessor;
-        private SergxloveCoin.resourse.Processor professionalprocessor;
-        private SergxloveCoin.resourse.Processor premiumprocessor;
-        private SergxloveCoin.resourse.Processor eliteprocessor;
-        private SergxloveCoin.resourse.Processor legendaryprocessor;
+        private Processor commonprocessor;
+        private Processor economyprocessor;
+        private Processor budgetprocessor;
+        private Processor standartprocessor;
+        private Processor universalprocessor;
+        private Processor classicalprocessor;
+        private Processor professionalprocessor;
+        private Processor premiumprocessor;
+        private Processor eliteprocessor;
+        private Processor legendaryprocessor;
+
+        private Level firstLevel;
+        private Level secondLevel;
+        private Level thirdLevel;
+        private Level fourLevel;
+        private Level fiveLevel;
+        private Level sixLevel;
+        private Level sevenLevel;
 
         private Dictionary<string, Mouse> dictionaryMouse;
         private Dictionary<string, VideoCard> dictionaryVideoCard;
         private Dictionary<string, Processor> dictionaryProcessor;
+        private Dictionary<string, Level> dictionaryLevel;
         private List<string> namesMouse;
         private List<string> namesVideoCard;
         private List<string> namesProcessor;
+        private List<string> namesLevel;
 
         private bool isChangedDataMouses;
         private bool isChangedDataVideoCard;
