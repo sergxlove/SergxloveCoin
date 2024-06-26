@@ -274,6 +274,20 @@ namespace SergxloveCoin
                             }
                         }
                     }
+                    countComponent = 0;
+                    sqlCommand = "SELECT * FROM Levels;";
+                    command.CommandText = sqlCommand;
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        if(reader.HasRows)
+                        {
+                            while(reader.Read())
+                            {
+                                dictionaryLevel[namesLevel[countComponent]].IsDone = Convert.ToBoolean(reader.GetInt32(1));
+                                countComponent++;
+                            }
+                        }
+                    }
                     sqlCommand = "SELECT * FROM StatsPlayer WHERE idPlayer = 1;";
                     command.CommandText = sqlCommand;
                     using (SqliteDataReader reader = command.ExecuteReader())
@@ -336,6 +350,14 @@ namespace SergxloveCoin
                 eliteprocessor.ChangeData(30000000, 100, 0);
                 legendaryprocessor.ChangeData(50000000, 130, 0);
 
+                firstLevel.ChangeData(1, 1000, 250, false);
+                secondLevel.ChangeData(2, 10000, 2500, false);
+                thirdLevel.ChangeData(3, 50000, 9000, false);
+                fourLevel.ChangeData(4, 400000, 75000, false);
+                fiveLevel.ChangeData(5, 2000000, 350000, false);
+                sixLevel.ChangeData(6, 10000000, 1300000, false);
+                sevenLevel.ChangeData(7, 50000000, 8000000, false);
+
                 myBalance.changeData(1, 0, 0, 0, 1000, 1000, DateTime.Now);
                 using (var connection = new SqliteConnection(sqlConnection))
                 {
@@ -364,6 +386,9 @@ namespace SergxloveCoin
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
                     sqlCommand = "CREATE TABLE Processors(idProcessor INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);";
+                    command.CommandText = sqlCommand;
+                    command.ExecuteNonQuery();
+                    sqlCommand = "CREATE TABLE Levels(idLevel INT PRIMARY KEY NOT NULL, isDone INT NOT NULL);";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
                     sqlCommand = $@"INSERT INTO StatsPlayer(idPlayer, balancePlayer, speedClick, speedVideoCard, speedProcessor, currentEnergy, maxEnergy, lastVisitDate) VALUES(1, 0, 1, 0, 0, 1000, 1000, '2024-01-01 00:00:00');";
@@ -397,6 +422,14 @@ namespace SergxloveCoin
                         priceParam.Value = dictionaryProcessor[namesProcessor[i]].Price;
                         speedParam.Value = dictionaryProcessor[namesProcessor[i]].Speed;
                         quantityParam.Value = dictionaryProcessor[namesProcessor[i]].Quantity;
+                        command.ExecuteNonQuery();
+                    }
+                    sqlCommand = $@"INSERT INTO Levels(idLevel, isDone) VALUES (@id, @price);";
+                    command.CommandText = sqlCommand;
+                    for(int i = 0;i<namesLevel.Count; i++)
+                    {
+                        idParam.Value = i + 1;
+                        priceParam.Value = dictionaryLevel[namesLevel[i]].IsDone;
                         command.ExecuteNonQuery();
                     }
                 }
@@ -559,6 +592,35 @@ namespace SergxloveCoin
             label155.DataBindings.Add(new Binding(nameof(Text), legendaryprocessor, nameof(legendaryprocessor.Price), true, DataSourceUpdateMode.OnPropertyChanged));
             label154.DataBindings.Add(new Binding(nameof(Text), legendaryprocessor, nameof(legendaryprocessor.Speed), true, DataSourceUpdateMode.OnPropertyChanged));
             label153.DataBindings.Add(new Binding(nameof(Text), legendaryprocessor, nameof(legendaryprocessor.Quantity), true, DataSourceUpdateMode.OnPropertyChanged));
+
+            //237, 240, 241
+            label237.DataBindings.Add(new Binding(nameof(Text), firstLevel, nameof(firstLevel.NumberLevel), true, DataSourceUpdateMode.OnPropertyChanged));
+            label240.DataBindings.Add(new Binding(nameof(Text), firstLevel, nameof(firstLevel.NeedCoin), true, DataSourceUpdateMode.OnPropertyChanged));
+            label241.DataBindings.Add(new Binding(nameof(Text), firstLevel, nameof(firstLevel.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //246, 243, 242
+            label246.DataBindings.Add(new Binding(nameof(Text), secondLevel, nameof(firstLevel.NumberLevel), true, DataSourceUpdateMode.OnPropertyChanged));
+            label243.DataBindings.Add(new Binding(nameof(Text), secondLevel, nameof(firstLevel.NeedCoin), true, DataSourceUpdateMode.OnPropertyChanged));
+            label242.DataBindings.Add(new Binding(nameof(Text), secondLevel, nameof(firstLevel.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //252, 249, 248
+            label252.DataBindings.Add(new Binding(nameof(Text), thirdLevel, nameof(firstLevel.NumberLevel), true, DataSourceUpdateMode.OnPropertyChanged));
+            label249.DataBindings.Add(new Binding(nameof(Text), thirdLevel, nameof(firstLevel.NeedCoin), true, DataSourceUpdateMode.OnPropertyChanged));
+            label248.DataBindings.Add(new Binding(nameof(Text), thirdLevel, nameof(firstLevel.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //258, 255, 254
+            label258.DataBindings.Add(new Binding(nameof(Text), fourLevel, nameof(firstLevel.NumberLevel), true, DataSourceUpdateMode.OnPropertyChanged));
+            label255.DataBindings.Add(new Binding(nameof(Text), fourLevel, nameof(firstLevel.NeedCoin), true, DataSourceUpdateMode.OnPropertyChanged));
+            label254.DataBindings.Add(new Binding(nameof(Text), fourLevel, nameof(firstLevel.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //264, 261, 260
+            label264.DataBindings.Add(new Binding(nameof(Text), fiveLevel, nameof(firstLevel.NumberLevel), true, DataSourceUpdateMode.OnPropertyChanged));
+            label261.DataBindings.Add(new Binding(nameof(Text), fiveLevel, nameof(firstLevel.NeedCoin), true, DataSourceUpdateMode.OnPropertyChanged));
+            label260.DataBindings.Add(new Binding(nameof(Text), fiveLevel, nameof(firstLevel.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //270, 267, 266
+            label270.DataBindings.Add(new Binding(nameof(Text), sixLevel, nameof(firstLevel.NumberLevel), true, DataSourceUpdateMode.OnPropertyChanged));
+            label267.DataBindings.Add(new Binding(nameof(Text), sixLevel, nameof(firstLevel.NeedCoin), true, DataSourceUpdateMode.OnPropertyChanged));
+            label266.DataBindings.Add(new Binding(nameof(Text), sixLevel, nameof(firstLevel.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //276, 273, 272
+            label276.DataBindings.Add(new Binding(nameof(Text), firstLevel, nameof(firstLevel.NumberLevel), true, DataSourceUpdateMode.OnPropertyChanged));
+            label273.DataBindings.Add(new Binding(nameof(Text), firstLevel, nameof(firstLevel.NeedCoin), true, DataSourceUpdateMode.OnPropertyChanged));
+            label272.DataBindings.Add(new Binding(nameof(Text), firstLevel, nameof(firstLevel.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
 
             threadUpBalanceInSecond.Start();
             threadUpEnergyInSeconds.Start();
