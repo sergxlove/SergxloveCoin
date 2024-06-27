@@ -133,6 +133,20 @@ namespace SergxloveCoin
                 "getfirstlevel", "getsecondlevel", "getthirdlevel", "getfourlevel",
                 "getfivelevel", "getsixlevel", "getsevenlevel"
             };
+            levelList = new List<Level>()
+            {
+                firstLevel, secondLevel, thirdLevel, fourLevel, fiveLevel, sixLevel, sevenLevel
+            };
+            dictionaryButtonLevel = new Dictionary<Level, Button>()
+            {
+                [firstLevel] = getfirstlevel,
+                [secondLevel] = getsecondlevel,
+                [thirdLevel] = getthirdlevel,
+                [fourLevel] = getfourlevel,
+                [fiveLevel] = getfivelevel,
+                [sixLevel] = getsixlevel,
+                [sevenLevel] = getsevenlevel
+            };
             sqlConnection = "Data source=userdata.db";
             panels = new List<Panel> { panel4, panel5, panel6 };
             selectedPanel = 0;
@@ -141,10 +155,12 @@ namespace SergxloveCoin
             isChangedDataProcessor = false;
             threadUpBalanceInSecond = new Thread(AutoUpBalance);
             threadUpEnergyInSeconds = new Thread(AutoUpEnergy);
+            threadCheckLevel = new(CheckLevels);
             isThreadingActive = true;
             showAnimation = false;
             showAnimationPanel = false;
             showAnimationNotify = true;
+            countLevel = 0;
             tabControl1.BringToFront();
         }
         private StatsPlayer myBalance;
@@ -189,11 +205,13 @@ namespace SergxloveCoin
         private Level fiveLevel;
         private Level sixLevel;
         private Level sevenLevel;
+        private List<Level> levelList;
 
         private Dictionary<string, Mouse> dictionaryMouse;
         private Dictionary<string, VideoCard> dictionaryVideoCard;
         private Dictionary<string, Processor> dictionaryProcessor;
         private Dictionary<string, Level> dictionaryLevel;
+        private Dictionary<Level, Button> dictionaryButtonLevel;
         private List<string> namesMouse;
         private List<string> namesVideoCard;
         private List<string> namesProcessor;
@@ -222,7 +240,9 @@ namespace SergxloveCoin
 
         private Thread threadUpBalanceInSecond;
         private Thread threadUpEnergyInSeconds;
+        private Thread threadCheckLevel;
         private bool isThreadingActive;
+        private int countLevel;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -287,9 +307,9 @@ namespace SergxloveCoin
                     sevenLevel.ChangeData(7, 50000000, 8000000, false);
                     using (SqliteDataReader reader = command.ExecuteReader())
                     {
-                        if(reader.HasRows)
+                        if (reader.HasRows)
                         {
-                            while(reader.Read())
+                            while (reader.Read())
                             {
                                 dictionaryLevel[namesLevel[countComponent]].IsDone = Convert.ToBoolean(reader.GetInt32(1));
                                 countComponent++;
@@ -314,7 +334,7 @@ namespace SergxloveCoin
                             }
                             else
                             {
-                                label235.Text = (actualTimesForFullEnergy /3).ToString();
+                                label235.Text = (actualTimesForFullEnergy / 3).ToString();
                                 myBalance.CurrentEnergy += actualTimesForFullEnergy / 3;
                             }
                             label234.Text = (actualTimesForFullEnergy / 3 * myBalance.SpeedProcessor).ToString();
@@ -434,7 +454,7 @@ namespace SergxloveCoin
                     }
                     sqlCommand = $@"INSERT INTO Levels(idLevel, isDone) VALUES (@id, @price);";
                     command.CommandText = sqlCommand;
-                    for(int i = 0;i<namesLevel.Count; i++)
+                    for (int i = 0; i < namesLevel.Count; i++)
                     {
                         idParam.Value = i + 1;
                         priceParam.Value = dictionaryLevel[namesLevel[i]].IsDone;
@@ -632,6 +652,7 @@ namespace SergxloveCoin
 
             threadUpBalanceInSecond.Start();
             threadUpEnergyInSeconds.Start();
+            threadCheckLevel.Start();
 
             showAnimationNotify = true;
             sizeNotifyX = 0;
@@ -729,7 +750,7 @@ namespace SergxloveCoin
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if(showAnimationNotify) button7_Click(sender, e);
+            if (showAnimationNotify) button7_Click(sender, e);
             myBalance.upBalanse(myBalance.SpeedClick);
             myBalance.CurrentEnergy -= 3;
         }
@@ -1057,12 +1078,32 @@ namespace SergxloveCoin
         private void getLevel(object sender, EventArgs e)
         {
             Button selectButton = (Button)sender;
-            if(dictionaryLevel.ContainsKey(selectButton.Name))
+            if (dictionaryLevel.ContainsKey(selectButton.Name))
             {
                 Level newlevel = dictionaryLevel[selectButton.Name];
-                newlevel.IsDone = true;
-                myBalance.upBalanse(newlevel.Prize);
-                selectButton.Text = "Получено";
+                if (selectButton.Text == "Получить")
+                {
+                    newlevel.IsDone = true;
+                    myBalance.upBalanse(newlevel.Prize);
+                    selectButton.Text = "Получено";
+                }
+            }
+        }
+        private void ChangeButton(object sender)
+        {
+            Button selectButton = (Button)sender;
+            selectButton.Text = "Получить";
+        }
+        private void CheckLevels()
+        {
+            while(isThreadingActive)
+            {
+                Thread.Sleep(10000);
+                if (levelList[countLevel].NeedCoin < myBalance.BalansePlayer)
+                {
+                    ChangeButton(dictionaryButtonLevel[levelList[countLevel]]);
+                    countLevel++;
+                }
             }
         }
     }
