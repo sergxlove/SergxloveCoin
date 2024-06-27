@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using Microsoft.Data.Sqlite;
 using System.Threading;
+using System.Security.Cryptography;
 
 namespace SergxloveCoin
 {
@@ -129,7 +130,7 @@ namespace SergxloveCoin
             };
             namesLevel = new List<string>()
             {
-                "getfirstlevel", "getsecondlevel", "gethirdlevel", "getfourlevel",
+                "getfirstlevel", "getsecondlevel", "getthirdlevel", "getfourlevel",
                 "getfivelevel", "getsixlevel", "getsevenlevel"
             };
             sqlConnection = "Data source=userdata.db";
@@ -277,6 +278,13 @@ namespace SergxloveCoin
                     countComponent = 0;
                     sqlCommand = "SELECT * FROM Levels;";
                     command.CommandText = sqlCommand;
+                    firstLevel.ChangeData(1, 1000, 250, false);
+                    secondLevel.ChangeData(2, 10000, 2500, false);
+                    thirdLevel.ChangeData(3, 50000, 9000, false);
+                    fourLevel.ChangeData(4, 400000, 75000, false);
+                    fiveLevel.ChangeData(5, 2000000, 350000, false);
+                    sixLevel.ChangeData(6, 10000000, 1300000, false);
+                    sevenLevel.ChangeData(7, 50000000, 8000000, false);
                     using (SqliteDataReader reader = command.ExecuteReader())
                     {
                         if(reader.HasRows)
@@ -618,9 +626,9 @@ namespace SergxloveCoin
             label267.DataBindings.Add(new Binding(nameof(Text), sixLevel, nameof(firstLevel.NeedCoin), true, DataSourceUpdateMode.OnPropertyChanged));
             label266.DataBindings.Add(new Binding(nameof(Text), sixLevel, nameof(firstLevel.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
             //276, 273, 272
-            label276.DataBindings.Add(new Binding(nameof(Text), firstLevel, nameof(firstLevel.NumberLevel), true, DataSourceUpdateMode.OnPropertyChanged));
-            label273.DataBindings.Add(new Binding(nameof(Text), firstLevel, nameof(firstLevel.NeedCoin), true, DataSourceUpdateMode.OnPropertyChanged));
-            label272.DataBindings.Add(new Binding(nameof(Text), firstLevel, nameof(firstLevel.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            label276.DataBindings.Add(new Binding(nameof(Text), sevenLevel, nameof(firstLevel.NumberLevel), true, DataSourceUpdateMode.OnPropertyChanged));
+            label273.DataBindings.Add(new Binding(nameof(Text), sevenLevel, nameof(firstLevel.NeedCoin), true, DataSourceUpdateMode.OnPropertyChanged));
+            label272.DataBindings.Add(new Binding(nameof(Text), sevenLevel, nameof(firstLevel.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
 
             threadUpBalanceInSecond.Start();
             threadUpEnergyInSeconds.Start();
@@ -1044,6 +1052,18 @@ namespace SergxloveCoin
             frameCountNotify = 0;
             timer3.Interval = 10;
             timer3.Start();
+        }
+
+        private void getLevel(object sender, EventArgs e)
+        {
+            Button selectButton = (Button)sender;
+            if(dictionaryLevel.ContainsKey(selectButton.Name))
+            {
+                Level newlevel = dictionaryLevel[selectButton.Name];
+                newlevel.IsDone = true;
+                myBalance.upBalanse(newlevel.Prize);
+                selectButton.Text = "Получено";
+            }
         }
     }
 }
