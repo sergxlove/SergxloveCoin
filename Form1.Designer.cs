@@ -440,6 +440,24 @@
             label232 = new Label();
             label231 = new Label();
             timer3 = new System.Windows.Forms.Timer(components);
+            label278 = new Label();
+            pictureBox4 = new PictureBox();
+            label279 = new Label();
+            label280 = new Label();
+            label281 = new Label();
+            label282 = new Label();
+            label283 = new Label();
+            groupBox38 = new GroupBox();
+            label284 = new Label();
+            label285 = new Label();
+            label286 = new Label();
+            label287 = new Label();
+            label288 = new Label();
+            label289 = new Label();
+            label290 = new Label();
+            label291 = new Label();
+            label292 = new Label();
+            label293 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -524,6 +542,8 @@
             panel5.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            groupBox38.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -5181,18 +5201,26 @@
             // 
             panel6.AutoScroll = true;
             panel6.BorderStyle = BorderStyle.Fixed3D;
+            panel6.Controls.Add(groupBox38);
+            panel6.Controls.Add(label283);
+            panel6.Controls.Add(label282);
+            panel6.Controls.Add(label281);
+            panel6.Controls.Add(label280);
+            panel6.Controls.Add(label279);
+            panel6.Controls.Add(pictureBox4);
+            panel6.Controls.Add(label278);
             panel6.Controls.Add(button6);
             panel6.Controls.Add(label230);
             panel6.Location = new Point(12, 155);
             panel6.Name = "panel6";
-            panel6.Size = new Size(620, 0);
+            panel6.Size = new Size(620, 650);
             panel6.TabIndex = 25;
             // 
             // button6
             // 
             button6.FlatStyle = FlatStyle.Flat;
             button6.ForeColor = Color.Red;
-            button6.Location = new Point(456, 13);
+            button6.Location = new Point(430, 10);
             button6.Name = "button6";
             button6.Size = new Size(154, 53);
             button6.TabIndex = 27;
@@ -5295,6 +5323,210 @@
             // timer3
             // 
             timer3.Tick += timer3_Tick;
+            // 
+            // label278
+            // 
+            label278.AutoSize = true;
+            label278.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label278.ForeColor = Color.White;
+            label278.Location = new Point(20, 94);
+            label278.Name = "label278";
+            label278.Size = new Size(119, 38);
+            label278.TabIndex = 28;
+            label278.Text = "Баланс :";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.sergxloveCoinBlack;
+            pictureBox4.Location = new Point(152, 86);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(53, 52);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 29;
+            pictureBox4.TabStop = false;
+            // 
+            // label279
+            // 
+            label279.AutoSize = true;
+            label279.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label279.ForeColor = Color.White;
+            label279.Location = new Point(216, 94);
+            label279.Name = "label279";
+            label279.Size = new Size(32, 38);
+            label279.TabIndex = 30;
+            label279.Text = "0";
+            // 
+            // label280
+            // 
+            label280.AutoSize = true;
+            label280.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label280.ForeColor = Color.White;
+            label280.Location = new Point(20, 153);
+            label280.Name = "label280";
+            label280.Size = new Size(249, 38);
+            label280.TabIndex = 31;
+            label280.Text = "Прибыль за клик :";
+            // 
+            // label281
+            // 
+            label281.AutoSize = true;
+            label281.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label281.ForeColor = Color.White;
+            label281.Location = new Point(20, 214);
+            label281.Name = "label281";
+            label281.Size = new Size(280, 38);
+            label281.TabIndex = 32;
+            label281.Text = "Прибыль в секунду :";
+            // 
+            // label282
+            // 
+            label282.AutoSize = true;
+            label282.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label282.ForeColor = Color.White;
+            label282.Location = new Point(341, 158);
+            label282.Name = "label282";
+            label282.Size = new Size(32, 38);
+            label282.TabIndex = 33;
+            label282.Text = "0";
+            // 
+            // label283
+            // 
+            label283.AutoSize = true;
+            label283.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label283.ForeColor = Color.White;
+            label283.Location = new Point(341, 218);
+            label283.Name = "label283";
+            label283.Size = new Size(32, 38);
+            label283.TabIndex = 34;
+            label283.Text = "0";
+            // 
+            // groupBox38
+            // 
+            groupBox38.Controls.Add(label293);
+            groupBox38.Controls.Add(label292);
+            groupBox38.Controls.Add(label291);
+            groupBox38.Controls.Add(label290);
+            groupBox38.Controls.Add(label289);
+            groupBox38.Controls.Add(label288);
+            groupBox38.Controls.Add(label287);
+            groupBox38.Controls.Add(label286);
+            groupBox38.Controls.Add(label285);
+            groupBox38.Controls.Add(label284);
+            groupBox38.Location = new Point(8, 259);
+            groupBox38.Name = "groupBox38";
+            groupBox38.Size = new Size(558, 609);
+            groupBox38.TabIndex = 35;
+            groupBox38.TabStop = false;
+            // 
+            // label284
+            // 
+            label284.AutoSize = true;
+            label284.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label284.ForeColor = Color.White;
+            label284.Location = new Point(2, 20);
+            label284.Name = "label284";
+            label284.Size = new Size(240, 50);
+            label284.TabIndex = 36;
+            label284.Text = "Статистика :";
+            // 
+            // label285
+            // 
+            label285.AutoSize = true;
+            label285.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label285.ForeColor = Color.White;
+            label285.Location = new Point(12, 81);
+            label285.Name = "label285";
+            label285.Size = new Size(270, 38);
+            label285.TabIndex = 36;
+            label285.Text = "Количество кликов:";
+            // 
+            // label286
+            // 
+            label286.AutoSize = true;
+            label286.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label286.ForeColor = Color.White;
+            label286.Location = new Point(12, 138);
+            label286.Name = "label286";
+            label286.Size = new Size(257, 38);
+            label286.TabIndex = 37;
+            label286.Text = "Прибыль за клики:";
+            // 
+            // label287
+            // 
+            label287.AutoSize = true;
+            label287.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label287.ForeColor = Color.White;
+            label287.Location = new Point(12, 196);
+            label287.Name = "label287";
+            label287.Size = new Size(238, 38);
+            label287.TabIndex = 38;
+            label287.Text = "Прибыль за авто:";
+            // 
+            // label288
+            // 
+            label288.AutoSize = true;
+            label288.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label288.ForeColor = Color.White;
+            label288.Location = new Point(12, 255);
+            label288.Name = "label288";
+            label288.Size = new Size(131, 38);
+            label288.TabIndex = 39;
+            label288.Text = "Уровень:";
+            // 
+            // label289
+            // 
+            label289.AutoSize = true;
+            label289.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label289.ForeColor = Color.White;
+            label289.Location = new Point(12, 316);
+            label289.Name = "label289";
+            label289.Size = new Size(335, 38);
+            label289.TabIndex = 40;
+            label289.Text = "Количество достижений:";
+            // 
+            // label290
+            // 
+            label290.AutoSize = true;
+            label290.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label290.ForeColor = Color.White;
+            label290.Location = new Point(12, 374);
+            label290.Name = "label290";
+            label290.Size = new Size(271, 38);
+            label290.TabIndex = 41;
+            label290.Text = "Количество мышек:";
+            // 
+            // label291
+            // 
+            label291.AutoSize = true;
+            label291.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label291.ForeColor = Color.White;
+            label291.Location = new Point(12, 435);
+            label291.Name = "label291";
+            label291.Size = new Size(312, 38);
+            label291.TabIndex = 42;
+            label291.Text = "Количество видеокарт:";
+            // 
+            // label292
+            // 
+            label292.AutoSize = true;
+            label292.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label292.ForeColor = Color.White;
+            label292.Location = new Point(15, 495);
+            label292.Name = "label292";
+            label292.Size = new Size(349, 38);
+            label292.TabIndex = 43;
+            label292.Text = "Количество процессоров:";
+            // 
+            // label293
+            // 
+            label293.AutoSize = true;
+            label293.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label293.ForeColor = Color.White;
+            label293.Location = new Point(16, 551);
+            label293.Name = "label293";
+            label293.Size = new Size(176, 38);
+            label293.TabIndex = 44;
+            label293.Text = "Дней в году:";
             // 
             // Form1
             // 
@@ -5463,6 +5695,9 @@
             panel6.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            groupBox38.ResumeLayout(false);
+            groupBox38.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -5879,5 +6114,23 @@
         private Label label263;
         private Label label264;
         private Label label265;
+        private Label label278;
+        private Label label281;
+        private Label label280;
+        private Label label279;
+        private PictureBox pictureBox4;
+        private Label label283;
+        private Label label282;
+        private GroupBox groupBox38;
+        private Label label284;
+        private Label label287;
+        private Label label286;
+        private Label label285;
+        private Label label288;
+        private Label label289;
+        private Label label290;
+        private Label label293;
+        private Label label292;
+        private Label label291;
     }
 }
