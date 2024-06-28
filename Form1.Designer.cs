@@ -4455,7 +4455,7 @@
             panel4.Controls.Add(label228);
             panel4.Location = new Point(12, 155);
             panel4.Name = "panel4";
-            panel4.Size = new Size(620, 650);
+            panel4.Size = new Size(620, 0);
             panel4.TabIndex = 23;
             // 
             // groupBox37
@@ -4475,7 +4475,7 @@
             // 
             // getsevenlevel
             // 
-            getsevenlevel.BackColor = Color.FromArgb(0, 192, 0);
+            getsevenlevel.BackColor = Color.FromArgb(69, 69, 69);
             getsevenlevel.FlatStyle = FlatStyle.Flat;
             getsevenlevel.ForeColor = Color.White;
             getsevenlevel.Location = new Point(411, 79);
@@ -4569,7 +4569,7 @@
             // 
             // getsixlevel
             // 
-            getsixlevel.BackColor = Color.FromArgb(0, 192, 0);
+            getsixlevel.BackColor = Color.FromArgb(69, 69, 69);
             getsixlevel.FlatStyle = FlatStyle.Flat;
             getsixlevel.ForeColor = Color.White;
             getsixlevel.Location = new Point(411, 79);
@@ -4663,7 +4663,7 @@
             // 
             // getfivelevel
             // 
-            getfivelevel.BackColor = Color.FromArgb(0, 192, 0);
+            getfivelevel.BackColor = Color.FromArgb(69, 69, 69);
             getfivelevel.FlatStyle = FlatStyle.Flat;
             getfivelevel.ForeColor = Color.White;
             getfivelevel.Location = new Point(411, 79);
@@ -4757,7 +4757,7 @@
             // 
             // getfourlevel
             // 
-            getfourlevel.BackColor = Color.FromArgb(0, 192, 0);
+            getfourlevel.BackColor = Color.FromArgb(69, 69, 69);
             getfourlevel.FlatStyle = FlatStyle.Flat;
             getfourlevel.ForeColor = Color.White;
             getfourlevel.Location = new Point(411, 79);
@@ -4851,7 +4851,7 @@
             // 
             // getthirdlevel
             // 
-            getthirdlevel.BackColor = Color.FromArgb(0, 192, 0);
+            getthirdlevel.BackColor = Color.FromArgb(69, 69, 69);
             getthirdlevel.FlatStyle = FlatStyle.Flat;
             getthirdlevel.ForeColor = Color.White;
             getthirdlevel.Location = new Point(411, 79);
@@ -4945,7 +4945,7 @@
             // 
             // getsecondlevel
             // 
-            getsecondlevel.BackColor = Color.FromArgb(0, 192, 0);
+            getsecondlevel.BackColor = Color.FromArgb(69, 69, 69);
             getsecondlevel.FlatStyle = FlatStyle.Flat;
             getsecondlevel.ForeColor = Color.White;
             getsecondlevel.Location = new Point(411, 79);
@@ -5039,7 +5039,7 @@
             // 
             // getfirstlevel
             // 
-            getfirstlevel.BackColor = Color.FromArgb(0, 192, 0);
+            getfirstlevel.BackColor = Color.FromArgb(69, 69, 69);
             getfirstlevel.FlatStyle = FlatStyle.Flat;
             getfirstlevel.ForeColor = Color.White;
             getfirstlevel.Location = new Point(411, 79);
