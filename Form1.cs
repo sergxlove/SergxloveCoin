@@ -153,6 +153,7 @@ namespace SergxloveCoin
             isChangedDataMouses = false;
             isChangedDataVideoCard = false;
             isChangedDataProcessor = false;
+            isChangedDataLevel = false;
             threadUpBalanceInSecond = new Thread(AutoUpBalance);
             threadUpEnergyInSeconds = new Thread(AutoUpEnergy);
             threadCheckLevel = new(CheckLevels);
@@ -220,6 +221,7 @@ namespace SergxloveCoin
         private bool isChangedDataMouses;
         private bool isChangedDataVideoCard;
         private bool isChangedDataProcessor;
+        private bool isChangedDataLevel;
 
         private string sqlConnection;
         bool isCreateDatabase;
@@ -734,6 +736,24 @@ namespace SergxloveCoin
                         command.ExecuteNonQuery();
                     }
                 }
+                if (isChangedDataLevel)
+                {
+                    sqlCommand = "UPDATE Levels SET isDone = @price WHERE idLevel = @id;";
+                    command.CommandText = sqlCommand;
+                    for(int i = 0;i < namesLevel.Count; i++)
+                    {
+                        idParam.Value = i + 1;
+                        if (dictionaryLevel[namesLevel[i]].IsDone)
+                        {
+                            priceParam.Value = 1;
+                        }
+                        else
+                        {
+                            priceParam.Value = 0;
+                        }
+                        command.ExecuteNonQuery();
+                    }
+                }
                 sqlCommand = "UPDATE StatsPlayer SET balancePlayer = @price, speedClick = @speedClick, speedVideoCard = @speed, speedProcessor = @quantity , currentEnergy = @currentEnergy, maxEnergy = @maxEnergy, lastVisitDate = @lastVisitDate WHERE idPlayer = 1;";
                 command.CommandText = sqlCommand;
                 priceParam.Value = myBalance.BalansePlayer;
@@ -1086,6 +1106,7 @@ namespace SergxloveCoin
                     newlevel.IsDone = true;
                     myBalance.upBalanse(newlevel.Prize);
                     selectButton.Text = "Получено";
+                    isChangedDataLevel = true;
                 }
             }
         }
@@ -1093,15 +1114,23 @@ namespace SergxloveCoin
         {
             Button selectButton = (Button)sender;
             selectButton.Text = "Получить";
+            selectButton.BackColor = Color.FromArgb(0, 192, 0);
         }
         private void CheckLevels()
         {
             while(isThreadingActive)
             {
                 Thread.Sleep(10000);
-                if (levelList[countLevel].NeedCoin < myBalance.BalansePlayer)
+                if (levelList[countLevel].IsDone == false)
                 {
-                    ChangeButton(dictionaryButtonLevel[levelList[countLevel]]);
+                    if (levelList[countLevel].NeedCoin < myBalance.BalansePlayer)
+                    {
+                        ChangeButton(dictionaryButtonLevel[levelList[countLevel]]);
+                        countLevel++;
+                    }
+                }
+                else
+                {
                     countLevel++;
                 }
             }
