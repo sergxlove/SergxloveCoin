@@ -431,6 +431,15 @@
             label229 = new Label();
             panel6 = new Panel();
             groupBox38 = new GroupBox();
+            label302 = new Label();
+            label301 = new Label();
+            label300 = new Label();
+            label299 = new Label();
+            label298 = new Label();
+            label297 = new Label();
+            label296 = new Label();
+            label295 = new Label();
+            label294 = new Label();
             label293 = new Label();
             label292 = new Label();
             label291 = new Label();
@@ -458,15 +467,6 @@
             label232 = new Label();
             label231 = new Label();
             timer3 = new System.Windows.Forms.Timer(components);
-            label294 = new Label();
-            label295 = new Label();
-            label296 = new Label();
-            label297 = new Label();
-            label298 = new Label();
-            label299 = new Label();
-            label300 = new Label();
-            label301 = new Label();
-            label302 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -5252,6 +5252,105 @@
             groupBox38.TabIndex = 35;
             groupBox38.TabStop = false;
             // 
+            // label302
+            // 
+            label302.AutoSize = true;
+            label302.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label302.ForeColor = Color.White;
+            label302.Location = new Point(367, 565);
+            label302.Name = "label302";
+            label302.Size = new Size(23, 28);
+            label302.TabIndex = 53;
+            label302.Text = "0";
+            // 
+            // label301
+            // 
+            label301.AutoSize = true;
+            label301.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label301.ForeColor = Color.White;
+            label301.Location = new Point(367, 506);
+            label301.Name = "label301";
+            label301.Size = new Size(23, 28);
+            label301.TabIndex = 52;
+            label301.Text = "0";
+            // 
+            // label300
+            // 
+            label300.AutoSize = true;
+            label300.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label300.ForeColor = Color.White;
+            label300.Location = new Point(367, 445);
+            label300.Name = "label300";
+            label300.Size = new Size(23, 28);
+            label300.TabIndex = 51;
+            label300.Text = "0";
+            // 
+            // label299
+            // 
+            label299.AutoSize = true;
+            label299.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label299.ForeColor = Color.White;
+            label299.Location = new Point(367, 384);
+            label299.Name = "label299";
+            label299.Size = new Size(23, 28);
+            label299.TabIndex = 50;
+            label299.Text = "0";
+            // 
+            // label298
+            // 
+            label298.AutoSize = true;
+            label298.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label298.ForeColor = Color.White;
+            label298.Location = new Point(367, 326);
+            label298.Name = "label298";
+            label298.Size = new Size(23, 28);
+            label298.TabIndex = 49;
+            label298.Text = "0";
+            // 
+            // label297
+            // 
+            label297.AutoSize = true;
+            label297.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label297.ForeColor = Color.White;
+            label297.Location = new Point(367, 265);
+            label297.Name = "label297";
+            label297.Size = new Size(23, 28);
+            label297.TabIndex = 48;
+            label297.Text = "0";
+            // 
+            // label296
+            // 
+            label296.AutoSize = true;
+            label296.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label296.ForeColor = Color.White;
+            label296.Location = new Point(367, 207);
+            label296.Name = "label296";
+            label296.Size = new Size(23, 28);
+            label296.TabIndex = 47;
+            label296.Text = "0";
+            // 
+            // label295
+            // 
+            label295.AutoSize = true;
+            label295.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label295.ForeColor = Color.White;
+            label295.Location = new Point(367, 146);
+            label295.Name = "label295";
+            label295.Size = new Size(23, 28);
+            label295.TabIndex = 46;
+            label295.Text = "0";
+            // 
+            // label294
+            // 
+            label294.AutoSize = true;
+            label294.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label294.ForeColor = Color.White;
+            label294.Location = new Point(367, 91);
+            label294.Name = "label294";
+            label294.Size = new Size(23, 28);
+            label294.TabIndex = 45;
+            label294.Text = "0";
+            // 
             // label293
             // 
             label293.AutoSize = true;
@@ -5259,9 +5358,9 @@
             label293.ForeColor = Color.White;
             label293.Location = new Point(16, 551);
             label293.Name = "label293";
-            label293.Size = new Size(176, 38);
+            label293.Size = new Size(178, 38);
             label293.TabIndex = 44;
-            label293.Text = "Дней в году:";
+            label293.Text = "Дней в игре:";
             // 
             // label292
             // 
@@ -5545,105 +5644,6 @@
             // timer3
             // 
             timer3.Tick += timer3_Tick;
-            // 
-            // label294
-            // 
-            label294.AutoSize = true;
-            label294.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label294.ForeColor = Color.White;
-            label294.Location = new Point(367, 91);
-            label294.Name = "label294";
-            label294.Size = new Size(23, 28);
-            label294.TabIndex = 45;
-            label294.Text = "0";
-            // 
-            // label295
-            // 
-            label295.AutoSize = true;
-            label295.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label295.ForeColor = Color.White;
-            label295.Location = new Point(367, 146);
-            label295.Name = "label295";
-            label295.Size = new Size(23, 28);
-            label295.TabIndex = 46;
-            label295.Text = "0";
-            // 
-            // label296
-            // 
-            label296.AutoSize = true;
-            label296.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label296.ForeColor = Color.White;
-            label296.Location = new Point(367, 207);
-            label296.Name = "label296";
-            label296.Size = new Size(23, 28);
-            label296.TabIndex = 47;
-            label296.Text = "0";
-            // 
-            // label297
-            // 
-            label297.AutoSize = true;
-            label297.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label297.ForeColor = Color.White;
-            label297.Location = new Point(367, 265);
-            label297.Name = "label297";
-            label297.Size = new Size(23, 28);
-            label297.TabIndex = 48;
-            label297.Text = "0";
-            // 
-            // label298
-            // 
-            label298.AutoSize = true;
-            label298.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label298.ForeColor = Color.White;
-            label298.Location = new Point(367, 326);
-            label298.Name = "label298";
-            label298.Size = new Size(23, 28);
-            label298.TabIndex = 49;
-            label298.Text = "0";
-            // 
-            // label299
-            // 
-            label299.AutoSize = true;
-            label299.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label299.ForeColor = Color.White;
-            label299.Location = new Point(367, 384);
-            label299.Name = "label299";
-            label299.Size = new Size(23, 28);
-            label299.TabIndex = 50;
-            label299.Text = "0";
-            // 
-            // label300
-            // 
-            label300.AutoSize = true;
-            label300.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label300.ForeColor = Color.White;
-            label300.Location = new Point(367, 445);
-            label300.Name = "label300";
-            label300.Size = new Size(23, 28);
-            label300.TabIndex = 51;
-            label300.Text = "0";
-            // 
-            // label301
-            // 
-            label301.AutoSize = true;
-            label301.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label301.ForeColor = Color.White;
-            label301.Location = new Point(367, 506);
-            label301.Name = "label301";
-            label301.Size = new Size(23, 28);
-            label301.TabIndex = 52;
-            label301.Text = "0";
-            // 
-            // label302
-            // 
-            label302.AutoSize = true;
-            label302.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label302.ForeColor = Color.White;
-            label302.Location = new Point(367, 565);
-            label302.Name = "label302";
-            label302.Size = new Size(23, 28);
-            label302.TabIndex = 53;
-            label302.Text = "0";
             // 
             // Form1
             // 
