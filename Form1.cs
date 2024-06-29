@@ -659,7 +659,13 @@ namespace SergxloveCoin
             label283.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.SpeedAutoString), true, DataSourceUpdateMode.OnPropertyChanged));
             label294.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityClick), true, DataSourceUpdateMode.OnPropertyChanged));
             label295.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.TotalSumClickMoney), true, DataSourceUpdateMode.OnPropertyChanged));
-
+            label296.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.TotalSumAutoMoney), true, DataSourceUpdateMode.OnPropertyChanged));
+            label297.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.Level), true, DataSourceUpdateMode.OnPropertyChanged));
+            label298.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityAchives), true, DataSourceUpdateMode.OnPropertyChanged));
+            label299.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityMouse), true, DataSourceUpdateMode.OnPropertyChanged));
+            label300.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityVideocard), true, DataSourceUpdateMode.OnPropertyChanged));
+            label301.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityProcessor), true, DataSourceUpdateMode.OnPropertyChanged));
+            label302.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityDays), true, DataSourceUpdateMode.OnPropertyChanged));
 
             threadUpBalanceInSecond.Start();
             threadUpEnergyInSeconds.Start();
@@ -782,6 +788,8 @@ namespace SergxloveCoin
             if (showAnimationNotify) button7_Click(sender, e);
             myBalance.upBalanse(myBalance.SpeedClick);
             myBalance.CurrentEnergy -= 3;
+            statisticsPlayer.QuantityClick++;
+            statisticsPlayer.TotalSumClickMoney += myBalance.SpeedClick;
         }
 
         private void openPanel(object sender, EventArgs e)
@@ -976,6 +984,7 @@ namespace SergxloveCoin
                     myBalance.SpeedClick += newmouse.SpeedClick;
                     myBalance.downBalanse(newmouse.Price);
                     label2.Text = myBalance.BalansePlayer.ToString();
+                    statisticsPlayer.QuantityMouse++;
                 }
             }
             else
@@ -1002,6 +1011,7 @@ namespace SergxloveCoin
                     myBalance.SpeedVideoCard += newvideocard.Speed;
                     myBalance.downBalanse(newvideocard.Price);
                     label2.Text = myBalance.BalansePlayer.ToString();
+                    statisticsPlayer.QuantityVideocard++;
                 }
             }
             else
@@ -1028,6 +1038,7 @@ namespace SergxloveCoin
                     myBalance.SpeedProcessor += newprocessor.Speed;
                     myBalance.downBalanse(newprocessor.Price);
                     label2.Text = myBalance.BalansePlayer.ToString();
+                    statisticsPlayer.QuantityProcessor++;
                 }
             }
             else
@@ -1040,6 +1051,7 @@ namespace SergxloveCoin
             while (isThreadingActive)
             {
                 myBalance.upBalanse(myBalance.SpeedVideoCard + myBalance.SpeedProcessor);
+                statisticsPlayer.TotalSumAutoMoney += myBalance.SpeedProcessor + myBalance.SpeedVideoCard;
                 Thread.Sleep(1000);
             }
         }
@@ -1113,6 +1125,7 @@ namespace SergxloveCoin
                 if (selectButton.Text == "Получить")
                 {
                     newlevel.IsDone = true;
+                    statisticsPlayer.Level++;
                     myBalance.upBalanse(newlevel.Prize);
                     selectButton.Text = "Получено";
                     isChangedDataLevel = true;
