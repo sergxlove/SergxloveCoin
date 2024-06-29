@@ -22,6 +22,7 @@ namespace SergxloveCoin
                 isCreateDatabase = false;
             }
             myBalance = new();
+            statisticsPlayer = new();
 
             commonmouse = new("ќбычна€ мышь");
             economymouse = new("Ёконом мышь");
@@ -165,6 +166,7 @@ namespace SergxloveCoin
             tabControl1.BringToFront();
         }
         private StatsPlayer myBalance;
+        private Statistics statisticsPlayer;
 
         private Mouse commonmouse;
         private Mouse economymouse;
@@ -651,6 +653,13 @@ namespace SergxloveCoin
             label276.DataBindings.Add(new Binding(nameof(Text), sevenLevel, nameof(firstLevel.NumberLevel), true, DataSourceUpdateMode.OnPropertyChanged));
             label273.DataBindings.Add(new Binding(nameof(Text), sevenLevel, nameof(firstLevel.NeedCoin), true, DataSourceUpdateMode.OnPropertyChanged));
             label272.DataBindings.Add(new Binding(nameof(Text), sevenLevel, nameof(firstLevel.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+
+            label279.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.BalansePlayer), true, DataSourceUpdateMode.OnPropertyChanged));
+            label282.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.SpeedClick), true, DataSourceUpdateMode.OnPropertyChanged));
+            label283.DataBindings.Add(new Binding(nameof(Text), myBalance, nameof(myBalance.SpeedAutoString), true, DataSourceUpdateMode.OnPropertyChanged));
+            label294.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityClick), true, DataSourceUpdateMode.OnPropertyChanged));
+            label295.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.TotalSumClickMoney), true, DataSourceUpdateMode.OnPropertyChanged));
+
 
             threadUpBalanceInSecond.Start();
             threadUpEnergyInSeconds.Start();
