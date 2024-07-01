@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using Microsoft.Data.Sqlite;
 using System.Threading;
 using System.Security.Cryptography;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace SergxloveCoin
 {
@@ -300,6 +302,18 @@ namespace SergxloveCoin
                         }
                     }
                     countComponent = 0;
+                    sqlCommand = "SELECT * FROM Statistics WHERE idStats = 1;";
+                    command.CommandText = sqlCommand;
+                    using(SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        if(reader.HasRows)
+                        {
+                            while(reader.Read())
+                            {
+                                statisticsPlayer.ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8), reader.GetDateTime(9));
+                            }
+                        }
+                    }
                     sqlCommand = "SELECT * FROM Levels;";
                     command.CommandText = sqlCommand;
                     firstLevel.ChangeData(1, 1000, 250, false);
@@ -391,6 +405,7 @@ namespace SergxloveCoin
                 sevenLevel.ChangeData(7, 50000000, 8000000, false);
 
                 myBalance.changeData(1, 0, 0, 0, 1000, 1000, DateTime.Now);
+                statisticsPlayer.ChangeData(1, 0, 0, 0, 0, 0, 0, 0, DateTime.Now);
                 using (var connection = new SqliteConnection(sqlConnection))
                 {
                     connection.Open();
@@ -423,7 +438,23 @@ namespace SergxloveCoin
                     sqlCommand = "CREATE TABLE Levels(idLevel INT PRIMARY KEY NOT NULL, isDone INT NOT NULL);";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
+                    sqlCommand = $@"CREATE TABLE Statistics(idStats INT PRIMARY KEY NOT NULL,
+                    quantityClick INT NOT NULL,
+                    totalSumClickMoney INT NOT NULL,
+                    totalSumAutoMoney INT NOT NULL,
+                    level INT NOT NULL,
+                    quantityAchives INT NOT NULL,
+                    quantityMouse INT NOT NULL,
+                    quantityVideocard INT NOT NULL,
+                    quantityProcessor INT NOT NULL,
+                    dateBegin DATETIME NOT NULL);";
+                    command.CommandText = sqlCommand;
+                    command.ExecuteNonQuery();
                     sqlCommand = $@"INSERT INTO StatsPlayer(idPlayer, balancePlayer, speedClick, speedVideoCard, speedProcessor, currentEnergy, maxEnergy, lastVisitDate) VALUES(1, 0, 1, 0, 0, 1000, 1000, '2024-01-01 00:00:00');";
+                    command.CommandText = sqlCommand;
+                    command.ExecuteNonQuery();
+                    sqlCommand = $@"INSERT INTO Statistics(idStats, quantityClick, totalSumClickMoney, totalSumAutoMoney, level, quantityAchives,
+                    quantityMouse, quantityVideocard, quantityProcessor, dateBegin) VALUES(1, 0, 0, 0, 0, 0, 0, 0, 0, '2024-01-01 00:00:00')";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
                     sqlCommand = $@"INSERT INTO Mouses(idMouse, price, speed, quantity) VALUES (@id, @price, @speed, @quantity);";
@@ -769,6 +800,19 @@ namespace SergxloveCoin
                         command.ExecuteNonQuery();
                     }
                 }
+
+                sqlCommand = "UPDATE Statistics SET quantityClick = @quantity, totalSumClickMoney = @speed, totalSumAutoMoney = @id, level = @price, quantityAchives = @speedClick, quantityMouse = @currentEnergy, quantityVideocard = @maxEnergy, quantityProcessor = @lastVisitDate WHERE idStats = 1;";
+                command.CommandText = sqlCommand;
+                quantityParam.Value = statisticsPlayer.QuantityClick;
+                speedParam.Value = statisticsPlayer.TotalSumClickMoney;
+                idParam.Value = statisticsPlayer.TotalSumAutoMoney;
+                priceParam.Value = statisticsPlayer.Level;
+                speedClickParam.Value = statisticsPlayer.QuantityAchives;
+                currentEnergyParam.Value = statisticsPlayer.QuantityMouse;
+                maxEnergyParam.Value = statisticsPlayer.QuantityVideocard;
+                quantityParam.Value = statisticsPlayer.QuantityProcessor;
+                command.ExecuteNonQuery();
+
                 sqlCommand = "UPDATE StatsPlayer SET balancePlayer = @price, speedClick = @speedClick, speedVideoCard = @speed, speedProcessor = @quantity , currentEnergy = @currentEnergy, maxEnergy = @maxEnergy, lastVisitDate = @lastVisitDate WHERE idPlayer = 1;";
                 command.CommandText = sqlCommand;
                 priceParam.Value = myBalance.BalansePlayer;

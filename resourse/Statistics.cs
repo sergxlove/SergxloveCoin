@@ -13,16 +13,16 @@ namespace SergxloveCoin.resourse
     {
         public Statistics() 
         {
-            _quantityClick = 0;
-            _totalSumClickMoney = 0;
-            _totalSumAutoMoney = 0;
-            _level = 0;
-            _quantityAchives = 0;
-            _quantityMouse = 0;
-            _quantityVideoCrad = 0;
-            _quantityProcessor = 0;
+            _quantityClick = 1;
+            _totalSumClickMoney = 1;
+            _totalSumAutoMoney = 1;
+            _level = 1;
+            _quantityAchives = 1;
+            _quantityMouse = 1;
+            _quantityVideoCrad = 1;
+            _quantityProcessor = 1;
             _dateBegin = DateTime.Now;
-            _quantityDaysPlayed = 0;
+            _quantityDaysPlayed = 1;
         }
 
         public Statistics(int quantityClick, int totalSumClickMoney, int totalSumAutoMoney, int level, int quantityAchives, int quantityMouse, int quantityVideoCrad, int quantityProcessor, DateTime dateBegin, int quantityDaysPlayed)
