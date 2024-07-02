@@ -164,7 +164,6 @@ namespace SergxloveCoin
             showAnimation = false;
             showAnimationPanel = false;
             showAnimationNotify = true;
-            countLevel = 0;
             tabControl1.BringToFront();
         }
         private StatsPlayer myBalance;
@@ -248,7 +247,6 @@ namespace SergxloveCoin
         private Thread threadUpEnergyInSeconds;
         private Thread threadCheckLevel;
         private bool isThreadingActive;
-        private int countLevel;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -355,8 +353,15 @@ namespace SergxloveCoin
                                 label235.Text = (actualTimesForFullEnergy / 3).ToString();
                                 myBalance.CurrentEnergy += actualTimesForFullEnergy / 3;
                             }
+                            if(actualTimesForFullEnergy > (3600 * 8))
+                            {
+                                myBalance.BalansePlayer += (3600 * 8) * myBalance.SpeedProcessor; 
+                            }
+                            else
+                            {
+                                myBalance.BalansePlayer += actualTimesForFullEnergy * myBalance.SpeedProcessor;
+                            }
                             label234.Text = (actualTimesForFullEnergy / 3 * myBalance.SpeedProcessor).ToString();
-                            myBalance.BalansePlayer += actualTimesForFullEnergy / 3 * myBalance.SpeedProcessor;
                         }
                     }
                 }
@@ -698,6 +703,8 @@ namespace SergxloveCoin
             label301.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityProcessor), true, DataSourceUpdateMode.OnPropertyChanged));
             label302.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityDays), true, DataSourceUpdateMode.OnPropertyChanged));
 
+            RegLevels();
+
             threadUpBalanceInSecond.Start();
             threadUpEnergyInSeconds.Start();
             threadCheckLevel.Start();
@@ -801,17 +808,18 @@ namespace SergxloveCoin
                     }
                 }
 
-                sqlCommand = "UPDATE Statistics SET quantityClick = @quantity, totalSumClickMoney = @speed, totalSumAutoMoney = @id, level = @price, quantityAchives = @speedClick, quantityMouse = @currentEnergy, quantityVideocard = @maxEnergy, quantityProcessor = @lastVisitDate WHERE idStats = 1;";
+                sqlCommand = "UPDATE Statistics SET quantityClick = @id, totalSumClickMoney = @price, totalSumAutoMoney = @speed, level = @speedClick, quantityAchives = @quantity, quantityMouse = @currentEnergy, quantityVideocard = @maxEnergy, quantityProcessor = @lastVisitDate WHERE idStats = 1;";
                 command.CommandText = sqlCommand;
-                quantityParam.Value = statisticsPlayer.QuantityClick;
-                speedParam.Value = statisticsPlayer.TotalSumClickMoney;
-                idParam.Value = statisticsPlayer.TotalSumAutoMoney;
-                priceParam.Value = statisticsPlayer.Level;
-                speedClickParam.Value = statisticsPlayer.QuantityAchives;
+                idParam.Value = statisticsPlayer.QuantityClick;
+                priceParam.Value = statisticsPlayer.TotalSumClickMoney;
+                speedParam.Value = statisticsPlayer.TotalSumAutoMoney;
+                speedClickParam.Value = statisticsPlayer.Level;
+                quantityParam.Value = statisticsPlayer.QuantityAchives;
                 currentEnergyParam.Value = statisticsPlayer.QuantityMouse;
                 maxEnergyParam.Value = statisticsPlayer.QuantityVideocard;
-                quantityParam.Value = statisticsPlayer.QuantityProcessor;
+                lastVisitDateParam.Value = statisticsPlayer.QuantityProcessor;
                 command.ExecuteNonQuery();
+
 
                 sqlCommand = "UPDATE StatsPlayer SET balancePlayer = @price, speedClick = @speedClick, speedVideoCard = @speed, speedProcessor = @quantity , currentEnergy = @currentEnergy, maxEnergy = @maxEnergy, lastVisitDate = @lastVisitDate WHERE idPlayer = 1;";
                 command.CommandText = sqlCommand;
@@ -1182,22 +1190,36 @@ namespace SergxloveCoin
             selectButton.Text = "Получить";
             selectButton.BackColor = Color.FromArgb(0, 192, 0);
         }
+        private void StartChangeButton(object sender)
+        {
+            Button selectButton = (Button)sender;
+            selectButton.Text = "Получено";
+            selectButton.BackColor = Color.FromArgb(0, 192, 0);
+        }
         private void CheckLevels()
         {
             while(isThreadingActive)
             {
                 Thread.Sleep(10000);
-                if (levelList[countLevel].IsDone == false)
+                for (int i = 0; i < levelList.Count; i++)
                 {
-                    if (levelList[countLevel].NeedCoin < myBalance.BalansePlayer)
+                    if (levelList[i].IsDone == false)
                     {
-                        ChangeButton(dictionaryButtonLevel[levelList[countLevel]]);
-                        countLevel++;
+                        if (levelList[i].NeedCoin < myBalance.BalansePlayer)
+                        {
+                            ChangeButton(dictionaryButtonLevel[levelList[i]]);
+                        }
                     }
                 }
-                else
+            }
+        }
+        private void RegLevels()
+        {
+            for (int i = 0; i < levelList.Count; i++)
+            {
+                if (levelList[i].IsDone)
                 {
-                    countLevel++;
+                    StartChangeButton(dictionaryButtonLevel[levelList[i]]);
                 }
             }
         }
