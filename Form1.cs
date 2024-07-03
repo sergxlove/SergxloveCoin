@@ -67,6 +67,16 @@ namespace SergxloveCoin
             sixLevel = new();
             sevenLevel = new();
 
+            firstAchive = new();
+            secondAchive = new();
+            thirdAchive = new();
+            fourAchive = new();
+            fiveAchive = new();
+            sixAchive = new();
+            sevenAchive = new();
+            eightAchives = new();
+            nineAchives = new();
+
             dictionaryMouse = new Dictionary<string, Mouse>()
             {
                 ["buycommonmouse"] = commonmouse,
@@ -150,6 +160,10 @@ namespace SergxloveCoin
                 [sixLevel] = getsixlevel,
                 [sevenLevel] = getsevenlevel
             };
+            achivesList = new List<Achives>()
+            {
+                firstAchive, secondAchive, thirdAchive, fourAchive, fiveAchive, sixAchive, sevenAchive, eightAchives, nineAchives
+            };
             sqlConnection = "Data source=userdata.db";
             panels = new List<Panel> { panel4, panel5, panel6 };
             selectedPanel = 0;
@@ -210,6 +224,17 @@ namespace SergxloveCoin
         private Level sixLevel;
         private Level sevenLevel;
         private List<Level> levelList;
+
+        private Achives firstAchive;
+        private Achives secondAchive;
+        private Achives thirdAchive;
+        private Achives fourAchive;
+        private Achives fiveAchive;
+        private Achives sixAchive;
+        private Achives sevenAchive;
+        private Achives eightAchives;
+        private Achives nineAchives;
+        private List<Achives> achivesList;
 
         private Dictionary<string, Mouse> dictionaryMouse;
         private Dictionary<string, VideoCard> dictionaryVideoCard;

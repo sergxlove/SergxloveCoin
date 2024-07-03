@@ -427,6 +427,55 @@
             label228 = new Label();
             timer2 = new System.Windows.Forms.Timer(components);
             panel5 = new Panel();
+            groupBox45 = new GroupBox();
+            button14 = new Button();
+            label333 = new Label();
+            label334 = new Label();
+            label335 = new Label();
+            label336 = new Label();
+            label337 = new Label();
+            groupBox44 = new GroupBox();
+            button13 = new Button();
+            label328 = new Label();
+            label329 = new Label();
+            label330 = new Label();
+            label331 = new Label();
+            label332 = new Label();
+            groupBox43 = new GroupBox();
+            button12 = new Button();
+            label323 = new Label();
+            label324 = new Label();
+            label325 = new Label();
+            label326 = new Label();
+            label327 = new Label();
+            groupBox42 = new GroupBox();
+            button11 = new Button();
+            label318 = new Label();
+            label319 = new Label();
+            label320 = new Label();
+            label321 = new Label();
+            label322 = new Label();
+            groupBox41 = new GroupBox();
+            button10 = new Button();
+            label313 = new Label();
+            label314 = new Label();
+            label315 = new Label();
+            label316 = new Label();
+            label317 = new Label();
+            groupBox40 = new GroupBox();
+            button9 = new Button();
+            label307 = new Label();
+            label309 = new Label();
+            label310 = new Label();
+            label311 = new Label();
+            label312 = new Label();
+            groupBox39 = new GroupBox();
+            button8 = new Button();
+            label303 = new Label();
+            label304 = new Label();
+            label305 = new Label();
+            label306 = new Label();
+            label308 = new Label();
             button5 = new Button();
             label229 = new Label();
             panel6 = new Panel();
@@ -467,6 +516,20 @@
             label232 = new Label();
             label231 = new Label();
             timer3 = new System.Windows.Forms.Timer(components);
+            groupBox46 = new GroupBox();
+            button15 = new Button();
+            label338 = new Label();
+            label339 = new Label();
+            label340 = new Label();
+            label341 = new Label();
+            label342 = new Label();
+            groupBox47 = new GroupBox();
+            button16 = new Button();
+            label343 = new Label();
+            label344 = new Label();
+            label345 = new Label();
+            label346 = new Label();
+            label347 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -549,10 +612,19 @@
             groupBox32.SuspendLayout();
             groupBox31.SuspendLayout();
             panel5.SuspendLayout();
+            groupBox45.SuspendLayout();
+            groupBox44.SuspendLayout();
+            groupBox43.SuspendLayout();
+            groupBox42.SuspendLayout();
+            groupBox41.SuspendLayout();
+            groupBox40.SuspendLayout();
+            groupBox39.SuspendLayout();
             panel6.SuspendLayout();
             groupBox38.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel7.SuspendLayout();
+            groupBox46.SuspendLayout();
+            groupBox47.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -5176,18 +5248,594 @@
             // 
             panel5.AutoScroll = true;
             panel5.BorderStyle = BorderStyle.Fixed3D;
+            panel5.Controls.Add(groupBox47);
+            panel5.Controls.Add(groupBox46);
+            panel5.Controls.Add(groupBox45);
+            panel5.Controls.Add(groupBox44);
+            panel5.Controls.Add(groupBox43);
+            panel5.Controls.Add(groupBox42);
+            panel5.Controls.Add(groupBox41);
+            panel5.Controls.Add(groupBox40);
+            panel5.Controls.Add(groupBox39);
             panel5.Controls.Add(button5);
             panel5.Controls.Add(label229);
             panel5.Location = new Point(12, 155);
             panel5.Name = "panel5";
-            panel5.Size = new Size(620, 0);
+            panel5.Size = new Size(620, 650);
             panel5.TabIndex = 24;
+            // 
+            // groupBox45
+            // 
+            groupBox45.Controls.Add(button14);
+            groupBox45.Controls.Add(label333);
+            groupBox45.Controls.Add(label334);
+            groupBox45.Controls.Add(label335);
+            groupBox45.Controls.Add(label336);
+            groupBox45.Controls.Add(label337);
+            groupBox45.Location = new Point(12, 1100);
+            groupBox45.Name = "groupBox45";
+            groupBox45.Size = new Size(550, 140);
+            groupBox45.TabIndex = 34;
+            groupBox45.TabStop = false;
+            // 
+            // button14
+            // 
+            button14.BackColor = Color.FromArgb(69, 69, 69);
+            button14.FlatStyle = FlatStyle.Flat;
+            button14.ForeColor = Color.White;
+            button14.Location = new Point(411, 79);
+            button14.Name = "button14";
+            button14.Size = new Size(133, 55);
+            button14.TabIndex = 33;
+            button14.Text = "Недоступно";
+            button14.UseVisualStyleBackColor = false;
+            // 
+            // label333
+            // 
+            label333.AutoSize = true;
+            label333.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label333.ForeColor = Color.White;
+            label333.Location = new Point(275, 94);
+            label333.Name = "label333";
+            label333.Size = new Size(24, 28);
+            label333.TabIndex = 32;
+            label333.Text = "0";
+            // 
+            // label334
+            // 
+            label334.AutoSize = true;
+            label334.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label334.ForeColor = Color.White;
+            label334.Location = new Point(275, 54);
+            label334.Name = "label334";
+            label334.Size = new Size(24, 28);
+            label334.TabIndex = 31;
+            label334.Text = "0";
+            // 
+            // label335
+            // 
+            label335.AutoSize = true;
+            label335.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label335.ForeColor = Color.White;
+            label335.Location = new Point(12, 94);
+            label335.Name = "label335";
+            label335.Size = new Size(73, 28);
+            label335.TabIndex = 30;
+            label335.Text = "Приз :";
+            // 
+            // label336
+            // 
+            label336.AutoSize = true;
+            label336.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label336.ForeColor = Color.White;
+            label336.Location = new Point(12, 54);
+            label336.Name = "label336";
+            label336.Size = new Size(215, 28);
+            label336.TabIndex = 29;
+            label336.Text = "Необходимо монет :";
+            // 
+            // label337
+            // 
+            label337.AutoSize = true;
+            label337.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label337.ForeColor = Color.White;
+            label337.Location = new Point(6, 13);
+            label337.Name = "label337";
+            label337.Size = new Size(200, 41);
+            label337.TabIndex = 27;
+            label337.Text = "Достижение";
+            // 
+            // groupBox44
+            // 
+            groupBox44.Controls.Add(button13);
+            groupBox44.Controls.Add(label328);
+            groupBox44.Controls.Add(label329);
+            groupBox44.Controls.Add(label330);
+            groupBox44.Controls.Add(label331);
+            groupBox44.Controls.Add(label332);
+            groupBox44.Location = new Point(12, 929);
+            groupBox44.Name = "groupBox44";
+            groupBox44.Size = new Size(550, 140);
+            groupBox44.TabIndex = 37;
+            groupBox44.TabStop = false;
+            // 
+            // button13
+            // 
+            button13.BackColor = Color.FromArgb(69, 69, 69);
+            button13.FlatStyle = FlatStyle.Flat;
+            button13.ForeColor = Color.White;
+            button13.Location = new Point(411, 79);
+            button13.Name = "button13";
+            button13.Size = new Size(133, 55);
+            button13.TabIndex = 33;
+            button13.Text = "Недоступно";
+            button13.UseVisualStyleBackColor = false;
+            // 
+            // label328
+            // 
+            label328.AutoSize = true;
+            label328.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label328.ForeColor = Color.White;
+            label328.Location = new Point(275, 94);
+            label328.Name = "label328";
+            label328.Size = new Size(24, 28);
+            label328.TabIndex = 32;
+            label328.Text = "0";
+            // 
+            // label329
+            // 
+            label329.AutoSize = true;
+            label329.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label329.ForeColor = Color.White;
+            label329.Location = new Point(275, 54);
+            label329.Name = "label329";
+            label329.Size = new Size(24, 28);
+            label329.TabIndex = 31;
+            label329.Text = "0";
+            // 
+            // label330
+            // 
+            label330.AutoSize = true;
+            label330.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label330.ForeColor = Color.White;
+            label330.Location = new Point(12, 94);
+            label330.Name = "label330";
+            label330.Size = new Size(73, 28);
+            label330.TabIndex = 30;
+            label330.Text = "Приз :";
+            // 
+            // label331
+            // 
+            label331.AutoSize = true;
+            label331.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label331.ForeColor = Color.White;
+            label331.Location = new Point(12, 54);
+            label331.Name = "label331";
+            label331.Size = new Size(215, 28);
+            label331.TabIndex = 29;
+            label331.Text = "Необходимо монет :";
+            // 
+            // label332
+            // 
+            label332.AutoSize = true;
+            label332.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label332.ForeColor = Color.White;
+            label332.Location = new Point(6, 13);
+            label332.Name = "label332";
+            label332.Size = new Size(200, 41);
+            label332.TabIndex = 27;
+            label332.Text = "Достижение";
+            // 
+            // groupBox43
+            // 
+            groupBox43.Controls.Add(button12);
+            groupBox43.Controls.Add(label323);
+            groupBox43.Controls.Add(label324);
+            groupBox43.Controls.Add(label325);
+            groupBox43.Controls.Add(label326);
+            groupBox43.Controls.Add(label327);
+            groupBox43.Location = new Point(12, 760);
+            groupBox43.Name = "groupBox43";
+            groupBox43.Size = new Size(550, 140);
+            groupBox43.TabIndex = 36;
+            groupBox43.TabStop = false;
+            // 
+            // button12
+            // 
+            button12.BackColor = Color.FromArgb(69, 69, 69);
+            button12.FlatStyle = FlatStyle.Flat;
+            button12.ForeColor = Color.White;
+            button12.Location = new Point(411, 79);
+            button12.Name = "button12";
+            button12.Size = new Size(133, 55);
+            button12.TabIndex = 33;
+            button12.Text = "Недоступно";
+            button12.UseVisualStyleBackColor = false;
+            // 
+            // label323
+            // 
+            label323.AutoSize = true;
+            label323.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label323.ForeColor = Color.White;
+            label323.Location = new Point(275, 94);
+            label323.Name = "label323";
+            label323.Size = new Size(24, 28);
+            label323.TabIndex = 32;
+            label323.Text = "0";
+            // 
+            // label324
+            // 
+            label324.AutoSize = true;
+            label324.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label324.ForeColor = Color.White;
+            label324.Location = new Point(275, 54);
+            label324.Name = "label324";
+            label324.Size = new Size(24, 28);
+            label324.TabIndex = 31;
+            label324.Text = "0";
+            // 
+            // label325
+            // 
+            label325.AutoSize = true;
+            label325.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label325.ForeColor = Color.White;
+            label325.Location = new Point(12, 94);
+            label325.Name = "label325";
+            label325.Size = new Size(73, 28);
+            label325.TabIndex = 30;
+            label325.Text = "Приз :";
+            // 
+            // label326
+            // 
+            label326.AutoSize = true;
+            label326.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label326.ForeColor = Color.White;
+            label326.Location = new Point(12, 54);
+            label326.Name = "label326";
+            label326.Size = new Size(215, 28);
+            label326.TabIndex = 29;
+            label326.Text = "Необходимо монет :";
+            // 
+            // label327
+            // 
+            label327.AutoSize = true;
+            label327.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label327.ForeColor = Color.White;
+            label327.Location = new Point(6, 13);
+            label327.Name = "label327";
+            label327.Size = new Size(200, 41);
+            label327.TabIndex = 27;
+            label327.Text = "Достижение";
+            // 
+            // groupBox42
+            // 
+            groupBox42.Controls.Add(button11);
+            groupBox42.Controls.Add(label318);
+            groupBox42.Controls.Add(label319);
+            groupBox42.Controls.Add(label320);
+            groupBox42.Controls.Add(label321);
+            groupBox42.Controls.Add(label322);
+            groupBox42.Location = new Point(12, 583);
+            groupBox42.Name = "groupBox42";
+            groupBox42.Size = new Size(550, 140);
+            groupBox42.TabIndex = 34;
+            groupBox42.TabStop = false;
+            // 
+            // button11
+            // 
+            button11.BackColor = Color.FromArgb(69, 69, 69);
+            button11.FlatStyle = FlatStyle.Flat;
+            button11.ForeColor = Color.White;
+            button11.Location = new Point(411, 79);
+            button11.Name = "button11";
+            button11.Size = new Size(133, 55);
+            button11.TabIndex = 33;
+            button11.Text = "Недоступно";
+            button11.UseVisualStyleBackColor = false;
+            // 
+            // label318
+            // 
+            label318.AutoSize = true;
+            label318.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label318.ForeColor = Color.White;
+            label318.Location = new Point(275, 94);
+            label318.Name = "label318";
+            label318.Size = new Size(24, 28);
+            label318.TabIndex = 32;
+            label318.Text = "0";
+            // 
+            // label319
+            // 
+            label319.AutoSize = true;
+            label319.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label319.ForeColor = Color.White;
+            label319.Location = new Point(275, 54);
+            label319.Name = "label319";
+            label319.Size = new Size(24, 28);
+            label319.TabIndex = 31;
+            label319.Text = "0";
+            // 
+            // label320
+            // 
+            label320.AutoSize = true;
+            label320.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label320.ForeColor = Color.White;
+            label320.Location = new Point(12, 94);
+            label320.Name = "label320";
+            label320.Size = new Size(73, 28);
+            label320.TabIndex = 30;
+            label320.Text = "Приз :";
+            // 
+            // label321
+            // 
+            label321.AutoSize = true;
+            label321.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label321.ForeColor = Color.White;
+            label321.Location = new Point(12, 54);
+            label321.Name = "label321";
+            label321.Size = new Size(215, 28);
+            label321.TabIndex = 29;
+            label321.Text = "Необходимо монет :";
+            // 
+            // label322
+            // 
+            label322.AutoSize = true;
+            label322.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label322.ForeColor = Color.White;
+            label322.Location = new Point(6, 13);
+            label322.Name = "label322";
+            label322.Size = new Size(200, 41);
+            label322.TabIndex = 27;
+            label322.Text = "Достижение";
+            // 
+            // groupBox41
+            // 
+            groupBox41.Controls.Add(button10);
+            groupBox41.Controls.Add(label313);
+            groupBox41.Controls.Add(label314);
+            groupBox41.Controls.Add(label315);
+            groupBox41.Controls.Add(label316);
+            groupBox41.Controls.Add(label317);
+            groupBox41.Location = new Point(12, 410);
+            groupBox41.Name = "groupBox41";
+            groupBox41.Size = new Size(550, 140);
+            groupBox41.TabIndex = 35;
+            groupBox41.TabStop = false;
+            // 
+            // button10
+            // 
+            button10.BackColor = Color.FromArgb(69, 69, 69);
+            button10.FlatStyle = FlatStyle.Flat;
+            button10.ForeColor = Color.White;
+            button10.Location = new Point(411, 79);
+            button10.Name = "button10";
+            button10.Size = new Size(133, 55);
+            button10.TabIndex = 33;
+            button10.Text = "Недоступно";
+            button10.UseVisualStyleBackColor = false;
+            // 
+            // label313
+            // 
+            label313.AutoSize = true;
+            label313.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label313.ForeColor = Color.White;
+            label313.Location = new Point(275, 94);
+            label313.Name = "label313";
+            label313.Size = new Size(24, 28);
+            label313.TabIndex = 32;
+            label313.Text = "0";
+            // 
+            // label314
+            // 
+            label314.AutoSize = true;
+            label314.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label314.ForeColor = Color.White;
+            label314.Location = new Point(275, 54);
+            label314.Name = "label314";
+            label314.Size = new Size(24, 28);
+            label314.TabIndex = 31;
+            label314.Text = "0";
+            // 
+            // label315
+            // 
+            label315.AutoSize = true;
+            label315.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label315.ForeColor = Color.White;
+            label315.Location = new Point(12, 94);
+            label315.Name = "label315";
+            label315.Size = new Size(73, 28);
+            label315.TabIndex = 30;
+            label315.Text = "Приз :";
+            // 
+            // label316
+            // 
+            label316.AutoSize = true;
+            label316.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label316.ForeColor = Color.White;
+            label316.Location = new Point(12, 54);
+            label316.Name = "label316";
+            label316.Size = new Size(215, 28);
+            label316.TabIndex = 29;
+            label316.Text = "Необходимо монет :";
+            // 
+            // label317
+            // 
+            label317.AutoSize = true;
+            label317.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label317.ForeColor = Color.White;
+            label317.Location = new Point(6, 13);
+            label317.Name = "label317";
+            label317.Size = new Size(200, 41);
+            label317.TabIndex = 27;
+            label317.Text = "Достижение";
+            // 
+            // groupBox40
+            // 
+            groupBox40.Controls.Add(button9);
+            groupBox40.Controls.Add(label307);
+            groupBox40.Controls.Add(label309);
+            groupBox40.Controls.Add(label310);
+            groupBox40.Controls.Add(label311);
+            groupBox40.Controls.Add(label312);
+            groupBox40.Location = new Point(12, 238);
+            groupBox40.Name = "groupBox40";
+            groupBox40.Size = new Size(550, 140);
+            groupBox40.TabIndex = 34;
+            groupBox40.TabStop = false;
+            // 
+            // button9
+            // 
+            button9.BackColor = Color.FromArgb(69, 69, 69);
+            button9.FlatStyle = FlatStyle.Flat;
+            button9.ForeColor = Color.White;
+            button9.Location = new Point(411, 79);
+            button9.Name = "button9";
+            button9.Size = new Size(133, 55);
+            button9.TabIndex = 33;
+            button9.Text = "Недоступно";
+            button9.UseVisualStyleBackColor = false;
+            // 
+            // label307
+            // 
+            label307.AutoSize = true;
+            label307.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label307.ForeColor = Color.White;
+            label307.Location = new Point(275, 94);
+            label307.Name = "label307";
+            label307.Size = new Size(24, 28);
+            label307.TabIndex = 32;
+            label307.Text = "0";
+            // 
+            // label309
+            // 
+            label309.AutoSize = true;
+            label309.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label309.ForeColor = Color.White;
+            label309.Location = new Point(275, 54);
+            label309.Name = "label309";
+            label309.Size = new Size(24, 28);
+            label309.TabIndex = 31;
+            label309.Text = "0";
+            // 
+            // label310
+            // 
+            label310.AutoSize = true;
+            label310.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label310.ForeColor = Color.White;
+            label310.Location = new Point(12, 94);
+            label310.Name = "label310";
+            label310.Size = new Size(73, 28);
+            label310.TabIndex = 30;
+            label310.Text = "Приз :";
+            // 
+            // label311
+            // 
+            label311.AutoSize = true;
+            label311.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label311.ForeColor = Color.White;
+            label311.Location = new Point(12, 54);
+            label311.Name = "label311";
+            label311.Size = new Size(215, 28);
+            label311.TabIndex = 29;
+            label311.Text = "Необходимо монет :";
+            // 
+            // label312
+            // 
+            label312.AutoSize = true;
+            label312.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label312.ForeColor = Color.White;
+            label312.Location = new Point(6, 13);
+            label312.Name = "label312";
+            label312.Size = new Size(200, 41);
+            label312.TabIndex = 27;
+            label312.Text = "Достижение";
+            // 
+            // groupBox39
+            // 
+            groupBox39.Controls.Add(button8);
+            groupBox39.Controls.Add(label303);
+            groupBox39.Controls.Add(label304);
+            groupBox39.Controls.Add(label305);
+            groupBox39.Controls.Add(label306);
+            groupBox39.Controls.Add(label308);
+            groupBox39.Location = new Point(12, 78);
+            groupBox39.Name = "groupBox39";
+            groupBox39.Size = new Size(550, 140);
+            groupBox39.TabIndex = 27;
+            groupBox39.TabStop = false;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.FromArgb(69, 69, 69);
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.ForeColor = Color.White;
+            button8.Location = new Point(411, 79);
+            button8.Name = "button8";
+            button8.Size = new Size(133, 55);
+            button8.TabIndex = 33;
+            button8.Text = "Недоступно";
+            button8.UseVisualStyleBackColor = false;
+            // 
+            // label303
+            // 
+            label303.AutoSize = true;
+            label303.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label303.ForeColor = Color.White;
+            label303.Location = new Point(275, 94);
+            label303.Name = "label303";
+            label303.Size = new Size(24, 28);
+            label303.TabIndex = 32;
+            label303.Text = "0";
+            // 
+            // label304
+            // 
+            label304.AutoSize = true;
+            label304.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label304.ForeColor = Color.White;
+            label304.Location = new Point(275, 54);
+            label304.Name = "label304";
+            label304.Size = new Size(24, 28);
+            label304.TabIndex = 31;
+            label304.Text = "0";
+            // 
+            // label305
+            // 
+            label305.AutoSize = true;
+            label305.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label305.ForeColor = Color.White;
+            label305.Location = new Point(12, 94);
+            label305.Name = "label305";
+            label305.Size = new Size(73, 28);
+            label305.TabIndex = 30;
+            label305.Text = "Приз :";
+            // 
+            // label306
+            // 
+            label306.AutoSize = true;
+            label306.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label306.ForeColor = Color.White;
+            label306.Location = new Point(12, 54);
+            label306.Name = "label306";
+            label306.Size = new Size(215, 28);
+            label306.TabIndex = 29;
+            label306.Text = "Необходимо монет :";
+            // 
+            // label308
+            // 
+            label308.AutoSize = true;
+            label308.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label308.ForeColor = Color.White;
+            label308.Location = new Point(6, 13);
+            label308.Name = "label308";
+            label308.Size = new Size(200, 41);
+            label308.TabIndex = 27;
+            label308.Text = "Достижение";
             // 
             // button5
             // 
             button5.FlatStyle = FlatStyle.Flat;
             button5.ForeColor = Color.Red;
-            button5.Location = new Point(456, 13);
+            button5.Location = new Point(427, 13);
             button5.Name = "button5";
             button5.Size = new Size(154, 53);
             button5.TabIndex = 26;
@@ -5645,6 +6293,168 @@
             // 
             timer3.Tick += timer3_Tick;
             // 
+            // groupBox46
+            // 
+            groupBox46.Controls.Add(button15);
+            groupBox46.Controls.Add(label338);
+            groupBox46.Controls.Add(label339);
+            groupBox46.Controls.Add(label340);
+            groupBox46.Controls.Add(label341);
+            groupBox46.Controls.Add(label342);
+            groupBox46.Location = new Point(12, 1276);
+            groupBox46.Name = "groupBox46";
+            groupBox46.Size = new Size(550, 140);
+            groupBox46.TabIndex = 35;
+            groupBox46.TabStop = false;
+            // 
+            // button15
+            // 
+            button15.BackColor = Color.FromArgb(69, 69, 69);
+            button15.FlatStyle = FlatStyle.Flat;
+            button15.ForeColor = Color.White;
+            button15.Location = new Point(411, 79);
+            button15.Name = "button15";
+            button15.Size = new Size(133, 55);
+            button15.TabIndex = 33;
+            button15.Text = "Недоступно";
+            button15.UseVisualStyleBackColor = false;
+            // 
+            // label338
+            // 
+            label338.AutoSize = true;
+            label338.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label338.ForeColor = Color.White;
+            label338.Location = new Point(275, 94);
+            label338.Name = "label338";
+            label338.Size = new Size(24, 28);
+            label338.TabIndex = 32;
+            label338.Text = "0";
+            // 
+            // label339
+            // 
+            label339.AutoSize = true;
+            label339.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label339.ForeColor = Color.White;
+            label339.Location = new Point(275, 54);
+            label339.Name = "label339";
+            label339.Size = new Size(24, 28);
+            label339.TabIndex = 31;
+            label339.Text = "0";
+            // 
+            // label340
+            // 
+            label340.AutoSize = true;
+            label340.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label340.ForeColor = Color.White;
+            label340.Location = new Point(12, 94);
+            label340.Name = "label340";
+            label340.Size = new Size(73, 28);
+            label340.TabIndex = 30;
+            label340.Text = "Приз :";
+            // 
+            // label341
+            // 
+            label341.AutoSize = true;
+            label341.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label341.ForeColor = Color.White;
+            label341.Location = new Point(12, 54);
+            label341.Name = "label341";
+            label341.Size = new Size(215, 28);
+            label341.TabIndex = 29;
+            label341.Text = "Необходимо монет :";
+            // 
+            // label342
+            // 
+            label342.AutoSize = true;
+            label342.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label342.ForeColor = Color.White;
+            label342.Location = new Point(6, 13);
+            label342.Name = "label342";
+            label342.Size = new Size(200, 41);
+            label342.TabIndex = 27;
+            label342.Text = "Достижение";
+            // 
+            // groupBox47
+            // 
+            groupBox47.Controls.Add(button16);
+            groupBox47.Controls.Add(label343);
+            groupBox47.Controls.Add(label344);
+            groupBox47.Controls.Add(label345);
+            groupBox47.Controls.Add(label346);
+            groupBox47.Controls.Add(label347);
+            groupBox47.Location = new Point(12, 1458);
+            groupBox47.Name = "groupBox47";
+            groupBox47.Size = new Size(550, 140);
+            groupBox47.TabIndex = 35;
+            groupBox47.TabStop = false;
+            // 
+            // button16
+            // 
+            button16.BackColor = Color.FromArgb(69, 69, 69);
+            button16.FlatStyle = FlatStyle.Flat;
+            button16.ForeColor = Color.White;
+            button16.Location = new Point(411, 79);
+            button16.Name = "button16";
+            button16.Size = new Size(133, 55);
+            button16.TabIndex = 33;
+            button16.Text = "Недоступно";
+            button16.UseVisualStyleBackColor = false;
+            // 
+            // label343
+            // 
+            label343.AutoSize = true;
+            label343.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label343.ForeColor = Color.White;
+            label343.Location = new Point(275, 94);
+            label343.Name = "label343";
+            label343.Size = new Size(24, 28);
+            label343.TabIndex = 32;
+            label343.Text = "0";
+            // 
+            // label344
+            // 
+            label344.AutoSize = true;
+            label344.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label344.ForeColor = Color.White;
+            label344.Location = new Point(275, 54);
+            label344.Name = "label344";
+            label344.Size = new Size(24, 28);
+            label344.TabIndex = 31;
+            label344.Text = "0";
+            // 
+            // label345
+            // 
+            label345.AutoSize = true;
+            label345.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label345.ForeColor = Color.White;
+            label345.Location = new Point(12, 94);
+            label345.Name = "label345";
+            label345.Size = new Size(73, 28);
+            label345.TabIndex = 30;
+            label345.Text = "Приз :";
+            // 
+            // label346
+            // 
+            label346.AutoSize = true;
+            label346.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label346.ForeColor = Color.White;
+            label346.Location = new Point(12, 54);
+            label346.Name = "label346";
+            label346.Size = new Size(215, 28);
+            label346.TabIndex = 29;
+            label346.Text = "Необходимо монет :";
+            // 
+            // label347
+            // 
+            label347.AutoSize = true;
+            label347.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label347.ForeColor = Color.White;
+            label347.Location = new Point(6, 13);
+            label347.Name = "label347";
+            label347.Size = new Size(200, 41);
+            label347.TabIndex = 27;
+            label347.Text = "Достижение";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -5808,6 +6618,20 @@
             groupBox31.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            groupBox45.ResumeLayout(false);
+            groupBox45.PerformLayout();
+            groupBox44.ResumeLayout(false);
+            groupBox44.PerformLayout();
+            groupBox43.ResumeLayout(false);
+            groupBox43.PerformLayout();
+            groupBox42.ResumeLayout(false);
+            groupBox42.PerformLayout();
+            groupBox41.ResumeLayout(false);
+            groupBox41.PerformLayout();
+            groupBox40.ResumeLayout(false);
+            groupBox40.PerformLayout();
+            groupBox39.ResumeLayout(false);
+            groupBox39.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             groupBox38.ResumeLayout(false);
@@ -5815,6 +6639,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            groupBox46.ResumeLayout(false);
+            groupBox46.PerformLayout();
+            groupBox47.ResumeLayout(false);
+            groupBox47.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -6258,5 +7086,68 @@
         private Label label301;
         private Label label300;
         private Label label299;
+        private GroupBox groupBox39;
+        private Button button8;
+        private Label label303;
+        private Label label304;
+        private Label label305;
+        private Label label306;
+        private Label label308;
+        private GroupBox groupBox40;
+        private Button button9;
+        private Label label307;
+        private Label label309;
+        private Label label310;
+        private Label label311;
+        private Label label312;
+        private GroupBox groupBox45;
+        private Button button14;
+        private Label label333;
+        private Label label334;
+        private Label label335;
+        private Label label336;
+        private Label label337;
+        private GroupBox groupBox44;
+        private Button button13;
+        private Label label328;
+        private Label label329;
+        private Label label330;
+        private Label label331;
+        private Label label332;
+        private GroupBox groupBox43;
+        private Button button12;
+        private Label label323;
+        private Label label324;
+        private Label label325;
+        private Label label326;
+        private Label label327;
+        private GroupBox groupBox42;
+        private Button button11;
+        private Label label318;
+        private Label label319;
+        private Label label320;
+        private Label label321;
+        private Label label322;
+        private GroupBox groupBox41;
+        private Button button10;
+        private Label label313;
+        private Label label314;
+        private Label label315;
+        private Label label316;
+        private Label label317;
+        private GroupBox groupBox47;
+        private Button button16;
+        private Label label343;
+        private Label label344;
+        private Label label345;
+        private Label label346;
+        private Label label347;
+        private GroupBox groupBox46;
+        private Button button15;
+        private Label label338;
+        private Label label339;
+        private Label label340;
+        private Label label341;
+        private Label label342;
     }
 }

@@ -27,4 +27,9 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="docs\eng\" />
+    <Folder Include="docs\rus\" />
+  </ItemGroup>
+
 </Project>
