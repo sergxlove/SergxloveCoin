@@ -164,6 +164,18 @@ namespace SergxloveCoin
             {
                 firstAchive, secondAchive, thirdAchive, fourAchive, fiveAchive, sixAchive, sevenAchive, eightAchives, nineAchives
             };
+            dictionaryButtonAchives = new Dictionary<Achives, Button>()
+            {
+                [firstAchive] = getfirstachive,
+                [secondAchive] = getsecondachive,
+                [thirdAchive] = getthirdachive,
+                [fourAchive] = getfourachive,
+                [fiveAchive] = getfiveachive,
+                [sixAchive] = getsixachive,
+                [secondAchive] = getsevenachive,
+                [eightAchives] = geteightachive,
+                [nineAchives] = getnineachive,
+            };
             sqlConnection = "Data source=userdata.db";
             panels = new List<Panel> { panel4, panel5, panel6 };
             selectedPanel = 0;
@@ -241,6 +253,7 @@ namespace SergxloveCoin
         private Dictionary<string, Processor> dictionaryProcessor;
         private Dictionary<string, Level> dictionaryLevel;
         private Dictionary<Level, Button> dictionaryButtonLevel;
+        private Dictionary<Achives , Button> dictionaryButtonAchives;
         private List<string> namesMouse;
         private List<string> namesVideoCard;
         private List<string> namesProcessor;
@@ -727,6 +740,9 @@ namespace SergxloveCoin
             label300.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityVideocard), true, DataSourceUpdateMode.OnPropertyChanged));
             label301.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityProcessor), true, DataSourceUpdateMode.OnPropertyChanged));
             label302.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityDays), true, DataSourceUpdateMode.OnPropertyChanged));
+
+            //304, 303
+
 
             RegLevels();
 
