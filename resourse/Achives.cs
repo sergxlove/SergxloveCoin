@@ -6,7 +6,7 @@ namespace SergxloveCoin.resourse
     enum VariationAchive
     {
         None = 0,
-        Click = 1,
+        Money = 1,
         SpeedAuto = 2,
         SpeedClick = 3
     }

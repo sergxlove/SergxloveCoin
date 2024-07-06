@@ -74,8 +74,8 @@ namespace SergxloveCoin
             fiveAchive = new();
             sixAchive = new();
             sevenAchive = new();
-            eightAchives = new();
-            nineAchives = new();
+            eightAchive = new();
+            nineAchive = new();
 
             dictionaryMouse = new Dictionary<string, Mouse>()
             {
@@ -126,6 +126,18 @@ namespace SergxloveCoin
                 ["getsixlevel"] = sixLevel,
                 ["getsevenlevel"] = sevenLevel
             };
+            dictionaryAchives = new Dictionary<string, Achives>()
+            {
+                ["getfirstachive"] = firstAchive,
+                ["getsecondachive"] = secondAchive,
+                ["getthirdachive"] = thirdAchive,
+                ["getfourachive"] = fourAchive,
+                ["getfiveachive"] = fiveAchive,
+                ["getsixachive"] = sixAchive,
+                ["getsevenachive"] = sevenAchive,
+                ["geteightachive"] = eightAchive,
+                ["getnineachive"] = nineAchive
+            };
             namesMouse = new List<string>()
             {
                 "buycommonmouse", "buyeconomymouse", "buybudgetmouse", "buystandartmouse", "buyuniversalmouse",
@@ -146,6 +158,11 @@ namespace SergxloveCoin
                 "getfirstlevel", "getsecondlevel", "getthirdlevel", "getfourlevel",
                 "getfivelevel", "getsixlevel", "getsevenlevel"
             };
+            namesAchives = new List<string>()
+            {
+                "getfirstachive", "getsecondachive", "getthirdachive", "getfourachive", "getfiveachive", 
+                "getsixachive", "getsevenachive", "geteightachive", "getnineachive" 
+            };
             levelList = new List<Level>()
             {
                 firstLevel, secondLevel, thirdLevel, fourLevel, fiveLevel, sixLevel, sevenLevel
@@ -162,7 +179,7 @@ namespace SergxloveCoin
             };
             achivesList = new List<Achives>()
             {
-                firstAchive, secondAchive, thirdAchive, fourAchive, fiveAchive, sixAchive, sevenAchive, eightAchives, nineAchives
+                firstAchive, secondAchive, thirdAchive, fourAchive, fiveAchive, sixAchive, sevenAchive, eightAchive, nineAchive
             };
             dictionaryButtonAchives = new Dictionary<Achives, Button>()
             {
@@ -173,8 +190,8 @@ namespace SergxloveCoin
                 [fiveAchive] = getfiveachive,
                 [sixAchive] = getsixachive,
                 [secondAchive] = getsevenachive,
-                [eightAchives] = geteightachive,
-                [nineAchives] = getnineachive,
+                [eightAchive] = geteightachive,
+                [nineAchive] = getnineachive,
             };
             sqlConnection = "Data source=userdata.db";
             panels = new List<Panel> { panel4, panel5, panel6 };
@@ -183,9 +200,11 @@ namespace SergxloveCoin
             isChangedDataVideoCard = false;
             isChangedDataProcessor = false;
             isChangedDataLevel = false;
+            isChangedDataAchive = false;
             threadUpBalanceInSecond = new Thread(AutoUpBalance);
             threadUpEnergyInSeconds = new Thread(AutoUpEnergy);
-            threadCheckLevel = new(CheckLevels);
+            threadCheckLevel = new Thread (CheckLevels);
+            threadCheckAchive = new Thread (CheckAchives);
             isThreadingActive = true;
             showAnimation = false;
             showAnimationPanel = false;
@@ -244,8 +263,8 @@ namespace SergxloveCoin
         private Achives fiveAchive;
         private Achives sixAchive;
         private Achives sevenAchive;
-        private Achives eightAchives;
-        private Achives nineAchives;
+        private Achives eightAchive;
+        private Achives nineAchive;
         private List<Achives> achivesList;
 
         private Dictionary<string, Mouse> dictionaryMouse;
@@ -253,16 +272,19 @@ namespace SergxloveCoin
         private Dictionary<string, Processor> dictionaryProcessor;
         private Dictionary<string, Level> dictionaryLevel;
         private Dictionary<Level, Button> dictionaryButtonLevel;
+        private Dictionary<string, Achives> dictionaryAchives;
         private Dictionary<Achives , Button> dictionaryButtonAchives;
         private List<string> namesMouse;
         private List<string> namesVideoCard;
         private List<string> namesProcessor;
         private List<string> namesLevel;
+        private List<string> namesAchives;
 
         private bool isChangedDataMouses;
         private bool isChangedDataVideoCard;
         private bool isChangedDataProcessor;
         private bool isChangedDataLevel;
+        private bool isChangedDataAchive;
 
         private string sqlConnection;
         bool isCreateDatabase;
@@ -284,6 +306,7 @@ namespace SergxloveCoin
         private Thread threadUpBalanceInSecond;
         private Thread threadUpEnergyInSeconds;
         private Thread threadCheckLevel;
+        private Thread threadCheckAchive;
         private bool isThreadingActive;
 
         private void Form1_Load(object sender, EventArgs e)
@@ -370,6 +393,29 @@ namespace SergxloveCoin
                             }
                         }
                     }
+                    countComponent = 0;
+                    sqlCommand = "SELECT * FROM Achives;";
+                    command.CommandText = sqlCommand;
+                    firstAchive.ChangeData(10000000, 1000000, false, VariationAchive.Money);
+                    secondAchive.ChangeData(100000000, 10000000, false, VariationAchive.Money);
+                    thirdAchive.ChangeData(1000000000, 100000000, false, VariationAchive.Money);
+                    fourAchive.ChangeData(1000, 100000, false, VariationAchive.SpeedClick);
+                    fiveAchive.ChangeData(10000, 1000000, false, VariationAchive.SpeedClick);
+                    sixAchive.ChangeData(100000, 10000000, false, VariationAchive.SpeedClick);
+                    sevenAchive.ChangeData(10000, 1000000, false, VariationAchive.SpeedAuto);
+                    eightAchive.ChangeData(100000, 10000000, false, VariationAchive.SpeedAuto);
+                    nineAchive.ChangeData(1000000, 100000000, false, VariationAchive.SpeedAuto);
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+                        if(reader.HasRows)
+                        {
+                            while(reader.Read())
+                            {
+                                dictionaryAchives[namesAchives[countComponent]].IsDone = Convert.ToBoolean(reader.GetInt32(1));
+                                countComponent++;
+                            }
+                        }
+                    }
                     sqlCommand = "SELECT * FROM StatsPlayer WHERE idPlayer = 1;";
                     command.CommandText = sqlCommand;
                     using (SqliteDataReader reader = command.ExecuteReader())
@@ -447,8 +493,19 @@ namespace SergxloveCoin
                 sixLevel.ChangeData(6, 10000000, 1300000, false);
                 sevenLevel.ChangeData(7, 50000000, 8000000, false);
 
+                firstAchive.ChangeData(10000000, 1000000, false, VariationAchive.Money);
+                secondAchive.ChangeData(100000000, 10000000, false, VariationAchive.Money);
+                thirdAchive.ChangeData(1000000000, 100000000, false, VariationAchive.Money);
+                fourAchive.ChangeData(1000, 100000, false, VariationAchive.SpeedClick);
+                fiveAchive.ChangeData(10000, 1000000, false, VariationAchive.SpeedClick);
+                sixAchive.ChangeData(100000, 10000000, false, VariationAchive.SpeedClick);
+                sevenAchive.ChangeData(10000, 1000000, false, VariationAchive.SpeedAuto);
+                eightAchive.ChangeData(100000, 10000000, false, VariationAchive.SpeedAuto);
+                nineAchive.ChangeData(1000000, 100000000, false, VariationAchive.SpeedAuto);
+
                 myBalance.changeData(1, 0, 0, 0, 1000, 1000, DateTime.Now);
                 statisticsPlayer.ChangeData(1, 0, 0, 0, 0, 0, 0, 0, DateTime.Now);
+
                 using (var connection = new SqliteConnection(sqlConnection))
                 {
                     connection.Open();
@@ -479,6 +536,9 @@ namespace SergxloveCoin
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
                     sqlCommand = "CREATE TABLE Levels(idLevel INT PRIMARY KEY NOT NULL, isDone INT NOT NULL);";
+                    command.CommandText = sqlCommand;
+                    command.ExecuteNonQuery();
+                    sqlCommand = "CREATE TABLE Achives(idAchives INT PRIMARY KEY NOT NULL, isDone INT NOT NULL);";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
                     sqlCommand = $@"CREATE TABLE Statistics(idStats INT PRIMARY KEY NOT NULL,
@@ -536,6 +596,14 @@ namespace SergxloveCoin
                     {
                         idParam.Value = i + 1;
                         priceParam.Value = dictionaryLevel[namesLevel[i]].IsDone;
+                        command.ExecuteNonQuery();
+                    }
+                    sqlCommand = $@"INSERT INTO Achives(idAcheves, isDone) VALUES (@id, @price);";
+                    command.CommandText = sqlCommand;
+                    for(int i = 0; i < namesAchives.Count; i++)
+                    {
+                        idParam.Value = i + 1;
+                        priceParam.Value = dictionaryAchives[namesAchives[i]].IsDone;
                         command.ExecuteNonQuery();
                     }
                 }
@@ -742,13 +810,40 @@ namespace SergxloveCoin
             label302.DataBindings.Add(new Binding(nameof(Text), statisticsPlayer, nameof(statisticsPlayer.QuantityDays), true, DataSourceUpdateMode.OnPropertyChanged));
 
             //304, 303
-
+            label304.DataBindings.Add(new Binding(nameof(Text), firstAchive, nameof(firstAchive.NeedClaim), true, DataSourceUpdateMode.OnPropertyChanged));
+            label303.DataBindings.Add(new Binding(nameof(Text), firstAchive, nameof(firstAchive.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //309, 307
+            label309.DataBindings.Add(new Binding(nameof(Text), secondAchive, nameof(secondAchive.NeedClaim), true, DataSourceUpdateMode.OnPropertyChanged));
+            label307.DataBindings.Add(new Binding(nameof(Text), secondAchive, nameof(secondAchive.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //314, 313
+            label314.DataBindings.Add(new Binding(nameof(Text), thirdAchive, nameof(thirdAchive.NeedClaim), true, DataSourceUpdateMode.OnPropertyChanged));
+            label313.DataBindings.Add(new Binding(nameof(Text), thirdAchive, nameof(thirdAchive.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //319, 318
+            label319.DataBindings.Add(new Binding(nameof(Text), fourAchive, nameof(fourAchive.NeedClaim), true, DataSourceUpdateMode.OnPropertyChanged));
+            label318.DataBindings.Add(new Binding(nameof(Text), fourAchive, nameof(fourAchive.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //324, 323
+            label324.DataBindings.Add(new Binding(nameof(Text), fiveAchive, nameof(fiveAchive.NeedClaim), true, DataSourceUpdateMode.OnPropertyChanged));
+            label323.DataBindings.Add(new Binding(nameof(Text), fiveAchive, nameof(fiveAchive.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //329 ,328
+            label329.DataBindings.Add(new Binding(nameof(Text), sixAchive, nameof(sixAchive.NeedClaim), true, DataSourceUpdateMode.OnPropertyChanged));
+            label328.DataBindings.Add(new Binding(nameof(Text), sixAchive, nameof(sixAchive.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //334, 333
+            label334.DataBindings.Add(new Binding(nameof(Text), sevenAchive, nameof(sevenAchive.NeedClaim), true, DataSourceUpdateMode.OnPropertyChanged));
+            label333.DataBindings.Add(new Binding(nameof(Text), sevenAchive, nameof(sevenAchive.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //339, 338
+            label339.DataBindings.Add(new Binding(nameof(Text), eightAchive, nameof(eightAchive.NeedClaim), true, DataSourceUpdateMode.OnPropertyChanged));
+            label338.DataBindings.Add(new Binding(nameof(Text), eightAchive, nameof(eightAchive.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
+            //344, 343
+            label344.DataBindings.Add(new Binding(nameof(Text), nineAchive, nameof(nineAchive.NeedClaim), true, DataSourceUpdateMode.OnPropertyChanged));
+            label343.DataBindings.Add(new Binding(nameof(Text), nineAchive, nameof(nineAchive.Prize), true, DataSourceUpdateMode.OnPropertyChanged));
 
             RegLevels();
+            RegAchives();
 
             threadUpBalanceInSecond.Start();
             threadUpEnergyInSeconds.Start();
             threadCheckLevel.Start();
+            threadCheckAchive.Start();
 
             showAnimationNotify = true;
             sizeNotifyX = 0;
@@ -879,10 +974,13 @@ namespace SergxloveCoin
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (showAnimationNotify) button7_Click(sender, e);
-            myBalance.upBalanse(myBalance.SpeedClick);
-            myBalance.CurrentEnergy -= 3;
-            statisticsPlayer.QuantityClick++;
-            statisticsPlayer.TotalSumClickMoney += myBalance.SpeedClick;
+            if(myBalance.CurrentEnergy >= 3)
+            {
+                myBalance.upBalanse(myBalance.SpeedClick);
+                myBalance.CurrentEnergy -= 3;
+                statisticsPlayer.QuantityClick++;
+                statisticsPlayer.TotalSumClickMoney += myBalance.SpeedClick;
+            }
         }
 
         private void openPanel(object sender, EventArgs e)
@@ -1261,6 +1359,68 @@ namespace SergxloveCoin
                 if (levelList[i].IsDone)
                 {
                     StartChangeButton(dictionaryButtonLevel[levelList[i]]);
+                }
+            }
+        }
+        private void getAchive(object sender, EventArgs e)
+        {
+            Button selectButton = (Button )sender;
+            if(dictionaryAchives.ContainsKey(selectButton.Name))
+            {
+                Achives newAchives = dictionaryAchives[selectButton.Name];
+                if(selectButton.Text == "Получить")
+                {
+                    newAchives.IsDone = true;
+                    statisticsPlayer.QuantityAchives++;
+                    myBalance.upBalanse(newAchives.Prize);
+                    selectButton.Text = "Получено";
+                    isChangedDataAchive = true;
+                }
+            }
+        }
+        private void CheckAchives()
+        {
+            while(isThreadingActive)
+            {
+                Thread.Sleep(10000);
+                for (int i = 0; i < achivesList.Count; i++)
+                {
+                    if (achivesList[i].IsDone == false)
+                    {
+                        switch(achivesList[i].TypeAchives)
+                        {
+                            case VariationAchive.SpeedClick:
+                                if (achivesList[i].NeedClaim < myBalance.SpeedClick)
+                                {
+                                    ChangeButton(dictionaryButtonAchives[achivesList[i]]);
+                                }
+                                break;
+                            case VariationAchive.SpeedAuto:
+                                if (achivesList[i].NeedClaim < (myBalance.SpeedVideoCard + myBalance.SpeedProcessor))
+                                {
+                                    ChangeButton(dictionaryButtonAchives[achivesList[i]]);
+                                }
+                                break;
+                            case VariationAchive.Money:
+                                if(achivesList[i].NeedClaim < myBalance.BalansePlayer)
+                                {
+                                    ChangeButton(dictionaryButtonAchives[achivesList[i]]);
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+        private void RegAchives()
+        {
+            for (int i = 0; i< achivesList.Count; i++)
+            {
+                if (achivesList[i].IsDone)
+                {
+                    StartChangeButton(dictionaryButtonAchives[achivesList[i]]);
                 }
             }
         }
