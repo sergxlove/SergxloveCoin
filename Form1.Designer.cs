@@ -5289,6 +5289,7 @@
             getnineachive.TabIndex = 33;
             getnineachive.Text = "Недоступно";
             getnineachive.UseVisualStyleBackColor = false;
+            getnineachive.Click += getAchive;
             // 
             // label343
             // 
@@ -5370,6 +5371,7 @@
             geteightachive.TabIndex = 33;
             geteightachive.Text = "Недоступно";
             geteightachive.UseVisualStyleBackColor = false;
+            geteightachive.Click += getAchive;
             // 
             // label338
             // 
@@ -5451,6 +5453,7 @@
             getsevenachive.TabIndex = 33;
             getsevenachive.Text = "Недоступно";
             getsevenachive.UseVisualStyleBackColor = false;
+            getsevenachive.Click += getAchive;
             // 
             // label333
             // 
@@ -5532,6 +5535,7 @@
             getsixachive.TabIndex = 33;
             getsixachive.Text = "Недоступно";
             getsixachive.UseVisualStyleBackColor = false;
+            getsixachive.Click += getAchive;
             // 
             // label328
             // 
@@ -5613,6 +5617,7 @@
             getfiveachive.TabIndex = 33;
             getfiveachive.Text = "Недоступно";
             getfiveachive.UseVisualStyleBackColor = false;
+            getfiveachive.Click += getAchive;
             // 
             // label323
             // 
@@ -5694,6 +5699,7 @@
             getfourachive.TabIndex = 33;
             getfourachive.Text = "Недоступно";
             getfourachive.UseVisualStyleBackColor = false;
+            getfourachive.Click += getAchive;
             // 
             // label318
             // 
@@ -5775,6 +5781,7 @@
             getthirdachive.TabIndex = 33;
             getthirdachive.Text = "Недоступно";
             getthirdachive.UseVisualStyleBackColor = false;
+            getthirdachive.Click += getAchive;
             // 
             // label313
             // 
@@ -5856,6 +5863,7 @@
             getsecondachive.TabIndex = 33;
             getsecondachive.Text = "Недоступно";
             getsecondachive.UseVisualStyleBackColor = false;
+            getsecondachive.Click += getAchive;
             // 
             // label307
             // 
@@ -5937,6 +5945,7 @@
             getfirstachive.TabIndex = 33;
             getfirstachive.Text = "Недоступно";
             getfirstachive.UseVisualStyleBackColor = false;
+            getfirstachive.Click += getAchive;
             // 
             // label303
             // 
