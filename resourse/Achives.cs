@@ -10,7 +10,7 @@ namespace SergxloveCoin.resourse
         SpeedAuto = 2,
         SpeedClick = 3
     }
-    internal class Achives : INotifyPropertyChanged
+    internal sealed class Achives : INotifyPropertyChanged
     {
         public Achives()
         {
