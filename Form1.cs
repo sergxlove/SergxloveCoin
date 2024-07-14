@@ -287,7 +287,7 @@ namespace SergxloveCoin
         private bool isChangedDataAchive;
 
         private string sqlConnection;
-        bool isCreateDatabase;
+        private bool isCreateDatabase;
 
         private int frameCount = 0;
         private int sizeX = 0;
