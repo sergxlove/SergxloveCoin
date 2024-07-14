@@ -194,6 +194,7 @@ namespace SergxloveCoin
                 [nineAchive] = getnineachive,
             };
             sqlConnection = "Data source=userdata.db";
+            baseDate = new SqlQuery("Data source=userdata.db");
             panels = new List<Panel> { panel4, panel5, panel6 };
             selectedPanel = 0;
             isChangedDataMouses = false;
@@ -288,6 +289,7 @@ namespace SergxloveCoin
 
         private string sqlConnection;
         private bool isCreateDatabase;
+        private SqlQuery baseDate;
 
         private int frameCount = 0;
         private int sizeX = 0;
@@ -309,7 +311,7 @@ namespace SergxloveCoin
         private Thread threadCheckAchive;
         private bool isThreadingActive;
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
             if (isCreateDatabase)
             {
@@ -505,14 +507,24 @@ namespace SergxloveCoin
 
                 myBalance.changeData(1, 0, 0, 0, 1000, 1000, DateTime.Now);
                 statisticsPlayer.ChangeData(1, 0, 0, 0, 0, 0, 0, 0, DateTime.Now);
+                await baseDate.CreateTable($@"CREATE TABLE StatsPlayer( idPlayer INT PRIMARY KEY NOT NULL, balancePlayer BIGINT NOT NULL, speedClick INT NOT NULL, 
+                    speedVideoCard INT NOT NULL, speedProcessor INT NOT NULL, currentEnergy INT NOT NULL, maxEnergy INT NOT NULL, lastVisitDate DATETIME NOT NULL);");
+                await baseDate.CreateTable("CREATE TABLE Mouses(idMouse INT PRIMARY KEY NOT NULL,price INT NOT NULL,speed INT NOT NULL,quantity INT NOT NULL);");
+                await baseDate.CreateTable("CREATE TABLE Videocards(idVideocard INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);");
+                await baseDate.CreateTable("CREATE TABLE Processors(idProcessor INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);");
+                await baseDate.CreateTable("CREATE TABLE Levels(idLevel INT PRIMARY KEY NOT NULL, isDone INT NOT NULL);");
+                await baseDate.CreateTable("CREATE TABLE Achives(idAchives INT PRIMARY KEY NOT NULL, isDone INT NOT NULL);");
+                await baseDate.CreateTable($@"CREATE TABLE Statistics(idStats INT PRIMARY KEY NOT NULL, quantityClick INT NOT NULL, totalSumClickMoney INT NOT NULL,
+                    totalSumAutoMoney INT NOT NULL, level INT NOT NULL, quantityAchives INT NOT NULL, quantityMouse INT NOT NULL, quantityVideocard INT NOT NULL,
+                    quantityProcessor INT NOT NULL, dateBegin DATETIME NOT NULL);");
 
                 using (var connection = new SqliteConnection(sqlConnection))
                 {
                     connection.Open();
                     string sqlCommand = "CREATE TABLE StatsPlayer( idPlayer INT PRIMARY KEY NOT NULL, balancePlayer BIGINT NOT NULL, speedClick INT NOT NULL, speedVideoCard INT NOT NULL, speedProcessor INT NOT NULL, currentEnergy INT NOT NULL, maxEnergy INT NOT NULL, lastVisitDate DATETIME NOT NULL);";
                     SqliteCommand command = connection.CreateCommand();
-                    command.Connection = connection;
-                    command.CommandText = sqlCommand;
+                    //command.Connection = connection;
+                    //command.CommandText = sqlCommand;
                     SqliteParameter idParam = new SqliteParameter();
                     SqliteParameter priceParam = new SqliteParameter();
                     SqliteParameter speedParam = new SqliteParameter();
@@ -525,35 +537,8 @@ namespace SergxloveCoin
                     command.Parameters.Add(priceParam);
                     command.Parameters.Add(speedParam);
                     command.Parameters.Add(quantityParam);
-                    command.ExecuteNonQuery();
-                    sqlCommand = "CREATE TABLE Mouses(idMouse INT PRIMARY KEY NOT NULL,price INT NOT NULL,speed INT NOT NULL,quantity INT NOT NULL);";
-                    command.CommandText = sqlCommand;
-                    command.ExecuteNonQuery();
-                    sqlCommand = "CREATE TABLE Videocards(idVideocard INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);";
-                    command.CommandText = sqlCommand;
-                    command.ExecuteNonQuery();
-                    sqlCommand = "CREATE TABLE Processors(idProcessor INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);";
-                    command.CommandText = sqlCommand;
-                    command.ExecuteNonQuery();
-                    sqlCommand = "CREATE TABLE Levels(idLevel INT PRIMARY KEY NOT NULL, isDone INT NOT NULL);";
-                    command.CommandText = sqlCommand;
-                    command.ExecuteNonQuery();
-                    sqlCommand = "CREATE TABLE Achives(idAchives INT PRIMARY KEY NOT NULL, isDone INT NOT NULL);";
-                    command.CommandText = sqlCommand;
-                    command.ExecuteNonQuery();
-                    sqlCommand = $@"CREATE TABLE Statistics(idStats INT PRIMARY KEY NOT NULL,
-                    quantityClick INT NOT NULL,
-                    totalSumClickMoney INT NOT NULL,
-                    totalSumAutoMoney INT NOT NULL,
-                    level INT NOT NULL,
-                    quantityAchives INT NOT NULL,
-                    quantityMouse INT NOT NULL,
-                    quantityVideocard INT NOT NULL,
-                    quantityProcessor INT NOT NULL,
-                    dateBegin DATETIME NOT NULL);";
-                    command.CommandText = sqlCommand;
-                    command.ExecuteNonQuery();
-                    sqlCommand = $@"INSERT INTO StatsPlayer(idPlayer, balancePlayer, speedClick, speedVideoCard, speedProcessor, currentEnergy, maxEnergy, lastVisitDate) VALUES(1, 0, 1, 0, 0, 1000, 1000, '2024-01-01 00:00:00');";
+                    sqlCommand = $@"INSERT INTO StatsPlayer(idPlayer, balancePlayer, speedClick, speedVideoCard, speedProcessor, currentEnergy, maxEnergy, lastVisitDate) 
+                        VALUES(1, 0, 1, 0, 0, 1000, 1000, '2024-01-01 00:00:00');";
                     command.CommandText = sqlCommand;
                     command.ExecuteNonQuery();
                     sqlCommand = $@"INSERT INTO Statistics(idStats, quantityClick, totalSumClickMoney, totalSumAutoMoney, level, quantityAchives,
@@ -598,7 +583,7 @@ namespace SergxloveCoin
                         priceParam.Value = dictionaryLevel[namesLevel[i]].IsDone;
                         command.ExecuteNonQuery();
                     }
-                    sqlCommand = $@"INSERT INTO Achives(idAcheves, isDone) VALUES (@id, @price);";
+                    sqlCommand = $@"INSERT INTO Achives(idAchives, isDone) VALUES (@id, @price);";
                     command.CommandText = sqlCommand;
                     for(int i = 0; i < namesAchives.Count; i++)
                     {
