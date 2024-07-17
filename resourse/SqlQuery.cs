@@ -57,6 +57,11 @@ namespace SergxloveCoin.resourse
             }
         }
 
+        internal async Task FieldTableMousesDef(Dictionary<string, Mouse> mouses)
+        {
+            
+        }
+
         private readonly string sqlConnection;
     }
 }
