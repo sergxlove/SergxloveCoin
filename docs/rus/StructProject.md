@@ -12,19 +12,19 @@ resourse - директори€ содержит файлы .cs, в которых описан функционал приложени€
 
 ƒоступные файлы :
 
-Achives.cs - 
+Achives.cs - содержит класс Achives.
 
-Level.cs - 
+Level.cs - содержит класс Levels.
 
-Mouse.cs - 
+Mouse.cs - содержит класс Mouse.
 
-Processor.cs - 
+Processor.cs - содержит класс Processor.
 
-SqlQuery.cs - 
+SqlQuery.cs - содержит класс SqlQuery.
 
-Statistics.cs - 
+Statistics.cs - содержит класс Statistics.
 
-StatsPlayer.cs - 
+StatsPlayer.cs - содержит класс StatsPlayer.
 
-VideoCard.cs - 
+VideoCard.cs - содержит класс VideoCard.
 
