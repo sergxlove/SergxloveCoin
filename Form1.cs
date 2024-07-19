@@ -160,8 +160,8 @@ namespace SergxloveCoin
             };
             namesAchives = new List<string>()
             {
-                "getfirstachive", "getsecondachive", "getthirdachive", "getfourachive", "getfiveachive", 
-                "getsixachive", "getsevenachive", "geteightachive", "getnineachive" 
+                "getfirstachive", "getsecondachive", "getthirdachive", "getfourachive", "getfiveachive",
+                "getsixachive", "getsevenachive", "geteightachive", "getnineachive"
             };
             levelList = new List<Level>()
             {
@@ -204,8 +204,8 @@ namespace SergxloveCoin
             isChangedDataAchive = false;
             threadUpBalanceInSecond = new Thread(AutoUpBalance);
             threadUpEnergyInSeconds = new Thread(AutoUpEnergy);
-            threadCheckLevel = new Thread (CheckLevels);
-            threadCheckAchive = new Thread (CheckAchives);
+            threadCheckLevel = new Thread(CheckLevels);
+            threadCheckAchive = new Thread(CheckAchives);
             isThreadingActive = true;
             showAnimation = false;
             showAnimationPanel = false;
@@ -274,7 +274,7 @@ namespace SergxloveCoin
         private Dictionary<string, Level> dictionaryLevel;
         private Dictionary<Level, Button> dictionaryButtonLevel;
         private Dictionary<string, Achives> dictionaryAchives;
-        private Dictionary<Achives , Button> dictionaryButtonAchives;
+        private Dictionary<Achives, Button> dictionaryButtonAchives;
         private List<string> namesMouse;
         private List<string> namesVideoCard;
         private List<string> namesProcessor;
@@ -365,11 +365,11 @@ namespace SergxloveCoin
                     countComponent = 0;
                     sqlCommand = "SELECT * FROM Statistics WHERE idStats = 1;";
                     command.CommandText = sqlCommand;
-                    using(SqliteDataReader reader = command.ExecuteReader())
+                    using (SqliteDataReader reader = command.ExecuteReader())
                     {
-                        if(reader.HasRows)
+                        if (reader.HasRows)
                         {
-                            while(reader.Read())
+                            while (reader.Read())
                             {
                                 statisticsPlayer.ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8), reader.GetDateTime(9));
                             }
@@ -409,9 +409,9 @@ namespace SergxloveCoin
                     nineAchive.ChangeData(1000000, 100000000, false, VariationAchive.SpeedAuto);
                     using (SqliteDataReader reader = command.ExecuteReader())
                     {
-                        if(reader.HasRows)
+                        if (reader.HasRows)
                         {
-                            while(reader.Read())
+                            while (reader.Read())
                             {
                                 dictionaryAchives[namesAchives[countComponent]].IsDone = Convert.ToBoolean(reader.GetInt32(1));
                                 countComponent++;
@@ -439,9 +439,9 @@ namespace SergxloveCoin
                                 label235.Text = (actualTimesForFullEnergy / 3).ToString();
                                 myBalance.CurrentEnergy += actualTimesForFullEnergy / 3;
                             }
-                            if(actualTimesForFullEnergy > (3600 * 8))
+                            if (actualTimesForFullEnergy > (3600 * 8))
                             {
-                                myBalance.BalansePlayer += (3600 * 8) * myBalance.SpeedProcessor; 
+                                myBalance.BalansePlayer += (3600 * 8) * myBalance.SpeedProcessor;
                             }
                             else
                             {
@@ -517,81 +517,14 @@ namespace SergxloveCoin
                 await baseDate.CreateTable($@"CREATE TABLE Statistics(idStats INT PRIMARY KEY NOT NULL, quantityClick INT NOT NULL, totalSumClickMoney INT NOT NULL,
                     totalSumAutoMoney INT NOT NULL, level INT NOT NULL, quantityAchives INT NOT NULL, quantityMouse INT NOT NULL, quantityVideocard INT NOT NULL,
                     quantityProcessor INT NOT NULL, dateBegin DATETIME NOT NULL);");
-
-                using (var connection = new SqliteConnection(sqlConnection))
-                {
-                    connection.Open();
-                    string sqlCommand = "CREATE TABLE StatsPlayer( idPlayer INT PRIMARY KEY NOT NULL, balancePlayer BIGINT NOT NULL, speedClick INT NOT NULL, speedVideoCard INT NOT NULL, speedProcessor INT NOT NULL, currentEnergy INT NOT NULL, maxEnergy INT NOT NULL, lastVisitDate DATETIME NOT NULL);";
-                    SqliteCommand command = connection.CreateCommand();
-                    //command.Connection = connection;
-                    //command.CommandText = sqlCommand;
-                    SqliteParameter idParam = new SqliteParameter();
-                    SqliteParameter priceParam = new SqliteParameter();
-                    SqliteParameter speedParam = new SqliteParameter();
-                    SqliteParameter quantityParam = new SqliteParameter();
-                    idParam.ParameterName = "@id";
-                    priceParam.ParameterName = "@price";
-                    speedParam.ParameterName = "@speed";
-                    quantityParam.ParameterName = "@quantity";
-                    command.Parameters.Add(idParam);
-                    command.Parameters.Add(priceParam);
-                    command.Parameters.Add(speedParam);
-                    command.Parameters.Add(quantityParam);
-                    sqlCommand = $@"INSERT INTO StatsPlayer(idPlayer, balancePlayer, speedClick, speedVideoCard, speedProcessor, currentEnergy, maxEnergy, lastVisitDate) 
-                        VALUES(1, 0, 1, 0, 0, 1000, 1000, '2024-01-01 00:00:00');";
-                    command.CommandText = sqlCommand;
-                    command.ExecuteNonQuery();
-                    sqlCommand = $@"INSERT INTO Statistics(idStats, quantityClick, totalSumClickMoney, totalSumAutoMoney, level, quantityAchives,
-                    quantityMouse, quantityVideocard, quantityProcessor, dateBegin) VALUES(1, 0, 0, 0, 0, 0, 0, 0, 0, '2024-01-01 00:00:00')";
-                    command.CommandText = sqlCommand;
-                    command.ExecuteNonQuery();
-                    sqlCommand = $@"INSERT INTO Mouses(idMouse, price, speed, quantity) VALUES (@id, @price, @speed, @quantity);";
-                    command.CommandText = sqlCommand;
-                    for (int i = 0; i < namesMouse.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        priceParam.Value = dictionaryMouse[namesMouse[i]].Price;
-                        speedParam.Value = dictionaryMouse[namesMouse[i]].SpeedClick;
-                        quantityParam.Value = dictionaryMouse[namesMouse[i]].Quantity;
-                        command.ExecuteNonQuery();
-                    }
-                    sqlCommand = $@"INSERT INTO Videocards(idVideocard, price, speed, quantity) VALUES (@id, @price, @speed, @quantity);";
-                    command.CommandText = sqlCommand;
-                    for (int i = 0; i < namesVideoCard.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        priceParam.Value = dictionaryVideoCard[namesVideoCard[i]].Price;
-                        speedParam.Value = dictionaryVideoCard[namesVideoCard[i]].Speed;
-                        quantityParam.Value = dictionaryVideoCard[namesVideoCard[i]].Quantity;
-                        command.ExecuteNonQuery();
-                    }
-                    sqlCommand = $@"INSERT INTO Processors(idProcessor, price, speed, quantity) VALUES (@id, @price, @speed, @quantity);";
-                    command.CommandText = sqlCommand;
-                    for (int i = 0; i < namesProcessor.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        priceParam.Value = dictionaryProcessor[namesProcessor[i]].Price;
-                        speedParam.Value = dictionaryProcessor[namesProcessor[i]].Speed;
-                        quantityParam.Value = dictionaryProcessor[namesProcessor[i]].Quantity;
-                        command.ExecuteNonQuery();
-                    }
-                    sqlCommand = $@"INSERT INTO Levels(idLevel, isDone) VALUES (@id, @price);";
-                    command.CommandText = sqlCommand;
-                    for (int i = 0; i < namesLevel.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        priceParam.Value = dictionaryLevel[namesLevel[i]].IsDone;
-                        command.ExecuteNonQuery();
-                    }
-                    sqlCommand = $@"INSERT INTO Achives(idAchives, isDone) VALUES (@id, @price);";
-                    command.CommandText = sqlCommand;
-                    for(int i = 0; i < namesAchives.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        priceParam.Value = dictionaryAchives[namesAchives[i]].IsDone;
-                        command.ExecuteNonQuery();
-                    }
-                }
+                await baseDate.FieldTableStatsPlayerDef();
+                await baseDate.FieldTableStatisticsDef();
+                await baseDate.FieldTableMousesDef(dictionaryMouse, namesMouse);
+                await baseDate.FieldTableVideoCardDef(dictionaryVideoCard, namesVideoCard);
+                await baseDate.FieldTableProcessorDef(dictionaryProcessor, namesProcessor);
+                await baseDate.FieldTableLevelDef(dictionaryLevel, namesLevel);
+                await baseDate.FieldTableAchiveDef(dictionaryAchives, namesAchives);
+                
             }
             label2.Text = myBalance.BalansePlayer.ToString();
             label5.Text = myBalance.SpeedClick.ToString();
@@ -914,7 +847,7 @@ namespace SergxloveCoin
                 {
                     sqlCommand = "UPDATE Levels SET isDone = @price WHERE idLevel = @id;";
                     command.CommandText = sqlCommand;
-                    for(int i = 0;i < namesLevel.Count; i++)
+                    for (int i = 0; i < namesLevel.Count; i++)
                     {
                         idParam.Value = i + 1;
                         if (dictionaryLevel[namesLevel[i]].IsDone)
@@ -959,7 +892,7 @@ namespace SergxloveCoin
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (showAnimationNotify) button7_Click(sender, e);
-            if(myBalance.CurrentEnergy >= 3)
+            if (myBalance.CurrentEnergy >= 3)
             {
                 myBalance.upBalanse(myBalance.SpeedClick);
                 myBalance.CurrentEnergy -= 3;
@@ -1322,7 +1255,7 @@ namespace SergxloveCoin
         }
         private void CheckLevels()
         {
-            while(isThreadingActive)
+            while (isThreadingActive)
             {
                 Thread.Sleep(10000);
                 for (int i = 0; i < levelList.Count; i++)
@@ -1349,11 +1282,11 @@ namespace SergxloveCoin
         }
         private void getAchive(object sender, EventArgs e)
         {
-            Button selectButton = (Button )sender;
-            if(dictionaryAchives.ContainsKey(selectButton.Name))
+            Button selectButton = (Button)sender;
+            if (dictionaryAchives.ContainsKey(selectButton.Name))
             {
                 Achives newAchives = dictionaryAchives[selectButton.Name];
-                if(selectButton.Text == "Получить")
+                if (selectButton.Text == "Получить")
                 {
                     newAchives.IsDone = true;
                     statisticsPlayer.QuantityAchives++;
@@ -1365,14 +1298,14 @@ namespace SergxloveCoin
         }
         private void CheckAchives()
         {
-            while(isThreadingActive)
+            while (isThreadingActive)
             {
                 Thread.Sleep(10000);
                 for (int i = 0; i < achivesList.Count; i++)
                 {
                     if (achivesList[i].IsDone == false)
                     {
-                        switch(achivesList[i].TypeAchives)
+                        switch (achivesList[i].TypeAchives)
                         {
                             case VariationAchive.SpeedClick:
                                 if (achivesList[i].NeedClaim < myBalance.SpeedClick)
@@ -1387,7 +1320,7 @@ namespace SergxloveCoin
                                 }
                                 break;
                             case VariationAchive.Money:
-                                if(achivesList[i].NeedClaim < myBalance.BalansePlayer)
+                                if (achivesList[i].NeedClaim < myBalance.BalansePlayer)
                                 {
                                     ChangeButton(dictionaryButtonAchives[achivesList[i]]);
                                 }
@@ -1401,7 +1334,7 @@ namespace SergxloveCoin
         }
         private void RegAchives()
         {
-            for (int i = 0; i< achivesList.Count; i++)
+            for (int i = 0; i < achivesList.Count; i++)
             {
                 if (achivesList[i].IsDone)
                 {
