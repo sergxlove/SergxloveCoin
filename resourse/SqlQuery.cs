@@ -88,6 +88,29 @@ namespace SergxloveCoin.resourse
             }
         }
 
+        internal async Task ReadTableMouses(Dictionary<string, Mouse> mouses, List<string> namesMouse)
+        {
+            using(var connection = new SqliteConnection(sqlConnection))
+            {
+                await connection.OpenAsync();
+                int countComponent = 0;
+                SqliteCommand command = connection.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM Mouses;";
+                using (SqliteDataReader reader = await command.ExecuteReaderAsync())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            mouses[namesMouse[countComponent]].ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3));
+                            countComponent++;
+                        }
+                    }
+                }
+            }
+        }
+
         internal async Task FieldTableVideoCardDef(Dictionary<string, VideoCard> videocards, List<string> nameVideocard)
         {
             using (var connection = new SqliteConnection(sqlConnection))
@@ -119,6 +142,29 @@ namespace SergxloveCoin.resourse
             }
         }
 
+        internal async Task ReadTableVideoCard(Dictionary<string, VideoCard> videocards, List<string> namesVideocard)
+        {
+            using (var connection = new SqliteConnection(sqlConnection))
+            {
+                await connection.OpenAsync();
+                int countComponent = 0;
+                SqliteCommand command = connection.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM Videocards;";
+                using (SqliteDataReader reader = await command.ExecuteReaderAsync())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            videocards[namesVideocard[countComponent]].ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3));
+                            countComponent++;
+                        }
+                    }
+                }
+            }
+        }
+
         internal async Task FieldTableProcessorDef(Dictionary<string, Processor> processors, List<string> nameProcessor)
         {
             using (var connection = new SqliteConnection(sqlConnection))
@@ -146,6 +192,29 @@ namespace SergxloveCoin.resourse
                     speedParam.Value = processors[nameProcessor[i]].Speed;
                     quantityParam.Value = processors[nameProcessor[i]].Quantity;
                     await command.ExecuteNonQueryAsync();
+                }
+            }
+        }
+
+        internal async Task ReadTableProcessor(Dictionary<string, Processor> processors, List<string> namesProcessor)
+        {
+            using (var connection = new SqliteConnection(sqlConnection))
+            {
+                await connection.OpenAsync();
+                int countComponent = 0;
+                SqliteCommand command = connection.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM Processors;";
+                using (SqliteDataReader reader =await command.ExecuteReaderAsync())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            processors[namesProcessor[countComponent]].ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3));
+                            countComponent++;
+                        }
+                    }
                 }
             }
         }
