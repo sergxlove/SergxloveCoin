@@ -57,6 +57,27 @@ namespace SergxloveCoin.resourse
             }
         }
 
+        internal async Task ReadTableStatistics(Statistics stats)
+        {
+            using (var connection = new SqliteConnection(sqlConnection))
+            {
+                await connection.OpenAsync();
+                SqliteCommand command = connection.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM Statistics WHERE idStats = 1;";
+                using (SqliteDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            stats.ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8), reader.GetDateTime(9));
+                        }
+                    }
+                }
+            }
+        }
+
         internal async Task FieldTableMousesDef(Dictionary<string, Mouse> mouses, List<string> namesMouse)
         {
             using (var connection = new SqliteConnection(sqlConnection))
@@ -238,6 +259,29 @@ namespace SergxloveCoin.resourse
                     idParam.Value = i + 1;
                     isDoneParam.Value = levels[nameLevels[i]].IsDone;
                     await command.ExecuteNonQueryAsync();
+                }
+            }
+        }
+
+        internal async Task ReadTableLevel(Dictionary<string, Level> levels, List<string> namesLevels)
+        {
+            using (var connection = new SqliteConnection(sqlConnection))
+            {
+                await connection.OpenAsync();
+                int countComponent = 0;
+                SqliteCommand command = connection.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM Levels;";
+                using (SqliteDataReader reader = await command.ExecuteReaderAsync())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            levels[namesLevels[countComponent]].IsDone = Convert.ToBoolean(reader.GetInt32(1));
+                            countComponent++;
+                        }
+                    }
                 }
             }
         }
