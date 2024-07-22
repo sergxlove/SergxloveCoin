@@ -194,7 +194,7 @@ namespace SergxloveCoin
                 [nineAchive] = getnineachive,
             };
             sqlConnection = "Data source=userdata.db";
-            baseDate = new SqlQuery("Data source=userdata.db");
+            baseData = new SqlQuery("Data source=userdata.db");
             panels = new List<Panel> { panel4, panel5, panel6 };
             selectedPanel = 0;
             isChangedDataMouses = false;
@@ -289,7 +289,7 @@ namespace SergxloveCoin
 
         private string sqlConnection;
         private bool isCreateDatabase;
-        private SqlQuery baseDate;
+        private SqlQuery baseData;
 
         private int frameCount = 0;
         private int sizeX = 0;
@@ -315,142 +315,51 @@ namespace SergxloveCoin
         {
             if (isCreateDatabase)
             {
-                using (var connection = new SqliteConnection(sqlConnection))
+                await baseData.ReadTableMouses(dictionaryMouse, namesMouse);
+                await baseData.ReadTableVideoCard(dictionaryVideoCard, namesVideoCard);
+                await baseData.ReadTableProcessor(dictionaryProcessor, namesProcessor);
+                await baseData.ReadTableStatistics(statisticsPlayer);
+                firstLevel.ChangeData(1, 1000, 250, false);
+                secondLevel.ChangeData(2, 10000, 2500, false);
+                thirdLevel.ChangeData(3, 50000, 9000, false);
+                fourLevel.ChangeData(4, 400000, 75000, false);
+                fiveLevel.ChangeData(5, 2000000, 350000, false);
+                sixLevel.ChangeData(6, 10000000, 1300000, false);
+                sevenLevel.ChangeData(7, 50000000, 8000000, false);
+                await baseData.ReadTableLevel(dictionaryLevel, namesLevel);
+                firstAchive.ChangeData(10000000, 1000000, false, VariationAchive.Money);
+                secondAchive.ChangeData(100000000, 10000000, false, VariationAchive.Money);
+                thirdAchive.ChangeData(1000000000, 100000000, false, VariationAchive.Money);
+                fourAchive.ChangeData(1000, 100000, false, VariationAchive.SpeedClick);
+                fiveAchive.ChangeData(10000, 1000000, false, VariationAchive.SpeedClick);
+                sixAchive.ChangeData(100000, 10000000, false, VariationAchive.SpeedClick);
+                sevenAchive.ChangeData(10000, 1000000, false, VariationAchive.SpeedAuto);
+                eightAchive.ChangeData(100000, 10000000, false, VariationAchive.SpeedAuto);
+                nineAchive.ChangeData(1000000, 100000000, false, VariationAchive.SpeedAuto);
+                await baseData.ReadTableAchive(dictionaryAchives, namesAchives);
+                await baseData.ReadTableStatsPlayer(myBalance);
+                TimeSpan diffTime = DateTime.Now - myBalance.LastVisitDate;
+                int needTimesForFullEnergy = (myBalance.MaxEnergy - myBalance.CurrentEnergy) * 3;
+                int actualTimesForFullEnergy = Convert.ToInt32(diffTime.TotalHours * 3600.0);
+                if (actualTimesForFullEnergy >= needTimesForFullEnergy)
                 {
-                    connection.Open();
-                    string sqlCommand = "SELECT * FROM Mouses;";
-                    int countComponent = 0;
-                    SqliteCommand command = connection.CreateCommand();
-                    command.Connection = connection;
-                    command.CommandText = sqlCommand;
-                    using (SqliteDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                dictionaryMouse[namesMouse[countComponent]].ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3));
-                                countComponent++;
-                            }
-                        }
-                    }
-                    countComponent = 0;
-                    sqlCommand = "SELECT * FROM Videocards;";
-                    command.CommandText = sqlCommand;
-                    using (SqliteDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                dictionaryVideoCard[namesVideoCard[countComponent]].ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3));
-                                countComponent++;
-                            }
-                        }
-                    }
-                    countComponent = 0;
-                    sqlCommand = "SELECT * FROM Processors;";
-                    command.CommandText = sqlCommand;
-                    using (SqliteDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                dictionaryProcessor[namesProcessor[countComponent]].ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3));
-                                countComponent++;
-                            }
-                        }
-                    }
-                    countComponent = 0;
-                    sqlCommand = "SELECT * FROM Statistics WHERE idStats = 1;";
-                    command.CommandText = sqlCommand;
-                    using (SqliteDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                statisticsPlayer.ChangeData(reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8), reader.GetDateTime(9));
-                            }
-                        }
-                    }
-                    sqlCommand = "SELECT * FROM Levels;";
-                    command.CommandText = sqlCommand;
-                    firstLevel.ChangeData(1, 1000, 250, false);
-                    secondLevel.ChangeData(2, 10000, 2500, false);
-                    thirdLevel.ChangeData(3, 50000, 9000, false);
-                    fourLevel.ChangeData(4, 400000, 75000, false);
-                    fiveLevel.ChangeData(5, 2000000, 350000, false);
-                    sixLevel.ChangeData(6, 10000000, 1300000, false);
-                    sevenLevel.ChangeData(7, 50000000, 8000000, false);
-                    using (SqliteDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                dictionaryLevel[namesLevel[countComponent]].IsDone = Convert.ToBoolean(reader.GetInt32(1));
-                                countComponent++;
-                            }
-                        }
-                    }
-                    countComponent = 0;
-                    sqlCommand = "SELECT * FROM Achives;";
-                    command.CommandText = sqlCommand;
-                    firstAchive.ChangeData(10000000, 1000000, false, VariationAchive.Money);
-                    secondAchive.ChangeData(100000000, 10000000, false, VariationAchive.Money);
-                    thirdAchive.ChangeData(1000000000, 100000000, false, VariationAchive.Money);
-                    fourAchive.ChangeData(1000, 100000, false, VariationAchive.SpeedClick);
-                    fiveAchive.ChangeData(10000, 1000000, false, VariationAchive.SpeedClick);
-                    sixAchive.ChangeData(100000, 10000000, false, VariationAchive.SpeedClick);
-                    sevenAchive.ChangeData(10000, 1000000, false, VariationAchive.SpeedAuto);
-                    eightAchive.ChangeData(100000, 10000000, false, VariationAchive.SpeedAuto);
-                    nineAchive.ChangeData(1000000, 100000000, false, VariationAchive.SpeedAuto);
-                    using (SqliteDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                dictionaryAchives[namesAchives[countComponent]].IsDone = Convert.ToBoolean(reader.GetInt32(1));
-                                countComponent++;
-                            }
-                        }
-                    }
-                    sqlCommand = "SELECT * FROM StatsPlayer WHERE idPlayer = 1;";
-                    command.CommandText = sqlCommand;
-                    using (SqliteDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            reader.Read();
-                            myBalance.changeData(reader.GetInt32(2), reader.GetInt64(1), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetInt32(6), reader.GetDateTime(7));
-                            TimeSpan diffTime = DateTime.Now - reader.GetDateTime(7);
-                            int needTimesForFullEnergy = (myBalance.MaxEnergy - myBalance.CurrentEnergy) * 3;
-                            int actualTimesForFullEnergy = Convert.ToInt32(diffTime.TotalHours * 3600.0);
-                            if (actualTimesForFullEnergy >= needTimesForFullEnergy)
-                            {
-                                label235.Text = (myBalance.MaxEnergy - myBalance.CurrentEnergy).ToString();
-                                myBalance.CurrentEnergy = myBalance.MaxEnergy;
-                            }
-                            else
-                            {
-                                label235.Text = (actualTimesForFullEnergy / 3).ToString();
-                                myBalance.CurrentEnergy += actualTimesForFullEnergy / 3;
-                            }
-                            if (actualTimesForFullEnergy > (3600 * 8))
-                            {
-                                myBalance.BalansePlayer += (3600 * 8) * myBalance.SpeedProcessor;
-                            }
-                            else
-                            {
-                                myBalance.BalansePlayer += actualTimesForFullEnergy * myBalance.SpeedProcessor;
-                            }
-                            label234.Text = (actualTimesForFullEnergy / 3 * myBalance.SpeedProcessor).ToString();
-                        }
-                    }
+                    label235.Text = (myBalance.MaxEnergy - myBalance.CurrentEnergy).ToString();
+                    myBalance.CurrentEnergy = myBalance.MaxEnergy;
                 }
+                else
+                {
+                    label235.Text = (actualTimesForFullEnergy / 3).ToString();
+                    myBalance.CurrentEnergy += actualTimesForFullEnergy / 3;
+                }
+                if (actualTimesForFullEnergy > (3600 * 8))
+                {
+                    myBalance.BalansePlayer += (3600 * 8) * myBalance.SpeedProcessor;
+                }
+                else
+                {
+                    myBalance.BalansePlayer += actualTimesForFullEnergy * myBalance.SpeedProcessor;
+                }
+                label234.Text = (actualTimesForFullEnergy / 3 * myBalance.SpeedProcessor).ToString();
             }
             else
             {
@@ -507,23 +416,23 @@ namespace SergxloveCoin
 
                 myBalance.changeData(1, 0, 0, 0, 1000, 1000, DateTime.Now);
                 statisticsPlayer.ChangeData(1, 0, 0, 0, 0, 0, 0, 0, DateTime.Now);
-                await baseDate.CreateTable($@"CREATE TABLE StatsPlayer( idPlayer INT PRIMARY KEY NOT NULL, balancePlayer BIGINT NOT NULL, speedClick INT NOT NULL, 
+                await baseData.CreateTable($@"CREATE TABLE StatsPlayer( idPlayer INT PRIMARY KEY NOT NULL, balancePlayer BIGINT NOT NULL, speedClick INT NOT NULL, 
                     speedVideoCard INT NOT NULL, speedProcessor INT NOT NULL, currentEnergy INT NOT NULL, maxEnergy INT NOT NULL, lastVisitDate DATETIME NOT NULL);");
-                await baseDate.CreateTable("CREATE TABLE Mouses(idMouse INT PRIMARY KEY NOT NULL,price INT NOT NULL,speed INT NOT NULL,quantity INT NOT NULL);");
-                await baseDate.CreateTable("CREATE TABLE Videocards(idVideocard INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);");
-                await baseDate.CreateTable("CREATE TABLE Processors(idProcessor INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);");
-                await baseDate.CreateTable("CREATE TABLE Levels(idLevel INT PRIMARY KEY NOT NULL, isDone INT NOT NULL);");
-                await baseDate.CreateTable("CREATE TABLE Achives(idAchives INT PRIMARY KEY NOT NULL, isDone INT NOT NULL);");
-                await baseDate.CreateTable($@"CREATE TABLE Statistics(idStats INT PRIMARY KEY NOT NULL, quantityClick INT NOT NULL, totalSumClickMoney INT NOT NULL,
+                await baseData.CreateTable("CREATE TABLE Mouses(idMouse INT PRIMARY KEY NOT NULL,price INT NOT NULL,speed INT NOT NULL,quantity INT NOT NULL);");
+                await baseData.CreateTable("CREATE TABLE Videocards(idVideocard INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);");
+                await baseData.CreateTable("CREATE TABLE Processors(idProcessor INT PRIMARY KEY NOT NULL, price INT NOT NULL, speed INT NOT NULL, quantity INT NOT NULL);");
+                await baseData.CreateTable("CREATE TABLE Levels(idLevel INT PRIMARY KEY NOT NULL, isDone INT NOT NULL);");
+                await baseData.CreateTable("CREATE TABLE Achives(idAchives INT PRIMARY KEY NOT NULL, isDone INT NOT NULL);");
+                await baseData.CreateTable($@"CREATE TABLE Statistics(idStats INT PRIMARY KEY NOT NULL, quantityClick INT NOT NULL, totalSumClickMoney INT NOT NULL,
                     totalSumAutoMoney INT NOT NULL, level INT NOT NULL, quantityAchives INT NOT NULL, quantityMouse INT NOT NULL, quantityVideocard INT NOT NULL,
                     quantityProcessor INT NOT NULL, dateBegin DATETIME NOT NULL);");
-                await baseDate.FieldTableStatsPlayerDef();
-                await baseDate.FieldTableStatisticsDef();
-                await baseDate.FieldTableMousesDef(dictionaryMouse, namesMouse);
-                await baseDate.FieldTableVideoCardDef(dictionaryVideoCard, namesVideoCard);
-                await baseDate.FieldTableProcessorDef(dictionaryProcessor, namesProcessor);
-                await baseDate.FieldTableLevelDef(dictionaryLevel, namesLevel);
-                await baseDate.FieldTableAchiveDef(dictionaryAchives, namesAchives);
+                await baseData.FieldTableStatsPlayerDef();
+                await baseData.FieldTableStatisticsDef();
+                await baseData.FieldTableMousesDef(dictionaryMouse, namesMouse);
+                await baseData.FieldTableVideoCardDef(dictionaryVideoCard, namesVideoCard);
+                await baseData.FieldTableProcessorDef(dictionaryProcessor, namesProcessor);
+                await baseData.FieldTableLevelDef(dictionaryLevel, namesLevel);
+                await baseData.FieldTableAchiveDef(dictionaryAchives, namesAchives);
                 
             }
             label2.Text = myBalance.BalansePlayer.ToString();

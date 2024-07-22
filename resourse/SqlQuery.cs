@@ -44,6 +44,25 @@ namespace SergxloveCoin.resourse
             }
         }
 
+        internal async Task ReadTableStatsPlayer(StatsPlayer myBalance)
+        {
+            using (var connection = new SqliteConnection(sqlConnection))
+            {
+                await connection.OpenAsync();
+                SqliteCommand command = connection.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM StatsPlayer WHERE idPlayer = 1;";
+                using (SqliteDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        myBalance.changeData(reader.GetInt32(2), reader.GetInt64(1), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetInt32(6), reader.GetDateTime(7));
+                    }
+                }
+            }
+        }
+
         internal async Task FieldTableStatisticsDef()
         {
             using (var connection = new SqliteConnection(sqlConnection))
@@ -305,6 +324,29 @@ namespace SergxloveCoin.resourse
                     idParam.Value = i + 1;
                     isDoneParam.Value = achives[nameAchives[i]].IsDone;
                     await command.ExecuteNonQueryAsync();
+                }
+            }
+        }
+
+        internal async Task ReadTableAchive(Dictionary<string, Achives> achives, List<string> nameAchives)
+        {
+            using(var connection = new SqliteConnection(sqlConnection))
+            {
+                await connection.OpenAsync();
+                int countComponent = 0;
+                SqliteCommand command = connection.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM Achives;";
+                using (SqliteDataReader reader = await command.ExecuteReaderAsync())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            achives[nameAchives[countComponent]].IsDone = Convert.ToBoolean(reader.GetInt32(1));
+                            countComponent++;
+                        }
+                    }
                 }
             }
         }
