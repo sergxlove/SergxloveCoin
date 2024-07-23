@@ -11,7 +11,7 @@ namespace SergxloveCoin.resourse
     {
         public SqlQuery()
         {
-            sqlConnection = "";
+            sqlConnection = string.Empty;
         }
 
         public SqlQuery(string sqlConnection)
