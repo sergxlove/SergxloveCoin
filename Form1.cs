@@ -770,6 +770,24 @@ namespace SergxloveCoin
                         command.ExecuteNonQuery();
                     }
                 }
+                if(isChangedDataAchive)
+                {
+                    sqlCommand = "UPDATE Achives SET isDone = @price WHERE idAchives = @id;";
+                    command.CommandText = sqlCommand;
+                    for (int i = 0; i < namesAchives.Count; i++)
+                    {
+                        idParam.Value = i + 1;
+                        if (dictionaryAchives[namesAchives[i]].IsDone)
+                        {
+                            priceParam.Value = 1;
+                        }
+                        else
+                        {
+                            priceParam.Value = 0;
+                        }
+                        command.ExecuteNonQuery();
+                    }
+                }
 
                 sqlCommand = "UPDATE Statistics SET quantityClick = @id, totalSumClickMoney = @price, totalSumAutoMoney = @speed, level = @speedClick, quantityAchives = @quantity, quantityMouse = @currentEnergy, quantityVideocard = @maxEnergy, quantityProcessor = @lastVisitDate WHERE idStats = 1;";
                 command.CommandText = sqlCommand;
