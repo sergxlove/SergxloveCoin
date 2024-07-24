@@ -195,6 +195,7 @@ namespace SergxloveCoin
             };
             sqlConnection = "Data source=userdata.db";
             baseData = new SqlQuery("Data source=userdata.db");
+            updateBaseData = new SqlUpdateQuery("Data source=userdata.db");
             panels = new List<Panel> { panel4, panel5, panel6 };
             selectedPanel = 0;
             isChangedDataMouses = false;
@@ -290,6 +291,7 @@ namespace SergxloveCoin
         private string sqlConnection;
         private bool isCreateDatabase;
         private SqlQuery baseData;
+        private SqlUpdateQuery updateBaseData;
 
         private int frameCount = 0;
         private int sizeX = 0;
@@ -680,139 +682,32 @@ namespace SergxloveCoin
             timer3.Start();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             myBalance.LastVisitDate = DateTime.Now;
             isThreadingActive = false;
-            using (SqliteConnection connection = new SqliteConnection(sqlConnection))
+            if(isChangedDataMouses)
             {
-                connection.Open();
-                string sqlCommand;
-                SqliteCommand command = connection.CreateCommand();
-                SqliteParameter idParam = new SqliteParameter();
-                SqliteParameter priceParam = new SqliteParameter();
-                SqliteParameter speedParam = new SqliteParameter();
-                SqliteParameter speedClickParam = new SqliteParameter();
-                SqliteParameter quantityParam = new SqliteParameter();
-                SqliteParameter currentEnergyParam = new SqliteParameter();
-                SqliteParameter maxEnergyParam = new SqliteParameter();
-                SqliteParameter lastVisitDateParam = new SqliteParameter();
-                idParam.ParameterName = "@id";
-                priceParam.ParameterName = "@price";
-                speedParam.ParameterName = "@speed";
-                speedClickParam.ParameterName = "@speedClick";
-                quantityParam.ParameterName = "@quantity";
-                currentEnergyParam.ParameterName = "@currentEnergy";
-                maxEnergyParam.ParameterName = "@maxEnergy";
-                lastVisitDateParam.ParameterName = "@lastVisitDate";
-                command.Parameters.Add(idParam);
-                command.Parameters.Add(priceParam);
-                command.Parameters.Add(speedParam);
-                command.Parameters.Add(speedClickParam);
-                command.Parameters.Add(quantityParam);
-                command.Parameters.Add(currentEnergyParam);
-                command.Parameters.Add(maxEnergyParam);
-                command.Parameters.Add(lastVisitDateParam);
-                if (isChangedDataMouses)
-                {
-                    sqlCommand = "UPDATE Mouses SET price = @price, speed = @speed, quantity = @quantity WHERE idMouse = @id;";
-                    command.CommandText = sqlCommand;
-                    for (int i = 0; i < namesMouse.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        priceParam.Value = dictionaryMouse[namesMouse[i]].Price;
-                        speedParam.Value = dictionaryMouse[namesMouse[i]].SpeedClick;
-                        quantityParam.Value = dictionaryMouse[namesMouse[i]].Quantity;
-                        command.ExecuteNonQuery();
-                    }
-                }
-                if (isChangedDataVideoCard)
-                {
-                    sqlCommand = "UPDATE Videocards SET price = @price, speed = @speed, quantity = @quantity WHERE idVideocard = @id;";
-                    command.CommandText = sqlCommand;
-                    for (int i = 0; i < namesVideoCard.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        priceParam.Value = dictionaryVideoCard[namesVideoCard[i]].Price;
-                        speedParam.Value = dictionaryVideoCard[namesVideoCard[i]].Speed;
-                        quantityParam.Value = dictionaryVideoCard[namesVideoCard[i]].Quantity;
-                        command.ExecuteNonQuery();
-                    }
-                }
-                if (isChangedDataProcessor)
-                {
-                    sqlCommand = "UPDATE Processors SET price = @price, speed = @speed, quantity = @quantity WHERE idProcessor = @id;";
-                    command.CommandText = sqlCommand;
-                    for (int i = 0; i < namesProcessor.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        priceParam.Value = dictionaryProcessor[namesProcessor[i]].Price;
-                        speedParam.Value = dictionaryProcessor[namesProcessor[i]].Speed;
-                        quantityParam.Value = dictionaryProcessor[namesProcessor[i]].Quantity;
-                        command.ExecuteNonQuery();
-                    }
-                }
-                if (isChangedDataLevel)
-                {
-                    sqlCommand = "UPDATE Levels SET isDone = @price WHERE idLevel = @id;";
-                    command.CommandText = sqlCommand;
-                    for (int i = 0; i < namesLevel.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        if (dictionaryLevel[namesLevel[i]].IsDone)
-                        {
-                            priceParam.Value = 1;
-                        }
-                        else
-                        {
-                            priceParam.Value = 0;
-                        }
-                        command.ExecuteNonQuery();
-                    }
-                }
-                if(isChangedDataAchive)
-                {
-                    sqlCommand = "UPDATE Achives SET isDone = @price WHERE idAchives = @id;";
-                    command.CommandText = sqlCommand;
-                    for (int i = 0; i < namesAchives.Count; i++)
-                    {
-                        idParam.Value = i + 1;
-                        if (dictionaryAchives[namesAchives[i]].IsDone)
-                        {
-                            priceParam.Value = 1;
-                        }
-                        else
-                        {
-                            priceParam.Value = 0;
-                        }
-                        command.ExecuteNonQuery();
-                    }
-                }
-
-                sqlCommand = "UPDATE Statistics SET quantityClick = @id, totalSumClickMoney = @price, totalSumAutoMoney = @speed, level = @speedClick, quantityAchives = @quantity, quantityMouse = @currentEnergy, quantityVideocard = @maxEnergy, quantityProcessor = @lastVisitDate WHERE idStats = 1;";
-                command.CommandText = sqlCommand;
-                idParam.Value = statisticsPlayer.QuantityClick;
-                priceParam.Value = statisticsPlayer.TotalSumClickMoney;
-                speedParam.Value = statisticsPlayer.TotalSumAutoMoney;
-                speedClickParam.Value = statisticsPlayer.Level;
-                quantityParam.Value = statisticsPlayer.QuantityAchives;
-                currentEnergyParam.Value = statisticsPlayer.QuantityMouse;
-                maxEnergyParam.Value = statisticsPlayer.QuantityVideocard;
-                lastVisitDateParam.Value = statisticsPlayer.QuantityProcessor;
-                command.ExecuteNonQuery();
-
-
-                sqlCommand = "UPDATE StatsPlayer SET balancePlayer = @price, speedClick = @speedClick, speedVideoCard = @speed, speedProcessor = @quantity , currentEnergy = @currentEnergy, maxEnergy = @maxEnergy, lastVisitDate = @lastVisitDate WHERE idPlayer = 1;";
-                command.CommandText = sqlCommand;
-                priceParam.Value = myBalance.BalansePlayer;
-                speedClickParam.Value = myBalance.SpeedClick;
-                speedParam.Value = myBalance.SpeedVideoCard;
-                quantityParam.Value = myBalance.SpeedProcessor;
-                currentEnergyParam.Value = myBalance.CurrentEnergy;
-                maxEnergyParam.Value = myBalance.MaxEnergy;
-                lastVisitDateParam.Value = myBalance.LastVisitDate;
-                command.ExecuteNonQuery();
+                await updateBaseData.UpdateTableMouse(dictionaryMouse, namesMouse);
             }
+            if(isChangedDataVideoCard)
+            {
+                await updateBaseData.UpdateTableVideoCard(dictionaryVideoCard, namesVideoCard);
+            }
+            if(isChangedDataProcessor)
+            {
+                await updateBaseData.UpdateTableProcessor(dictionaryProcessor, namesProcessor);
+            }
+            if(isChangedDataLevel)
+            {
+                await updateBaseData.UpdateTableLevel(dictionaryLevel, namesLevel);
+            }
+            if (isChangedDataAchive)
+            {
+                await updateBaseData.UpdateTableAchive(dictionaryAchives, namesAchives);
+            }
+            await updateBaseData.UpdateTableStatsPlayer(myBalance);
+            await updateBaseData.UpdateTableStatistics(statisticsPlayer);
             Close();
         }
 
