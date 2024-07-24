@@ -202,6 +202,14 @@ namespace SergxloveCoin.resourse
                 command.CommandText = @"UPDATE Statistics SET quantityClick = @quantityClick, totalSumClickMoney = @totalSumClickMoney, totalSumAutoMoney = @totalSumAutoMoney, 
                                       level = @level, quantityAchives = @quantityAchive, quantityMouse = @quantityMouse, quantityVideocard = @quantityVideocard, 
                                       quantityProcessor = @quantityProcessor WHERE idStats = 1;";
+                quantityClickParam.Value = stats.QuantityClick;
+                totalSumClickMoneyParam.Value = stats.TotalSumClickMoney;
+                totalSumAutoMoneyParam.Value = stats.TotalSumAutoMoney;
+                levelParam.Value = stats.Level;
+                quantityAchivesParam.Value = stats.QuantityAchives;
+                quantityMouseParam.Value = stats.QuantityMouse;
+                quantityVideoCardParam.Value = stats.QuantityVideocard;
+                quantityProcessorParam.Value = stats.QuantityProcessor;
                 await command.ExecuteNonQueryAsync();
             }
         }
@@ -239,6 +247,13 @@ namespace SergxloveCoin.resourse
                 command.Connection = connection;
                 command.CommandText = @"UPDATE StatsPlayer SET balancePlayer = @price, speedClick = @speedClick, speedVideoCard = @speed, speedProcessor = @quantity , 
                                       currentEnergy = @currentEnergy, maxEnergy = @maxEnergy, lastVisitDate = @lastVisitDate WHERE idPlayer = 1;";
+                priceParam.Value = stats.BalansePlayer;
+                speedClickParam.Value = stats.SpeedClick;
+                speedParam.Value = stats.SpeedVideoCard;
+                quantityParam.Value = stats.SpeedProcessor;
+                currentEnergyParam.Value = stats.CurrentEnergy;
+                maxEnergyParam.Value = stats.MaxEnergy;
+                lastVisitDateParam.Value = stats.LastVisitDate;
                 await command.ExecuteNonQueryAsync();
             }
         }
