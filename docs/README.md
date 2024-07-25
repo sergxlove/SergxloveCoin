@@ -2,7 +2,7 @@
 
 The documentation is available in two languages:
 
-rus:
+[russian documentation](https://github.com/sergxlove/SergxloveCoin/tree/master/docs/rus)
 
 
 eng:
