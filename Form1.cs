@@ -15,6 +15,7 @@ namespace SergxloveCoin
         public Form1()
         {
             InitializeComponent();
+            pathLog = "log.txt";
             if (File.Exists("userdata.db"))
             {
                 isCreateDatabase = true;
@@ -23,6 +24,11 @@ namespace SergxloveCoin
             {
                 isCreateDatabase = false;
             }
+            if (!File.Exists(pathLog))
+            {
+                File.Create(pathLog);
+            }
+            writerLog = new StreamWriter(pathLog, true);
             myBalance = new();
             statisticsPlayer = new();
 
@@ -312,6 +318,10 @@ namespace SergxloveCoin
         private Thread threadCheckLevel;
         private Thread threadCheckAchive;
         private bool isThreadingActive;
+
+        private string pathLog;
+        private bool isCreateLog;
+        StreamWriter writerLog;
 
         private async void Form1_Load(object sender, EventArgs e)
         {
