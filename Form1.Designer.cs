@@ -5261,7 +5261,7 @@
             panel5.Controls.Add(label229);
             panel5.Location = new Point(12, 155);
             panel5.Name = "panel5";
-            panel5.Size = new Size(620, 650);
+            panel5.Size = new Size(620, 0);
             panel5.TabIndex = 24;
             // 
             // groupBox47
