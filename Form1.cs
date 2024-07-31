@@ -320,7 +320,6 @@ namespace SergxloveCoin
         private bool isThreadingActive;
 
         private string pathLog;
-        private bool isCreateLog;
         StreamWriter writerLog;
 
         private async void Form1_Load(object sender, EventArgs e)
@@ -372,6 +371,7 @@ namespace SergxloveCoin
                     myBalance.BalansePlayer += actualTimesForFullEnergy * myBalance.SpeedProcessor;
                 }
                 label234.Text = (actualTimesForFullEnergy / 3 * myBalance.SpeedProcessor).ToString();
+                await writerLog.WriteLineAsync($"database data read {DateTime.UtcNow}");
             }
             else
             {
@@ -445,6 +445,7 @@ namespace SergxloveCoin
                 await baseData.FieldTableProcessorDef(dictionaryProcessor, namesProcessor);
                 await baseData.FieldTableLevelDef(dictionaryLevel, namesLevel);
                 await baseData.FieldTableAchiveDef(dictionaryAchives, namesAchives);
+                await writerLog.WriteLineAsync($"database create {DateTime.UtcNow}");
                 
             }
             label2.Text = myBalance.BalansePlayer.ToString();
@@ -718,6 +719,8 @@ namespace SergxloveCoin
             }
             await updateBaseData.UpdateTableStatsPlayer(myBalance);
             await updateBaseData.UpdateTableStatistics(statisticsPlayer);
+            await writerLog.WriteLineAsync($"exit the program {DateTime.UtcNow}");
+            writerLog.Dispose();
             Close();
         }
 
