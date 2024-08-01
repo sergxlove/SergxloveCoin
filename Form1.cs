@@ -749,7 +749,7 @@ namespace SergxloveCoin
             timer2.Start();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private async void pictureBox3_Click(object sender, EventArgs e)
         {
             if (showAnimationNotify) button7_Click(sender, e);
             timer1.Interval = 7;
@@ -757,6 +757,7 @@ namespace SergxloveCoin
             coordPointY = 805;
             sizeY = 0;
             showAnimation = true;
+            await writerLog.WriteLineAsync($"open panel shop {DateTime.UtcNow}");
             timer1.Start();
         }
 
@@ -909,7 +910,7 @@ namespace SergxloveCoin
             }
         }
 
-        private void buyComponentMouse(object sender, EventArgs e)
+        private async void buyComponentMouse(object sender, EventArgs e)
         {
             Button selectButton = (Button)sender;
             if (dictionaryMouse.ContainsKey(selectButton.Name))
@@ -929,6 +930,7 @@ namespace SergxloveCoin
                     myBalance.downBalanse(newmouse.Price);
                     label2.Text = myBalance.BalansePlayer.ToString();
                     statisticsPlayer.QuantityMouse++;
+                    await writerLog.WriteLineAsync($"buy component mouse {DateTime.UtcNow}");
                 }
             }
             else
@@ -936,7 +938,7 @@ namespace SergxloveCoin
                 MessageBox.Show("No found key");
             }
         }
-        private void buyComponentVideoCard(object sender, EventArgs e)
+        private async void buyComponentVideoCard(object sender, EventArgs e)
         {
             Button selectButton = (Button)sender;
             if (dictionaryVideoCard.ContainsKey(selectButton.Name))
@@ -956,6 +958,7 @@ namespace SergxloveCoin
                     myBalance.downBalanse(newvideocard.Price);
                     label2.Text = myBalance.BalansePlayer.ToString();
                     statisticsPlayer.QuantityVideocard++;
+                    await writerLog.WriteLineAsync($"buy component videocard {DateTime.UtcNow}");
                 }
             }
             else
@@ -963,7 +966,7 @@ namespace SergxloveCoin
                 MessageBox.Show("No found key");
             }
         }
-        private void buyComponentProcessor(object sender, EventArgs e)
+        private async void buyComponentProcessor(object sender, EventArgs e)
         {
             Button selectButton = (Button)sender;
             if (dictionaryProcessor.ContainsKey(selectButton.Name))
@@ -983,6 +986,7 @@ namespace SergxloveCoin
                     myBalance.downBalanse(newprocessor.Price);
                     label2.Text = myBalance.BalansePlayer.ToString();
                     statisticsPlayer.QuantityProcessor++;
+                    await writerLog.WriteLineAsync($"buy component processor {DateTime.UtcNow}");
                 }
             }
             else
@@ -1060,7 +1064,7 @@ namespace SergxloveCoin
             timer3.Start();
         }
 
-        private void getLevel(object sender, EventArgs e)
+        private async void getLevel(object sender, EventArgs e)
         {
             Button selectButton = (Button)sender;
             if (dictionaryLevel.ContainsKey(selectButton.Name))
@@ -1073,6 +1077,7 @@ namespace SergxloveCoin
                     myBalance.upBalanse(newlevel.Prize);
                     selectButton.Text = "Получено";
                     isChangedDataLevel = true;
+                    await writerLog.WriteLineAsync($"getting level {DateTime.UtcNow}");
                 }
             }
         }
@@ -1115,7 +1120,7 @@ namespace SergxloveCoin
                 }
             }
         }
-        private void getAchive(object sender, EventArgs e)
+        private async void getAchive(object sender, EventArgs e)
         {
             Button selectButton = (Button)sender;
             if (dictionaryAchives.ContainsKey(selectButton.Name))
@@ -1128,6 +1133,7 @@ namespace SergxloveCoin
                     myBalance.upBalanse(newAchives.Prize);
                     selectButton.Text = "Получено";
                     isChangedDataAchive = true;
+                    await writerLog.WriteLineAsync($"getting achive {DateTime.UtcNow}");
                 }
             }
         }
