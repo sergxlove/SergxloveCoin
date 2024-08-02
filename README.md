@@ -11,5 +11,15 @@
 
 # Installation / Установка
 
+Клонировать репозиторий
+```
+git clone git@github.com:sergxlove/SergxloveCoin.git
+```
+
 # System requirements / Системные требования
 
+Operating system: windows <br>
+Processor: 1 GHz and high <br>
+RAM memory: 512 Mb and high <br>
+Free hard disk space: 50 Mb and more <br>
+Availability .NET runtime <br>
